@@ -126,6 +126,139 @@
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
         }
+        
+        /* Markdown 内容样式 */
+        .markdown-body {
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .markdown-body h1,
+        .markdown-body h2,
+        .markdown-body h3,
+        .markdown-body h4,
+        .markdown-body h5,
+        .markdown-body h6 {
+            margin-top: 16px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .markdown-body h1 { font-size: 1.5rem; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        .markdown-body h2 { font-size: 1.3rem; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+        .markdown-body h3 { font-size: 1.1rem; }
+        .markdown-body h4 { font-size: 1rem; }
+        
+        .markdown-body p {
+            margin-bottom: 12px;
+        }
+        
+        .markdown-body ul,
+        .markdown-body ol {
+            margin-bottom: 12px;
+            padding-left: 24px;
+        }
+        
+        .markdown-body li {
+            margin-bottom: 6px;
+        }
+        
+        .markdown-body table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 12px 0;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        .markdown-body th,
+        .markdown-body td {
+            border: 1px solid #dfe2e5;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        .markdown-body th {
+            background: #f6f8fa;
+            font-weight: 600;
+        }
+        
+        .markdown-body tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .markdown-body pre {
+            margin: 12px 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .markdown-body pre code {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            display: block;
+            padding: 16px;
+            overflow-x: auto;
+        }
+        
+        .markdown-body code {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.85em;
+            padding: 0.2em 0.4em;
+            margin: 0;
+            background: rgba(27,31,35,0.05);
+            border-radius: 3px;
+        }
+        
+        .markdown-body pre code {
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 16px;
+        }
+        
+        .markdown-body blockquote {
+            border-left: 4px solid #667eea;
+            padding: 8px 16px;
+            margin: 12px 0;
+            color: #6a737d;
+            background: #f6f8fa;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .markdown-body blockquote p {
+            margin-bottom: 0;
+        }
+        
+        .markdown-body strong {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .markdown-body a {
+            color: #667eea;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.2s;
+        }
+        
+        .markdown-body a:hover {
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+        }
+        
+        .markdown-body hr {
+            border: 0;
+            border-top: 1px solid #eaecef;
+            margin: 20px 0;
+        }
+        
+        .markdown-body img {
+            max-width: 100%;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
@@ -227,7 +360,23 @@
     </footer>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Markdown 解析库 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/marked/12.0.0/marked.min.js"></script>
+    <!-- HTML 安全过滤 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/dompurify/3.0.9/purify.min.js"></script>
+    <!-- 代码高亮 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>
+        // 配置 marked
+        marked.setOptions({
+            breaks: true,        // 支持 GFM 换行
+            gfm: true,          // GitHub 风格 Markdown
+            highlight: function(code, lang) {
+                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                return hljs.highlight(code, { language }).value;
+            }
+        });
         const chatMessages = document.getElementById('chatMessages');
         const messageInput = document.getElementById('messageInput');
         const typingIndicator = document.getElementById('typingIndicator');
@@ -246,17 +395,29 @@
             avatar.innerHTML = isUser ? '<i class="bi bi-person"></i>' : '<i class="bi bi-robot"></i>';
             
             const contentDiv = document.createElement('div');
-            contentDiv.innerHTML = `
-                <div class="message-content">${content}</div>
-                <div class="message-time">${new Date().toLocaleTimeString('zh-CN', {hour: '2-digit', minute:'2-digit'})}</div>
-            `;
             
             if (isUser) {
+                // 用户消息：纯文本
+                contentDiv.innerHTML = `
+                    <div class="message-content">${escapeHtml(content)}</div>
+                    <div class="message-time">${new Date().toLocaleTimeString('zh-CN', {hour: '2-digit', minute:'2-digit'})}</div>
+                `;
                 messageDiv.appendChild(contentDiv);
                 messageDiv.appendChild(avatar);
             } else {
+                // Agent 消息：Markdown 渲染
+                const htmlContent = DOMPurify.sanitize(marked.parse(content));
+                contentDiv.innerHTML = `
+                    <div class="message-content markdown-body">${htmlContent}</div>
+                    <div class="message-time">${new Date().toLocaleTimeString('zh-CN', {hour: '2-digit', minute:'2-digit'})}</div>
+                `;
                 messageDiv.appendChild(avatar);
                 messageDiv.appendChild(contentDiv);
+                
+                // 代码高亮
+                contentDiv.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightElement(block);
+                });
             }
             
             chatMessages.appendChild(messageDiv);
@@ -350,7 +511,8 @@
                                     console.log('Stream started');
                                 } else if (data.type === 'token') {
                                     fullContent += data.content;
-                                    contentElement.innerHTML = formatAgentReply(fullContent) + '<span class="cursor-blink"></span>';
+                                    // 流式阶段：纯文本 + 光标
+                                    contentElement.textContent = fullContent + '▌';
                                     chatMessages.scrollTop = chatMessages.scrollHeight;
                                 } else if (data.type === 'error') {
                                     contentElement.innerHTML = `❌ 错误：${data.error}`;
@@ -369,16 +531,25 @@
                     if (streamEnded) break;
                 }
                 
-                // 流结束，移除光标
-                contentElement.innerHTML = formatAgentReply(fullContent);
+                // 流结束：渲染 Markdown
+                if (fullContent) {
+                    const htmlContent = DOMPurify.sanitize(marked.parse(fullContent));
+                    contentElement.innerHTML = htmlContent;
+                    
+                    // 代码高亮
+                    contentElement.querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightElement(block);
+                    });
+                }
                 reader.releaseLock();
                 
             } catch (error) {
                 console.error('Stream error:', error);
                 if (contentElement && !fullContent) {
                     contentElement.innerHTML = `❌ 发送失败：${error.message}`;
-                } else if (contentElement) {
-                    contentElement.innerHTML = formatAgentReply(fullContent);
+                } else if (fullContent) {
+                    const htmlContent = DOMPurify.sanitize(marked.parse(fullContent));
+                    contentElement.innerHTML = htmlContent;
                 }
             } finally {
                 // 总是清理状态
@@ -397,25 +568,13 @@
             sendMessage();
         }
 
-        // 格式化 Agent 回复（支持简单的 Markdown）
-        function formatAgentReply(text) {
-            // 换行
-            text = text.replace(/\n/g, '<br>');
-            // 粗体
-            text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            // 列表
-            text = text.replace(/^- (.*?)/gm, '• $1<br>');
-            // 标题
-            text = text.replace(/^### (.*?)/gm, '<h6>$1</h6>');
-            text = text.replace(/^## (.*?)/gm, '<h5>$1</h5>');
-            text = text.replace(/^# (.*?)/gm, '<h4>$1</h4>');
-            // 代码块
-            text = text.replace(/```(\w*?)\n([\s\S]*?)```/g, '<pre><code class="language-$1">$2</code></pre>');
-            // 行内代码
-            text = text.replace(/`(.*?)`/g, '<code>$1</code>');
-            return text;
+        // HTML 转义（用户消息）
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
-
+        
         // 页面加载完成
         document.addEventListener('DOMContentLoaded', () => {
             messageInput.focus();
