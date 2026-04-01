@@ -11,10 +11,6 @@ env/
 dist/
 build/
 
-# 工作目录外
-../venv/
-../web.pid
-
 # 日志
 logs/
 *.log
@@ -47,3 +43,6 @@ Thumbs.db
 # 压缩包
 *.zip
 *.tar.gz
+
+# Git 子模块
+skills/self-improving-agent
