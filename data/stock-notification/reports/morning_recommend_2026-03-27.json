@@ -1,0 +1,337 @@
+{
+  "date": "2026-03-27",
+  "evening_date": "20260326",
+  "hot_sectors": [
+    "银行",
+    "锂电",
+    "化工",
+    "消费电子",
+    "医疗器械"
+  ],
+  "sector_leaders": {
+    "银行": [
+      {
+        "code": "601398",
+        "name": "",
+        "score": 37.12986,
+        "main_force_in": 18564.93,
+        "main_force_out": 0,
+        "main_force_net": 18564.93,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": -0.2695,
+        "auction": "-"
+      },
+      {
+        "code": "601988",
+        "name": "",
+        "score": 23.665860000000002,
+        "main_force_in": 11832.93,
+        "main_force_out": 0,
+        "main_force_net": 11832.93,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": -0.1792,
+        "auction": "-"
+      },
+      {
+        "code": "601328",
+        "name": "",
+        "score": 17.04501,
+        "main_force_in": 8158.13,
+        "main_force_out": 0,
+        "main_force_net": 8158.13,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0.2915,
+        "auction": "-"
+      }
+    ],
+    "锂电": [
+      {
+        "code": "002466",
+        "name": "",
+        "score": 57.34325,
+        "main_force_in": 43932.83,
+        "main_force_out": 0,
+        "main_force_net": 43932.83,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 6.9373,
+        "auction": "-"
+      },
+      {
+        "code": "300014",
+        "name": "",
+        "score": 48.5715,
+        "main_force_in": 38296.84,
+        "main_force_out": 0,
+        "main_force_net": 38296.84,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 3.4286,
+        "auction": "-"
+      },
+      {
+        "code": "300750",
+        "name": "",
+        "score": 48.497,
+        "main_force_in": 213889.9,
+        "main_force_out": 0,
+        "main_force_net": 213889.9,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 3.3988,
+        "auction": "-"
+      }
+    ],
+    "化工": [
+      {
+        "code": "000792",
+        "name": "",
+        "score": 57.638999999999996,
+        "main_force_in": 128070.69,
+        "main_force_out": 0,
+        "main_force_net": 128070.69,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 7.0556,
+        "auction": "-"
+      },
+      {
+        "code": "002497",
+        "name": "",
+        "score": 50.46124,
+        "main_force_in": 18994.12,
+        "main_force_out": 0,
+        "main_force_net": 18994.12,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 4.9892,
+        "auction": "-"
+      },
+      {
+        "code": "600096",
+        "name": "",
+        "score": 45.96125,
+        "main_force_in": 20864.31,
+        "main_force_out": 0,
+        "main_force_net": 20864.31,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 2.3845,
+        "auction": "-"
+      }
+    ],
+    "消费电子": [
+      {
+        "code": "002384",
+        "name": "",
+        "score": 40.0,
+        "main_force_in": 20806.95,
+        "main_force_out": 0,
+        "main_force_net": 20806.95,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": -1.582,
+        "auction": "-"
+      },
+      {
+        "code": "002475",
+        "name": "",
+        "score": 23.35428,
+        "main_force_in": 10631.14,
+        "main_force_out": 0,
+        "main_force_net": 10631.14,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0.8368,
+        "auction": "-"
+      },
+      {
+        "code": "300088",
+        "name": "",
+        "score": 1.7078600000000002,
+        "main_force_in": 16.43,
+        "main_force_out": 0,
+        "main_force_net": 16.43,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0.67,
+        "auction": "-"
+      }
+    ],
+    "医疗器械": [
+      {
+        "code": "300760",
+        "name": "",
+        "score": 48.0645,
+        "main_force_in": 36477.72,
+        "main_force_out": 0,
+        "main_force_net": 36477.72,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 3.2258,
+        "auction": "-"
+      },
+      {
+        "code": "300015",
+        "name": "",
+        "score": 25.83864,
+        "main_force_in": 10530.82,
+        "main_force_out": 0,
+        "main_force_net": 10530.82,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 1.9108,
+        "auction": "-"
+      },
+      {
+        "code": "300633",
+        "name": "",
+        "score": 10.668009999999999,
+        "main_force_in": 2108.88,
+        "main_force_out": 0,
+        "main_force_net": 2108.88,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 2.5801,
+        "auction": "-"
+      }
+    ]
+  },
+  "news_count": 18,
+  "recommendations": [
+    {
+      "sector": "银行",
+      "stocks": [
+        {
+          "code": "601398",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": -0.2695
+        },
+        {
+          "code": "601988",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": -0.1792
+        },
+        {
+          "code": "601328",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0.2915
+        }
+      ]
+    },
+    {
+      "sector": "锂电",
+      "stocks": [
+        {
+          "code": "002466",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 6.9373
+        },
+        {
+          "code": "300014",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 3.4286
+        },
+        {
+          "code": "300750",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 3.3988
+        }
+      ]
+    },
+    {
+      "sector": "化工",
+      "stocks": [
+        {
+          "code": "000792",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 7.0556
+        },
+        {
+          "code": "002497",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 4.9892
+        },
+        {
+          "code": "600096",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 2.3845
+        }
+      ]
+    },
+    {
+      "sector": "消费电子",
+      "stocks": [
+        {
+          "code": "002384",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": -1.582
+        },
+        {
+          "code": "002475",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0.8368
+        },
+        {
+          "code": "300088",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0.67
+        }
+      ]
+    },
+    {
+      "sector": "医疗器械",
+      "stocks": [
+        {
+          "code": "300760",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 3.2258
+        },
+        {
+          "code": "300015",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 1.9108
+        },
+        {
+          "code": "300633",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 2.5801
+        }
+      ]
+    }
+  ],
+  "position_suggestion": 30
+}

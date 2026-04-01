@@ -1,0 +1,128 @@
+{
+  "date": "2026-03-27",
+  "strategy": "龙虎榜机构买入",
+  "market_summary": {
+    "shanghai": {"close": 3913.72, "change_pct": 0.63},
+    "shenzhen": {"close": 13760.37, "change_pct": 1.13},
+    "chinext": {"close": 3295.88, "change_pct": 0.71},
+    "hs300": {"close": 4502.57, "change_pct": 0.56}
+  },
+  "recommendations": [
+    {
+      "rank": 1,
+      "ts_code": "002460.SZ",
+      "name": "赣锋锂业",
+      "price": 79.67,
+      "change_pct": 10.00,
+      "net_amount": 823011000,
+      "reason": "日涨幅偏离值达到 7%",
+      "score": 95,
+      "recommendation": "锂电池龙头，机构大笔买入，短线关注"
+    },
+    {
+      "rank": 2,
+      "ts_code": "002310.SZ",
+      "name": "东方新能",
+      "price": 3.84,
+      "change_pct": 10.03,
+      "net_amount": 491448000,
+      "reason": "日振幅值达到 15%",
+      "score": 88,
+      "recommendation": "新能源概念，资金活跃"
+    },
+    {
+      "rank": 3,
+      "ts_code": "002361.SZ",
+      "name": "神剑股份",
+      "price": 13.64,
+      "change_pct": 10.00,
+      "net_amount": 308330000,
+      "reason": "连续三个交易日涨幅偏离 20%",
+      "score": 85,
+      "recommendation": "连续走强，趋势良好"
+    },
+    {
+      "rank": 4,
+      "ts_code": "301292.SZ",
+      "name": "海科新源",
+      "price": 96.29,
+      "change_pct": 20.00,
+      "net_amount": 279095000,
+      "reason": "连续三个交易日涨幅偏离 30%",
+      "score": 82,
+      "recommendation": "创业板强势股，注意波动风险"
+    },
+    {
+      "rank": 5,
+      "ts_code": "300204.SZ",
+      "name": "舒泰神",
+      "price": 27.76,
+      "change_pct": 20.02,
+      "net_amount": 279024000,
+      "reason": "日涨幅达到 15%",
+      "score": 80,
+      "recommendation": "医药股，短线强势"
+    },
+    {
+      "rank": 6,
+      "ts_code": "600110.SH",
+      "name": "诺德股份",
+      "price": 8.66,
+      "change_pct": 10.04,
+      "net_amount": 275429000,
+      "reason": "日收盘价格涨幅偏离 7%",
+      "score": 78,
+      "recommendation": "铜箔材料，机构介入"
+    },
+    {
+      "rank": 7,
+      "ts_code": "002432.SZ",
+      "name": "九安医疗",
+      "price": 68.64,
+      "change_pct": 10.00,
+      "net_amount": 193175000,
+      "reason": "日涨幅偏离值达到 7%",
+      "score": 75,
+      "recommendation": "医疗器械，资金关注"
+    },
+    {
+      "rank": 8,
+      "ts_code": "002428.SZ",
+      "name": "云南锗业",
+      "price": 51.36,
+      "change_pct": 10.00,
+      "net_amount": 176791000,
+      "reason": "日涨幅偏离值达到 7%",
+      "score": 73,
+      "recommendation": "稀有金属，资源股"
+    },
+    {
+      "rank": 9,
+      "ts_code": "600227.SH",
+      "name": "赤天化",
+      "price": 4.27,
+      "change_pct": 10.05,
+      "net_amount": 156485000,
+      "reason": "日换手率达到 20%",
+      "score": 70,
+      "recommendation": "低价股，高换手"
+    },
+    {
+      "rank": 10,
+      "ts_code": "002594.SZ",
+      "name": "比亚迪",
+      "price": 416.18,
+      "change_pct": 3.40,
+      "net_amount": 150000000,
+      "reason": "主力净流入",
+      "score": 85,
+      "recommendation": "新能源龙头，中线配置"
+    }
+  ],
+  "notes": [
+    "今日市场普涨，创业板领涨 (+0.71%)",
+    "龙虎榜机构净买入活跃，新能源板块受捧",
+    "建议关注前排 3-5 只，设置好止损",
+    "数据来源：Tushare Pro 龙虎榜"
+  ]
+}

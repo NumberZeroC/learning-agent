@@ -1,0 +1,360 @@
+{
+  "report_type": "evening",
+  "generated_at": "2026-04-01T20:31:15.891088",
+  "trade_date": "2026-04-01",
+  "data": {
+    "market_indices": {
+      "shanghai": {
+        "name": "sh000001",
+        "trade_date": "2026-04-01",
+        "close": 3948.552,
+        "open": 3939.566,
+        "high": 3955.943,
+        "low": 3929.921,
+        "change_pct": 1.46,
+        "change": 56.69,
+        "volume": 56461159800.0,
+        "prev_close": 3891.861
+      },
+      "shenzhen": {
+        "name": "sz399001",
+        "trade_date": "2026-04-01",
+        "close": 13706.52,
+        "open": 13731.387,
+        "high": 13740.975,
+        "low": 13603.785,
+        "change_pct": 1.7,
+        "change": 228.46,
+        "volume": 65413025986.0,
+        "prev_close": 13478.056
+      },
+      "chinext": {
+        "name": "sz399006",
+        "trade_date": "2026-04-01",
+        "close": 3247.523,
+        "open": 3255.264,
+        "high": 3255.264,
+        "low": 3206.802,
+        "change_pct": 1.96,
+        "change": 62.57,
+        "volume": 18012365918.0,
+        "prev_close": 3184.952
+      },
+      "hs300": {
+        "name": "sh000300",
+        "trade_date": "2026-04-01",
+        "close": 4526.067,
+        "open": 4517.272,
+        "high": 4532.109,
+        "low": 4492.054,
+        "change_pct": 1.71,
+        "change": 76.02,
+        "volume": 21648319600.0,
+        "prev_close": 4450.049
+      },
+      "zheng50": {
+        "name": "sh000016",
+        "trade_date": "2026-04-01",
+        "close": 2878.794,
+        "open": 2863.493,
+        "high": 2882.671,
+        "low": 2856.968,
+        "change_pct": 1.86,
+        "change": 52.67,
+        "volume": 5069558000.0,
+        "prev_close": 2826.125
+      }
+    },
+    "sector_flows": [
+      {
+        "sector": "创新药",
+        "main_force_in": 159494.54000000004,
+        "main_force_out": 0,
+        "net_flow": 159494.54000000004,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 5.076569999999999,
+        "top_stocks": []
+      },
+      {
+        "sector": "半导体",
+        "main_force_in": 231673.20000000004,
+        "main_force_out": 22199.9,
+        "net_flow": 209473.30000000005,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 2.82761,
+        "top_stocks": []
+      },
+      {
+        "sector": "医药生物",
+        "main_force_in": 126630.39,
+        "main_force_out": 0,
+        "net_flow": 126630.39,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 2.68621,
+        "top_stocks": []
+      },
+      {
+        "sector": "消费电子",
+        "main_force_in": 246098.16999999998,
+        "main_force_out": 5403.219999999999,
+        "net_flow": 240694.94999999998,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 2.6251799999999994,
+        "top_stocks": []
+      },
+      {
+        "sector": "软件",
+        "main_force_in": 98041.78,
+        "main_force_out": 12289.820000000002,
+        "net_flow": 85751.95999999999,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 2.57382,
+        "top_stocks": []
+      },
+      {
+        "sector": "有色",
+        "main_force_in": 107200.34000000001,
+        "main_force_out": 37687.33,
+        "net_flow": 69513.01000000001,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 2.3715,
+        "top_stocks": []
+      },
+      {
+        "sector": "家电",
+        "main_force_in": 58104.87,
+        "main_force_out": 4221.67,
+        "net_flow": 53883.200000000004,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 2.09542,
+        "top_stocks": []
+      },
+      {
+        "sector": "5G",
+        "main_force_in": 479357.66,
+        "main_force_out": 107932.29000000001,
+        "net_flow": 371425.37,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 1.76223,
+        "top_stocks": []
+      },
+      {
+        "sector": "医疗器械",
+        "main_force_in": 20966.29,
+        "main_force_out": 364.87,
+        "net_flow": 20601.420000000002,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 1.70805,
+        "top_stocks": []
+      },
+      {
+        "sector": "白酒",
+        "main_force_in": 70623.1,
+        "main_force_out": 0,
+        "net_flow": 70623.1,
+        "inst_net": 0,
+        "financing_net": 0,
+        "stock_count": 10,
+        "avg_change": 1.6763199999999998,
+        "top_stocks": []
+      }
+    ],
+    "sector_sentiment": {
+      "汽车": {
+        "score": 50.5,
+        "level": "🟡 中性",
+        "news_count": 1,
+        "positive_ratio": 100.0
+      },
+      "人工智能": {
+        "score": 17.2,
+        "level": "🟢 谨慎",
+        "news_count": 3,
+        "positive_ratio": 33.3
+      },
+      "医药生物": {
+        "score": 11.5,
+        "level": "🟢 谨慎",
+        "news_count": 5,
+        "positive_ratio": 20.0
+      },
+      "银行": {
+        "score": 4.7,
+        "level": "🟢 谨慎",
+        "news_count": 12,
+        "positive_ratio": 8.3
+      },
+      "新能源": {
+        "score": 0.0,
+        "level": "🟢 谨慎",
+        "news_count": 1,
+        "positive_ratio": 0.0
+      },
+      "券商": {
+        "score": 0.0,
+        "level": "🟢 谨慎",
+        "news_count": 1,
+        "positive_ratio": 0.0
+      }
+    },
+    "reliable_data_log": [
+      {
+        "timestamp": "2026-04-01T20:30:05.196546",
+        "type": "index_data",
+        "data": {
+          "shanghai": {
+            "name": "sh000001",
+            "trade_date": "2026-04-01",
+            "close": 3948.552,
+            "open": 3939.566,
+            "high": 3955.943,
+            "low": 3929.921,
+            "change_pct": 1.46,
+            "change": 56.69,
+            "volume": 56461159800.0,
+            "prev_close": 3891.861
+          },
+          "shenzhen": {
+            "name": "sz399001",
+            "trade_date": "2026-04-01",
+            "close": 13706.52,
+            "open": 13731.387,
+            "high": 13740.975,
+            "low": 13603.785,
+            "change_pct": 1.7,
+            "change": 228.46,
+            "volume": 65413025986.0,
+            "prev_close": 13478.056
+          },
+          "chinext": {
+            "name": "sz399006",
+            "trade_date": "2026-04-01",
+            "close": 3247.523,
+            "open": 3255.264,
+            "high": 3255.264,
+            "low": 3206.802,
+            "change_pct": 1.96,
+            "change": 62.57,
+            "volume": 18012365918.0,
+            "prev_close": 3184.952
+          },
+          "hs300": {
+            "name": "sh000300",
+            "trade_date": "2026-04-01",
+            "close": 4526.067,
+            "open": 4517.272,
+            "high": 4532.109,
+            "low": 4492.054,
+            "change_pct": 1.71,
+            "change": 76.02,
+            "volume": 21648319600.0,
+            "prev_close": 4450.049
+          },
+          "zheng50": {
+            "name": "sh000016",
+            "trade_date": "2026-04-01",
+            "close": 2878.794,
+            "open": 2863.493,
+            "high": 2882.671,
+            "low": 2856.968,
+            "change_pct": 1.86,
+            "change": 52.67,
+            "volume": 5069558000.0,
+            "prev_close": 2826.125
+          }
+        }
+      }
+    ]
+  },
+  "data_sources": {
+    "akshare": true,
+    "tushare": true,
+    "requests": true
+  },
+  "log": [
+    {
+      "timestamp": "2026-04-01T20:30:05.196546",
+      "type": "index_data",
+      "data": {
+        "shanghai": {
+          "name": "sh000001",
+          "trade_date": "2026-04-01",
+          "close": 3948.552,
+          "open": 3939.566,
+          "high": 3955.943,
+          "low": 3929.921,
+          "change_pct": 1.46,
+          "change": 56.69,
+          "volume": 56461159800.0,
+          "prev_close": 3891.861
+        },
+        "shenzhen": {
+          "name": "sz399001",
+          "trade_date": "2026-04-01",
+          "close": 13706.52,
+          "open": 13731.387,
+          "high": 13740.975,
+          "low": 13603.785,
+          "change_pct": 1.7,
+          "change": 228.46,
+          "volume": 65413025986.0,
+          "prev_close": 13478.056
+        },
+        "chinext": {
+          "name": "sz399006",
+          "trade_date": "2026-04-01",
+          "close": 3247.523,
+          "open": 3255.264,
+          "high": 3255.264,
+          "low": 3206.802,
+          "change_pct": 1.96,
+          "change": 62.57,
+          "volume": 18012365918.0,
+          "prev_close": 3184.952
+        },
+        "hs300": {
+          "name": "sh000300",
+          "trade_date": "2026-04-01",
+          "close": 4526.067,
+          "open": 4517.272,
+          "high": 4532.109,
+          "low": 4492.054,
+          "change_pct": 1.71,
+          "change": 76.02,
+          "volume": 21648319600.0,
+          "prev_close": 4450.049
+        },
+        "zheng50": {
+          "name": "sh000016",
+          "trade_date": "2026-04-01",
+          "close": 2878.794,
+          "open": 2863.493,
+          "high": 2882.671,
+          "low": 2856.968,
+          "change_pct": 1.86,
+          "change": 52.67,
+          "volume": 5069558000.0,
+          "prev_close": 2826.125
+        }
+      }
+    }
+  ]
+}

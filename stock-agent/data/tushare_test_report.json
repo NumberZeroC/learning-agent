@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-03-27T22:29:44.162442",
+  "token_points": 2000,
+  "results": {
+    "success": [
+      "get_stock_basic",
+      "get_daily",
+      "get_daily_batch",
+      "get_major_indices",
+      "get_moneyflow",
+      "get_north_flow",
+      "get_top_list",
+      "get_fina_indicator",
+      "get_daily_basic",
+      "get_adj_factor",
+      "get_industry_list",
+      "get_top10_holders",
+      "get_forecast",
+      "get_suspend_d"
+    ],
+    "failed": [],
+    "skipped": [
+      "get_min",
+      "get_concept_list",
+      "get_margin"
+    ]
+  },
+  "cache_stats": {
+    "hits": 1,
+    "misses": 14,
+    "hit_rate": "6.7%",
+    "cache_dir": "data/cache/tushare",
+    "cache_files": 15
+  }
+}

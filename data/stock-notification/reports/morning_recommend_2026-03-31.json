@@ -1,0 +1,337 @@
+{
+  "date": "2026-03-31",
+  "evening_date": "20260330",
+  "hot_sectors": [
+    "有色",
+    "云计算",
+    "5G",
+    "医药生物",
+    "银行"
+  ],
+  "sector_leaders": {
+    "有色": [
+      {
+        "code": "000629",
+        "name": "钒钛股份",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000633",
+        "name": "合金投资",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000657",
+        "name": "中钨高新",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "云计算": [
+      {
+        "code": "002230",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600845",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "002153",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "5G": [
+      {
+        "code": "000063",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "002792",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "300308",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "医药生物": [
+      {
+        "code": "000028",
+        "name": "国药一致",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000078",
+        "name": "海王生物",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000403",
+        "name": "派林生物",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "银行": [
+      {
+        "code": "000001",
+        "name": "平安银行",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600000",
+        "name": "浦发银行",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600015",
+        "name": "华夏银行",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ]
+  },
+  "news_count": 16,
+  "recommendations": [
+    {
+      "sector": "有色",
+      "stocks": [
+        {
+          "code": "000629",
+          "name": "钒钛股份",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000633",
+          "name": "合金投资",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000657",
+          "name": "中钨高新",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "云计算",
+      "stocks": [
+        {
+          "code": "002230",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600845",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "002153",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "5G",
+      "stocks": [
+        {
+          "code": "000063",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "002792",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "300308",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "医药生物",
+      "stocks": [
+        {
+          "code": "000028",
+          "name": "国药一致",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000078",
+          "name": "海王生物",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000403",
+          "name": "派林生物",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "银行",
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    }
+  ],
+  "position_suggestion": 40
+}

@@ -1,0 +1,178 @@
+{
+  "date": "2026-03-30",
+  "update_time": "2026-03-30T20:01:11.697413",
+  "news": [
+    {
+      "title": "Introducing Claude Sonnet 4.6",
+      "summary": "Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.",
+      "url": "https://www.anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-30T20:00:19.621586",
+      "detailed_summary": ""
+    },
+    {
+      "title": "Introducing Claude Opus 4.6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finan",
+      "url": "https://www.anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-30T20:00:19.622136",
+      "detailed_summary": ""
+    },
+    {
+      "title": "Claude is a space to think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompati",
+      "url": "https://www.anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-30T20:00:19.622664",
+      "detailed_summary": ""
+    },
+    {
+      "title": "整个公司一起吃虾！这个开源项目，让OpenClaw实现企业级部署",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/393382.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-30T20:00:22.925710",
+      "detailed_summary": "📌 **重点摘要**:\n   1. ClawManager内置AI Gateway，作为所有模型请求的统一入口，支持同时接入多个模型，并可以区分普通模型和安全模型进行分级路由\n   2. AI Gateway的分级路由，让IT团队可以根据不同部门的业务敏感程度，决定哪些人能用哪些模型；完整的调用记录让合规审计有据可查；风险规则引擎则可以在公司层面统一设定内容边界\n   3. 另外，ClawManager也可以通过RESTful API和OpenAI风格的模型接口，很方便地与企业内部的工单、计费等系统打通，使用者不需要为了接入而大幅改造现有的IT体系\n"
+    },
+    {
+      "title": "何同学会玩：让龙虾自己3D打印自己",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/393085.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-30T20:00:22.925741",
+      "detailed_summary": "📌 **重点摘要**:\n   1. 整场直播看下来，无论是何同学跨界操控硬件的赛博朋克，还是李诞一人成军的AI内容工厂，亦或是小Lin培养出的金融AI实习生，都在向业界传递一个极其强烈的信号：\n大模型，终于开始从聊天机器人玩具，正式脱胎换骨，变成了能替人干脏活累活的战友\n   2. 总结起来，火山引擎ArkClaw之所以能让这些硬核的AI技术在C端大众面前展现出如此巨大的潜力，离不开其四大核心技术优势的底座支撑：\n这可以说是最具让人印象深刻的一点，因为过去的AI更像是被困在网页的对话框里，而ArkClaw的龙虾则是打破了应用孤岛\n   3. 属于全民Agent的时代，才算真正拉开了序幕\n金磊 发自 凹非寺量子位 | 公众号 QbitAI\n因为别人玩龙虾是让它干活，但何同学玩龙虾，是让它自己3D打印自己，而且是现场直播开搞的那种\n"
+    },
+    {
+      "title": "海淀AI，集体开弓：少年极客、中年创客与ICU归来者",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/392996.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-30T20:00:22.925754"
+    },
+    {
+      "title": "8.68万新车普及车位到车位，世界模型不吃高算力！零跑夯爆了",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/392948.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-30T20:00:22.925766"
+    },
+    {
+      "title": "论芯率先跑进AI for EDA产线：读芯片协议文档速度25倍，揪出respin级bug",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/393045.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-30T20:00:22.925780"
+    },
+    {
+      "title": "“杭州六小龙”第一股来了！浙大校友创业，年入8亿冲刺IPO",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/393419.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-30T20:00:22.925792"
+    },
+    {
+      "title": "美国开源AI最后的旗帜，也倒了",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/393395.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-30T20:00:22.925807"
+    }
+  ],
+  "advice": {
+    "opportunities": [],
+    "risks": [
+      {
+        "type": "⚠️ 政策监管",
+        "content": "注意 AI 监管动态，避免踩红线",
+        "items": [
+          "整个公司一起吃虾！这个开源项目，让OpenClaw实现企业级部署"
+        ]
+      }
+    ],
+    "learning": [
+      {
+        "type": "📚 技术跟进",
+        "content": "保持对新技术的敏感度",
+        "items": [
+          "海淀AI，集体开弓：少年极客、中年创客与ICU归来者",
+          "论芯率先跑进AI for EDA产线：读芯片协议文档速度25倍，揪出respin级bug",
+          "美国开源AI最后的旗帜，也倒了"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "priority": "📅 中",
+        "item": "记录技术突破到知识库，评估是否可应用到产品",
+        "reason": "技术深度是华为系创业者的优势"
+      },
+      {
+        "priority": "📅 中",
+        "item": "记录今日新闻到知识库，周末复盘",
+        "reason": "建立行业认知体系"
+      },
+      {
+        "priority": "💡 低",
+        "item": "在社交媒体分享一条洞察",
+        "reason": "建立个人品牌影响力"
+      }
+    ]
+  }
+}

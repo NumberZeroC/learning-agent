@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-03-27T11:07:34.334930",
+  "results": {
+    "eastmoney": {
+      "success": false,
+      "data": []
+    },
+    "sina": {
+      "success": false,
+      "data": []
+    },
+    "tushare": {
+      "success": true,
+      "data": [
+        {
+          "code": "600519",
+          "name": "贵州茅台",
+          "price": 1401.18,
+          "change_pct": -0.6446
+        },
+        {
+          "code": "000858",
+          "name": "五粮液",
+          "price": 101.28,
+          "change_pct": -1.142
+        },
+        {
+          "code": "300750",
+          "name": "宁德时代",
+          "price": 402.5,
+          "change_pct": 1.179
+        },
+        {
+          "code": "002594",
+          "name": "比亚迪",
+          "price": 103.14,
+          "change_pct": -3.2458
+        },
+        {
+          "code": "601318",
+          "name": "中国平安",
+          "price": 56.8,
+          "change_pct": -3.3849
+        }
+      ]
+    },
+    "akshare": {
+      "success": null,
+      "data": []
+    }
+  },
+  "rate_limit": false
+}

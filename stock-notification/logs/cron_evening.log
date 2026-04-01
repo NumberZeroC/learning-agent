@@ -1,0 +1,1598 @@
+[2026-03-17 20:00:01] ==========================================
+[2026-03-17 20:00:01] 晚间新闻综合分析开始
+[2026-03-17 20:00:01] ==========================================
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间新闻综合分析 - 2026-03-17 20:00
+======================================================================
+
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 19 条新闻
+[新闻监控] 去重后共 78 条新闻
+[新闻监控] 分析完成，覆盖 8 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：18 条
+
+📊 分析利好板块...
+
+   利好板块 TOP5:
+   1. 化工: ⭐⭐⭐⭐ 利好 (得分：5.0)
+   2. 券商: 中性 (得分：2.8)
+   3. 银行: 中性 (得分：1.6)
+   4. 医药生物: 中性 (得分：1.0)
+   5. 人工智能: 中性 (得分：0.4)
+
+🎯 识别受益个股...
+   分析 化工 板块成分股...
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:01<00:03,  1.08s/it]                                             [资金流] 化工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 化工: AKShare ❌ 尝试其他数据源...
+[资金流] 化工: 使用本地成分股列表...
+[资金流] 化工: 本地列表 ✅ 10只
+   分析 券商 板块成分股...
+[资金流] 券商: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 券商: AKShare ❌ 尝试其他数据源...
+[资金流] 券商: 使用本地成分股列表...
+[资金流] 券商: 本地列表 ✅ 10只
+   分析 银行 板块成分股...
+[资金流] 银行: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 银行: AKShare ❌ 尝试其他数据源...
+[资金流] 银行: 使用本地成分股列表...
+[资金流] 银行: 本地列表 ✅ 10只
+   识别受益股：0 只
+
+📊 获取市场概况...
+
+📝 生成分析报告...
+   报告已保存：data/reports/evening_analysis_2026-03-17.md
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_analysis_2026-03-17.md
+[2026-03-17 20:00:23] ==========================================
+[2026-03-17 20:00:23] ✅ 晚间分析完成
+[2026-03-17 20:00:23] ==========================================
+[2026-03-18 20:00:01] ==========================================
+[2026-03-18 20:00:01] 晚间新闻综合分析开始
+[2026-03-18 20:00:01] ==========================================
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间新闻综合分析 - 2026-03-18 20:00
+======================================================================
+
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 17 条新闻
+[新闻监控] 去重后共 77 条新闻
+[新闻监控] 分析完成，覆盖 6 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：21 条
+
+📊 分析利好板块...
+
+   利好板块 TOP5:
+   1. 半导体: ⭐⭐⭐ 小幅利好 (得分：4.8)
+   2. 人工智能: ⭐⭐⭐ 小幅利好 (得分：3.6)
+   3. 化工: 中性 (得分：2.2)
+   4. 银行: 中性 (得分：1.8)
+   5. 券商: 中性 (得分：0.8)
+
+🎯 识别受益个股...
+   分析 半导体 板块成分股...
+[资金流] 半导体: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 半导体: AKShare ❌ 尝试其他数据源...
+[资金流] 半导体: 使用本地成分股列表...
+[资金流] 半导体: 本地列表 ✅ 10只
+   分析 人工智能 板块成分股...
+[资金流] 人工智能: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 人工智能: AKShare ❌ 尝试其他数据源...
+[资金流] 人工智能: 使用本地成分股列表...
+[资金流] 人工智能: 本地列表 ✅ 10只
+   分析 化工 板块成分股...
+[资金流] 化工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 化工: AKShare ❌ 尝试其他数据源...
+[资金流] 化工: 使用本地成分股列表...
+[资金流] 化工: 本地列表 ✅ 10只
+   识别受益股：0 只
+
+📊 获取市场概况...
+
+📝 生成分析报告...
+   报告已保存：data/reports/evening_analysis_2026-03-18.md
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_analysis_2026-03-18.md
+[2026-03-18 20:00:22] ==========================================
+[2026-03-18 20:00:22] ✅ 晚间分析完成
+[2026-03-18 20:00:22] ==========================================
+[2026-03-19 20:00:01] ==========================================
+[2026-03-19 20:00:01] 晚间市场分析开始
+[2026-03-19 20:00:01] ==========================================
+[2026-03-19 20:00:01] ==========================================
+[2026-03-19 20:00:01] 2026-03-19 20:00:01 晚间分析开始
+[2026-03-19 20:00:01] 🌙 执行晚间市场综合分析...
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-03-19 20:00
+======================================================================
+
+
+📊 获取大盘走势...
+   ✅ 上证指数: 4006.55 (-1.39%)
+   ✅ 深证成指: 13901.57 (-2.02%)
+   ✅ 创业板指: 3309.10 (-1.11%)
+   ✅ 上证 50: 2916.23 (-1.53%)
+   ✅ 沪深 300: 4583.25 (-1.61%)
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 20 条新闻
+[新闻监控] 去重后共 80 条新闻
+[新闻监控] 分析完成，覆盖 7 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：19 条
+   覆盖板块：7 个
+
+💰 分析板块资金流...
+[资金流] 半导体: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 半导体: AKShare ❌ 尝试其他数据源...
+[资金流] 半导体: 使用本地成分股列表...
+[资金流] 半导体: 本地列表 ✅ 10只
+[资金流] 人工智能: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 人工智能: AKShare ❌ 尝试其他数据源...
+[资金流] 人工智能: 使用本地成分股列表...
+[资金流] 人工智能: 本地列表 ✅ 10只
+[资金流] 消费电子: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 消费电子: AKShare ❌ 尝试其他数据源...
+[资金流] 消费电子: 使用本地成分股列表...
+[资金流] 消费电子: 本地列表 ✅ 10只
+[资金流] 5G: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 5G: AKShare ❌ 尝试其他数据源...
+[资金流] 5G: 使用本地成分股列表...
+[资金流] 5G: 本地列表 ✅ 10只
+[资金流] 云计算: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 云计算: AKShare ❌ 尝试其他数据源...
+[资金流] 云计算: 使用本地成分股列表...
+[资金流] 云计算: 本地列表 ✅ 10只
+[资金流] 软件: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 软件: AKShare ❌ 尝试其他数据源...
+[资金流] 软件: 使用本地成分股列表...
+[资金流] 软件: 本地列表 ✅ 10只
+[资金流] 新能源: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 新能源: AKShare ❌ 尝试其他数据源...
+[资金流] 新能源: 使用本地成分股列表...
+[资金流] 新能源: 本地列表 ✅ 10只
+[资金流] 光伏: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 光伏: AKShare ❌ 尝试其他数据源...
+[资金流] 光伏: 使用本地成分股列表...
+[资金流] 光伏: 本地列表 ✅ 10只
+[资金流] 锂电: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 锂电: AKShare ❌ 尝试其他数据源...
+[资金流] 锂电: 使用本地成分股列表...
+[资金流] 锂电: 本地列表 ✅ 10只
+[资金流] 储能: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 储能: AKShare ❌ 尝试其他数据源...
+[资金流] 储能: 使用本地成分股列表...
+[资金流] 储能: 本地列表 ✅ 10只
+[资金流] 医药生物: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 医药生物: AKShare ❌ 尝试其他数据源...
+[资金流] 医药生物: 使用本地成分股列表...
+[资金流] 医药生物: 本地列表 ✅ 10只
+[资金流] 创新药: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 创新药: AKShare ❌ 尝试其他数据源...
+[资金流] 创新药: 使用本地成分股列表...
+[资金流] 创新药: 本地列表 ✅ 10只
+[资金流] 医疗器械: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 医疗器械: AKShare ❌ 尝试其他数据源...
+[资金流] 医疗器械: 使用本地成分股列表...
+[资金流] 医疗器械: 本地列表 ✅ 10只
+[资金流] 白酒: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 白酒: AKShare ❌ 尝试其他数据源...
+[资金流] 白酒: 使用本地成分股列表...
+[资金流] 白酒: 本地列表 ✅ 10只
+[资金流] 食品饮料: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 食品饮料: AKShare ❌ 尝试其他数据源...
+[资金流] 食品饮料: 使用本地成分股列表...
+[资金流] 食品饮料: 本地列表 ✅ 10只
+[资金流] 家电: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 家电: AKShare ❌ 尝试其他数据源...
+[资金流] 家电: 使用本地成分股列表...
+[资金流] 家电: 本地列表 ✅ 10只
+[资金流] 券商: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 券商: AKShare ❌ 尝试其他数据源...
+[资金流] 券商: 使用本地成分股列表...
+[资金流] 券商: 本地列表 ✅ 10只
+[资金流] 银行: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 银行: AKShare ❌ 尝试其他数据源...
+[资金流] 银行: 使用本地成分股列表...
+[资金流] 银行: 本地列表 ✅ 10只
+[资金流] 保险: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 保险: AKShare ❌ 尝试其他数据源...
+[资金流] 保险: 使用本地成分股列表...
+[资金流] 保险: 本地列表 ✅ 10只
+[资金流] 房地产: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 房地产: AKShare ❌ 尝试其他数据源...
+[资金流] 房地产: 使用本地成分股列表...
+[资金流] 房地产: 本地列表 ✅ 10只
+[资金流] 化工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 化工: AKShare ❌ 尝试其他数据源...
+[资金流] 化工: 使用本地成分股列表...
+[资金流] 化工: 本地列表 ✅ 10只
+[资金流] 有色: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 有色: AKShare ❌ 尝试其他数据源...
+[资金流] 有色: 使用本地成分股列表...
+[资金流] 有色: 本地列表 ✅ 10只
+[资金流] 军工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 军工: AKShare ❌ 尝试其他数据源...
+[资金流] 军工: 使用本地成分股列表...
+[资金流] 军工: 本地列表 ✅ 10只
+[资金流] 机器人: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 机器人: AKShare ❌ 尝试其他数据源...
+[资金流] 机器人: 使用本地成分股列表...
+[资金流] 机器人: 本地列表 ✅ 10只
+[资金流] 汽车: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 汽车: AKShare ❌ 尝试其他数据源...
+[资金流] 汽车: 使用本地成分股列表...
+[资金流] 汽车: 本地列表 ✅ 10只
+
+   资金净流入 TOP5:
+   1. 半导体: 0.0万
+   2. 人工智能: 0.0万
+   3. 消费电子: 0.0万
+   4. 5G: 0.0万
+   5. 云计算: 0.0万
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 券商: 🔴 谨慎 (得分：17.2)
+   2. 人工智能: 🔴 谨慎 (得分：13.1)
+   3. 银行: 🔴 谨慎 (得分：0.5)
+   4. 白酒: 🔴 谨慎 (得分：0.0)
+   5. 医药生物: 🔴 谨慎 (得分：0.0)
+
+📝 生成晚间总结报告...
+   报告已保存：data/reports/evening_summary_2026-03-19.md
+   数据已保存：data/reports/evening_summary_2026-03-19.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-03-19.md
+[2026-03-19 20:02:21] ✅ 晚间分析完成
+[2026-03-19 20:02:21] ✅ 晚间分析完成
+[2026-03-19 20:02:21] ==========================================
+[2026-03-19 20:02:21] 晚间分析结束
+[2026-03-19 20:02:21] ==========================================
+[2026-03-19 20:02:21] ==========================================
+[2026-03-20 20:00:01] ==========================================
+[2026-03-20 20:00:01] 晚间市场分析开始
+[2026-03-20 20:00:01] ==========================================
+[2026-03-20 20:00:01] ==========================================
+[2026-03-20 20:00:01] 2026-03-20 20:00:01 晚间分析开始
+[2026-03-20 20:00:01] 🌙 执行晚间市场综合分析...
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-03-20 20:00
+======================================================================
+
+
+📊 获取大盘走势...
+   ✅ 上证指数: 3957.05 (-1.24%)
+   ✅ 深证成指: 13866.20 (-0.25%)
+   ✅ 创业板指: 3352.10 (+1.30%)
+   ✅ 上证 50: 2883.86 (-1.11%)
+   ✅ 沪深 300: 4567.02 (-0.35%)
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 20 条新闻
+[新闻监控] 去重后共 78 条新闻
+[新闻监控] 分析完成，覆盖 7 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：19 条
+   覆盖板块：7 个
+
+💰 分析板块资金流...
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:01<00:03,  1.01s/it]                                             [资金流] 半导体: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 半导体: AKShare ❌ 尝试其他数据源...
+[资金流] 半导体: 使用本地成分股列表...
+[资金流] 半导体: 本地列表 ✅ 10只
+[资金流] 人工智能: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 人工智能: AKShare ❌ 尝试其他数据源...
+[资金流] 人工智能: 使用本地成分股列表...
+[资金流] 人工智能: 本地列表 ✅ 10只
+[资金流] 消费电子: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 消费电子: AKShare ❌ 尝试其他数据源...
+[资金流] 消费电子: 使用本地成分股列表...
+[资金流] 消费电子: 本地列表 ✅ 10只
+[资金流] 5G: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 5G: AKShare ❌ 尝试其他数据源...
+[资金流] 5G: 使用本地成分股列表...
+[资金流] 5G: 本地列表 ✅ 10只
+[资金流] 云计算: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 云计算: AKShare ❌ 尝试其他数据源...
+[资金流] 云计算: 使用本地成分股列表...
+[资金流] 云计算: 本地列表 ✅ 10只
+[资金流] 软件: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 软件: AKShare ❌ 尝试其他数据源...
+[资金流] 软件: 使用本地成分股列表...
+[资金流] 软件: 本地列表 ✅ 10只
+[资金流] 新能源: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 新能源: AKShare ❌ 尝试其他数据源...
+[资金流] 新能源: 使用本地成分股列表...
+[资金流] 新能源: 本地列表 ✅ 10只
+[资金流] 光伏: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 光伏: AKShare ❌ 尝试其他数据源...
+[资金流] 光伏: 使用本地成分股列表...
+[资金流] 光伏: 本地列表 ✅ 10只
+[资金流] 锂电: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 锂电: AKShare ❌ 尝试其他数据源...
+[资金流] 锂电: 使用本地成分股列表...
+[资金流] 锂电: 本地列表 ✅ 10只
+[资金流] 储能: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 储能: AKShare ❌ 尝试其他数据源...
+[资金流] 储能: 使用本地成分股列表...
+[资金流] 储能: 本地列表 ✅ 10只
+[资金流] 医药生物: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 医药生物: AKShare ❌ 尝试其他数据源...
+[资金流] 医药生物: 使用本地成分股列表...
+[资金流] 医药生物: 本地列表 ✅ 10只
+[资金流] 创新药: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 创新药: AKShare ❌ 尝试其他数据源...
+[资金流] 创新药: 使用本地成分股列表...
+[资金流] 创新药: 本地列表 ✅ 10只
+[资金流] 医疗器械: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 医疗器械: AKShare ❌ 尝试其他数据源...
+[资金流] 医疗器械: 使用本地成分股列表...
+[资金流] 医疗器械: 本地列表 ✅ 10只
+[资金流] 白酒: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 白酒: AKShare ❌ 尝试其他数据源...
+[资金流] 白酒: 使用本地成分股列表...
+[资金流] 白酒: 本地列表 ✅ 10只
+[资金流] 食品饮料: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 食品饮料: AKShare ❌ 尝试其他数据源...
+[资金流] 食品饮料: 使用本地成分股列表...
+[资金流] 食品饮料: 本地列表 ✅ 10只
+[资金流] 家电: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 家电: AKShare ❌ 尝试其他数据源...
+[资金流] 家电: 使用本地成分股列表...
+[资金流] 家电: 本地列表 ✅ 10只
+[资金流] 券商: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 券商: AKShare ❌ 尝试其他数据源...
+[资金流] 券商: 使用本地成分股列表...
+[资金流] 券商: 本地列表 ✅ 10只
+[资金流] 银行: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 银行: AKShare ❌ 尝试其他数据源...
+[资金流] 银行: 使用本地成分股列表...
+[资金流] 银行: 本地列表 ✅ 10只
+[资金流] 保险: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 保险: AKShare ❌ 尝试其他数据源...
+[资金流] 保险: 使用本地成分股列表...
+[资金流] 保险: 本地列表 ✅ 10只
+[资金流] 房地产: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 房地产: AKShare ❌ 尝试其他数据源...
+[资金流] 房地产: 使用本地成分股列表...
+[资金流] 房地产: 本地列表 ✅ 10只
+[资金流] 化工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 化工: AKShare ❌ 尝试其他数据源...
+[资金流] 化工: 使用本地成分股列表...
+[资金流] 化工: 本地列表 ✅ 10只
+[资金流] 有色: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 有色: AKShare ❌ 尝试其他数据源...
+[资金流] 有色: 使用本地成分股列表...
+[资金流] 有色: 本地列表 ✅ 10只
+[资金流] 军工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 军工: AKShare ❌ 尝试其他数据源...
+[资金流] 军工: 使用本地成分股列表...
+[资金流] 军工: 本地列表 ✅ 10只
+[资金流] 机器人: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 机器人: AKShare ❌ 尝试其他数据源...
+[资金流] 机器人: 使用本地成分股列表...
+[资金流] 机器人: 本地列表 ✅ 10只
+[资金流] 汽车: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 汽车: AKShare ❌ 尝试其他数据源...
+[资金流] 汽车: 使用本地成分股列表...
+[资金流] 汽车: 本地列表 ✅ 10只
+
+   资金净流入 TOP5:
+   1. 半导体: 0.0万
+   2. 人工智能: 0.0万
+   3. 消费电子: 0.0万
+   4. 5G: 0.0万
+   5. 云计算: 0.0万
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 人工智能: 🔴 谨慎 (得分：14.5)
+   2. 券商: 🔴 谨慎 (得分：13.0)
+   3. 银行: 🔴 谨慎 (得分：0.5)
+   4. 汽车: 🔴 谨慎 (得分：0.0)
+   5. 半导体: 🔴 谨慎 (得分：0.0)
+
+📝 生成晚间总结报告...
+   报告已保存：data/reports/evening_summary_2026-03-20.md
+   数据已保存：data/reports/evening_summary_2026-03-20.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-03-20.md
+[2026-03-20 20:02:30] ✅ 晚间分析完成
+[2026-03-20 20:02:30] ✅ 晚间分析完成
+[2026-03-20 20:02:30] ==========================================
+[2026-03-20 20:02:30] 晚间分析结束
+[2026-03-20 20:02:30] ==========================================
+[2026-03-20 20:02:30] ==========================================
+[2026-03-23 20:00:01] ==========================================
+[2026-03-23 20:00:01] 晚间市场分析开始
+[2026-03-23 20:00:01] ==========================================
+[2026-03-23 20:00:01] ==========================================
+[2026-03-23 20:00:01] 2026-03-23 20:00:01 晚间分析开始
+[2026-03-23 20:00:01] 🌙 执行晚间市场综合分析...
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+[可靠数据源] ✅ 已初始化
+   缓存目录：data/cache
+   AKShare: ✅
+   Tushare: ✅
+    Requests: ✅
+[可靠数据源] ✅ 已初始化 - 用于大盘指数/股价/资金流
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-03-23 20:00
+======================================================================
+
+
+📊 获取大盘走势...
+
+📊 获取大盘指数数据 (2026-03-23)...
+   ✅ 上证指数: 3813.28 (-3.63%) [AKShare]
+   ✅ 深证成指: 13345.51 (-3.76%) [AKShare]
+   ✅ 创业板指: 3235.22 (-3.49%) [AKShare]
+   ✅ 沪深 300: 4418.00 (-3.26%) [AKShare]
+   ✅ 上证 50: 2792.33 (-3.17%) [AKShare]
+   ✅ 成功获取 5 个指数数据
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 16 条新闻
+[新闻监控] 去重后共 76 条新闻
+[新闻监控] 分析完成，覆盖 8 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：21 条
+   覆盖板块：8 个
+
+💰 分析板块资金流...
+[资金流] 半导体: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 半导体: AKShare ❌ 尝试其他数据源...
+[资金流] 半导体: 使用本地成分股列表...
+[资金流] 半导体: 本地列表 ✅ 10只
+[资金流] 人工智能: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 人工智能: AKShare ❌ 尝试其他数据源...
+[资金流] 人工智能: 使用本地成分股列表...
+[资金流] 人工智能: 本地列表 ✅ 10只
+[资金流] 消费电子: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 消费电子: AKShare ❌ 尝试其他数据源...
+[资金流] 消费电子: 使用本地成分股列表...
+[资金流] 消费电子: 本地列表 ✅ 10只
+[资金流] 5G: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 5G: AKShare ❌ 尝试其他数据源...
+[资金流] 5G: 使用本地成分股列表...
+[资金流] 5G: 本地列表 ✅ 10只
+[资金流] 云计算: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 云计算: AKShare ❌ 尝试其他数据源...
+[资金流] 云计算: 使用本地成分股列表...
+[资金流] 云计算: 本地列表 ✅ 10只
+[资金流] 软件: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 软件: AKShare ❌ 尝试其他数据源...
+[资金流] 软件: 使用本地成分股列表...
+[资金流] 软件: 本地列表 ✅ 10只
+[资金流] 新能源: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 新能源: AKShare ❌ 尝试其他数据源...
+[资金流] 新能源: 使用本地成分股列表...
+[资金流] 新能源: 本地列表 ✅ 10只
+[资金流] 光伏: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 光伏: AKShare ❌ 尝试其他数据源...
+[资金流] 光伏: 使用本地成分股列表...
+[资金流] 光伏: 本地列表 ✅ 10只
+[资金流] 锂电: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 锂电: AKShare ❌ 尝试其他数据源...
+[资金流] 锂电: 使用本地成分股列表...
+[资金流] 锂电: 本地列表 ✅ 10只
+[资金流] 储能: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 储能: AKShare ❌ 尝试其他数据源...
+[资金流] 储能: 使用本地成分股列表...
+[资金流] 储能: 本地列表 ✅ 10只
+[资金流] 医药生物: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 医药生物: AKShare ❌ 尝试其他数据源...
+[资金流] 医药生物: 使用本地成分股列表...
+[资金流] 医药生物: 本地列表 ✅ 10只
+[资金流] 创新药: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 创新药: AKShare ❌ 尝试其他数据源...
+[资金流] 创新药: 使用本地成分股列表...
+[资金流] 创新药: 本地列表 ✅ 10只
+[资金流] 医疗器械: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 医疗器械: AKShare ❌ 尝试其他数据源...
+[资金流] 医疗器械: 使用本地成分股列表...
+[资金流] 医疗器械: 本地列表 ✅ 10只
+[资金流] 白酒: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 白酒: AKShare ❌ 尝试其他数据源...
+[资金流] 白酒: 使用本地成分股列表...
+[资金流] 白酒: 本地列表 ✅ 10只
+[资金流] 食品饮料: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 食品饮料: AKShare ❌ 尝试其他数据源...
+[资金流] 食品饮料: 使用本地成分股列表...
+[资金流] 食品饮料: 本地列表 ✅ 10只
+[资金流] 家电: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 家电: AKShare ❌ 尝试其他数据源...
+[资金流] 家电: 使用本地成分股列表...
+[资金流] 家电: 本地列表 ✅ 10只
+[资金流] 券商: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 券商: AKShare ❌ 尝试其他数据源...
+[资金流] 券商: 使用本地成分股列表...
+[资金流] 券商: 本地列表 ✅ 10只
+[资金流] 银行: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 银行: AKShare ❌ 尝试其他数据源...
+[资金流] 银行: 使用本地成分股列表...
+[资金流] 银行: 本地列表 ✅ 10只
+[资金流] 保险: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 保险: AKShare ❌ 尝试其他数据源...
+[资金流] 保险: 使用本地成分股列表...
+[资金流] 保险: 本地列表 ✅ 10只
+[资金流] 房地产: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 房地产: AKShare ❌ 尝试其他数据源...
+[资金流] 房地产: 使用本地成分股列表...
+[资金流] 房地产: 本地列表 ✅ 10只
+[资金流] 化工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 化工: AKShare ❌ 尝试其他数据源...
+[资金流] 化工: 使用本地成分股列表...
+[资金流] 化工: 本地列表 ✅ 10只
+[资金流] 有色: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 有色: AKShare ❌ 尝试其他数据源...
+[资金流] 有色: 使用本地成分股列表...
+[资金流] 有色: 本地列表 ✅ 10只
+[资金流] 军工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 军工: AKShare ❌ 尝试其他数据源...
+[资金流] 军工: 使用本地成分股列表...
+[资金流] 军工: 本地列表 ✅ 10只
+[资金流] 机器人: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 机器人: AKShare ❌ 尝试其他数据源...
+[资金流] 机器人: 使用本地成分股列表...
+[资金流] 机器人: 本地列表 ✅ 10只
+[资金流] 汽车: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 汽车: AKShare ❌ 尝试其他数据源...
+[资金流] 汽车: 使用本地成分股列表...
+[资金流] 汽车: 本地列表 ✅ 10只
+
+   资金净流入 TOP5:
+   1. 半导体: 0.0万
+   2. 人工智能: 0.0万
+   3. 消费电子: 0.0万
+   4. 5G: 0.0万
+   5. 云计算: 0.0万
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 医药生物: 🟢 谨慎 (得分：25.5)
+   2. 人工智能: 🟢 谨慎 (得分：0.5)
+   3. 券商: 🟢 谨慎 (得分：0.0)
+   4. 银行: 🟢 谨慎 (得分：0.0)
+   5. 消费电子: 🟢 谨慎 (得分：0.0)
+
+📝 生成晚间总结报告...
+   报告已保存：data/reports/evening_summary_2026-03-23.md
+   数据已保存：data/reports/evening_summary_2026-03-23.json
+📸 数据快照已保存：data/reports/evening_data_snapshot_2026-03-23_200223.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-03-23.md
+[2026-03-23 20:02:24] ✅ 晚间分析完成
+[2026-03-23 20:02:24] ✅ 晚间分析完成
+[2026-03-23 20:02:24] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-03-23 20:02
+==================================================
+
+NOTIFICATION_READY
+TYPE: evening
+TITLE: 晚间市场总结
+MESSAGE: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3813.28 (-3.63%)
+
+要点：
+• 资金流入第 1：半导体 (0.0万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-23.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+🌙 *晚间市场总结* 已完成
+
+📌 上证：3813.28 (-3.63%)
+
+要点：
+• 资金流入第 1：半导体 (0.0万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-23.md`
+
+_投资有风险，决策需谨慎_
+[2026-03-23 20:02:24] ==========================================
+[2026-03-23 20:02:24] 晚间分析结束
+[2026-03-23 20:02:24] ==========================================
+[2026-03-23 20:02:24] ==========================================
+[2026-03-24 20:00:01] ==========================================
+[2026-03-24 20:00:01] 晚间市场分析开始
+[2026-03-24 20:00:01] ==========================================
+[2026-03-24 20:00:01] ==========================================
+[2026-03-24 20:00:01] 2026-03-24 20:00:01 晚间分析开始
+[2026-03-24 20:00:01] 🌙 执行晚间市场综合分析...
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 300s)
+[资金流] ✅ Tushare Pro 已连接 - 主数据源 (2000 积分)
+[资金流]    可用接口：moneyflow, top_list, top_inst, margin, margin_detail, stk_holdertrade
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+[可靠数据源] ✅ 已初始化
+   缓存目录：data/cache
+   AKShare: ✅
+   Tushare: ✅
+    Requests: ✅
+[可靠数据源] ✅ 已初始化 - 用于大盘指数/股价/资金流
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-03-24 20:00
+======================================================================
+
+
+📊 获取大盘走势...
+
+📊 获取大盘指数数据 (2026-03-24)...
+   ✅ 上证指数: 3881.28 (+1.78%) [AKShare]
+   ✅ 深证成指: 13536.56 (+1.43%) [AKShare]
+   ✅ 创业板指: 3251.55 (+0.50%) [AKShare]
+   ✅ 沪深 300: 4474.72 (+1.28%) [AKShare]
+   ✅ 上证 50: 2830.85 (+1.38%) [AKShare]
+   ✅ 成功获取 5 个指数数据
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 17 条新闻
+[新闻监控] 去重后共 75 条新闻
+[新闻监控] 分析完成，覆盖 7 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：20 条
+   覆盖板块：7 个
+
+💰 分析板块资金流 (Tushare 2000 积分)...
+[资金流] 获取全市场资金流数据...
+[Tushare] 获取龙虎榜 70 只
+[Tushare] 获取机构交易 67 只
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[资金流] ✅ 成功获取 196/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 262 只
+   半导体: 净流入 -11.1万，机构 0.0万
+   人工智能: 净流入 -3.7万，机构 0.0万
+   消费电子: 净流入 7.4万，机构 0.0万
+   5G: 净流入 -4.9万，机构 0.0万
+   云计算: 净流入 -2.4万，机构 0.0万
+   软件: 净流入 2.0万，机构 0.0万
+   新能源: 净流入 -18.0万，机构 0.0万
+   光伏: 净流入 -12.3万，机构 0.0万
+   锂电: 净流入 -10.1万，机构 0.0万
+   储能: 净流入 -18.5万，机构 0.0万
+   医药生物: 净流入 1.1万，机构 0.0万
+   创新药: 净流入 1.4万，机构 0.0万
+   医疗器械: 净流入 0.7万，机构 0.0万
+   白酒: 净流入 -0.8万，机构 0.0万
+   食品饮料: 净流入 -5.9万，机构 0.0万
+   家电: 净流入 -0.8万，机构 0.0万
+   券商: 净流入 -2.0万，机构 0.0万
+   银行: 净流入 17.6万，机构 0.0万
+   保险: 净流入 2.3万，机构 0.0万
+   房地产: 净流入 -0.0万，机构 0.0万
+   化工: 净流入 -5.0万，机构 5100.6万
+   有色: 净流入 8.5万，机构 0.0万
+   军工: 净流入 -0.1万，机构 0.0万
+   机器人: 净流入 -1.3万，机构 0.0万
+   汽车: 净流入 -2.0万，机构 0.0万
+
+   资金净流入 TOP5:
+   1. 银行: 17.6万
+   2. 有色: 8.5万
+   3. 消费电子: 7.4万
+   4. 保险: 2.3万
+   5. 软件: 2.0万
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 新能源: 🟡 中性 (得分：51.5)
+   2. 医药生物: 🟢 谨慎 (得分：17.2)
+   3. 人工智能: 🟢 谨慎 (得分：0.5)
+   4. 银行: 🟢 谨慎 (得分：0.0)
+   5. 消费电子: 🟢 谨慎 (得分：0.0)
+
+📝 生成晚间总结报告...
+
+💰 获取龙虎榜数据...
+   获取到 262 只股票
+   龙虎榜股票：67 只
+   报告已保存：data/reports/evening_summary_2026-03-24.md
+   数据已保存：data/reports/evening_summary_2026-03-24.json
+📸 数据快照已保存：data/reports/evening_data_snapshot_2026-03-24_200011.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-03-24.md
+[2026-03-24 20:00:11] ✅ 晚间分析完成
+[2026-03-24 20:00:11] ✅ 晚间分析完成
+[2026-03-24 20:00:12] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-03-24 20:00
+==================================================
+
+NOTIFICATION_READY
+TYPE: evening
+TITLE: 晚间市场总结
+MESSAGE: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3881.28 (+1.78%)
+
+要点：
+• 热点板块：银行、有色、消费电子
+• 资金流入第 1：银行 (17.6万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-24.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+🌙 *晚间市场总结* 已完成
+
+📌 上证：3881.28 (+1.78%)
+
+要点：
+• 热点板块：银行、有色、消费电子
+• 资金流入第 1：银行 (17.6万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-24.md`
+
+_投资有风险，决策需谨慎_
+[2026-03-24 20:00:12] ==========================================
+[2026-03-24 20:00:12] 晚间分析结束
+[2026-03-24 20:00:12] ==========================================
+[2026-03-24 20:00:12] ==========================================
+[2026-03-25 21:17:53] ==========================================
+[2026-03-25 21:17:53] 2026-03-25 21:17:53 晚间分析开始
+[2026-03-25 21:19:08] ✅ 晚间分析完成
+[2026-03-25 21:19:16] ==========================================
+[2026-03-26 20:30:01] ==========================================
+[2026-03-26 20:30:02] 晚间市场分析开始
+[2026-03-26 20:30:02] ==========================================
+[2026-03-26 20:30:02] ==========================================
+[2026-03-26 20:30:02] 2026-03-26 20:30:02 晚间分析开始
+[2026-03-26 20:30:02] 🌙 执行晚间市场综合分析...
+[AI 新闻监控] ✅ 模块已加载
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 300s)
+[资金流] ✅ Tushare Pro 已连接 - 主数据源 (2000 积分)
+[资金流]    可用接口：moneyflow, top_list, top_inst, margin, margin_detail, stk_holdertrade
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+[可靠数据源] ✅ 已初始化
+   缓存目录：data/cache
+   AKShare: ✅
+   Tushare: ✅
+    Requests: ✅
+[可靠数据源] ✅ 已初始化 - 用于大盘指数/股价/资金流
+[AI 新闻监控] ✅ 已初始化 - 用于 AI 行业动态分析
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-03-26 20:30
+======================================================================
+
+
+📊 获取大盘走势...
+
+📊 获取大盘指数数据 (2026-03-26)...
+   ✅ 上证指数: 3889.08 (-1.09%) [AKShare]
+   ✅ 深证成指: 13606.44 (-1.41%) [AKShare]
+   ✅ 创业板指: 3272.49 (-1.34%) [AKShare]
+   ✅ 沪深 300: 4477.53 (-1.32%) [AKShare]
+   ✅ 上证 50: 2824.67 (-1.22%) [AKShare]
+   ✅ 成功获取 5 个指数数据
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 18 条新闻
+[新闻监控] 去重后共 78 条新闻
+[新闻监控] 分析完成，覆盖 9 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：21 条
+   覆盖板块：9 个
+
+💰 分析板块资金流 (Tushare 2000 积分)...
+[资金流] 获取全市场资金流数据...
+[Tushare] 获取龙虎榜 74 只
+[Tushare] 获取机构交易 68 只
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[资金流] ✅ 成功获取 196/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 264 只
+   半导体: 净流入 -29.1万，机构 0.0万
+   人工智能: 净流入 -14.2万，机构 0.0万
+   消费电子: 净流入 -2.7万，机构 0.0万
+   5G: 净流入 -11.7万，机构 0.0万
+   云计算: 净流入 -15.7万，机构 0.0万
+   软件: 净流入 -15.1万，机构 0.0万
+   新能源: 净流入 -7.2万，机构 0.0万
+   光伏: 净流入 -22.1万，机构 0.0万
+   锂电: 净流入 2.2万，机构 0.0万
+   储能: 净流入 -11.3万，机构 0.0万
+   医药生物: 净流入 -12.2万，机构 0.0万
+   创新药: 净流入 -8.0万，机构 0.0万
+   医疗器械: 净流入 -2.7万，机构 0.0万
+   白酒: 净流入 -8.8万，机构 0.0万
+   食品饮料: 净流入 -4.8万，机构 0.0万
+   家电: 净流入 -3.2万，机构 0.0万
+   券商: 净流入 -24.5万，机构 0.0万
+   银行: 净流入 10.1万，机构 0.0万
+   保险: 净流入 -16.8万，机构 0.0万
+   房地产: 净流入 -4.9万，机构 0.0万
+   化工: 净流入 -1.2万，机构 0.0万
+   有色: 净流入 -13.5万，机构 0.0万
+   军工: 净流入 -6.4万，机构 0.0万
+   机器人: 净流入 -3.5万，机构 0.0万
+   汽车: 净流入 -19.4万，机构 0.0万
+
+   资金净流入 TOP5:
+   1. 银行: 10.1万
+   2. 锂电: 2.2万
+   3. 化工: -1.2万
+   4. 消费电子: -2.7万
+   5. 医疗器械: -2.7万
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 半导体: 🟡 中性 (得分：51.0)
+   2. 券商: 🟢 谨慎 (得分：0.5)
+   3. 银行: 🟢 谨慎 (得分：0.5)
+   4. 军工: 🟢 谨慎 (得分：0.0)
+   5. 新能源: 🟢 谨慎 (得分：0.0)
+
+🤖 获取 AI 行业新闻...
+[The Verge AI] 📡 获取新闻中...
+[TechCrunch AI] 📡 获取新闻中...
+[Anthropic News] 📡 获取新闻中...
+[Anthropic News] ✅ 获取 3 条
+[机器之心] 📡 获取新闻中...
+[量子位] 📡 获取新闻中...
+[量子位] ✅ 获取 6 条
+[Hacker News AI] 📡 获取新闻中...
+[Hacker News AI] ❌ 错误：HTTPSConnectionPool(host='news.ycombinator.com', port=443): Max retries exceeded with url: /front (Caused by NewConnectionError("HTTPSConnection(host='news.ycombinator.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Reddit ML] 📡 获取新闻中...
+[Reddit ML] ❌ 错误：HTTPSConnectionPool(host='www.reddit.com', port=443): Max retries exceeded with url: /r/MachineLearning/ (Caused by NewConnectionError("HTTPSConnection(host='www.reddit.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Import AI] 📡 获取新闻中...
+   ✅ 获取 9 条 AI 新闻
+   📊 情感得分：52.8 (🟡 neutral)
+
+📝 生成晚间总结报告...
+
+💰 获取龙虎榜数据...
+   获取到 264 只股票
+   龙虎榜股票：68 只
+   报告已保存：data/reports/evening_summary_2026-03-26.md
+   数据已保存：data/reports/evening_summary_2026-03-26.json
+📸 数据快照已保存：data/reports/evening_data_snapshot_2026-03-26_203111.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-03-26.md
+🤖 AI 新闻：9 条，情感得分：52.8
+[2026-03-26 20:31:11] ✅ 晚间分析完成
+[2026-03-26 20:31:11] ✅ 晚间分析完成
+[2026-03-26 20:31:11] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-03-26 20:31
+==================================================
+
+NOTIFICATION_READY
+TYPE: evening
+TITLE: 晚间市场总结
+MESSAGE: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3889.08 (-1.09%)
+
+要点：
+• 热点板块：银行、锂电、半导体
+• 资金流入第 1：银行 (10.1万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-26.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+🌙 *晚间市场总结* 已完成
+
+📌 上证：3889.08 (-1.09%)
+
+要点：
+• 热点板块：银行、锂电、半导体
+• 资金流入第 1：银行 (10.1万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-26.md`
+
+_投资有风险，决策需谨慎_
+[2026-03-26 20:31:18] ==========================================
+[2026-03-26 20:31:18] 晚间分析结束
+[2026-03-26 20:31:18] ==========================================
+[2026-03-26 20:31:18] ==========================================
+[2026-03-30 20:30:01] ==========================================
+[2026-03-30 20:30:01] 晚间市场分析开始
+[2026-03-30 20:30:01] ==========================================
+[2026-03-30 20:30:01] ==========================================
+[2026-03-30 20:30:01] 2026-03-30 20:30:01 晚间分析开始
+[2026-03-30 20:30:01] 🌙 执行晚间市场综合分析...
+[AI 新闻监控] ✅ 模块已加载
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 300s)
+[资金流] ✅ Tushare Pro 已连接 - 主数据源 (2000 积分)
+[资金流]    可用接口：moneyflow, top_list, top_inst, margin, margin_detail, stk_holdertrade
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+[可靠数据源] ✅ 已初始化
+   缓存目录：data/cache
+   AKShare: ✅
+   Tushare: ✅
+    Requests: ✅
+[可靠数据源] ✅ 已初始化 - 用于大盘指数/股价/资金流
+[AI 新闻监控] ✅ 已初始化 - 用于 AI 行业动态分析
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-03-30 20:30
+======================================================================
+
+
+📊 获取大盘走势...
+
+📊 获取大盘指数数据 (2026-03-30)...
+   ✅ 上证指数: 3923.29 (+0.24%) [AKShare]
+   ✅ 深证成指: 13726.19 (-0.25%) [AKShare]
+   ✅ 创业板指: 3273.36 (-0.68%) [AKShare]
+   ✅ 沪深 300: 4491.95 (-0.24%) [AKShare]
+   ✅ 上证 50: 2833.20 (-0.14%) [AKShare]
+   ✅ 成功获取 5 个指数数据
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 20 条新闻
+[新闻监控] 去重后共 79 条新闻
+[新闻监控] 分析完成，覆盖 6 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：16 条
+   覆盖板块：6 个
+
+💰 分析板块资金流 (Tushare 2000 积分)...
+[资金流] 获取全市场资金流数据...
+[Tushare] 获取龙虎榜 62 只
+[Tushare] 获取机构交易 61 只
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流和行情...
+[资金流] ✅ 成功获取 196/205 只股票资金流和行情
+[资金流] ✅ 获取全市场资金流 257 只
+   半导体: 涨幅 +0.16%, 净流入 10.3万，机构 0.0万
+   人工智能: 涨幅 +0.54%, 净流入 2.7万，机构 0.0万
+   消费电子: 涨幅 -1.02%, 净流入 -19.1万，机构 0.0万
+   5G: 涨幅 +1.64%, 净流入 -4.4万，机构 0.0万
+   云计算: 涨幅 +1.64%, 净流入 4.1万，机构 0.0万
+   软件: 涨幅 +0.34%, 净流入 1.6万，机构 0.0万
+   新能源: 涨幅 -1.25%, 净流入 -34.5万，机构 0.0万
+   光伏: 涨幅 -3.88%, 净流入 -31.5万，机构 0.0万
+   锂电: 涨幅 -2.10%, 净流入 -37.5万，机构 0.0万
+   储能: 涨幅 -2.48%, 净流入 -40.5万，机构 0.0万
+   医药生物: 涨幅 +1.05%, 净流入 2.1万，机构 0.0万
+   创新药: 涨幅 -0.09%, 净流入 0.9万，机构 0.0万
+   医疗器械: 涨幅 +0.85%, 净流入 -0.1万，机构 0.0万
+   白酒: 涨幅 +0.21%, 净流入 6.7万，机构 0.0万
+   食品饮料: 涨幅 +0.76%, 净流入 1.8万，机构 0.0万
+   家电: 涨幅 -0.45%, 净流入 -5.9万，机构 0.0万
+   券商: 涨幅 -0.48%, 净流入 -7.2万，机构 0.0万
+   银行: 涨幅 +0.75%, 净流入 19.5万，机构 0.0万
+   保险: 涨幅 -0.76%, 净流入 -3.0万，机构 0.0万
+   房地产: 涨幅 -0.14%, 净流入 -2.6万，机构 0.0万
+   化工: 涨幅 +1.22%, 净流入 0.8万，机构 0.0万
+   有色: 涨幅 +3.19%, 净流入 18.9万，机构 0.0万
+   军工: 涨幅 +1.18%, 净流入 -2.6万，机构 0.0万
+   机器人: 涨幅 -0.35%, 净流入 -0.4万，机构 0.0万
+   汽车: 涨幅 +0.25%, 净流入 3.2万，机构 0.0万
+
+   板块涨幅 TOP5:
+   1. 有色: +3.19% (净流入 18.9万)
+   2. 5G: +1.64% (净流入 -4.4万)
+   3. 云计算: +1.64% (净流入 4.1万)
+   4. 化工: +1.22% (净流入 0.8万)
+   5. 军工: +1.18% (净流入 -2.6万)
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 银行: 🟢 谨慎 (得分：15.3)
+   2. 医药生物: 🟢 谨慎 (得分：0.0)
+   3. 人工智能: 🟢 谨慎 (得分：0.0)
+   4. 新能源: 🟢 谨慎 (得分：0.0)
+   5. 汽车: 🟢 谨慎 (得分：0.0)
+
+🤖 获取 AI 行业新闻...
+[The Verge AI] 📡 获取新闻中...
+[TechCrunch AI] 📡 获取新闻中...
+[Anthropic News] 📡 获取新闻中...
+[Anthropic News] ✅ 获取 3 条
+[机器之心] 📡 获取新闻中...
+[量子位] 📡 获取新闻中...
+[量子位] ✅ 获取 7 条
+[Hacker News AI] 📡 获取新闻中...
+[Hacker News AI] ❌ 错误：HTTPSConnectionPool(host='news.ycombinator.com', port=443): Max retries exceeded with url: /front (Caused by NewConnectionError("HTTPSConnection(host='news.ycombinator.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Reddit ML] 📡 获取新闻中...
+[Reddit ML] ❌ 错误：HTTPSConnectionPool(host='www.reddit.com', port=443): Max retries exceeded with url: /r/MachineLearning/ (Caused by NewConnectionError("HTTPSConnection(host='www.reddit.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Import AI] 📡 获取新闻中...
+   ✅ 获取 10 条 AI 新闻
+   📊 情感得分：50.0 (🟡 neutral)
+
+📝 生成晚间总结报告...
+
+💰 获取龙虎榜数据...
+   获取到 257 只股票
+   龙虎榜股票：61 只
+   报告已保存：data/reports/evening_summary_2026-03-30.md
+   数据已保存：data/reports/evening_summary_2026-03-30.json
+📸 数据快照已保存：data/reports/evening_data_snapshot_2026-03-30_203116.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-03-30.md
+🤖 AI 新闻：10 条，情感得分：50.0
+[2026-03-30 20:31:16] ✅ 晚间分析完成
+[2026-03-30 20:31:16] ✅ 晚间分析完成
+[2026-03-30 20:31:16] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-03-30 20:31
+==================================================
+
+NOTIFICATION_READY
+TYPE: evening
+TITLE: 晚间市场总结
+MESSAGE: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3923.29 (+0.24%)
+
+要点：
+• 热点板块：有色、5G、云计算
+• 资金流入第 1：有色 (18.9万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-30.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+🌙 *晚间市场总结* 已完成
+
+📌 上证：3923.29 (+0.24%)
+
+要点：
+• 热点板块：有色、5G、云计算
+• 资金流入第 1：有色 (18.9万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-30.md`
+
+_投资有风险，决策需谨慎_
+[2026-03-30 20:31:23] ==========================================
+[2026-03-30 20:31:23] 晚间分析结束
+[2026-03-30 20:31:23] ==========================================
+[2026-03-30 20:31:23] ==========================================
+[2026-03-31 20:30:01] ==========================================
+[2026-03-31 20:30:01] 晚间市场分析开始
+[2026-03-31 20:30:01] ==========================================
+[2026-03-31 20:30:01] ==========================================
+[2026-03-31 20:30:01] 2026-03-31 20:30:01 晚间分析开始
+[2026-03-31 20:30:01] 🌙 执行晚间市场综合分析...
+[AI 新闻监控] ✅ 模块已加载
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 300s)
+[资金流] ✅ Tushare Pro 已连接 - 主数据源 (2000 积分)
+[资金流]    可用接口：moneyflow, top_list, top_inst, margin, margin_detail, stk_holdertrade
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+[可靠数据源] ✅ 已初始化
+   缓存目录：data/cache
+   AKShare: ✅
+   Tushare: ✅
+    Requests: ✅
+[可靠数据源] ✅ 已初始化 - 用于大盘指数/股价/资金流
+[AI 新闻监控] ✅ 已初始化 - 用于 AI 行业动态分析
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-03-31 20:30
+======================================================================
+
+
+📊 获取大盘走势...
+
+📊 获取大盘指数数据 (2026-03-31)...
+   ✅ 上证指数: 3891.86 (-0.80%) [AKShare]
+   ✅ 深证成指: 13478.06 (-1.81%) [AKShare]
+   ✅ 创业板指: 3184.95 (-2.70%) [AKShare]
+   ✅ 沪深 300: 4450.05 (-0.93%) [AKShare]
+   ✅ 上证 50: 2826.12 (-0.25%) [AKShare]
+   ✅ 成功获取 5 个指数数据
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 20 条新闻
+[新闻监控] 去重后共 80 条新闻
+[新闻监控] 分析完成，覆盖 10 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：22 条
+   覆盖板块：10 个
+
+💰 分析板块资金流 (Tushare 2000 积分)...
+[资金流] 获取全市场资金流数据...
+[Tushare] 获取龙虎榜 73 只
+[Tushare] 获取机构交易 66 只
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流和行情...
+[资金流] ✅ 成功获取 196/205 只股票资金流和行情
+[资金流] ✅ 获取全市场资金流 261 只
+   半导体: 涨幅 -3.58%, 净流入 -29.8万，机构 0.0万
+   人工智能: 涨幅 -1.17%, 净流入 -4.7万，机构 0.0万
+   消费电子: 涨幅 -0.47%, 净流入 10.2万，机构 0.0万
+   5G: 涨幅 -0.80%, 净流入 -20.3万，机构 0.0万
+   云计算: 涨幅 -1.99%, 净流入 -6.5万，机构 0.0万
+   软件: 涨幅 -1.26%, 净流入 -7.6万，机构 0.0万
+   新能源: 涨幅 -3.41%, 净流入 -31.0万，机构 0.0万
+   光伏: 涨幅 -3.28%, 净流入 -28.6万，机构 0.0万
+   锂电: 涨幅 -3.92%, 净流入 -30.9万，机构 0.0万
+   储能: 涨幅 -3.54%, 净流入 -29.2万，机构 0.0万
+   医药生物: 涨幅 -1.07%, 净流入 -5.1万，机构 0.0万
+   创新药: 涨幅 -0.45%, 净流入 -0.1万，机构 0.0万
+   医疗器械: 涨幅 -0.82%, 净流入 -3.6万，机构 0.0万
+   白酒: 涨幅 -0.41%, 净流入 -0.4万，机构 0.0万
+   食品饮料: 涨幅 -0.20%, 净流入 -4.9万，机构 0.0万
+   家电: 涨幅 +0.54%, 净流入 3.0万，机构 0.0万
+   券商: 涨幅 -0.55%, 净流入 -6.0万，机构 0.0万
+   银行: 涨幅 +1.08%, 净流入 23.6万，机构 0.0万
+   保险: 涨幅 -0.43%, 净流入 -2.9万，机构 0.0万
+   房地产: 涨幅 -0.82%, 净流入 -2.8万，机构 0.0万
+   化工: 涨幅 -3.24%, 净流入 -18.7万，机构 0.0万
+   有色: 涨幅 -1.60%, 净流入 -3.2万，机构 0.0万
+   军工: 涨幅 -0.32%, 净流入 -7.7万，机构 1176.4万
+   机器人: 涨幅 -0.45%, 净流入 -0.9万，机构 0.0万
+   汽车: 涨幅 +0.97%, 净流入 -4.1万，机构 0.0万
+
+   板块涨幅 TOP5:
+   1. 银行: +1.08% (净流入 23.6万)
+   2. 汽车: +0.97% (净流入 -4.1万)
+   3. 家电: +0.54% (净流入 3.0万)
+   4. 食品饮料: -0.20% (净流入 -4.9万)
+   5. 军工: -0.32% (净流入 -7.7万)
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 军工: 🟡 中性 (得分：51.5)
+   2. 新能源: 🟡 中性 (得分：50.5)
+   3. 汽车: 🟡 中性 (得分：50.5)
+   4. 人工智能: 🟢 谨慎 (得分：8.8)
+   5. 银行: 🟢 谨慎 (得分：4.7)
+
+🤖 获取 AI 行业新闻...
+[The Verge AI] 📡 获取新闻中...
+[TechCrunch AI] 📡 获取新闻中...
+[Anthropic News] 📡 获取新闻中...
+[Anthropic News] ✅ 获取 3 条
+[机器之心] 📡 获取新闻中...
+[量子位] 📡 获取新闻中...
+[量子位] ✅ 获取 6 条
+[Hacker News AI] 📡 获取新闻中...
+[Hacker News AI] ❌ 错误：HTTPSConnectionPool(host='news.ycombinator.com', port=443): Max retries exceeded with url: /front (Caused by NewConnectionError("HTTPSConnection(host='news.ycombinator.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Reddit ML] 📡 获取新闻中...
+[Reddit ML] ❌ 错误：('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[Import AI] 📡 获取新闻中...
+   ✅ 获取 9 条 AI 新闻
+   📊 情感得分：52.8 (🟡 neutral)
+
+📝 生成晚间总结报告...
+
+💰 获取龙虎榜数据...
+   获取到 261 只股票
+   龙虎榜股票：66 只
+   报告已保存：data/reports/evening_summary_2026-03-31.md
+   数据已保存：data/reports/evening_summary_2026-03-31.json
+📸 数据快照已保存：data/reports/evening_data_snapshot_2026-03-31_203058.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-03-31.md
+🤖 AI 新闻：9 条，情感得分：52.8
+[2026-03-31 20:30:58] ✅ 晚间分析完成
+[2026-03-31 20:30:58] ✅ 晚间分析完成
+[2026-03-31 20:30:58] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-03-31 20:30
+==================================================
+
+NOTIFICATION_READY
+TYPE: evening
+TITLE: 晚间市场总结
+MESSAGE: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3891.86 (-0.80%)
+
+要点：
+• 热点板块：银行、汽车、家电
+• 资金流入第 1：银行 (23.6万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-31.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+🌙 *晚间市场总结* 已完成
+
+📌 上证：3891.86 (-0.80%)
+
+要点：
+• 热点板块：银行、汽车、家电
+• 资金流入第 1：银行 (23.6万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-31.md`
+
+_投资有风险，决策需谨慎_
+[2026-03-31 20:31:06] ==========================================
+[2026-03-31 20:31:06] 晚间分析结束
+[2026-03-31 20:31:06] ==========================================
+[2026-03-31 20:31:06] ==========================================
+[2026-04-01 20:30:01] ==========================================
+[2026-04-01 20:30:01] 晚间市场分析开始
+[2026-04-01 20:30:01] ==========================================
+[2026-04-01 20:30:01] ==========================================
+[2026-04-01 20:30:01] 2026-04-01 20:30:01 晚间分析开始
+[2026-04-01 20:30:01] 🌙 执行晚间市场综合分析...
+[AI 新闻监控] ✅ 模块已加载
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 300s)
+[资金流] ✅ Tushare Pro 已连接 - 主数据源 (2000 积分)
+[资金流]    可用接口：moneyflow, top_list, top_inst, margin, margin_detail, stk_holdertrade
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+[可靠数据源] ✅ 已初始化
+   缓存目录：data/cache
+   AKShare: ✅
+   Tushare: ✅
+    Requests: ✅
+[可靠数据源] ✅ 已初始化 - 用于大盘指数/股价/资金流
+[AI 新闻监控] ✅ 已初始化 - 用于 AI 行业动态分析
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-04-01 20:30
+======================================================================
+
+
+📊 获取大盘走势...
+
+📊 获取大盘指数数据 (2026-04-01)...
+   ✅ 上证指数: 3948.55 (+1.46%) [AKShare]
+   ✅ 深证成指: 13706.52 (+1.70%) [AKShare]
+   ✅ 创业板指: 3247.52 (+1.96%) [AKShare]
+   ✅ 沪深 300: 4526.07 (+1.71%) [AKShare]
+   ✅ 上证 50: 2878.79 (+1.86%) [AKShare]
+   ✅ 成功获取 5 个指数数据
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 20 条新闻
+[新闻监控] 去重后共 80 条新闻
+[新闻监控] 分析完成，覆盖 6 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：16 条
+   覆盖板块：6 个
+
+💰 分析板块资金流 (Tushare 2000 积分)...
+[资金流] 获取全市场资金流数据...
+[Tushare] 获取龙虎榜 70 只
+[Tushare] 获取机构交易 66 只
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流和行情...
+[资金流] ✅ 成功获取 196/205 只股票资金流和行情
+[资金流] ✅ 获取全市场资金流 262 只
+   半导体: 涨幅 +2.83%, 净流入 20.9万，机构 0.0万
+   人工智能: 涨幅 +1.57%, 净流入 0.6万，机构 0.0万
+   消费电子: 涨幅 +2.63%, 净流入 24.1万，机构 0.0万
+   5G: 涨幅 +1.76%, 净流入 37.1万，机构 0.0万
+   云计算: 涨幅 +1.25%, 净流入 -1.7万，机构 0.0万
+   软件: 涨幅 +2.57%, 净流入 8.6万，机构 0.0万
+   新能源: 涨幅 -0.44%, 净流入 -28.4万，机构 0.0万
+   光伏: 涨幅 +0.82%, 净流入 -12.8万，机构 0.0万
+   锂电: 涨幅 +0.11%, 净流入 -13.3万，机构 0.0万
+   储能: 涨幅 -0.08%, 净流入 -27.3万，机构 0.0万
+   医药生物: 涨幅 +2.69%, 净流入 12.7万，机构 0.0万
+   创新药: 涨幅 +5.08%, 净流入 15.9万，机构 0.0万
+   医疗器械: 涨幅 +1.71%, 净流入 2.1万，机构 0.0万
+   白酒: 涨幅 +1.68%, 净流入 7.1万，机构 0.0万
+   食品饮料: 涨幅 +1.03%, 净流入 3.5万，机构 0.0万
+   家电: 涨幅 +2.10%, 净流入 5.4万，机构 0.0万
+   券商: 涨幅 +1.41%, 净流入 8.4万，机构 0.0万
+   银行: 涨幅 -0.12%, 净流入 -8.3万，机构 0.0万
+   保险: 涨幅 +1.29%, 净流入 2.6万，机构 0.0万
+   房地产: 涨幅 +0.47%, 净流入 -0.7万，机构 0.0万
+   化工: 涨幅 +0.45%, 净流入 -0.4万，机构 0.0万
+   有色: 涨幅 +2.37%, 净流入 7.0万，机构 0.0万
+   军工: 涨幅 +0.77%, 净流入 -2.7万，机构 0.0万
+   机器人: 涨幅 +1.43%, 净流入 0.6万，机构 0.0万
+   汽车: 涨幅 +1.67%, 净流入 -8.0万，机构 0.0万
+
+   板块涨幅 TOP5:
+   1. 创新药: +5.08% (净流入 15.9万)
+   2. 半导体: +2.83% (净流入 20.9万)
+   3. 医药生物: +2.69% (净流入 12.7万)
+   4. 消费电子: +2.63% (净流入 24.1万)
+   5. 软件: +2.57% (净流入 8.6万)
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 汽车: 🟡 中性 (得分：50.5)
+   2. 人工智能: 🟢 谨慎 (得分：17.2)
+   3. 医药生物: 🟢 谨慎 (得分：11.5)
+   4. 银行: 🟢 谨慎 (得分：4.7)
+   5. 新能源: 🟢 谨慎 (得分：0.0)
+
+🤖 获取 AI 行业新闻...
+[The Verge AI] 📡 获取新闻中...
+[TechCrunch AI] 📡 获取新闻中...
+[Anthropic News] 📡 获取新闻中...
+[Anthropic News] ✅ 获取 3 条
+[机器之心] 📡 获取新闻中...
+[量子位] 📡 获取新闻中...
+[量子位] ✅ 获取 6 条
+[Hacker News AI] 📡 获取新闻中...
+[Hacker News AI] ❌ 错误：HTTPSConnectionPool(host='news.ycombinator.com', port=443): Max retries exceeded with url: /front (Caused by NewConnectionError("HTTPSConnection(host='news.ycombinator.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Reddit ML] 📡 获取新闻中...
+[Reddit ML] ❌ 错误：HTTPSConnectionPool(host='www.reddit.com', port=443): Max retries exceeded with url: /r/MachineLearning/ (Caused by NewConnectionError("HTTPSConnection(host='www.reddit.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Import AI] 📡 获取新闻中...
+   ✅ 获取 9 条 AI 新闻
+   📊 情感得分：55.6 (🟡 neutral)
+
+📝 生成晚间总结报告...
+
+💰 获取龙虎榜数据...
+   获取到 262 只股票
+   龙虎榜股票：66 只
+   报告已保存：data/reports/evening_summary_2026-04-01.md
+   数据已保存：data/reports/evening_summary_2026-04-01.json
+📸 数据快照已保存：data/reports/evening_data_snapshot_2026-04-01_203115.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-04-01.md
+🤖 AI 新闻：9 条，情感得分：55.6
+[2026-04-01 20:31:16] ✅ 晚间分析完成
+[2026-04-01 20:31:16] ✅ 晚间分析完成
+[2026-04-01 20:31:16] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-04-01 20:31
+==================================================
+
+NOTIFICATION_READY
+TYPE: evening
+TITLE: 晚间市场总结
+MESSAGE: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3948.55 (+1.46%)
+
+要点：
+• 热点板块：创新药、半导体、医药生物
+• 资金流入第 1：创新药 (15.9万)
+
+📄 报告：`./data/reports/evening_summary_2026-04-01.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+🌙 *晚间市场总结* 已完成
+
+📌 上证：3948.55 (+1.46%)
+
+要点：
+• 热点板块：创新药、半导体、医药生物
+• 资金流入第 1：创新药 (15.9万)
+
+📄 报告：`./data/reports/evening_summary_2026-04-01.md`
+
+_投资有风险，决策需谨慎_
+[2026-04-01 20:31:28] ==========================================
+[2026-04-01 20:31:28] 晚间分析结束
+[2026-04-01 20:31:28] ==========================================
+[2026-04-01 20:31:28] ==========================================

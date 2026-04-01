@@ -1,0 +1,313 @@
+{
+  "date": "2026-03-24",
+  "update_time": "2026-03-24T22:24:08.957319",
+  "news": [
+    {
+      "title": "Skip to main content",
+      "url": "https://www.anthropic.com/#main-content",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.266923"
+    },
+    {
+      "title": "Skip to footer",
+      "url": "https://www.anthropic.com/#footer",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.266959"
+    },
+    {
+      "title": "Economic Futures",
+      "url": "https://www.anthropic.com//economic-futures",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.266995"
+    },
+    {
+      "title": "Try Claude",
+      "url": "https://claude.ai/",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267013"
+    },
+    {
+      "title": "press@anthropic.com",
+      "url": "https://www.anthropic.com/mailto:press@anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267027"
+    },
+    {
+      "title": "support@anthropic.com",
+      "url": "https://www.anthropic.com/mailto:support@anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267038"
+    },
+    {
+      "title": "Download press kit",
+      "url": "https://anthropic.com/press-kit",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267049"
+    },
+    {
+      "title": "ProductFeb 17, 2026Introducing Claude Sonnet 4.6Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.",
+      "url": "https://www.anthropic.com//news/claude-sonnet-4-6",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267086"
+    },
+    {
+      "title": "AnnouncementsJan 30, 2026Claude on MarsThe first AI-assisted drive on another planet. Claude helped NASA’s Perseverance rover travel four hundred meters on Mars.",
+      "url": "https://www.anthropic.com//mars",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267125"
+    },
+    {
+      "title": "Mar 12, 2026AnnouncementsAnthropic invests $100 million into the Claude Partner Network",
+      "url": "https://www.anthropic.com//news/claude-partner-network",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267141"
+    },
+    {
+      "title": "机器之心·PRO通讯会员一份让您从此不再担心错失AI赛道良机的业内通讯",
+      "url": "https://pro.jiqizhixin.com/inbox",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:23:45.585606"
+    },
+    {
+      "title": "从「模型」到「部署」，如何理解 AI 技术进步背后的基础设施挑战？",
+      "url": "https://pro.jiqizhixin.com/reference/8dfd3343-75d5-4571-9112-0dcd444ffdab",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:23:45.585635"
+    },
+    {
+      "title": "设计流程已死，Claude 设计负责人如何理解 AI 时代的设计？",
+      "url": "https://pro.jiqizhixin.com/reference/40708cff-bade-4862-9226-6094252f4238",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:23:45.585646"
+    },
+    {
+      "title": "「龙虾热」后，OpenClaw 会是又一个泡沫吗？",
+      "url": "https://pro.jiqizhixin.com/reference/8e8f05d3-7b38-47f1-84d6-65e8c357bbf6",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:23:45.585653"
+    },
+    {
+      "title": "AI Shortlist",
+      "url": "https://www.jiqizhixin.com/ai_shortlist",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:23:45.585678"
+    },
+    {
+      "title": "LeCun的世界模型单GPU就能跑了",
+      "url": "https://www.qbitai.com/2026/03/391698.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:23:46.888453"
+    },
+    {
+      "title": "又一华为天才少年入局具身创业！用视频生成数据训家用机器人，首个模型登顶具身基模榜单",
+      "url": "https://www.qbitai.com/2026/03/391668.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:23:46.888482"
+    },
+    {
+      "title": "阿里在海外上了个“企业级龙虾”，我用它30分钟手搓了一家网店",
+      "url": "https://www.qbitai.com/2026/03/391584.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:23:46.888492"
+    },
+    {
+      "title": "字节版龙虾架构火爆GitHub！开源获35k+ Star，内置Skill全家桶，原生适配飞书",
+      "url": "https://www.qbitai.com/2026/03/391361.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:23:46.888500"
+    },
+    {
+      "title": "拜拜了SWE-Bench！Cursor刚发了个AI Coding评测基准，难哭Claude",
+      "url": "https://www.qbitai.com/2026/03/387756.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:23:46.888509"
+    },
+    {
+      "title": "龙虾爆火之后，AI初创的全球化机会来了吗？｜线下沙龙报名",
+      "url": "https://www.qbitai.com/2026/03/391760.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:23:46.888518"
+    }
+  ],
+  "advice": {
+    "opportunities": [
+      {
+        "type": "💰 资本动向",
+        "content": "关注融资热点领域，可能是下一个风口",
+        "items": [
+          "Mar 12, 2026AnnouncementsAnthropic invests $100 million into the Claude Partner Network"
+        ]
+      },
+      {
+        "type": "🚀 产品趋势",
+        "content": "分析新产品功能，寻找差异化机会",
+        "items": [
+          "ProductFeb 17, 2026Introducing Claude Sonnet 4.6Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale."
+        ]
+      }
+    ],
+    "risks": [
+      {
+        "type": "⚠️ 政策监管",
+        "content": "注意 AI 监管动态，避免踩红线",
+        "items": [
+          "「龙虾热」后，OpenClaw 会是又一个泡沫吗？"
+        ]
+      }
+    ],
+    "learning": [
+      {
+        "type": "📚 技术跟进",
+        "content": "保持对新技术的敏感度",
+        "items": [
+          "Skip to main content",
+          "AnnouncementsJan 30, 2026Claude on MarsThe first AI-assisted drive on another planet. Claude helped NASA’s Perseverance rover travel four hundred meters on Mars.",
+          "机器之心·PRO通讯会员一份让您从此不再担心错失AI赛道良机的业内通讯"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "priority": "🔥 高",
+        "item": "研究融资新闻中的公司，评估是否有合作/投资机会",
+        "reason": "华为云人脉 + 行业理解 = 独特优势"
+      },
+      {
+        "priority": "🔥 高",
+        "item": "分析竞品新功能，思考如何差异化",
+        "reason": "快速迭代是创业公司的核心竞争力"
+      },
+      {
+        "priority": "📅 中",
+        "item": "记录技术突破到知识库，评估是否可应用到产品",
+        "reason": "技术深度是华为系创业者的优势"
+      },
+      {
+        "priority": "📅 中",
+        "item": "记录今日新闻到知识库，周末复盘",
+        "reason": "建立行业认知体系"
+      },
+      {
+        "priority": "💡 低",
+        "item": "在社交媒体分享一条洞察",
+        "reason": "建立个人品牌影响力"
+      }
+    ]
+  }
+}

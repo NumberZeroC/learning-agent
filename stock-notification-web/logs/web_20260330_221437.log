@@ -1,0 +1,12 @@
+[2026-03-30 22:14:37,979] INFO in __init__: Stock-Agent Web 启动
+[2026-03-30 22:14:37,979] INFO in __init__: 数据目录：/home/admin/.openclaw/workspace/data/stock-agent
+[2026-03-30 22:14:37,979] INFO in __init__: 报告目录：/home/admin/.openclaw/workspace/data/stock-agent/reports
+[2026-03-30 22:14:37,979] INFO in __init__: Web 数据服务：已初始化
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.25.10.209:5000/ (Press CTRL+C to quit)

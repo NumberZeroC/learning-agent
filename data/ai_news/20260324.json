@@ -1,0 +1,269 @@
+{
+  "trade_date": "20260324",
+  "fetched_at": "2026-03-24T22:50:45.975578",
+  "news": [
+    {
+      "title": "Skip to main content",
+      "url": "https://www.anthropic.com/#main-content",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438189"
+    },
+    {
+      "title": "Skip to footer",
+      "url": "https://www.anthropic.com/#footer",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438220"
+    },
+    {
+      "title": "Economic Futures",
+      "url": "https://www.anthropic.com//economic-futures",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438238"
+    },
+    {
+      "title": "Try Claude",
+      "url": "https://claude.ai/",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438265"
+    },
+    {
+      "title": "press@anthropic.com",
+      "url": "https://www.anthropic.com/mailto:press@anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438275"
+    },
+    {
+      "title": "support@anthropic.com",
+      "url": "https://www.anthropic.com/mailto:support@anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438284"
+    },
+    {
+      "title": "Download press kit",
+      "url": "https://anthropic.com/press-kit",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438292"
+    },
+    {
+      "title": "ProductFeb 17, 2026Introducing Claude Sonnet 4.6Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.",
+      "url": "https://www.anthropic.com//news/claude-sonnet-4-6",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438322"
+    },
+    {
+      "title": "AnnouncementsJan 30, 2026Claude on MarsThe first AI-assisted drive on another planet. Claude helped NASA’s Perseverance rover travel four hundred meters on Mars.",
+      "url": "https://www.anthropic.com//mars",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438343"
+    },
+    {
+      "title": "Mar 12, 2026AnnouncementsAnthropic invests $100 million into the Claude Partner Network",
+      "url": "https://www.anthropic.com//news/claude-partner-network",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:40:41.438352"
+    },
+    {
+      "title": "机器之心·PRO通讯会员一份让您从此不再担心错失AI赛道良机的业内通讯",
+      "url": "https://pro.jiqizhixin.com/inbox",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:40:43.585166"
+    },
+    {
+      "title": "从「模型」到「部署」，如何理解 AI 技术进步背后的基础设施挑战？",
+      "url": "https://pro.jiqizhixin.com/reference/8dfd3343-75d5-4571-9112-0dcd444ffdab",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:40:43.585192"
+    },
+    {
+      "title": "设计流程已死，Claude 设计负责人如何理解 AI 时代的设计？",
+      "url": "https://pro.jiqizhixin.com/reference/40708cff-bade-4862-9226-6094252f4238",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:40:43.585220"
+    },
+    {
+      "title": "「龙虾热」后，OpenClaw 会是又一个泡沫吗？",
+      "url": "https://pro.jiqizhixin.com/reference/8e8f05d3-7b38-47f1-84d6-65e8c357bbf6",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:40:43.585226"
+    },
+    {
+      "title": "AI Shortlist",
+      "url": "https://www.jiqizhixin.com/ai_shortlist",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T22:40:43.585257"
+    },
+    {
+      "title": "LeCun的世界模型单GPU就能跑了",
+      "url": "https://www.qbitai.com/2026/03/391698.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:40:46.938943"
+    },
+    {
+      "title": "又一华为天才少年入局具身创业！用视频生成数据训家用机器人，首个模型登顶具身基模榜单",
+      "url": "https://www.qbitai.com/2026/03/391668.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:40:46.938972"
+    },
+    {
+      "title": "阿里在海外上了个“企业级龙虾”，我用它30分钟手搓了一家网店",
+      "url": "https://www.qbitai.com/2026/03/391584.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:40:46.938982"
+    },
+    {
+      "title": "字节版龙虾架构火爆GitHub！开源获35k+ Star，内置Skill全家桶，原生适配飞书",
+      "url": "https://www.qbitai.com/2026/03/391361.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:40:46.938990"
+    },
+    {
+      "title": "拜拜了SWE-Bench！Cursor刚发了个AI Coding评测基准，难哭Claude",
+      "url": "https://www.qbitai.com/2026/03/387756.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:40:46.939008"
+    },
+    {
+      "title": "龙虾爆火之后，AI初创的全球化机会来了吗？｜线下沙龙报名",
+      "url": "https://www.qbitai.com/2026/03/391760.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T22:40:46.939018"
+    }
+  ],
+  "sentiment": {
+    "overall_score": 51.2,
+    "overall_level": "neutral",
+    "overall_emoji": "🟡",
+    "categories": {
+      "general": {
+        "score": 51.2,
+        "level": "neutral",
+        "count": 21
+      }
+    },
+    "hot_topics": [
+      "Claude (6)",
+      "Anthropic (3)",
+      "模型 (3)"
+    ],
+    "risk_signals": [],
+    "total_news": 21,
+    "positive_ratio": 4.8,
+    "negative_ratio": 0.0
+  }
+}

@@ -1,0 +1,16 @@
+# Browser Test Requirements
+
+# 浏览器自动化
+playwright>=1.40.0
+
+# 数据处理
+pandas>=2.0.0
+
+# 配置管理
+pyyaml>=6.0
+
+# 日志
+loguru>=0.7.0
+
+# 可选：DrissionPage（更简单的 API）
+# DrissionPage>=4.0.0

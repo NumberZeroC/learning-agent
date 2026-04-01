@@ -1,0 +1,22 @@
+# Stock-Agent Web 依赖
+
+# Web 框架
+Flask==2.3.3
+Flask-CORS==4.0.0
+
+# 数据处理
+PyYAML==6.0.1
+pandas==2.1.0
+
+# Markdown 渲染
+markdown==3.5.1
+Pygments==2.17.2
+
+# HTTP 请求
+requests==2.31.0
+
+# 工具
+python-dateutil==2.8.2
+
+# 生产部署（可选）
+# gunicorn==21.2.0

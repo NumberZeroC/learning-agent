@@ -1,0 +1,337 @@
+{
+  "date": "2026-04-01",
+  "evening_date": "20260331",
+  "hot_sectors": [
+    "汽车",
+    "军工",
+    "银行",
+    "家电",
+    "食品饮料"
+  ],
+  "sector_leaders": {
+    "汽车": [
+      {
+        "code": "000030",
+        "name": "富奥股份",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000550",
+        "name": "江铃汽车",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000559",
+        "name": "万向钱潮",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "军工": [
+      {
+        "code": "000697",
+        "name": "ST炼石",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000738",
+        "name": "航发控制",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000768",
+        "name": "中航西飞",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "银行": [
+      {
+        "code": "000001",
+        "name": "平安银行",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600000",
+        "name": "浦发银行",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600015",
+        "name": "华夏银行",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "家电": [
+      {
+        "code": "000651",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000333",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600690",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "食品饮料": [
+      {
+        "code": "000858",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600887",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "002714",
+        "name": "",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ]
+  },
+  "news_count": 26,
+  "recommendations": [
+    {
+      "sector": "汽车",
+      "stocks": [
+        {
+          "code": "000030",
+          "name": "富奥股份",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000550",
+          "name": "江铃汽车",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000559",
+          "name": "万向钱潮",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "军工",
+      "stocks": [
+        {
+          "code": "000697",
+          "name": "ST炼石",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000738",
+          "name": "航发控制",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000768",
+          "name": "中航西飞",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "银行",
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "家电",
+      "stocks": [
+        {
+          "code": "000651",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000333",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600690",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "食品饮料",
+      "stocks": [
+        {
+          "code": "000858",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600887",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "002714",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    }
+  ],
+  "position_suggestion": 30
+}

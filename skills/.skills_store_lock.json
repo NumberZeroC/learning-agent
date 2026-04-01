@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "skills": {
+    "news-aggregator-skill": {
+      "name": "News Aggregator Skill",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=news-aggregator-skill",
+      "source": "skillhub",
+      "version": "0.1.0"
+    },
+    "stock": {
+      "name": "股票查询",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=stock",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "email-daily-summary": {
+      "name": "Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or create daily email digests.",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=email-daily-summary",
+      "source": "skillhub",
+      "version": "0.1.0"
+    },
+    "ai-persona-os": {
+      "name": "AI Persona OS",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=ai-persona-os",
+      "source": "skillhub",
+      "version": "1.6.2"
+    },
+    "daily-briefing": {
+      "name": "Daily Briefing",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=daily-briefing",
+      "source": "skillhub",
+      "version": "1.0.5"
+    },
+    "stock-analysis": {
+      "name": "Stock Analysis",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=stock-analysis",
+      "source": "skillhub",
+      "version": "6.2.0"
+    },
+    "image-generation": {
+      "name": "AI Image Generation",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=image-generation",
+      "source": "skillhub",
+      "version": "1.0.3"
+    },
+    "calendar": {
+      "name": "Calendar",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=calendar",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "ai-news-collectors": {
+      "name": "ai-news-collectors",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=ai-news-collectors",
+      "source": "skillhub",
+      "version": "1.0.0"
+    }
+  }
+}

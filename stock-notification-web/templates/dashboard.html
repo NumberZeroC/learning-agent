@@ -1,0 +1,462 @@
+{% extends "base.html" %}
+
+{% block title %}数据看板 - Stock-Agent 监控平台{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">
+    <i class="bi bi-speedometer2"></i> 数据看板
+    <button class="btn btn-sm btn-outline-primary float-end" onclick="loadDashboardData()">
+        <i class="bi bi-arrow-clockwise"></i> 刷新
+    </button>
+</h2>
+
+<!-- 市场概览 -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h6 class="text-muted">上证指数</h6>
+                <h3 class="my-2" id="indexValue">--</h3>
+                <span id="indexTrend" class="text-muted">加载中...</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h6 class="text-muted">市场情绪</h6>
+                <h3 class="my-2" id="sentimentValue">--</h3>
+                <span class="text-muted" id="sentimentScore">得分：--</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h6 class="text-muted">今日推荐</h6>
+                <h3 class="my-2" id="recommendCount">--</h3>
+                <span class="text-muted" id="recommendStocks">--</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h6 class="text-muted">持仓监控</h6>
+                <h3 class="my-2" id="monitorCount">--</h3>
+                <span id="monitorSignal" class="text-muted">加载中...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 板块分析图表 -->
+<div class="row mb-4">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-bar-chart"></i> 板块资金流 TOP10</span>
+                <small class="text-muted" id="sectorUpdateTime"></small>
+            </div>
+            <div class="card-body">
+                <canvas id="sectorChart" height="100" style="cursor: pointer;"></canvas>
+                <div id="sectorStocks" class="mt-3" style="display: none;">
+                    <h5>📊 <span id="selectedSector"></span> 详情</h5>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr><th>排名</th><th>板块</th><th>主力流入</th><th>主力流出</th><th>净流入</th><th>平均涨幅</th></tr>
+                        </thead>
+                        <tbody id="sectorStocksBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-pie-chart"></i> 新闻情绪分布
+            </div>
+            <div class="card-body">
+                <canvas id="sentimentChart" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 持仓股表现 -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-eye"></i> 持仓股实时表现</span>
+                <small class="text-muted" id="monitorUpdateTime"></small>
+            </div>
+            <div class="card-body">
+                <div id="monitorTableContainer">
+                    <div class="text-center py-4">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">加载中...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// 格式化日期时间
+function formatDateTime(isoString) {
+    const date = new Date(isoString);
+    return date.toLocaleString('zh-CN', { 
+        month: '2-digit', 
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+}
+
+// 格式化数字（万）
+function formatFlow(flow) {
+    if (!flow && flow !== 0) return '--';
+    const num = parseFloat(flow);
+    if (isNaN(num)) return '--';
+    return (num / 10000).toFixed(2) + '万';
+}
+
+// A 股颜色：上涨红色，下跌绿色
+function getTrendClass(change) {
+    return change >= 0 ? 'text-danger' : 'text-success';
+}
+
+function getTrendArrow(change) {
+    return change >= 0 ? '↑' : '↓';
+}
+
+// 加载看板数据
+async function loadDashboardData() {
+    await loadMarketOverview();
+    await loadSectorData();
+    await loadMonitorData();
+}
+
+// 加载市场概览
+async function loadMarketOverview() {
+    try {
+        // 🔥 修复：使用与主页一致的 latest-data API
+        const response = await fetch('/api/v1/reports/latest-data?t=' + Date.now());
+        const result = await response.json();
+        
+        if (result.code === 200 && result.data) {
+            const jsonData = result.data;
+            updateMarketOverview(jsonData);
+        } else {
+            // fallback：默认数据
+            updateMarketOverview({
+                index: { value: 0, change: 0 },
+                sentiment: '--',
+                sentimentScore: 0
+            });
+        }
+        
+        // 加载早盘推荐数量
+        const morningResponse = await fetch('/api/v1/reports?type=morning&t=' + Date.now());
+        const morningResult = await morningResponse.json();
+        if (morningResult.code === 200 && morningResult.data.length > 0) {
+            document.getElementById('recommendCount').textContent = '5';
+            document.getElementById('recommendStocks').textContent = '25 只个股';
+        }
+        
+    } catch (error) {
+        console.error('加载市场概览失败:', error);
+    }
+}
+
+// 更新市场概览显示
+function updateMarketOverview(data) {
+    // 🔥 修复：适配 latest-data API 返回的数据结构
+    // 结构 1：{ index: { value: xxx, change: xxx }, sentiment: xxx, sentimentScore: xxx }
+    // 结构 2：{ market: { indices: { shanghai: { close: xxx, change_pct: xxx } } } }
+    
+    let indexValue = 0;
+    let indexChange = 0;
+    
+    // 优先使用 latest-data API 的结构
+    if (data.index) {
+        indexValue = data.index.value || 0;
+        indexChange = data.index.change || 0;
+    } else {
+        // 兼容旧结构
+        const market = data.market || data;
+        const indices = market.indices || {};
+        const shanghai = indices.shanghai || {};
+        indexValue = shanghai.close || 0;
+        indexChange = shanghai.change_pct || 0;
+    }
+    
+    document.getElementById('indexValue').textContent = indexValue > 0 ? indexValue.toFixed(2) : '--';
+    
+    const trendEl = document.getElementById('indexTrend');
+    if (indexValue > 0) {
+        const changeClass = indexChange >= 0 ? 'text-danger' : 'text-success';
+        const arrow = indexChange >= 0 ? 'bi-arrow-up' : 'bi-arrow-down';
+        trendEl.className = changeClass;
+        trendEl.innerHTML = `<i class="bi ${arrow}"></i> ${Math.abs(indexChange)}%`;
+    } else {
+        trendEl.className = 'text-muted';
+        trendEl.innerHTML = '休市中';
+    }
+    
+    // 情绪数据
+    const sentiment = data.sentiment || '--';
+    const sentimentScore = data.sentimentScore || 0;
+    document.getElementById('sentimentValue').textContent = sentiment;
+    document.getElementById('sentimentScore').textContent = sentimentScore > 0 ? `得分：${sentimentScore}` : '';
+}
+
+// 加载板块数据
+async function loadSectorData() {
+    try {
+        // 使用 latest-data API（包含完整 sector_flows）
+        const response = await fetch('/api/v1/reports/latest-data?t=' + Date.now());
+        const result = await response.json();
+        
+        if (result.code === 200 && result.data) {
+            const jsonData = result.data;
+            renderSectorChart(jsonData);
+            renderSentimentChart(jsonData);
+            document.getElementById('sectorUpdateTime').textContent = `更新于：${jsonData.report_time || ''}`;
+        }
+    } catch (error) {
+        console.error('加载板块数据失败:', error);
+    }
+}
+
+// 渲染板块图表
+function renderSectorChart(data) {
+    // 适配 JSON 数据结构 (字段名：sector_flows)
+    const sectors = data.sector_flows || data.sectors || data.topSectors || [];
+    
+    console.log('板块数据:', sectors.length, '前 3:', sectors.slice(0, 3).map(s => ({sector: s.sector, net_flow: s.net_flow})));
+    
+    // 确保至少有一些数据
+    if (sectors.length === 0) {
+        console.warn('无板块数据');
+        return;
+    }
+    
+    const top10 = sectors.slice(0, 10);
+    
+    const labels = top10.map(s => s.sector || s.name);
+    const flowData = top10.map(s => {
+        const netFlow = s.net_flow || s.netFlow || s.netInflow || 0;
+        const val = parseFloat(netFlow) || 0;
+        console.log(`  ${s.sector}: ${val/10000}万`);
+        return val;
+    });
+    
+    const ctx = document.getElementById('sectorChart').getContext('2d');
+    
+    // 销毁旧图表
+    if (window.sectorChartInstance) {
+        window.sectorChartInstance.destroy();
+    }
+    
+    window.sectorChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '净流入 (万)',
+                data: flowData,
+                backgroundColor: flowData.map(v => v >= 0 ? 'rgba(220, 53, 69, 0.7)' : 'rgba(40, 167, 69, 0.7)')
+            }]
+        },
+        options: {
+            responsive: true,
+            onClick: function(evt, elements) {
+                if (elements.length > 0) {
+                    const index = elements[0].index;
+                    showSectorDetail(top10[index]);
+                }
+            }
+        }
+    });
+}
+
+// 显示板块详情
+function showSectorDetail(sector) {
+    const container = document.getElementById('sectorStocks');
+    document.getElementById('selectedSector').textContent = sector.sector || sector.name;
+    
+    const inflow = sector.main_force_in || sector.inflow || sector.mainInflow || 0;
+    const outflow = sector.main_force_out || sector.outflow || sector.mainOutflow || 0;
+    const netFlow = sector.net_flow || sector.netFlow || sector.netInflow || 0;
+    const avgChange = sector.avg_change || sector.avgChange || sector.change || 0;
+    
+    const tbody = document.getElementById('sectorStocksBody');
+    tbody.innerHTML = `
+        <tr>
+            <td>1</td>
+            <td>${sector.sector || sector.name}</td>
+            <td>${formatFlow(inflow)}</td>
+            <td>${formatFlow(outflow)}</td>
+            <td class="${getTrendClass(netFlow)}">${formatFlow(netFlow)}</td>
+            <td class="${getTrendClass(avgChange)}">${getTrendArrow(avgChange)} ${Math.abs(avgChange)}%</td>
+        </tr>
+    `;
+    
+    container.style.display = 'block';
+}
+
+// 渲染情绪图表
+function renderSentimentChart(data) {
+    // 适配 JSON 数据结构
+    const sentiments = data.sentiments || data.newsSentiment || [];
+    
+    const positive = sentiments.filter(s => {
+        const ratio = s.positiveRatio || s.positive_ratio || 0;
+        return ratio > 0.5;
+    }).length;
+    const neutral = sentiments.filter(s => {
+        const ratio = s.positiveRatio || s.positive_ratio || 0;
+        return ratio === 0.5 || ratio === 0;
+    }).length;
+    const negative = sentiments.filter(s => {
+        const ratio = s.positiveRatio || s.positive_ratio || 0;
+        return ratio < 0.5 && ratio > 0;
+    }).length;
+    
+    const ctx = document.getElementById('sentimentChart').getContext('2d');
+    
+    if (window.sentimentChartInstance) {
+        window.sentimentChartInstance.destroy();
+    }
+    
+    window.sentimentChartInstance = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['正面', '中性', '负面'],
+            datasets: [{
+                data: [positive, neutral, negative],
+                backgroundColor: [
+                    'rgba(39, 174, 96, 0.8)',
+                    'rgba(243, 156, 18, 0.8)',
+                    'rgba(231, 76, 60, 0.8)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+}
+
+// 加载监控数据
+async function loadMonitorData() {
+    try {
+        const response = await fetch('/api/v1/reports?type=monitor&t=' + Date.now());
+        const result = await response.json();
+        
+        if (result.code === 200) {
+            const monitorReports = result.data;
+            document.getElementById('monitorCount').textContent = monitorReports.length;
+            
+            if (monitorReports.length > 0) {
+                const latestMonitor = monitorReports[0];
+                document.getElementById('monitorSignal').textContent = `最新：${formatDateTime(latestMonitor.created_at)}`;
+                document.getElementById('monitorSignal').className = 'text-muted';
+                document.getElementById('monitorUpdateTime').textContent = `更新于：${formatDateTime(latestMonitor.created_at)}`;
+                
+                // 加载监控报告详情
+                const jsonFilename = latestMonitor.filename.replace('.md', '.json');
+                const jsonResponse = await fetch(`/data/reports/${jsonFilename}?t=${Date.now()}`);
+                
+                if (jsonResponse.ok) {
+                    const jsonData = await jsonResponse.json();
+                    renderMonitorTable(jsonData);
+                } else {
+                    renderEmptyMonitorTable();
+                }
+            } else {
+                renderEmptyMonitorTable();
+            }
+        }
+    } catch (error) {
+        console.error('加载监控数据失败:', error);
+        renderEmptyMonitorTable();
+    }
+}
+
+// 渲染监控表格
+function renderMonitorTable(data) {
+    // 适配 JSON 数据结构
+    const stocks = data.stocks || data.holdings || [];
+    const container = document.getElementById('monitorTableContainer');
+    
+    if (stocks.length > 0) {
+        let html = `
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>股票</th>
+                        <th>价格</th>
+                        <th>涨跌幅</th>
+                        <th>信号</th>
+                        <th>得分</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+        
+        stocks.forEach(stock => {
+            const change = parseFloat(stock.change) || parseFloat(stock.change_pct) || 0;
+            const trendClass = getTrendClass(change);
+            const arrow = getTrendArrow(change);
+            const signal = stock.signal || stock.recommendation || '持有';
+            const signalClass = signal === '买入' ? 'bg-success' : signal === '卖出' ? 'bg-danger' : 'bg-warning';
+            const score = parseFloat(stock.score) || parseFloat(stock.tech_score) || 5.0;
+            const price = parseFloat(stock.price) || parseFloat(stock.current_price) || 0;
+            
+            html += `
+                <tr>
+                    <td>${stock.name || ''} (${stock.code || ''})</td>
+                    <td>¥${price.toFixed(2)}</td>
+                    <td class="${trendClass}">${arrow} ${Math.abs(change)}%</td>
+                    <td><span class="badge ${signalClass}">${signal}</span></td>
+                    <td>${score.toFixed(1)}</td>
+                </tr>
+            `;
+        });
+        
+        html += '</tbody></table>';
+        container.innerHTML = html;
+    } else {
+        renderEmptyMonitorTable();
+    }
+}
+
+// 渲染空监控表格
+function renderEmptyMonitorTable() {
+    document.getElementById('monitorTableContainer').innerHTML = `
+        <div class="text-center py-4 text-muted">
+            <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+            <p class="mt-2">暂无持仓监控数据</p>
+            <small>监控报告会在交易时间每 30 分钟生成</small>
+        </div>
+    `;
+}
+
+// 页面加载时初始化
+document.addEventListener('DOMContentLoaded', function() {
+    loadDashboardData();
+    
+    // 每 60 秒自动刷新
+    setInterval(loadDashboardData, 60000);
+});
+</script>
+{% endblock %}

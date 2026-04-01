@@ -1,0 +1,187 @@
+{
+  "date": "2026-03-19",
+  "timestamp": "2026-03-19T20:02:21.197415",
+  "market": {
+    "date": "2026-03-19",
+    "indices": {
+      "shanghai": {
+        "name": "上证指数",
+        "close": 4006.5523,
+        "change_pct": -1.3889,
+        "volume": 667255422.0,
+        "amount": 935264956.1,
+        "high": 4042.0221,
+        "low": 3994.1651,
+        "open": 4028.542
+      },
+      "shenzhen": {
+        "name": "深证成指",
+        "close": 13901.5678,
+        "change_pct": -2.0174,
+        "volume": 679341017.0,
+        "amount": 1175704077.7,
+        "high": 14098.6916,
+        "low": 13852.5958,
+        "open": 14003.6982
+      },
+      "chinext": {
+        "name": "创业板指",
+        "close": 3309.1033,
+        "change_pct": -1.1135,
+        "volume": 199153562.0,
+        "amount": 541748961.1,
+        "high": 3361.2145,
+        "low": 3295.4534,
+        "open": 3311.4447
+      },
+      "zheng50": {
+        "name": "上证 50",
+        "close": 2916.2348,
+        "change_pct": -1.526,
+        "volume": 67079441.0,
+        "amount": 136419483.407,
+        "high": 2942.4588,
+        "low": 2908.4428,
+        "open": 2933.5774
+      },
+      "hs300": {
+        "name": "沪深 300",
+        "close": 4583.2511,
+        "change_pct": -1.6118,
+        "volume": 254130449.0,
+        "amount": 547850295.789,
+        "high": 4634.5468,
+        "low": 4570.392,
+        "open": 4611.4399
+      }
+    }
+  },
+  "sector_flows": [
+    {
+      "sector": "半导体",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    },
+    {
+      "sector": "人工智能",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    },
+    {
+      "sector": "消费电子",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    },
+    {
+      "sector": "5G",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    },
+    {
+      "sector": "云计算",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    },
+    {
+      "sector": "软件",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    },
+    {
+      "sector": "新能源",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    },
+    {
+      "sector": "光伏",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    },
+    {
+      "sector": "锂电",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    },
+    {
+      "sector": "储能",
+      "main_force_in": 0,
+      "main_force_out": 0,
+      "net_flow": 0,
+      "stock_count": 10,
+      "avg_change": 0
+    }
+  ],
+  "sector_sentiment": {
+    "券商": {
+      "score": 17.2,
+      "level": "🔴 谨慎",
+      "news_count": 3,
+      "positive_ratio": 33.3
+    },
+    "人工智能": {
+      "score": 13.1,
+      "level": "🔴 谨慎",
+      "news_count": 9,
+      "positive_ratio": 22.2
+    },
+    "银行": {
+      "score": 0.5,
+      "level": "🔴 谨慎",
+      "news_count": 7,
+      "positive_ratio": 0.0
+    },
+    "白酒": {
+      "score": 0.0,
+      "level": "🔴 谨慎",
+      "news_count": 1,
+      "positive_ratio": 0.0
+    },
+    "医药生物": {
+      "score": 0.0,
+      "level": "🔴 谨慎",
+      "news_count": 2,
+      "positive_ratio": 0.0
+    },
+    "半导体": {
+      "score": 0.0,
+      "level": "🔴 谨慎",
+      "news_count": 2,
+      "positive_ratio": 0.0
+    },
+    "化工": {
+      "score": 0.0,
+      "level": "🔴 谨慎",
+      "news_count": 1,
+      "positive_ratio": 0.0
+    }
+  },
+  "hot_sectors": [],
+  "news_count": 25
+}

@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+
+{% block title %}{{ filename }} - Stock-Agent 监控平台{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <a href="/reports" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left"></i> 返回列表
+    </a>
+    <span class="ms-2 text-muted">{{ filename }}</span>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <i class="bi bi-file-earmark-text"></i> 报告内容
+    </div>
+    <div class="card-body">
+        <div id="reportContent" class="report-content">
+            <div class="text-center py-4">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">加载中...</span>
+                </div>
+                <p class="mt-2 text-muted">正在加载报告...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.report-content {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.report-content h1,
+.report-content h2,
+.report-content h3,
+.report-content h4,
+.report-content h5,
+.report-content h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.report-content h1 {
+    font-size: 2em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.3em;
+}
+
+.report-content h2 {
+    font-size: 1.5em;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 0.3em;
+}
+
+.report-content h3 {
+    font-size: 1.25em;
+}
+
+.report-content p {
+    margin-bottom: 1em;
+}
+
+.report-content ul,
+.report-content ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+
+.report-content li {
+    margin-bottom: 0.5em;
+}
+
+.report-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    background-color: #fff;
+}
+
+.report-content th,
+.report-content td {
+    border: 1px solid #dee2e6;
+    padding: 0.75em;
+    text-align: left;
+}
+
+.report-content th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.report-content tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.report-content tr:hover {
+    background-color: #e9ecef;
+}
+
+.report-content code {
+    background-color: #f8f9fa;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.9em;
+    color: #e83e8c;
+}
+
+.report-content pre {
+    background-color: #f8f9fa;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 1em 0;
+}
+
+.report-content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #333;
+}
+
+.report-content blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 1em;
+    margin-left: 0;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.report-content hr {
+    border: none;
+    border-top: 1px solid #dee2e6;
+    margin: 2em 0;
+}
+
+.report-content a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.report-content a:hover {
+    text-decoration: underline;
+}
+
+.report-content strong {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.report-content em {
+    font-style: italic;
+}
+
+/* 表格响应式 */
+.table-responsive {
+    overflow-x: auto;
+}
+</style>
+
+<script>
+// 渲染 Markdown 内容
+function renderMarkdown(content) {
+    let html = content;
+    
+    // 转义 HTML 特殊字符
+    html = html.replace(/&/g, '&amp;')
+               .replace(/</g, '&lt;')
+               .replace(/>/g, '&gt;');
+    
+    // 标题 (h1-h6)
+    html = html.replace(/^###### (.*$)/gim, '<h6>$1</h6>');
+    html = html.replace(/^##### (.*$)/gim, '<h5>$1</h5>');
+    html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
+    html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+    html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+    html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+    
+    // 粗体和斜体
+    html = html.replace(/\*\*\*(.*?)\*\*\*/gim, '<strong><em>$1</em></strong>');
+    html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+    html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>');
+    
+    // 删除线
+    html = html.replace(/~~(.*?)~~/gim, '<del>$1</del>');
+    
+    // 行内代码
+    html = html.replace(/`([^`]+)`/gim, '<code>$1</code>');
+    
+    // 代码块
+    html = html.replace(/```(\w*)\n([\s\S]*?)```/gim, '<pre><code class="language-$1">$2</code></pre>');
+    
+    // 引用
+    html = html.replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>');
+    
+    // 链接和图片
+    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/gim, '<img src="$2" alt="$1" class="img-fluid">');
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2" target="_blank">$1</a>');
+    
+    // 水平线
+    html = html.replace(/^---$/gim, '<hr>');
+    html = html.replace(/^\*\*\*$/gim, '<hr>');
+    
+    // 列表
+    html = html.replace(/^[\-\*] (.*$)/gim, '<li>$1</li>');
+    html = html.replace(/^\d+\. (.*$)/gim, '<li>$1</li>');
+    
+    // 将连续的 li 包裹在 ul/ol 中
+    html = html.replace(/(<li>.*<\/li>\n?)+/gim, function(match) {
+        return '<ul>' + match + '</ul>';
+    });
+    
+    // 表格
+    html = html.replace(/^\|(.+)\|$/gim, function(match, content) {
+        const cells = content.split('|').map(cell => cell.trim());
+        const isHeader = cells.every(cell => /^[-:]+$/.test(cell));
+        if (isHeader) {
+            return '</tbody><thead class="table-light">';
+        }
+        return '<tr>' + cells.map(cell => {
+            // 检查是否是表头分隔行
+            if (/^[-:]+$/.test(cell)) return '';
+            return '<td>' + cell + '</td>';
+        }).join('') + '</tr>';
+    });
+    
+    // 包裹表格
+    html = html.replace(/(<tr>.*<\/tr>\n?)+/gim, function(match) {
+        return '<table class="table table-bordered table-hover"><tbody>' + match + '</tbody></table>';
+    });
+    
+    // 段落
+    html = html.replace(/\n\n/gim, '</p><p>');
+    html = '<p>' + html + '</p>';
+    
+    // 清理空段落
+    html = html.replace(/<p>\s*<\/p>/gim, '');
+    html = html.replace(/<p>(<h[1-6]>)/gim, '$1');
+    html = html.replace(/(<\/h[1-6]>)<\/p>/gim, '$1');
+    html = html.replace(/<p>(<ul>)/gim, '$1');
+    html = html.replace(/(<\/ul>)<\/p>/gim, '$1');
+    html = html.replace(/<p>(<table>)/gim, '$1');
+    html = html.replace(/(<\/table>)<\/p>/gim, '$1');
+    html = html.replace(/<p>(<pre>)/gim, '$1');
+    html = html.replace(/(<\/pre>)<\/p>/gim, '$1');
+    html = html.replace(/<p>(<blockquote>)/gim, '$1');
+    html = html.replace(/(<\/blockquote>)<\/p>/gim, '$1');
+    html = html.replace(/<p>(<hr>)<\/p>/gim, '$1');
+    
+    return html;
+}
+
+// 页面加载时渲染报告
+document.addEventListener('DOMContentLoaded', function() {
+    const content = {{ content | tojson }};
+    const container = document.getElementById('reportContent');
+    
+    try {
+        const html = renderMarkdown(content);
+        container.innerHTML = html;
+    } catch (error) {
+        console.error('渲染失败:', error);
+        container.innerHTML = `
+            <div class="alert alert-danger">
+                <i class="bi bi-exclamation-triangle"></i>
+                报告渲染失败：${error.message}
+            </div>
+        `;
+    }
+});
+</script>
+{% endblock %}

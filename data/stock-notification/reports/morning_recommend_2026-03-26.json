@@ -1,0 +1,277 @@
+{
+  "date": "2026-03-26",
+  "evening_date": "20260325",
+  "hot_sectors": [
+    "银行",
+    "消费电子",
+    "5G",
+    "保险",
+    "券商"
+  ],
+  "sector_leaders": {
+    "银行": [
+      {
+        "code": "000001",
+        "name": "平安银行",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600000",
+        "name": "浦发银行",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600015",
+        "name": "华夏银行",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "消费电子": [
+      {
+        "code": "002475",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "002241",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "300433",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "5G": [
+      {
+        "code": "000063",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "002792",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "300308",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "保险": [
+      {
+        "code": "601318",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "601628",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "601601",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "券商": [
+      {
+        "code": "000686",
+        "name": "东北证券",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000712",
+        "name": "锦龙股份",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000728",
+        "name": "国元证券",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ]
+  },
+  "news_count": 17,
+  "recommendations": [
+    {
+      "sector": "银行",
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "消费电子",
+      "stocks": [
+        {
+          "code": "002475",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "002241",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "300433",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "5G",
+      "stocks": [
+        {
+          "code": "000063",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "002792",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "300308",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "保险",
+      "stocks": [
+        {
+          "code": "601318",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "601628",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "601601",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "券商",
+      "stocks": [
+        {
+          "code": "000686",
+          "name": "东北证券",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000712",
+          "name": "锦龙股份",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000728",
+          "name": "国元证券",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    }
+  ],
+  "position_suggestion": 70
+}

@@ -1,0 +1,116 @@
+{
+  "news": [
+    {
+      "title": "Skip to main content",
+      "url": "https://www.anthropic.com/#main-content",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.266923"
+    },
+    {
+      "title": "Skip to footer",
+      "url": "https://www.anthropic.com/#footer",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.266959"
+    },
+    {
+      "title": "Economic Futures",
+      "url": "https://www.anthropic.com//economic-futures",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.266995"
+    },
+    {
+      "title": "Try Claude",
+      "url": "https://claude.ai/",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267013"
+    },
+    {
+      "title": "press@anthropic.com",
+      "url": "https://www.anthropic.com/mailto:press@anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267027"
+    },
+    {
+      "title": "support@anthropic.com",
+      "url": "https://www.anthropic.com/mailto:support@anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267038"
+    },
+    {
+      "title": "Download press kit",
+      "url": "https://anthropic.com/press-kit",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267049"
+    },
+    {
+      "title": "ProductFeb 17, 2026Introducing Claude Sonnet 4.6Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.",
+      "url": "https://www.anthropic.com//news/claude-sonnet-4-6",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267086"
+    },
+    {
+      "title": "AnnouncementsJan 30, 2026Claude on MarsThe first AI-assisted drive on another planet. Claude helped NASA’s Perseverance rover travel four hundred meters on Mars.",
+      "url": "https://www.anthropic.com//mars",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267125"
+    },
+    {
+      "title": "Mar 12, 2026AnnouncementsAnthropic invests $100 million into the Claude Partner Network",
+      "url": "https://www.anthropic.com//news/claude-partner-network",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-24T22:23:42.267141"
+    }
+  ],
+  "cached_at": 1774362222.267309,
+  "source": "Anthropic News"
+}

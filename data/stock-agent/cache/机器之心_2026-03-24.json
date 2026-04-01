@@ -1,0 +1,66 @@
+{
+  "news": [
+    {
+      "title": "机器之心·PRO通讯会员一份让您从此不再担心错失AI赛道良机的业内通讯",
+      "url": "https://pro.jiqizhixin.com/inbox",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T23:01:09.437552"
+    },
+    {
+      "title": "从「模型」到「部署」，如何理解 AI 技术进步背后的基础设施挑战？",
+      "url": "https://pro.jiqizhixin.com/reference/8dfd3343-75d5-4571-9112-0dcd444ffdab",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T23:01:09.437594"
+    },
+    {
+      "title": "设计流程已死，Claude 设计负责人如何理解 AI 时代的设计？",
+      "url": "https://pro.jiqizhixin.com/reference/40708cff-bade-4862-9226-6094252f4238",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T23:01:09.437601"
+    },
+    {
+      "title": "「龙虾热」后，OpenClaw 会是又一个泡沫吗？",
+      "url": "https://pro.jiqizhixin.com/reference/8e8f05d3-7b38-47f1-84d6-65e8c357bbf6",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T23:01:09.437608"
+    },
+    {
+      "title": "AI Shortlist",
+      "url": "https://www.jiqizhixin.com/ai_shortlist",
+      "source": "机器之心",
+      "language": "zh",
+      "focus": [
+        "技术突破",
+        "研究论文",
+        "行业动态"
+      ],
+      "fetched_at": "2026-03-24T23:01:09.437632"
+    }
+  ],
+  "cached_at": 1774364469.4377196,
+  "source": "机器之心"
+}

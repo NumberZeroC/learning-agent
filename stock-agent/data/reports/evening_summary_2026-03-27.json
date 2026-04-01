@@ -1,0 +1,71 @@
+{
+  "date": "20260327",
+  "timestamp": "2026-03-29T14:46:21.543849",
+  "market": {
+    "date": "2026-03-27",
+    "indices": {
+      "shanghai": {
+        "name": "sh000001",
+        "trade_date": "2026-03-27",
+        "close": 3913.724,
+        "open": 3852.094,
+        "high": 3924.108,
+        "low": 3852.094,
+        "change_pct": 0.63,
+        "change": 24.64,
+        "volume": 56134296300.0,
+        "prev_close": 3889.084
+      },
+      "shenzhen": {
+        "name": "sz399001",
+        "trade_date": "2026-03-27",
+        "close": 13760.369,
+        "open": 13423.513,
+        "high": 13842.397,
+        "low": 13419.311,
+        "change_pct": 1.13,
+        "change": 153.93,
+        "volume": 63025383844.0,
+        "prev_close": 13606.443
+      },
+      "chinext": {
+        "name": "sz399006",
+        "trade_date": "2026-03-27",
+        "close": 3295.88,
+        "open": 3236.37,
+        "high": 3323.333,
+        "low": 3228.411,
+        "change_pct": 0.71,
+        "change": 23.39,
+        "volume": 16968830294.0,
+        "prev_close": 3272.488
+      },
+      "hs300": {
+        "name": "sh000300",
+        "trade_date": "2026-03-27",
+        "close": 4502.57,
+        "open": 4431.503,
+        "high": 4519.89,
+        "low": 4431.421,
+        "change_pct": 0.56,
+        "change": 25.04,
+        "volume": 19240038800.0,
+        "prev_close": 4477.534
+      },
+      "zheng50": {
+        "name": "sh000016",
+        "trade_date": "2026-03-27",
+        "close": 2837.306,
+        "open": 2803.498,
+        "high": 2845.834,
+        "low": 2803.498,
+        "change_pct": 0.45,
+        "change": 12.63,
+        "volume": 4652544100.0,
+        "prev_close": 2824.674
+      }
+    }
+  },
+  "sector_flows": [],
+  "top_list": []
+}

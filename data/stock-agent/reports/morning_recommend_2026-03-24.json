@@ -1,0 +1,277 @@
+{
+  "date": "2026-03-24",
+  "evening_date": "20260323",
+  "hot_sectors": [
+    "汽车",
+    "新能源",
+    "有色",
+    "储能",
+    "化工"
+  ],
+  "sector_leaders": {
+    "汽车": [
+      {
+        "code": "000030",
+        "name": "富奥股份",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000550",
+        "name": "江铃汽车",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000559",
+        "name": "万向钱潮",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "新能源": [
+      {
+        "code": "300750",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "002594",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "002466",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "有色": [
+      {
+        "code": "000629",
+        "name": "钒钛股份",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000633",
+        "name": "合金投资",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000657",
+        "name": "中钨高新",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "储能": [
+      {
+        "code": "300750",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "002594",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "300014",
+        "name": "",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ],
+    "化工": [
+      {
+        "code": "000510",
+        "name": "新金路",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000545",
+        "name": "金浦钛业",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "000635",
+        "name": "英力特",
+        "score": 0.0,
+        "main_force": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ]
+  },
+  "news_count": 20,
+  "recommendations": [
+    {
+      "sector": "汽车",
+      "stocks": [
+        {
+          "code": "000030",
+          "name": "富奥股份",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000550",
+          "name": "江铃汽车",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000559",
+          "name": "万向钱潮",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "新能源",
+      "stocks": [
+        {
+          "code": "300750",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "002594",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "002466",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "有色",
+      "stocks": [
+        {
+          "code": "000629",
+          "name": "钒钛股份",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000633",
+          "name": "合金投资",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000657",
+          "name": "中钨高新",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "储能",
+      "stocks": [
+        {
+          "code": "300750",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "002594",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "300014",
+          "name": "",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    },
+    {
+      "sector": "化工",
+      "stocks": [
+        {
+          "code": "000510",
+          "name": "新金路",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000545",
+          "name": "金浦钛业",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "000635",
+          "name": "英力特",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    }
+  ],
+  "position_suggestion": 30
+}

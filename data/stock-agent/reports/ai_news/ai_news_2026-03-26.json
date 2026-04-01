@@ -1,0 +1,170 @@
+{
+  "date": "2026-03-26",
+  "update_time": "2026-03-26T20:15:23.683268",
+  "news": [
+    {
+      "title": "Introducing Claude Sonnet 4.6",
+      "summary": "Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.",
+      "url": "https://www.anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-26T20:14:36.293801",
+      "detailed_summary": ""
+    },
+    {
+      "title": "Introducing Claude Opus 4.6",
+      "summary": "We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finan",
+      "url": "https://www.anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-26T20:14:36.294188",
+      "detailed_summary": ""
+    },
+    {
+      "title": "Claude is a space to think",
+      "summary": "We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompati",
+      "url": "https://www.anthropic.com",
+      "source": "Anthropic News",
+      "language": "en",
+      "focus": [
+        "官方动态",
+        "研究突破"
+      ],
+      "fetched_at": "2026-03-26T20:14:36.294663",
+      "detailed_summary": ""
+    },
+    {
+      "title": "在线等：如何优雅地分走鹅厂这600+万？",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/392641.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-26T20:14:38.706835",
+      "detailed_summary": "📌 **重点摘要**:\n   1. 大家忙着给广告配AI生成的创意图，用大模型写带货文案，搞多模态推荐\n   2. 就在这个技术转型的深水区，2026腾讯广告算法大赛完成了一次里程碑式的升级——\n正式与数据挖掘领域全球最顶级的学术会议KDD联动，以KDD Cup 2026官方赛道的身份亮相全球舞台\n   3. 这不仅要求模型在AUC（模型效果）指标上有所突破，还得兼顾实际业务中的推理效率\n"
+    },
+    {
+      "title": "马斯克xAI联创11跑10！仅剩特斯拉嫡系独苗留守",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/392245.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-26T20:14:38.706877",
+      "detailed_summary": "📌 **重点摘要**:\n   1. 在 xAI的初始计算基础之上，他还负责监督AI硬件扩展的技术执行，协调交易工程以集成高密度电源解决方案，这对于训练大规模模型至关重要\n   2. 他还与GuoDong Zhang一起负责改进xAI的编码模型，Zhang已于3月初离职\n   3. 2月11日，以提出Adam优化算法闻名的Jimmy Ba也宣布离开，他此前负责AI辅导功能和Grok 4模型的研发\n"
+    },
+    {
+      "title": "中国AI音乐，悄悄把全球第一拿走了",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/391839.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-26T20:14:38.706896"
+    },
+    {
+      "title": "WorkBuddy杀疯了？一群AI专家帮我打工，我在微信里当赛博虾工头！",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/391894.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-26T20:14:38.706916"
+    },
+    {
+      "title": "拜拜了SWE-Bench！Cursor刚发了个AI Coding评测基准，难哭Claude",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/387756.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-26T20:14:38.706937"
+    },
+    {
+      "title": "金融Agent再获近2亿加码！启明红杉高瓴集体押注，5个月内连获两轮融资",
+      "summary": "",
+      "url": "https://www.qbitai.com/2026/03/392684.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-26T20:14:38.706956"
+    }
+  ],
+  "advice": {
+    "opportunities": [
+      {
+        "type": "💰 资本动向",
+        "content": "关注融资热点领域，可能是下一个风口",
+        "items": [
+          "金融Agent再获近2亿加码！启明红杉高瓴集体押注，5个月内连获两轮融资"
+        ]
+      }
+    ],
+    "risks": [],
+    "learning": [
+      {
+        "type": "📚 技术跟进",
+        "content": "保持对新技术的敏感度",
+        "items": [
+          "马斯克xAI联创11跑10！仅剩特斯拉嫡系独苗留守",
+          "中国AI音乐，悄悄把全球第一拿走了",
+          "WorkBuddy杀疯了？一群AI专家帮我打工，我在微信里当赛博虾工头！"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "priority": "🔥 高",
+        "item": "研究融资新闻中的公司，评估是否有合作/投资机会",
+        "reason": "华为云人脉 + 行业理解 = 独特优势"
+      },
+      {
+        "priority": "📅 中",
+        "item": "记录技术突破到知识库，评估是否可应用到产品",
+        "reason": "技术深度是华为系创业者的优势"
+      },
+      {
+        "priority": "📅 中",
+        "item": "记录今日新闻到知识库，周末复盘",
+        "reason": "建立行业认知体系"
+      },
+      {
+        "priority": "💡 低",
+        "item": "在社交媒体分享一条洞察",
+        "reason": "建立个人品牌影响力"
+      }
+    ]
+  }
+}

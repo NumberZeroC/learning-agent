@@ -1,0 +1,361 @@
+{
+  "news": {
+    "半导体": {
+      "trend": "利好",
+      "score": 8,
+      "news_count": 12,
+      "positive_news": 9,
+      "negative_news": 1,
+      "latest_news": [
+        {
+          "title": "半导体行业迎来政策扶持，多地出台补贴政策",
+          "sentiment": {
+            "sentiment": "positive",
+            "score": 3
+          }
+        },
+        {
+          "title": "中芯国际订单激增，产能利用率达 100%",
+          "sentiment": {
+            "sentiment": "positive",
+            "score": 2
+          }
+        },
+        {
+          "title": "芯片进口替代加速，国产半导体设备获突破",
+          "sentiment": {
+            "sentiment": "positive",
+            "score": 2
+          }
+        }
+      ]
+    },
+    "人工智能": {
+      "trend": "利好",
+      "score": 12,
+      "news_count": 18,
+      "positive_news": 15,
+      "negative_news": 3,
+      "latest_news": [
+        {
+          "title": "AI 大模型应用爆发，多家企业发布新产品",
+          "sentiment": {
+            "sentiment": "positive",
+            "score": 3
+          }
+        },
+        {
+          "title": "算力需求激增，AI 芯片供不应求",
+          "sentiment": {
+            "sentiment": "positive",
+            "score": 2
+          }
+        }
+      ]
+    },
+    "新能源": {
+      "trend": "中性",
+      "score": 1,
+      "news_count": 8,
+      "positive_news": 4,
+      "negative_news": 3,
+      "latest_news": [
+        {
+          "title": "光伏产业链价格企稳，行业整合加速",
+          "sentiment": {
+            "sentiment": "neutral",
+            "score": 0
+          }
+        }
+      ]
+    },
+    "医药生物": {
+      "trend": "利好",
+      "score": 5,
+      "news_count": 10,
+      "positive_news": 7,
+      "negative_news": 2,
+      "latest_news": [
+        {
+          "title": "创新药审批加速，多家药企新品获批",
+          "sentiment": {
+            "sentiment": "positive",
+            "score": 2
+          }
+        }
+      ]
+    },
+    "消费电子": {
+      "trend": "利空",
+      "score": -4,
+      "news_count": 6,
+      "positive_news": 1,
+      "negative_news": 5,
+      "latest_news": [
+        {
+          "title": "手机销量下滑，消费电子产业链承压",
+          "sentiment": {
+            "sentiment": "negative",
+            "score": -2
+          }
+        }
+      ]
+    }
+  },
+  "flow": {
+    "sector_analysis": {
+      "半导体": {
+        "flow": {
+          "sector": "半导体",
+          "stock_count": 45,
+          "total_inflow": 280000,
+          "total_outflow": -95000,
+          "net_flow": 185000,
+          "trend": "流入",
+          "inflow_stocks": [
+            {
+              "code": "688981",
+              "name": "中芯国际",
+              "main_force_in": 52000000
+            },
+            {
+              "code": "002371",
+              "name": "北方华创",
+              "main_force_in": 38000000
+            },
+            {
+              "code": "688012",
+              "name": "中微公司",
+              "main_force_in": 25000000
+            }
+          ]
+        },
+        "leader": {
+          "code": "688981",
+          "name": "中芯国际",
+          "price": 52.8,
+          "change_pct": 4.25,
+          "main_force_in": 52000000,
+          "main_force_ratio": 12.5,
+          "reason": "主力净流入 5200 万，涨幅 4.25%"
+        }
+      },
+      "人工智能": {
+        "flow": {
+          "sector": "人工智能",
+          "stock_count": 62,
+          "total_inflow": 420000,
+          "total_outflow": -120000,
+          "net_flow": 300000,
+          "trend": "流入",
+          "inflow_stocks": [
+            {
+              "code": "002230",
+              "name": "科大讯飞",
+              "main_force_in": 85000000
+            },
+            {
+              "code": "688256",
+              "name": "寒武纪",
+              "main_force_in": 62000000
+            }
+          ]
+        },
+        "leader": {
+          "code": "002230",
+          "name": "科大讯飞",
+          "price": 48.9,
+          "change_pct": 6.82,
+          "main_force_in": 85000000,
+          "main_force_ratio": 15.2,
+          "reason": "主力净流入 8500 万，涨幅 6.82% 领涨板块"
+        }
+      },
+      "新能源": {
+        "flow": {
+          "sector": "新能源",
+          "stock_count": 78,
+          "total_inflow": 95000,
+          "total_outflow": -88000,
+          "net_flow": 7000,
+          "trend": "流入",
+          "inflow_stocks": []
+        },
+        "leader": {
+          "code": "300750",
+          "name": "宁德时代",
+          "price": 185.2,
+          "change_pct": 1.25,
+          "main_force_in": 12000000,
+          "main_force_ratio": 3.2,
+          "reason": "综合评分最高"
+        }
+      },
+      "医药生物": {
+        "flow": {
+          "sector": "医药生物",
+          "stock_count": 52,
+          "total_inflow": 150000,
+          "total_outflow": -75000,
+          "net_flow": 75000,
+          "trend": "流入",
+          "inflow_stocks": [
+            {
+              "code": "600276",
+              "name": "恒瑞医药",
+              "main_force_in": 42000000
+            }
+          ]
+        },
+        "leader": {
+          "code": "600276",
+          "name": "恒瑞医药",
+          "price": 42.15,
+          "change_pct": 3.15,
+          "main_force_in": 42000000,
+          "main_force_ratio": 8.9,
+          "reason": "主力净流入 4200 万"
+        }
+      },
+      "消费电子": {
+        "flow": {
+          "sector": "消费电子",
+          "stock_count": 38,
+          "total_inflow": 35000,
+          "total_outflow": -180000,
+          "net_flow": -145000,
+          "trend": "流出",
+          "inflow_stocks": []
+        },
+        "leader": {
+          "code": "002475",
+          "name": "立讯精密",
+          "price": 28.5,
+          "change_pct": -1.2,
+          "main_force_in": -15000000,
+          "main_force_ratio": -5.2,
+          "reason": "综合评分最高"
+        }
+      }
+    },
+    "top_inflow_sectors": [
+      {
+        "sector": "人工智能",
+        "net_flow": 300000,
+        "trend": "流入"
+      },
+      {
+        "sector": "半导体",
+        "net_flow": 185000,
+        "trend": "流入"
+      },
+      {
+        "sector": "医药生物",
+        "net_flow": 75000,
+        "trend": "流入"
+      },
+      {
+        "sector": "新能源",
+        "net_flow": 7000,
+        "trend": "流入"
+      },
+      {
+        "sector": "消费电子",
+        "net_flow": -145000,
+        "trend": "流出"
+      }
+    ],
+    "update_time": "2026-03-06T14:30:00"
+  },
+  "recommendations": [
+    {
+      "stock": {
+        "code": "002230",
+        "name": "科大讯飞",
+        "sector": "人工智能",
+        "price": 48.9,
+        "change_pct": 6.82,
+        "main_force_in": 85000000,
+        "news_sentiment": "利好",
+        "score": 9.52,
+        "reason": "主力净流入 8500 万，涨幅 6.82% 领涨板块"
+      },
+      "rating": "强烈推荐",
+      "action": "重点关注，可考虑建仓",
+      "risks": [],
+      "confidence": 0.952
+    },
+    {
+      "stock": {
+        "code": "688981",
+        "name": "中芯国际",
+        "sector": "半导体",
+        "price": 52.8,
+        "change_pct": 4.25,
+        "main_force_in": 52000000,
+        "news_sentiment": "利好",
+        "score": 9.14,
+        "reason": "主力净流入 5200 万，涨幅 4.25%"
+      },
+      "rating": "强烈推荐",
+      "action": "重点关注，可考虑建仓",
+      "risks": [],
+      "confidence": 0.914
+    },
+    {
+      "stock": {
+        "code": "600276",
+        "name": "恒瑞医药",
+        "sector": "医药生物",
+        "price": 42.15,
+        "change_pct": 3.15,
+        "main_force_in": 42000000,
+        "news_sentiment": "利好",
+        "score": 8.65,
+        "reason": "主力净流入 4200 万"
+      },
+      "rating": "强烈推荐",
+      "action": "重点关注，可考虑建仓",
+      "risks": [],
+      "confidence": 0.865
+    },
+    {
+      "stock": {
+        "code": "300750",
+        "name": "宁德时代",
+        "sector": "新能源",
+        "price": 185.2,
+        "change_pct": 1.25,
+        "main_force_in": 12000000,
+        "news_sentiment": "中性",
+        "score": 5.97,
+        "reason": "综合评分最高"
+      },
+      "rating": "中性",
+      "action": "观望为主",
+      "risks": [],
+      "confidence": 0.597
+    },
+    {
+      "stock": {
+        "code": "002475",
+        "name": "立讯精密",
+        "sector": "消费电子",
+        "price": 28.5,
+        "change_pct": -1.2,
+        "main_force_in": -15000000,
+        "news_sentiment": "利空",
+        "score": 3.02,
+        "reason": "综合评分最高"
+      },
+      "rating": "回避",
+      "action": "建议规避",
+      "risks": [
+        "主力资金流出，需谨慎",
+        "负面新闻较多"
+      ],
+      "confidence": 0.302
+    }
+  ],
+  "timestamp": "2026-03-06T02:36:03.476753"
+}

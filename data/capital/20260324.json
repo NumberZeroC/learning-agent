@@ -1,0 +1,2534 @@
+{
+  "trade_date": "20260324",
+  "fetched_at": "2026-03-24T22:49:51.040940",
+  "sector_flows": [
+    {
+      "sector": "银行",
+      "main_force_in": 180431.19000000003,
+      "main_force_out": 4136.86,
+      "net_flow": 176294.33000000005,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "有色",
+      "main_force_in": 118616.49999999999,
+      "main_force_out": 34068.63,
+      "net_flow": 84547.87,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "消费电子",
+      "main_force_in": 115092.64000000001,
+      "main_force_out": 41511.03,
+      "net_flow": 73581.61000000002,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "保险",
+      "main_force_in": 30251.040000000005,
+      "main_force_out": 7327.17,
+      "net_flow": 22923.870000000003,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "软件",
+      "main_force_in": 52309.01,
+      "main_force_out": 32242.710000000003,
+      "net_flow": 20066.3,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "创新药",
+      "main_force_in": 17090.85,
+      "main_force_out": 3037.22,
+      "net_flow": 14053.63,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "医药生物",
+      "main_force_in": 12603.21,
+      "main_force_out": 2003.44,
+      "net_flow": 10599.769999999999,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "医疗器械",
+      "main_force_in": 9327.65,
+      "main_force_out": 2003.44,
+      "net_flow": 7324.209999999999,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "房地产",
+      "main_force_in": 5919.4,
+      "main_force_out": 6301.15,
+      "net_flow": -381.75,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "军工",
+      "main_force_in": 14074.15,
+      "main_force_out": 14918.05,
+      "net_flow": -843.8999999999996,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "家电",
+      "main_force_in": 14752.34,
+      "main_force_out": 22315.2,
+      "net_flow": -7562.860000000001,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "白酒",
+      "main_force_in": 9364.99,
+      "main_force_out": 16949.320000000003,
+      "net_flow": -7584.330000000004,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "机器人",
+      "main_force_in": 1801.1799999999998,
+      "main_force_out": 15286.579999999998,
+      "net_flow": -13485.399999999998,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "券商",
+      "main_force_in": 26011.27,
+      "main_force_out": 45639.8,
+      "net_flow": -19628.530000000002,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "汽车",
+      "main_force_in": 72328.63,
+      "main_force_out": 92688.5,
+      "net_flow": -20359.869999999995,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "云计算",
+      "main_force_in": 4599.51,
+      "main_force_out": 28897.9,
+      "net_flow": -24298.39,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "人工智能",
+      "main_force_in": 3212.9900000000002,
+      "main_force_out": 40123.759999999995,
+      "net_flow": -36910.77,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "5G",
+      "main_force_in": 45563.39000000001,
+      "main_force_out": 94673.24,
+      "net_flow": -49109.85,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "化工",
+      "main_force_in": 38196.46,
+      "main_force_out": 88328.41,
+      "net_flow": -50131.950000000004,
+      "inst_net": 51005733.28000003,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": [
+        {
+          "code": "600096",
+          "name": "云天化",
+          "price": 0,
+          "change_pct": 0,
+          "main_force_in": -41499.36,
+          "inst_net": 51005733.28000003,
+          "financing_net": 0,
+          "top_reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+          "main_force_ratio": 0
+        }
+      ]
+    },
+    {
+      "sector": "食品饮料",
+      "main_force_in": 5081.780000000001,
+      "main_force_out": 64492.17,
+      "net_flow": -59410.39,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "锂电",
+      "main_force_in": 67980.45,
+      "main_force_out": 169159.05,
+      "net_flow": -101178.59999999999,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "半导体",
+      "main_force_in": 9235.87,
+      "main_force_out": 120260.73000000001,
+      "net_flow": -111024.86000000002,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "光伏",
+      "main_force_in": 46897.61,
+      "main_force_out": 169708.13,
+      "net_flow": -122810.52,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "新能源",
+      "main_force_in": 67980.45,
+      "main_force_out": 247992.11000000004,
+      "net_flow": -180011.66000000003,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    },
+    {
+      "sector": "储能",
+      "main_force_in": 66985.45,
+      "main_force_out": 251957.46999999997,
+      "net_flow": -184972.01999999996,
+      "inst_net": 0,
+      "financing_net": 0,
+      "stock_count": 10,
+      "avg_change": 0,
+      "top_stocks": []
+    }
+  ],
+  "market_flow": [
+    {
+      "code": "000020",
+      "name": "深华发A",
+      "top_net_in": -65232757.28,
+      "top_amount": 786592738.0,
+      "top_l_buy": 67814175.12,
+      "top_l_sell": 133046932.4,
+      "top_reason": "日跌幅偏离值达到7%的前5只证券",
+      "change_pct": -9.7619,
+      "inst_buy": 89499416.24,
+      "inst_sell": 195175712.81,
+      "inst_net": -105676296.57000001
+    },
+    {
+      "code": "000537",
+      "name": "绿发电力",
+      "top_net_in": 73727072.69,
+      "top_amount": 2038441027.0,
+      "top_l_buy": 320053209.8,
+      "top_l_sell": 246326137.11,
+      "top_reason": "日涨幅偏离值达到7%的前5只证券",
+      "change_pct": 10.0368,
+      "inst_buy": 451341827.68,
+      "inst_sell": 390126067.23,
+      "inst_net": 61215760.45000001
+    },
+    {
+      "code": "000601",
+      "name": "韶能股份",
+      "top_net_in": 118978073.24,
+      "top_amount": 2245346231.0,
+      "top_l_buy": 405734974.98,
+      "top_l_sell": 286756901.74,
+      "top_reason": "日涨幅偏离值达到7%的前5只证券",
+      "change_pct": 9.9591,
+      "inst_buy": 519203490.67,
+      "inst_sell": 416795065.16999996,
+      "inst_net": 102408425.5
+    },
+    {
+      "code": "000669",
+      "name": "ST金鸿",
+      "top_net_in": -27563919.74,
+      "top_amount": 250770620.0,
+      "top_l_buy": 22823855.6,
+      "top_l_sell": 50387775.34,
+      "top_reason": "日跌幅偏离值达到7%的前5只证券",
+      "change_pct": -4.927,
+      "inst_buy": 37149003.6,
+      "inst_sell": 73808349.88,
+      "inst_net": -36659346.28
+    },
+    {
+      "code": "000677",
+      "name": "恒天海龙",
+      "top_net_in": 80355631.87,
+      "top_amount": 461072847.0,
+      "top_l_buy": 132401698.2,
+      "top_l_sell": 52046066.33,
+      "top_reason": "日振幅值达到15%的前5只证券",
+      "change_pct": 10.0446,
+      "inst_buy": 164681152.2,
+      "inst_sell": 70892934.08,
+      "inst_net": 93788218.12
+    },
+    {
+      "code": "000688",
+      "name": "国城矿业",
+      "top_net_in": 21550990.85,
+      "top_amount": 4221614903.0,
+      "top_l_buy": 717491809.37,
+      "top_l_sell": 695940818.52,
+      "top_reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+      "change_pct": 10.0,
+      "inst_buy": 1187200027.98,
+      "inst_sell": 1159230837.5600002,
+      "inst_net": 27969190.419999987
+    },
+    {
+      "code": "000815",
+      "name": "美利云",
+      "top_net_in": -78585274.4,
+      "top_amount": 4767175192.0,
+      "top_l_buy": 473766097.71,
+      "top_l_sell": 552351372.11,
+      "top_reason": "日换手率达到20%的前5只证券",
+      "change_pct": 5.9794,
+      "inst_buy": 690280306.5300001,
+      "inst_sell": 826092728.6800001,
+      "inst_net": -135812422.15
+    },
+    {
+      "code": "000856",
+      "name": "冀东装备",
+      "top_net_in": -32279473.28,
+      "top_amount": 554295909.0,
+      "top_l_buy": 41056241.38,
+      "top_l_sell": 73335714.66,
+      "top_reason": "日跌幅偏离值达到7%的前5只证券",
+      "change_pct": -9.8294,
+      "inst_buy": 47723912.76,
+      "inst_sell": 96073004.66,
+      "inst_net": -48349091.89999999
+    },
+    {
+      "code": "000862",
+      "name": "银星能源",
+      "top_net_in": 16985962.93,
+      "top_amount": 1597149063.0,
+      "top_l_buy": 145362671.96,
+      "top_l_sell": 128376709.03,
+      "top_reason": "日换手率达到20%的前5只证券",
+      "change_pct": 3.3257,
+      "inst_buy": 207829101.28,
+      "inst_sell": 194191526.63,
+      "inst_net": 13637574.649999997
+    },
+    {
+      "code": "001203",
+      "name": "大中矿业",
+      "top_net_in": 46837090.53,
+      "top_amount": 5559670180.0,
+      "top_l_buy": 900221127.29,
+      "top_l_sell": 853384036.76,
+      "top_reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+      "change_pct": 10.0,
+      "inst_buy": 2600167990.84,
+      "inst_sell": 2331140854.92,
+      "inst_net": 269027135.9200001
+    },
+    {
+      "code": "001382",
+      "name": "新亚电缆",
+      "top_net_in": 10641200.0,
+      "top_amount": 435301099.0,
+      "top_l_buy": 75594813.24,
+      "top_l_sell": 64953613.24,
+      "top_reason": "日换手率达到20%的前5只证券",
+      "change_pct": 7.1161,
+      "inst_buy": 137635910.51,
+      "inst_sell": 121211519.17999999,
+      "inst_net": 16424391.330000002
+    },
+    {
+      "code": "002218",
+      "name": "拓日新能",
+      "top_net_in": 445294091.23,
+      "top_amount": 2546900015.0,
+      "top_l_buy": 587410691.86,
+      "top_l_sell": 142116600.63,
+      "top_reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+      "change_pct": 10.0152,
+      "inst_buy": 797166413.72,
+      "inst_sell": 221044601.60999998,
+      "inst_net": 576121812.11
+    },
+    {
+      "code": "002256",
+      "name": "兆新股份",
+      "top_net_in": 15971693.01,
+      "top_amount": 6193434903.0,
+      "top_l_buy": 614412826.47,
+      "top_l_sell": 598441133.46,
+      "top_reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+      "change_pct": 7.5055,
+      "inst_buy": 1498946342.5799997,
+      "inst_sell": 1470654912.17,
+      "inst_net": 28291430.409999993
+    },
+    {
+      "code": "002310",
+      "name": "东方新能",
+      "top_net_in": -141792754.27,
+      "top_amount": 3585995686.0,
+      "top_l_buy": 264449277.73,
+      "top_l_sell": 406242032.0,
+      "top_reason": "日振幅值达到15%的前5只证券",
+      "change_pct": -1.0444,
+      "inst_buy": 366033379.96000004,
+      "inst_sell": 551824351.1700001,
+      "inst_net": -185790971.21
+    },
+    {
+      "code": "002428",
+      "name": "云南锗业",
+      "top_net_in": 62245266.67,
+      "top_amount": 3601662527.0,
+      "top_l_buy": 461128520.63,
+      "top_l_sell": 398883253.96,
+      "top_reason": "日涨幅偏离值达到7%的前5只证券",
+      "change_pct": 10.0,
+      "inst_buy": 627453600.79,
+      "inst_sell": 676342067.46,
+      "inst_net": -48888466.67
+    },
+    {
+      "code": "002430",
+      "name": "杭氧股份",
+      "top_net_in": -47371601.47,
+      "top_amount": 706616468.0,
+      "top_l_buy": 100192636.21,
+      "top_l_sell": 147564237.68,
+      "top_reason": "日跌幅偏离值达到7%的前5只证券",
+      "change_pct": -5.1913,
+      "inst_buy": 159546632.36999997,
+      "inst_sell": 227838414.35999998,
+      "inst_net": -68291781.99000001
+    },
+    {
+      "code": "002498",
+      "name": "汉缆股份",
+      "top_net_in": 380532564.02,
+      "top_amount": 2631998153.0,
+      "top_l_buy": 597896291.8,
+      "top_l_sell": 217363727.78,
+      "top_reason": "日涨幅偏离值达到7%的前5只证券",
+      "change_pct": 10.0,
+      "inst_buy": 682537228.5999999,
+      "inst_sell": 318591295.04,
+      "inst_net": 363945933.56000006
+    },
+    {
+      "code": "002565",
+      "name": "顺灏股份",
+      "top_net_in": 63843605.69,
+      "top_amount": 4910929195.0,
+      "top_l_buy": 571648021.78,
+      "top_l_sell": 507804416.09,
+      "top_reason": "日换手率达到20%的前5只证券",
+      "change_pct": -0.4122,
+      "inst_buy": 863119039.09,
+      "inst_sell": 700716573.5,
+      "inst_net": 162402465.59
+    },
+    {
+      "code": "002620",
+      "name": "ST瑞和",
+      "top_net_in": -16335885.09,
+      "top_amount": 283555939.0,
+      "top_l_buy": 33166035.15,
+      "top_l_sell": 49501920.24,
+      "top_reason": "连续三个交易日内，涨幅偏离值累计达到12%的ST证券、*ST证券和未完成股改证券",
+      "change_pct": 5.035,
+      "inst_buy": 41279914.65,
+      "inst_sell": 56046965.980000004,
+      "inst_net": -14767051.33
+    },
+    {
+      "code": "002654",
+      "name": "万润科技",
+      "top_net_in": -4620029.81,
+      "top_amount": 1464078375.0,
+      "top_l_buy": 338221922.02,
+      "top_l_sell": 342841951.83,
+      "top_reason": "日振幅值达到15%的前5只证券",
+      "change_pct": 8.4733,
+      "inst_buy": 540667552.24,
+      "inst_sell": 630019370.66,
+      "inst_net": -89351818.42
+    },
+    {
+      "code": "002756",
+      "name": "永兴材料",
+      "top_net_in": -365753737.41,
+      "top_amount": 5654433174.0,
+      "top_l_buy": 963648733.45,
+      "top_l_sell": 1329402470.86,
+      "top_reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+      "change_pct": 8.6563,
+      "inst_buy": 1702989438.38,
+      "inst_sell": 2543719417.4200006,
+      "inst_net": -840729979.0400001
+    },
+    {
+      "code": "002902",
+      "name": "铭普光磁",
+      "top_net_in": -104880436.85,
+      "top_amount": 1257867992.0,
+      "top_l_buy": 133039699.72,
+      "top_l_sell": 237920136.57,
+      "top_reason": "日换手率达到20%的前5只证券",
+      "change_pct": 3.5103,
+      "inst_buy": 175988118.29999998,
+      "inst_sell": 329456048.40999997,
+      "inst_net": -153467930.10999998
+    },
+    {
+      "code": "123146",
+      "name": "中环转2",
+      "top_net_in": -6918528.25,
+      "top_amount": 87619122.0,
+      "top_l_buy": 30450107.72,
+      "top_l_sell": 37368635.97,
+      "top_reason": "日振幅值达到30%的前5只可转债",
+      "change_pct": 4.24,
+      "inst_buy": 57296674.51,
+      "inst_sell": 63148453.09,
+      "inst_net": -5851778.58
+    },
+    {
+      "code": "300040",
+      "name": "九洲集团",
+      "top_net_in": -80957028.04,
+      "top_amount": 1724819227.0,
+      "top_l_buy": 97306968.16,
+      "top_l_sell": 178263996.2,
+      "top_reason": "日换手率达到30%的前5只证券",
+      "change_pct": 5.9312,
+      "inst_buy": 155838680.67999998,
+      "inst_sell": 268572723.92,
+      "inst_net": -112734043.24
+    },
+    {
+      "code": "300335",
+      "name": "迪森股份",
+      "top_net_in": 168373318.96,
+      "top_amount": 887038727.0,
+      "top_l_buy": 252309408.88,
+      "top_l_sell": 83936089.92,
+      "top_reason": "日涨幅达到15%的前5只证券",
+      "change_pct": 20.0,
+      "inst_buy": 313593816.42,
+      "inst_sell": 120061297.84,
+      "inst_net": 193532518.58
+    },
+    {
+      "code": "300345",
+      "name": "华民股份",
+      "top_net_in": -34066307.44,
+      "top_amount": 1645016022.0,
+      "top_l_buy": 179246409.16,
+      "top_l_sell": 213312716.6,
+      "top_reason": "日换手率达到30%的前5只证券",
+      "change_pct": 0.7786,
+      "inst_buy": 273961093.32,
+      "inst_sell": 285220628.6,
+      "inst_net": -11259535.280000001
+    },
+    {
+      "code": "300385",
+      "name": "雪浪环境",
+      "top_net_in": 157326611.0,
+      "top_amount": 572109180.0,
+      "top_l_buy": 271784113.84,
+      "top_l_sell": 114457502.84,
+      "top_reason": "连续三个交易日内，涨幅偏离值累计达到30%的证券",
+      "change_pct": 19.9872,
+      "inst_buy": 522079501.67999995,
+      "inst_sell": 211060287.68,
+      "inst_net": 311019214.0
+    },
+    {
+      "code": "300391",
+      "name": "长药退",
+      "top_net_in": 213993.82,
+      "top_amount": 27545483.0,
+      "top_l_buy": 5066585.32,
+      "top_l_sell": 4852591.5,
+      "top_reason": "退市整理期",
+      "change_pct": 17.1429,
+      "inst_buy": 5066585.32,
+      "inst_sell": 4852591.5,
+      "inst_net": 213993.8200000003
+    },
+    {
+      "code": "300497",
+      "name": "富祥药业",
+      "top_net_in": 148014713.12,
+      "top_amount": 1594103104.0,
+      "top_l_buy": 272036606.32,
+      "top_l_sell": 124021893.2,
+      "top_reason": "日涨幅达到15%的前5只证券",
+      "change_pct": 19.9718,
+      "inst_buy": 337638309.88,
+      "inst_sell": 152675463.2,
+      "inst_net": 184962846.68
+    },
+    {
+      "code": "300868",
+      "name": "杰美特",
+      "top_net_in": -31122215.57,
+      "top_amount": 1678515854.0,
+      "top_l_buy": 365286361.6,
+      "top_l_sell": 396408577.17,
+      "top_reason": "连续三个交易日内，涨幅偏离值累计达到30%的证券",
+      "change_pct": 12.2383,
+      "inst_buy": 584129247.6,
+      "inst_sell": 674856758.3399999,
+      "inst_net": -90727510.74000001
+    },
+    {
+      "code": "301183",
+      "name": "东田微",
+      "top_net_in": 164441831.1,
+      "top_amount": 1643826316.0,
+      "top_l_buy": 335810493.11,
+      "top_l_sell": 171368662.01,
+      "top_reason": "日涨幅达到15%的前5只证券",
+      "change_pct": 16.4591,
+      "inst_buy": 483592448.22,
+      "inst_sell": 256162400.01999998,
+      "inst_net": 227430048.2
+    },
+    {
+      "code": "301226",
+      "name": "祥明智能",
+      "top_net_in": 80834160.61,
+      "top_amount": 728894790.0,
+      "top_l_buy": 166009174.53,
+      "top_l_sell": 85175013.92,
+      "top_reason": "日涨幅达到15%的前5只证券",
+      "change_pct": 20.0,
+      "inst_buy": 223610135.49,
+      "inst_sell": 116941093.92,
+      "inst_net": 106669041.57000001
+    },
+    {
+      "code": "301609",
+      "name": "山大电力",
+      "top_net_in": 49255107.78,
+      "top_amount": 855497820.0,
+      "top_l_buy": 132809537.3,
+      "top_l_sell": 83554429.52,
+      "top_reason": "日换手率达到30%的前5只证券",
+      "change_pct": 15.5176,
+      "inst_buy": 188632883.89000002,
+      "inst_sell": 126947001.37,
+      "inst_net": 61685882.51999998
+    },
+    {
+      "code": "301658",
+      "name": "首航新能",
+      "top_net_in": -7915725.35,
+      "top_amount": 1245029567.0,
+      "top_l_buy": 166418711.5,
+      "top_l_sell": 174334436.85,
+      "top_reason": "日换手率达到30%的前5只证券",
+      "change_pct": -1.5294,
+      "inst_buy": 284542558.2,
+      "inst_sell": 310316208.2,
+      "inst_net": -25773650.0
+    },
+    {
+      "code": "301667",
+      "name": "纳百川",
+      "top_net_in": -81295120.04,
+      "top_amount": 985802216.0,
+      "top_l_buy": 91350382.06,
+      "top_l_sell": 172645502.1,
+      "top_reason": "日换手率达到30%的前5只证券",
+      "change_pct": -1.1241,
+      "inst_buy": 160529702.04,
+      "inst_sell": 282798716.74,
+      "inst_net": -122269014.69999999
+    },
+    {
+      "code": "600032",
+      "name": "浙江新能",
+      "top_net_in": -104472202.19,
+      "top_amount": 1990205509.0,
+      "top_l_buy": 134340481.76,
+      "top_l_sell": 238812683.95,
+      "top_reason": "有价格涨跌幅限制的日价格振幅达到15%的前五只证券",
+      "change_pct": 10.0372,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -104472202.19
+    },
+    {
+      "code": "600096",
+      "name": "云天化",
+      "top_net_in": 51005733.28,
+      "top_amount": 4057741717.0,
+      "top_l_buy": 646022557.19,
+      "top_l_sell": 595016823.91,
+      "top_reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+      "change_pct": -5.9417,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 51005733.28000003,
+      "main_force_in": -41499.36,
+      "buy_elg": 55475.64,
+      "sell_elg": 50185.94
+    },
+    {
+      "code": "600107",
+      "name": "ST尔雅",
+      "top_net_in": 5284297.59,
+      "top_amount": 75956995.0,
+      "top_l_buy": 20174601.59,
+      "top_l_sell": 14890304.0,
+      "top_reason": "ST、*ST证券连续三个交易日内收盘价格涨幅偏离值累计达到12%的证券",
+      "change_pct": 5.0089,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 5284297.59
+    },
+    {
+      "code": "600186",
+      "name": "莲花控股",
+      "top_net_in": 90146401.01,
+      "top_amount": 1292360710.0,
+      "top_l_buy": 265520408.15,
+      "top_l_sell": 175374007.14,
+      "top_reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+      "change_pct": 10.0813,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 90146401.00999999
+    },
+    {
+      "code": "600396",
+      "name": "华电辽能",
+      "top_net_in": 100.0,
+      "top_amount": 7845277100.0,
+      "top_l_buy": 7845277100.0,
+      "top_l_sell": 7845277000.0,
+      "top_reason": "有价格涨跌幅限制的连续10个交易日内收盘价格涨幅偏离值累计达到100%的证券",
+      "change_pct": 10.0145,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -170731000.0
+    },
+    {
+      "code": "600510",
+      "name": "黑牡丹",
+      "top_net_in": 6431504.7,
+      "top_amount": 114914968.0,
+      "top_l_buy": 28305029.7,
+      "top_l_sell": 21873525.0,
+      "top_reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+      "change_pct": 10.0654,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 6431504.699999999
+    },
+    {
+      "code": "600580",
+      "name": "卧龙电驱",
+      "top_net_in": -467545792.4,
+      "top_amount": 4242167577.0,
+      "top_l_buy": 225677516.45,
+      "top_l_sell": 693223308.85,
+      "top_reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+      "change_pct": -5.8362,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -467545792.4
+    },
+    {
+      "code": "600666",
+      "name": "奥瑞德",
+      "top_net_in": 213789487.15,
+      "top_amount": 1763472882.0,
+      "top_l_buy": 376192882.88,
+      "top_l_sell": 162403395.73,
+      "top_reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+      "change_pct": 10.0917,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 213789487.15
+    },
+    {
+      "code": "600698",
+      "name": "湖南天雁",
+      "top_net_in": 13654289.0,
+      "top_amount": 177157738.0,
+      "top_l_buy": 38203132.0,
+      "top_l_sell": 24548843.0,
+      "top_reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+      "change_pct": 10.0592,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 13654289.0
+    },
+    {
+      "code": "600703",
+      "name": "三安光电",
+      "top_net_in": -6501833.94,
+      "top_amount": 6399825742.0,
+      "top_l_buy": 578483331.08,
+      "top_l_sell": 584985165.02,
+      "top_reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+      "change_pct": -6.9846,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -6501833.939999945
+    },
+    {
+      "code": "600726",
+      "name": "华电能源",
+      "top_net_in": -251321.56,
+      "top_amount": 2454197142.0,
+      "top_l_buy": 185328478.36,
+      "top_l_sell": 185579799.92,
+      "top_reason": "有价格涨跌幅限制的日价格振幅达到15%的前五只证券",
+      "change_pct": 5.0752,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -251321.55999998748
+    },
+    {
+      "code": "600758",
+      "name": "辽宁能源",
+      "top_net_in": -1522158.81,
+      "top_amount": 1098687446.0,
+      "top_l_buy": 232530386.0,
+      "top_l_sell": 234052544.81,
+      "top_reason": "非ST、*ST和S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券",
+      "change_pct": 9.9366,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -1522158.8099999987
+    },
+    {
+      "code": "600759",
+      "name": "洲际油气",
+      "top_net_in": 12769466.21,
+      "top_amount": 3132317250.0,
+      "top_l_buy": 210656444.89,
+      "top_l_sell": 197886978.68,
+      "top_reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+      "change_pct": -5.5718,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 12769466.21
+    },
+    {
+      "code": "600821",
+      "name": "金开新能",
+      "top_net_in": 172109593.46,
+      "top_amount": 6439102612.0,
+      "top_l_buy": 889354361.8,
+      "top_l_sell": 717244768.34,
+      "top_reason": "有价格涨跌幅限制的日换手率达到20%的前五只证券",
+      "change_pct": 10.0398,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 344219186.91999984
+    },
+    {
+      "code": "600982",
+      "name": "宁波能源",
+      "top_net_in": -95111883.15,
+      "top_amount": 1899662362.0,
+      "top_l_buy": 121294716.45,
+      "top_l_sell": 216406599.6,
+      "top_reason": "非ST、*ST和S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券",
+      "change_pct": 10.0,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -95111883.14999999
+    },
+    {
+      "code": "601016",
+      "name": "节能风电",
+      "top_net_in": -95405901.92,
+      "top_amount": 5477009073.0,
+      "top_l_buy": 437971234.64,
+      "top_l_sell": 533377136.56,
+      "top_reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+      "change_pct": 10.0897,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -95405901.92000002
+    },
+    {
+      "code": "601218",
+      "name": "吉鑫科技",
+      "top_net_in": 6187881.66,
+      "top_amount": 1828576418.0,
+      "top_l_buy": 155753142.46,
+      "top_l_sell": 149565260.8,
+      "top_reason": "有价格涨跌幅限制的日换手率达到20%的前五只证券",
+      "change_pct": 5.9805,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 6187881.660000026
+    },
+    {
+      "code": "603105",
+      "name": "芯能科技",
+      "top_net_in": -63050298.91,
+      "top_amount": 1557505970.0,
+      "top_l_buy": 82157043.57,
+      "top_l_sell": 145207342.48,
+      "top_reason": "有价格涨跌幅限制的日价格振幅达到15%的前五只证券",
+      "change_pct": 4.8666,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -63050298.91000001
+    },
+    {
+      "code": "603248",
+      "name": "锡华科技",
+      "top_net_in": 8228627.82,
+      "top_amount": 687743811.0,
+      "top_l_buy": 97199858.0,
+      "top_l_sell": 88971230.18,
+      "top_reason": "有价格涨跌幅限制的日换手率达到20%的前五只证券",
+      "change_pct": 3.0325,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 8228627.819999998
+    },
+    {
+      "code": "603358",
+      "name": "华达科技",
+      "top_net_in": -137815854.41,
+      "top_amount": 466861849.0,
+      "top_l_buy": 90103183.96,
+      "top_l_sell": 227919038.37,
+      "top_reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+      "change_pct": -10.0,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -137815854.41
+    },
+    {
+      "code": "603687",
+      "name": "大胜达",
+      "top_net_in": 37724632.86,
+      "top_amount": 2146808315.0,
+      "top_l_buy": 301725874.24,
+      "top_l_sell": 264001241.38,
+      "top_reason": "有价格涨跌幅限制的日换手率达到20%的前五只证券",
+      "change_pct": 0.1358,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 37724632.859999955
+    },
+    {
+      "code": "603803",
+      "name": "瑞斯康达",
+      "top_net_in": -60049224.88,
+      "top_amount": 2146885966.0,
+      "top_l_buy": 138685516.92,
+      "top_l_sell": 198734741.8,
+      "top_reason": "有价格涨跌幅限制的日换手率达到20%的前五只证券",
+      "change_pct": 6.8446,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": -60049224.87999998
+    },
+    {
+      "code": "603843",
+      "name": "*ST正平",
+      "top_net_in": 3853903.77,
+      "top_amount": 556661516.0,
+      "top_l_buy": 52538195.2,
+      "top_l_sell": 48684291.43,
+      "top_reason": "ST、*ST证券连续三个交易日内收盘价格涨幅偏离值累计达到12%的证券",
+      "change_pct": 5.0469,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 3853903.7699999996
+    },
+    {
+      "code": "605299",
+      "name": "舒华体育",
+      "top_net_in": 28297245.0,
+      "top_amount": 736660236.0,
+      "top_l_buy": 79633938.0,
+      "top_l_sell": 51336693.0,
+      "top_reason": "有价格涨跌幅限制的日价格振幅达到15%的前五只证券",
+      "change_pct": 10.0273,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 28297245.0
+    },
+    {
+      "code": "688272",
+      "name": "富吉瑞",
+      "top_net_in": 21948064.52,
+      "top_amount": 296224600.0,
+      "top_l_buy": 65985015.66,
+      "top_l_sell": 44036951.14,
+      "top_reason": "有价格涨跌幅限制的日收盘价格涨幅达到15%的前五只证券",
+      "change_pct": 15.5193,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 21948064.519999992
+    },
+    {
+      "code": "688519",
+      "name": "南亚新材",
+      "top_net_in": 59729466.7,
+      "top_amount": 1232716300.0,
+      "top_l_buy": 219373177.44,
+      "top_l_sell": 159643710.74,
+      "top_reason": "有价格涨跌幅限制的日收盘价格涨幅达到15%的前五只证券",
+      "change_pct": 18.0274,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 59729466.69999998
+    },
+    {
+      "code": "688551",
+      "name": "科威尔",
+      "top_net_in": 19512336.26,
+      "top_amount": 194478000.0,
+      "top_l_buy": 37532195.45,
+      "top_l_sell": 18019859.19,
+      "top_reason": "有价格涨跌幅限制的日收盘价格涨幅达到15%的前五只证券",
+      "change_pct": 20.0,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 19512336.26
+    },
+    {
+      "code": "900946",
+      "name": "天雁B股",
+      "top_net_in": 119469.89,
+      "top_amount": 724555.0,
+      "top_l_buy": 275065.19,
+      "top_l_sell": 155595.3,
+      "top_reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+      "change_pct": 8.4746,
+      "inst_buy": NaN,
+      "inst_sell": NaN,
+      "inst_net": 119469.89
+    },
+    {
+      "code": "920028",
+      "name": "新恒泰",
+      "top_net_in": 5058400.07,
+      "top_amount": 293982900.0,
+      "top_l_buy": 30339927.17,
+      "top_l_sell": 25281527.1,
+      "top_reason": "当日换手率达到20%的前5只股票",
+      "change_pct": 2.107,
+      "inst_buy": 34005300.029999994,
+      "inst_sell": 29844852.400000002,
+      "inst_net": 4160447.630000004
+    },
+    {
+      "code": "920036",
+      "name": "觅睿科技",
+      "top_net_in": -22572852.76,
+      "top_amount": 139237800.0,
+      "top_l_buy": 11421138.14,
+      "top_l_sell": 33993990.9,
+      "top_reason": "当日换手率达到20%的前5只股票",
+      "change_pct": -3.4393,
+      "inst_buy": 15201592.709999999,
+      "inst_sell": 39219610.83,
+      "inst_net": -24018018.119999997
+    },
+    {
+      "code": "920078",
+      "name": "族兴新材",
+      "top_net_in": -12265305.04,
+      "top_amount": 183960500.0,
+      "top_l_buy": 14580028.83,
+      "top_l_sell": 26845333.87,
+      "top_reason": "当日换手率达到20%的前5只股票",
+      "change_pct": -1.7294,
+      "inst_buy": 18419797.729999997,
+      "inst_sell": 32009429.25,
+      "inst_net": -13589631.52
+    },
+    {
+      "code": "920088",
+      "name": "科力股份",
+      "top_net_in": -23648494.44,
+      "top_amount": 592770500.0,
+      "top_l_buy": 41500137.7,
+      "top_l_sell": 65148632.14,
+      "top_reason": "当日换手率达到20%的前5只股票",
+      "change_pct": -6.5074,
+      "inst_buy": 60662795.86000001,
+      "inst_sell": 97759506.14,
+      "inst_net": -37096710.28
+    },
+    {
+      "code": "603882",
+      "name": "",
+      "main_force_in": 1663.53,
+      "buy_elg": 607.63,
+      "sell_elg": 447.35
+    },
+    {
+      "code": "600983",
+      "name": "",
+      "main_force_in": 41.12,
+      "buy_elg": 0.0,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "603345",
+      "name": "",
+      "main_force_in": 184.43,
+      "buy_elg": 525.8,
+      "sell_elg": 327.44
+    },
+    {
+      "code": "600495",
+      "name": "",
+      "main_force_in": 1699.49,
+      "buy_elg": 1021.63,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "000738",
+      "name": "",
+      "main_force_in": 804.9,
+      "buy_elg": 7043.53,
+      "sell_elg": 7583.29
+    },
+    {
+      "code": "603986",
+      "name": "",
+      "main_force_in": -66288.46,
+      "buy_elg": 111642.11,
+      "sell_elg": 102275.02
+    },
+    {
+      "code": "601155",
+      "name": "",
+      "main_force_in": -1520.06,
+      "buy_elg": 344.57,
+      "sell_elg": 532.48
+    },
+    {
+      "code": "600116",
+      "name": "",
+      "main_force_in": 10039.86,
+      "buy_elg": 1197.93,
+      "sell_elg": 2421.49
+    },
+    {
+      "code": "002709",
+      "name": "",
+      "main_force_in": 995.0,
+      "buy_elg": 54739.81,
+      "sell_elg": 42036.84
+    },
+    {
+      "code": "002032",
+      "name": "",
+      "main_force_in": 1708.34,
+      "buy_elg": 0.0,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "688012",
+      "name": "",
+      "main_force_in": -6165.7,
+      "buy_elg": 25244.78,
+      "sell_elg": 23013.52
+    },
+    {
+      "code": "600745",
+      "name": "",
+      "main_force_in": 6117.61,
+      "buy_elg": 2721.54,
+      "sell_elg": 2980.73
+    },
+    {
+      "code": "002594",
+      "name": "",
+      "main_force_in": -82798.42,
+      "buy_elg": 208025.52,
+      "sell_elg": 273678.18
+    },
+    {
+      "code": "002129",
+      "name": "",
+      "main_force_in": -2608.2,
+      "buy_elg": 10971.12,
+      "sell_elg": 20113.06
+    },
+    {
+      "code": "300033",
+      "name": "",
+      "main_force_in": -20426.2,
+      "buy_elg": 47163.59,
+      "sell_elg": 47822.31
+    },
+    {
+      "code": "000063",
+      "name": "",
+      "main_force_in": 12460.04,
+      "buy_elg": 39359.39,
+      "sell_elg": 35652.4
+    },
+    {
+      "code": "300024",
+      "name": "",
+      "main_force_in": 330.31,
+      "buy_elg": 926.59,
+      "sell_elg": 629.7
+    },
+    {
+      "code": "002497",
+      "name": "",
+      "main_force_in": -7266.28,
+      "buy_elg": 4750.42,
+      "sell_elg": 5301.16
+    },
+    {
+      "code": "600036",
+      "name": "",
+      "main_force_in": 15501.83,
+      "buy_elg": 39411.59,
+      "sell_elg": 31197.32
+    },
+    {
+      "code": "600588",
+      "name": "",
+      "main_force_in": -2616.83,
+      "buy_elg": 918.26,
+      "sell_elg": 1093.24
+    },
+    {
+      "code": "603288",
+      "name": "",
+      "main_force_in": -2600.39,
+      "buy_elg": 1399.16,
+      "sell_elg": 1374.16
+    },
+    {
+      "code": "300166",
+      "name": "",
+      "main_force_in": 14483.55,
+      "buy_elg": 28460.52,
+      "sell_elg": 25407.4
+    },
+    {
+      "code": "002050",
+      "name": "",
+      "main_force_in": -21263.29,
+      "buy_elg": 39148.08,
+      "sell_elg": 56694.53
+    },
+    {
+      "code": "000333",
+      "name": "",
+      "main_force_in": 2985.7,
+      "buy_elg": 33599.22,
+      "sell_elg": 25352.0
+    },
+    {
+      "code": "002153",
+      "name": "",
+      "main_force_in": 663.21,
+      "buy_elg": 413.53,
+      "sell_elg": 987.07
+    },
+    {
+      "code": "300274",
+      "name": "",
+      "main_force_in": -79970.41,
+      "buy_elg": 341260.33,
+      "sell_elg": 426761.16
+    },
+    {
+      "code": "601689",
+      "name": "",
+      "main_force_in": -8674.25,
+      "buy_elg": 15558.58,
+      "sell_elg": 12470.37
+    },
+    {
+      "code": "300308",
+      "name": "",
+      "main_force_in": -48073.79,
+      "buy_elg": 575285.33,
+      "sell_elg": 528808.5
+    },
+    {
+      "code": "300454",
+      "name": "",
+      "main_force_in": -9773.85,
+      "buy_elg": 11104.31,
+      "sell_elg": 7624.67
+    },
+    {
+      "code": "603392",
+      "name": "",
+      "main_force_in": 592.98,
+      "buy_elg": 0.0,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "002673",
+      "name": "",
+      "main_force_in": 1983.08,
+      "buy_elg": 1220.81,
+      "sell_elg": 3650.77
+    },
+    {
+      "code": "600584",
+      "name": "",
+      "main_force_in": -8292.68,
+      "buy_elg": 10715.93,
+      "sell_elg": 12870.38
+    },
+    {
+      "code": "600498",
+      "name": "",
+      "main_force_in": 31404.83,
+      "buy_elg": 50387.11,
+      "sell_elg": 42401.37
+    },
+    {
+      "code": "600016",
+      "name": "",
+      "main_force_in": 35212.23,
+      "buy_elg": 15730.78,
+      "sell_elg": 19226.96
+    },
+    {
+      "code": "600196",
+      "name": "",
+      "main_force_in": 2503.64,
+      "buy_elg": 1928.72,
+      "sell_elg": 1491.62
+    },
+    {
+      "code": "601601",
+      "name": "",
+      "main_force_in": 599.88,
+      "buy_elg": 5194.28,
+      "sell_elg": 2630.56
+    },
+    {
+      "code": "000792",
+      "name": "",
+      "main_force_in": 30437.81,
+      "buy_elg": 86466.49,
+      "sell_elg": 65325.44
+    },
+    {
+      "code": "600030",
+      "name": "",
+      "main_force_in": -18144.1,
+      "buy_elg": 36441.24,
+      "sell_elg": 31628.3
+    },
+    {
+      "code": "002792",
+      "name": "",
+      "main_force_in": -1419.67,
+      "buy_elg": 5758.62,
+      "sell_elg": 5613.61
+    },
+    {
+      "code": "000630",
+      "name": "",
+      "main_force_in": 15739.54,
+      "buy_elg": 43171.82,
+      "sell_elg": 24435.53
+    },
+    {
+      "code": "002557",
+      "name": "",
+      "main_force_in": 1354.71,
+      "buy_elg": 318.13,
+      "sell_elg": 353.16
+    },
+    {
+      "code": "600276",
+      "name": "",
+      "main_force_in": 3028.97,
+      "buy_elg": 15779.57,
+      "sell_elg": 10031.71
+    },
+    {
+      "code": "002384",
+      "name": "",
+      "main_force_in": 14619.91,
+      "buy_elg": 175638.7,
+      "sell_elg": 188285.62
+    },
+    {
+      "code": "603960",
+      "name": "",
+      "main_force_in": -1083.22,
+      "buy_elg": 552.82,
+      "sell_elg": 472.34
+    },
+    {
+      "code": "002475",
+      "name": "",
+      "main_force_in": -2163.55,
+      "buy_elg": 63898.8,
+      "sell_elg": 69694.27
+    },
+    {
+      "code": "002126",
+      "name": "",
+      "main_force_in": 5487.36,
+      "buy_elg": 4698.87,
+      "sell_elg": 1062.29
+    },
+    {
+      "code": "600060",
+      "name": "",
+      "main_force_in": 1089.44,
+      "buy_elg": 1814.03,
+      "sell_elg": 1730.37
+    },
+    {
+      "code": "601939",
+      "name": "",
+      "main_force_in": 11887.74,
+      "buy_elg": 5427.32,
+      "sell_elg": 8430.66
+    },
+    {
+      "code": "601169",
+      "name": "",
+      "main_force_in": 21804.82,
+      "buy_elg": 12722.81,
+      "sell_elg": 14840.18
+    },
+    {
+      "code": "300059",
+      "name": "",
+      "main_force_in": -27495.7,
+      "buy_elg": 68870.94,
+      "sell_elg": 81155.06
+    },
+    {
+      "code": "300134",
+      "name": "",
+      "main_force_in": 226.36,
+      "buy_elg": 0.0,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "002588",
+      "name": "",
+      "main_force_in": -2904.87,
+      "buy_elg": 368.54,
+      "sell_elg": 677.1
+    },
+    {
+      "code": "300750",
+      "name": "",
+      "main_force_in": 40183.29,
+      "buy_elg": 391748.27,
+      "sell_elg": 401864.0
+    },
+    {
+      "code": "600958",
+      "name": "",
+      "main_force_in": 589.41,
+      "buy_elg": 2133.68,
+      "sell_elg": 2220.34
+    },
+    {
+      "code": "000625",
+      "name": "",
+      "main_force_in": 45.63,
+      "buy_elg": 8530.72,
+      "sell_elg": 8229.55
+    },
+    {
+      "code": "688981",
+      "name": "",
+      "main_force_in": -4006.06,
+      "buy_elg": 32591.74,
+      "sell_elg": 40889.16
+    },
+    {
+      "code": "600850",
+      "name": "",
+      "main_force_in": 1117.67,
+      "buy_elg": 2707.25,
+      "sell_elg": 1813.08
+    },
+    {
+      "code": "688166",
+      "name": "",
+      "main_force_in": -2424.45,
+      "buy_elg": 2761.49,
+      "sell_elg": 4129.27
+    },
+    {
+      "code": "000878",
+      "name": "",
+      "main_force_in": -2563.38,
+      "buy_elg": 10145.91,
+      "sell_elg": 7000.03
+    },
+    {
+      "code": "300271",
+      "name": "",
+      "main_force_in": -361.52,
+      "buy_elg": 168.92,
+      "sell_elg": 103.81
+    },
+    {
+      "code": "600141",
+      "name": "",
+      "main_force_in": -5794.78,
+      "buy_elg": 9274.63,
+      "sell_elg": 10776.91
+    },
+    {
+      "code": "600519",
+      "name": "",
+      "main_force_in": -15342.12,
+      "buy_elg": 61060.31,
+      "sell_elg": 58491.39
+    },
+    {
+      "code": "600887",
+      "name": "",
+      "main_force_in": 957.36,
+      "buy_elg": 13012.44,
+      "sell_elg": 9914.86
+    },
+    {
+      "code": "600765",
+      "name": "",
+      "main_force_in": 820.82,
+      "buy_elg": 2555.04,
+      "sell_elg": 1757.42
+    },
+    {
+      "code": "600741",
+      "name": "",
+      "main_force_in": 672.28,
+      "buy_elg": 424.36,
+      "sell_elg": 1356.51
+    },
+    {
+      "code": "601600",
+      "name": "",
+      "main_force_in": 5675.43,
+      "buy_elg": 41247.37,
+      "sell_elg": 29163.01
+    },
+    {
+      "code": "601398",
+      "name": "",
+      "main_force_in": 21491.83,
+      "buy_elg": 40503.66,
+      "sell_elg": 42077.01
+    },
+    {
+      "code": "000338",
+      "name": "",
+      "main_force_in": 31242.4,
+      "buy_elg": 48854.99,
+      "sell_elg": 28936.47
+    },
+    {
+      "code": "002958",
+      "name": "",
+      "main_force_in": 5891.52,
+      "buy_elg": 3172.08,
+      "sell_elg": 1238.05
+    },
+    {
+      "code": "601688",
+      "name": "",
+      "main_force_in": 12343.87,
+      "buy_elg": 5328.5,
+      "sell_elg": 6516.62
+    },
+    {
+      "code": "601238",
+      "name": "",
+      "main_force_in": 909.16,
+      "buy_elg": 1613.3,
+      "sell_elg": 4386.8
+    },
+    {
+      "code": "300633",
+      "name": "",
+      "main_force_in": 282.57,
+      "buy_elg": 250.73,
+      "sell_elg": 264.11
+    },
+    {
+      "code": "603799",
+      "name": "",
+      "main_force_in": -26950.11,
+      "buy_elg": 39390.43,
+      "sell_elg": 29162.33
+    },
+    {
+      "code": "601288",
+      "name": "",
+      "main_force_in": -4136.86,
+      "buy_elg": 22112.73,
+      "sell_elg": 16930.85
+    },
+    {
+      "code": "603369",
+      "name": "",
+      "main_force_in": 2115.13,
+      "buy_elg": 252.49,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "688029",
+      "name": "",
+      "main_force_in": 1153.24,
+      "buy_elg": 325.3,
+      "sell_elg": 734.74
+    },
+    {
+      "code": "002446",
+      "name": "",
+      "main_force_in": 1017.26,
+      "buy_elg": 2505.14,
+      "sell_elg": 2003.43
+    },
+    {
+      "code": "000568",
+      "name": "",
+      "main_force_in": 2079.62,
+      "buy_elg": 3901.37,
+      "sell_elg": 3671.87
+    },
+    {
+      "code": "600436",
+      "name": "",
+      "main_force_in": 4.52,
+      "buy_elg": 1192.94,
+      "sell_elg": 1523.15
+    },
+    {
+      "code": "002007",
+      "name": "",
+      "main_force_in": 929.75,
+      "buy_elg": 142.6,
+      "sell_elg": 546.5
+    },
+    {
+      "code": "002460",
+      "name": "",
+      "main_force_in": 33586.83,
+      "buy_elg": 72451.74,
+      "sell_elg": 48595.02
+    },
+    {
+      "code": "601778",
+      "name": "",
+      "main_force_in": 19613.46,
+      "buy_elg": 15426.65,
+      "sell_elg": 29559.81
+    },
+    {
+      "code": "600835",
+      "name": "",
+      "main_force_in": -717.63,
+      "buy_elg": 221.68,
+      "sell_elg": 179.34
+    },
+    {
+      "code": "600547",
+      "name": "",
+      "main_force_in": -4205.91,
+      "buy_elg": 23539.48,
+      "sell_elg": 20322.53
+    },
+    {
+      "code": "600809",
+      "name": "",
+      "main_force_in": -426.31,
+      "buy_elg": 4350.43,
+      "sell_elg": 4803.11
+    },
+    {
+      "code": "000799",
+      "name": "",
+      "main_force_in": 1943.52,
+      "buy_elg": 269.65,
+      "sell_elg": 302.34
+    },
+    {
+      "code": "600362",
+      "name": "",
+      "main_force_in": -384.0,
+      "buy_elg": 11754.81,
+      "sell_elg": 10886.38
+    },
+    {
+      "code": "603005",
+      "name": "",
+      "main_force_in": -2336.05,
+      "buy_elg": 1831.4,
+      "sell_elg": 2532.85
+    },
+    {
+      "code": "601136",
+      "name": "",
+      "main_force_in": 526.24,
+      "buy_elg": 0.0,
+      "sell_elg": 226.63
+    },
+    {
+      "code": "688266",
+      "name": "",
+      "main_force_in": 1457.32,
+      "buy_elg": 1863.92,
+      "sell_elg": 1299.7
+    },
+    {
+      "code": "601318",
+      "name": "",
+      "main_force_in": 11473.32,
+      "buy_elg": 57743.65,
+      "sell_elg": 58921.71
+    },
+    {
+      "code": "300595",
+      "name": "",
+      "main_force_in": 250.41,
+      "buy_elg": 451.45,
+      "sell_elg": 5.99
+    },
+    {
+      "code": "002001",
+      "name": "",
+      "main_force_in": -5902.12,
+      "buy_elg": 19747.92,
+      "sell_elg": 22519.19
+    },
+    {
+      "code": "600352",
+      "name": "",
+      "main_force_in": -1866.43,
+      "buy_elg": 2768.4,
+      "sell_elg": 983.25
+    },
+    {
+      "code": "688180",
+      "name": "",
+      "main_force_in": 6231.86,
+      "buy_elg": 1785.53,
+      "sell_elg": 2578.16
+    },
+    {
+      "code": "002216",
+      "name": "",
+      "main_force_in": -1193.19,
+      "buy_elg": 663.44,
+      "sell_elg": 417.73
+    },
+    {
+      "code": "002648",
+      "name": "",
+      "main_force_in": 7758.65,
+      "buy_elg": 28378.99,
+      "sell_elg": 30462.9
+    },
+    {
+      "code": "000100",
+      "name": "",
+      "main_force_in": 33385.38,
+      "buy_elg": 31601.77,
+      "sell_elg": 29031.62
+    },
+    {
+      "code": "600383",
+      "name": "",
+      "main_force_in": -2720.56,
+      "buy_elg": 2082.17,
+      "sell_elg": 2478.82
+    },
+    {
+      "code": "300624",
+      "name": "",
+      "main_force_in": -1565.45,
+      "buy_elg": 2838.9,
+      "sell_elg": 3215.25
+    },
+    {
+      "code": "601012",
+      "name": "",
+      "main_force_in": -26966.9,
+      "buy_elg": 51207.76,
+      "sell_elg": 60108.62
+    },
+    {
+      "code": "601198",
+      "name": "",
+      "main_force_in": 5566.09,
+      "buy_elg": 3077.27,
+      "sell_elg": 7014.9
+    },
+    {
+      "code": "600316",
+      "name": "",
+      "main_force_in": 2585.58,
+      "buy_elg": 986.03,
+      "sell_elg": 706.95
+    },
+    {
+      "code": "600779",
+      "name": "",
+      "main_force_in": 661.81,
+      "buy_elg": 0.0,
+      "sell_elg": 153.64
+    },
+    {
+      "code": "002368",
+      "name": "",
+      "main_force_in": 268.85,
+      "buy_elg": 110.49,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "002600",
+      "name": "",
+      "main_force_in": 924.35,
+      "buy_elg": 11287.91,
+      "sell_elg": 9837.78
+    },
+    {
+      "code": "601339",
+      "name": "",
+      "main_force_in": 244.87,
+      "buy_elg": 140.9,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "600309",
+      "name": "",
+      "main_force_in": -15707.68,
+      "buy_elg": 16257.17,
+      "sell_elg": 13904.84
+    },
+    {
+      "code": "600426",
+      "name": "",
+      "main_force_in": -7386.89,
+      "buy_elg": 4104.69,
+      "sell_elg": 3849.59
+    },
+    {
+      "code": "000402",
+      "name": "",
+      "main_force_in": 609.99,
+      "buy_elg": 99.34,
+      "sell_elg": 339.96
+    },
+    {
+      "code": "601988",
+      "name": "",
+      "main_force_in": 29267.57,
+      "buy_elg": 25762.49,
+      "sell_elg": 25426.42
+    },
+    {
+      "code": "000776",
+      "name": "",
+      "main_force_in": 1959.89,
+      "buy_elg": 6237.05,
+      "sell_elg": 9247.22
+    },
+    {
+      "code": "002714",
+      "name": "",
+      "main_force_in": -57287.54,
+      "buy_elg": 64942.36,
+      "sell_elg": 91562.69
+    },
+    {
+      "code": "002065",
+      "name": "",
+      "main_force_in": 2549.78,
+      "buy_elg": 1919.96,
+      "sell_elg": 1731.05
+    },
+    {
+      "code": "000002",
+      "name": "",
+      "main_force_in": 3805.35,
+      "buy_elg": 5115.31,
+      "sell_elg": 6384.55
+    },
+    {
+      "code": "600702",
+      "name": "",
+      "main_force_in": 882.03,
+      "buy_elg": 329.15,
+      "sell_elg": 721.57
+    },
+    {
+      "code": "002371",
+      "name": "",
+      "main_force_in": -20905.56,
+      "buy_elg": 26315.15,
+      "sell_elg": 30156.85
+    },
+    {
+      "code": "600873",
+      "name": "",
+      "main_force_in": -2230.16,
+      "buy_elg": 3801.87,
+      "sell_elg": 2741.97
+    },
+    {
+      "code": "300142",
+      "name": "",
+      "main_force_in": 1832.55,
+      "buy_elg": 3273.3,
+      "sell_elg": 3293.84
+    },
+    {
+      "code": "600048",
+      "name": "",
+      "main_force_in": -2060.53,
+      "buy_elg": 4410.9,
+      "sell_elg": 3829.46
+    },
+    {
+      "code": "600570",
+      "name": "",
+      "main_force_in": -587.45,
+      "buy_elg": 1881.78,
+      "sell_elg": 1289.92
+    },
+    {
+      "code": "002230",
+      "name": "",
+      "main_force_in": -7503.74,
+      "buy_elg": 23761.4,
+      "sell_elg": 25553.8
+    },
+    {
+      "code": "002459",
+      "name": "",
+      "main_force_in": -13396.7,
+      "buy_elg": 17390.4,
+      "sell_elg": 21762.8
+    },
+    {
+      "code": "000651",
+      "name": "",
+      "main_force_in": 3294.78,
+      "buy_elg": 8499.1,
+      "sell_elg": 8371.87
+    },
+    {
+      "code": "300115",
+      "name": "",
+      "main_force_in": -7686.13,
+      "buy_elg": 13630.87,
+      "sell_elg": 15784.79
+    },
+    {
+      "code": "601166",
+      "name": "",
+      "main_force_in": 26409.67,
+      "buy_elg": 11834.71,
+      "sell_elg": 11441.78
+    },
+    {
+      "code": "600325",
+      "name": "",
+      "main_force_in": 668.99,
+      "buy_elg": 322.36,
+      "sell_elg": 347.9
+    },
+    {
+      "code": "601628",
+      "name": "",
+      "main_force_in": 1475.35,
+      "buy_elg": 3180.06,
+      "sell_elg": 5650.46
+    },
+    {
+      "code": "002036",
+      "name": "",
+      "main_force_in": -1349.32,
+      "buy_elg": 787.41,
+      "sell_elg": 2567.03
+    },
+    {
+      "code": "600438",
+      "name": "",
+      "main_force_in": -9305.86,
+      "buy_elg": 4627.86,
+      "sell_elg": 6846.93
+    },
+    {
+      "code": "000538",
+      "name": "",
+      "main_force_in": 2732.71,
+      "buy_elg": 1509.46,
+      "sell_elg": 1485.12
+    },
+    {
+      "code": "300203",
+      "name": "",
+      "main_force_in": 2930.3,
+      "buy_elg": 2652.07,
+      "sell_elg": 4405.59
+    },
+    {
+      "code": "601328",
+      "name": "",
+      "main_force_in": 17326.16,
+      "buy_elg": 15222.69,
+      "sell_elg": 16321.58
+    },
+    {
+      "code": "600732",
+      "name": "",
+      "main_force_in": 27284.15,
+      "buy_elg": 15434.18,
+      "sell_elg": 11420.22
+    },
+    {
+      "code": "601336",
+      "name": "",
+      "main_force_in": -7327.17,
+      "buy_elg": 12180.19,
+      "sell_elg": 11091.38
+    },
+    {
+      "code": "600998",
+      "name": "",
+      "main_force_in": 2050.49,
+      "buy_elg": 624.34,
+      "sell_elg": 1416.0
+    },
+    {
+      "code": "600597",
+      "name": "",
+      "main_force_in": 505.66,
+      "buy_elg": 134.53,
+      "sell_elg": 370.3
+    },
+    {
+      "code": "000807",
+      "name": "",
+      "main_force_in": -7086.17,
+      "buy_elg": 20475.55,
+      "sell_elg": 16244.49
+    },
+    {
+      "code": "002179",
+      "name": "",
+      "main_force_in": -3842.34,
+      "buy_elg": 6402.47,
+      "sell_elg": 11906.25
+    },
+    {
+      "code": "688396",
+      "name": "",
+      "main_force_in": -1339.26,
+      "buy_elg": 3361.9,
+      "sell_elg": 4365.38
+    },
+    {
+      "code": "002527",
+      "name": "",
+      "main_force_in": -412.75,
+      "buy_elg": 349.6,
+      "sell_elg": 560.55
+    },
+    {
+      "code": "600845",
+      "name": "",
+      "main_force_in": -3988.67,
+      "buy_elg": 1840.79,
+      "sell_elg": 876.71
+    },
+    {
+      "code": "000963",
+      "name": "",
+      "main_force_in": 418.87,
+      "buy_elg": 1439.24,
+      "sell_elg": 1947.63
+    },
+    {
+      "code": "002242",
+      "name": "",
+      "main_force_in": 1527.34,
+      "buy_elg": 108.49,
+      "sell_elg": 353.88
+    },
+    {
+      "code": "603198",
+      "name": "",
+      "main_force_in": 812.6,
+      "buy_elg": 0.0,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "300170",
+      "name": "",
+      "main_force_in": -11399.32,
+      "buy_elg": 5341.97,
+      "sell_elg": 9098.95
+    },
+    {
+      "code": "603196",
+      "name": "",
+      "main_force_in": 1750.73,
+      "buy_elg": 148.01,
+      "sell_elg": 682.13
+    },
+    {
+      "code": "300015",
+      "name": "",
+      "main_force_in": -37.49,
+      "buy_elg": 1611.64,
+      "sell_elg": 3841.98
+    },
+    {
+      "code": "600150",
+      "name": "",
+      "main_force_in": -181.81,
+      "buy_elg": 26353.25,
+      "sell_elg": 31620.57
+    },
+    {
+      "code": "601375",
+      "name": "",
+      "main_force_in": 2987.19,
+      "buy_elg": 111.44,
+      "sell_elg": 456.09
+    },
+    {
+      "code": "300782",
+      "name": "",
+      "main_force_in": 4674.85,
+      "buy_elg": 30800.05,
+      "sell_elg": 32780.1
+    },
+    {
+      "code": "002164",
+      "name": "",
+      "main_force_in": 1140.56,
+      "buy_elg": 574.99,
+      "sell_elg": 724.28
+    },
+    {
+      "code": "600410",
+      "name": "",
+      "main_force_in": 34833.54,
+      "buy_elg": 12591.97,
+      "sell_elg": 13759.81
+    },
+    {
+      "code": "002011",
+      "name": "",
+      "main_force_in": -833.75,
+      "buy_elg": 1440.5,
+      "sell_elg": 1515.8
+    },
+    {
+      "code": "300529",
+      "name": "",
+      "main_force_in": 744.24,
+      "buy_elg": 336.92,
+      "sell_elg": 516.71
+    },
+    {
+      "code": "600000",
+      "name": "",
+      "main_force_in": 1529.34,
+      "buy_elg": 4013.38,
+      "sell_elg": 4905.68
+    },
+    {
+      "code": "300433",
+      "name": "",
+      "main_force_in": -11193.75,
+      "buy_elg": 8095.35,
+      "sell_elg": 10468.9
+    },
+    {
+      "code": "002508",
+      "name": "",
+      "main_force_in": 2354.89,
+      "buy_elg": 128.28,
+      "sell_elg": 403.89
+    },
+    {
+      "code": "688520",
+      "name": "",
+      "main_force_in": 1144.75,
+      "buy_elg": 234.09,
+      "sell_elg": 173.99
+    },
+    {
+      "code": "601899",
+      "name": "",
+      "main_force_in": 63614.7,
+      "buy_elg": 205839.34,
+      "sell_elg": 194571.12
+    },
+    {
+      "code": "300394",
+      "name": "",
+      "main_force_in": -26298.08,
+      "buy_elg": 184235.85,
+      "sell_elg": 183445.67
+    },
+    {
+      "code": "000858",
+      "name": "",
+      "main_force_in": -1180.89,
+      "buy_elg": 19648.91,
+      "sell_elg": 17719.22
+    },
+    {
+      "code": "002646",
+      "name": "",
+      "main_force_in": 870.28,
+      "buy_elg": 0.0,
+      "sell_elg": 106.51
+    },
+    {
+      "code": "300760",
+      "name": "",
+      "main_force_in": -1965.95,
+      "buy_elg": 11619.58,
+      "sell_elg": 9937.52
+    },
+    {
+      "code": "002466",
+      "name": "",
+      "main_force_in": 26802.16,
+      "buy_elg": 46246.39,
+      "sell_elg": 29105.67
+    },
+    {
+      "code": "600999",
+      "name": "",
+      "main_force_in": 581.74,
+      "buy_elg": 2918.81,
+      "sell_elg": 2046.31
+    },
+    {
+      "code": "300383",
+      "name": "",
+      "main_force_in": -5332.95,
+      "buy_elg": 33565.14,
+      "sell_elg": 28800.48
+    },
+    {
+      "code": "001979",
+      "name": "",
+      "main_force_in": 835.07,
+      "buy_elg": 2908.8,
+      "sell_elg": 1714.86
+    },
+    {
+      "code": "002405",
+      "name": "",
+      "main_force_in": -3073.9,
+      "buy_elg": 10858.62,
+      "sell_elg": 8997.93
+    },
+    {
+      "code": "601138",
+      "name": "",
+      "main_force_in": 93430.77,
+      "buy_elg": 47744.12,
+      "sell_elg": 55487.1
+    },
+    {
+      "code": "300122",
+      "name": "",
+      "main_force_in": 1152.2,
+      "buy_elg": 869.94,
+      "sell_elg": 976.65
+    },
+    {
+      "code": "002747",
+      "name": "",
+      "main_force_in": -280.06,
+      "buy_elg": 438.67,
+      "sell_elg": 862.37
+    },
+    {
+      "code": "600690",
+      "name": "",
+      "main_force_in": -1051.91,
+      "buy_elg": 5615.79,
+      "sell_elg": 4019.77
+    },
+    {
+      "code": "002281",
+      "name": "",
+      "main_force_in": -18881.7,
+      "buy_elg": 43187.15,
+      "sell_elg": 51252.56
+    },
+    {
+      "code": "600489",
+      "name": "",
+      "main_force_in": -16637.03,
+      "buy_elg": 24275.82,
+      "sell_elg": 17508.73
+    },
+    {
+      "code": "002056",
+      "name": "",
+      "main_force_in": -3965.36,
+      "buy_elg": 3792.13,
+      "sell_elg": 10176.01
+    },
+    {
+      "code": "603881",
+      "name": "",
+      "main_force_in": -8704.01,
+      "buy_elg": 12697.6,
+      "sell_elg": 6358.6
+    },
+    {
+      "code": "300661",
+      "name": "",
+      "main_force_in": -10926.96,
+      "buy_elg": 9931.35,
+      "sell_elg": 9266.62
+    },
+    {
+      "code": "600104",
+      "name": "",
+      "main_force_in": -1215.83,
+      "buy_elg": 5462.33,
+      "sell_elg": 2785.35
+    },
+    {
+      "code": "300014",
+      "name": "",
+      "main_force_in": -19392.21,
+      "buy_elg": 99147.97,
+      "sell_elg": 119235.62
+    },
+    {
+      "code": "002156",
+      "name": "",
+      "main_force_in": 4561.02,
+      "buy_elg": 19671.82,
+      "sell_elg": 24954.35
+    },
+    {
+      "code": "300088",
+      "name": "",
+      "main_force_in": -3842.0,
+      "buy_elg": 2491.39,
+      "sell_elg": 886.34
+    },
+    {
+      "code": "300212",
+      "name": "",
+      "main_force_in": -751.7,
+      "buy_elg": 830.08,
+      "sell_elg": 642.77
+    },
+    {
+      "code": "000768",
+      "name": "",
+      "main_force_in": -4771.53,
+      "buy_elg": 5919.0,
+      "sell_elg": 4743.19
+    },
+    {
+      "code": "000975",
+      "name": "",
+      "main_force_in": -3192.14,
+      "buy_elg": 6721.07,
+      "sell_elg": 5778.4
+    },
+    {
+      "code": "600893",
+      "name": "",
+      "main_force_in": -6122.37,
+      "buy_elg": 19061.0,
+      "sell_elg": 13514.31
+    },
+    {
+      "code": "300118",
+      "name": "",
+      "main_force_in": -33494.7,
+      "buy_elg": 19496.9,
+      "sell_elg": 26878.99
+    },
+    {
+      "code": "688363",
+      "name": "",
+      "main_force_in": -612.77,
+      "buy_elg": 145.93,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "603666",
+      "name": "",
+      "main_force_in": -559.85,
+      "buy_elg": 135.0,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "002241",
+      "name": "",
+      "main_force_in": -15276.28,
+      "buy_elg": 19546.46,
+      "sell_elg": 31106.03
+    },
+    {
+      "code": "000550",
+      "name": "",
+      "main_force_in": 586.42,
+      "buy_elg": 0.0,
+      "sell_elg": 0.0
+    },
+    {
+      "code": "002025",
+      "name": "",
+      "main_force_in": 8163.36,
+      "buy_elg": 77146.21,
+      "sell_elg": 48702.15
+    },
+    {
+      "code": "002194",
+      "name": "",
+      "main_force_in": 454.9,
+      "buy_elg": 885.51,
+      "sell_elg": 2840.19
+    },
+    {
+      "code": "300482",
+      "name": "",
+      "main_force_in": 813.13,
+      "buy_elg": 310.96,
+      "sell_elg": 166.68
+    },
+    {
+      "code": "601360",
+      "name": "",
+      "main_force_in": 442.14,
+      "buy_elg": 6809.16,
+      "sell_elg": 4284.9
+    }
+  ]
+}

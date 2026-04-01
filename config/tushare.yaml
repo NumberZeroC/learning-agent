@@ -1,0 +1,40 @@
+# ============================================
+# Tushare Pro 公共配置文件
+# ============================================
+# 说明：此文件存储 Tushare Pro Token，供所有项目共享使用
+# 位置：/home/admin/.openclaw/workspace/config/tushare.yaml
+# 权限：建议设置为 600 (仅所有者可读写)
+# ============================================
+
+tushare:
+  # Tushare Pro Token
+  token: "0b8ed09db7d7e733c133a04fad31fc34ff4938afd57f7766cfc6a3f2"
+  
+  # API 配置
+  api:
+    base_url: "http://api.tushare.pro"
+    timeout: 10  # 请求超时（秒）
+  
+  # 积分信息（可选）
+  account:
+    points: 2000  # 当前积分
+    level: "高级用户"
+  
+  # 缓存配置
+  cache:
+    enabled: true
+    ttl_seconds: 600  # 缓存有效期 10 分钟
+    dir: "/home/admin/.openclaw/workspace/data/cache/tushare"
+
+# ============================================
+# 使用示例
+# ============================================
+# Python:
+#   import yaml
+#   with open('/home/admin/.openclaw/workspace/config/tushare.yaml') as f:
+#       config = yaml.safe_load(f)
+#       token = config['tushare']['token']
+#
+# Shell:
+#   export TUSHARE_TOKEN=$(python3 -c "import yaml; print(yaml.safe_load(open('/home/admin/.openclaw/workspace/config/tushare.yaml'))['tushare']['token'])")
+# ============================================

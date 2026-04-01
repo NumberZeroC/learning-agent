@@ -1,0 +1,221 @@
+[2026-04-01 20:30:01] ==========================================
+[2026-04-01 20:30:01] 晚间市场分析开始
+[2026-04-01 20:30:01] ==========================================
+[2026-04-01 20:30:01] 🌙 执行晚间市场综合分析...
+[AI 新闻监控] ✅ 模块已加载
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 300s)
+[资金流] ✅ Tushare Pro 已连接 - 主数据源 (2000 积分)
+[资金流]    可用接口：moneyflow, top_list, top_inst, margin, margin_detail, stk_holdertrade
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+[可靠数据源] ✅ 已初始化
+   缓存目录：data/cache
+   AKShare: ✅
+   Tushare: ✅
+    Requests: ✅
+[可靠数据源] ✅ 已初始化 - 用于大盘指数/股价/资金流
+[AI 新闻监控] ✅ 已初始化 - 用于 AI 行业动态分析
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-04-01 20:30
+======================================================================
+
+
+📊 获取大盘走势...
+
+📊 获取大盘指数数据 (2026-04-01)...
+   ✅ 上证指数: 3948.55 (+1.46%) [AKShare]
+   ✅ 深证成指: 13706.52 (+1.70%) [AKShare]
+   ✅ 创业板指: 3247.52 (+1.96%) [AKShare]
+   ✅ 沪深 300: 4526.07 (+1.71%) [AKShare]
+   ✅ 上证 50: 2878.79 (+1.86%) [AKShare]
+   ✅ 成功获取 5 个指数数据
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 20 条新闻
+[新闻监控] 去重后共 80 条新闻
+[新闻监控] 分析完成，覆盖 6 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：16 条
+   覆盖板块：6 个
+
+💰 分析板块资金流 (Tushare 2000 积分)...
+[资金流] 获取全市场资金流数据...
+[Tushare] 获取龙虎榜 70 只
+[Tushare] 获取机构交易 66 只
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流和行情...
+[资金流] ✅ 成功获取 196/205 只股票资金流和行情
+[资金流] ✅ 获取全市场资金流 262 只
+   半导体: 涨幅 +2.83%, 净流入 20.9万，机构 0.0万
+   人工智能: 涨幅 +1.57%, 净流入 0.6万，机构 0.0万
+   消费电子: 涨幅 +2.63%, 净流入 24.1万，机构 0.0万
+   5G: 涨幅 +1.76%, 净流入 37.1万，机构 0.0万
+   云计算: 涨幅 +1.25%, 净流入 -1.7万，机构 0.0万
+   软件: 涨幅 +2.57%, 净流入 8.6万，机构 0.0万
+   新能源: 涨幅 -0.44%, 净流入 -28.4万，机构 0.0万
+   光伏: 涨幅 +0.82%, 净流入 -12.8万，机构 0.0万
+   锂电: 涨幅 +0.11%, 净流入 -13.3万，机构 0.0万
+   储能: 涨幅 -0.08%, 净流入 -27.3万，机构 0.0万
+   医药生物: 涨幅 +2.69%, 净流入 12.7万，机构 0.0万
+   创新药: 涨幅 +5.08%, 净流入 15.9万，机构 0.0万
+   医疗器械: 涨幅 +1.71%, 净流入 2.1万，机构 0.0万
+   白酒: 涨幅 +1.68%, 净流入 7.1万，机构 0.0万
+   食品饮料: 涨幅 +1.03%, 净流入 3.5万，机构 0.0万
+   家电: 涨幅 +2.10%, 净流入 5.4万，机构 0.0万
+   券商: 涨幅 +1.41%, 净流入 8.4万，机构 0.0万
+   银行: 涨幅 -0.12%, 净流入 -8.3万，机构 0.0万
+   保险: 涨幅 +1.29%, 净流入 2.6万，机构 0.0万
+   房地产: 涨幅 +0.47%, 净流入 -0.7万，机构 0.0万
+   化工: 涨幅 +0.45%, 净流入 -0.4万，机构 0.0万
+   有色: 涨幅 +2.37%, 净流入 7.0万，机构 0.0万
+   军工: 涨幅 +0.77%, 净流入 -2.7万，机构 0.0万
+   机器人: 涨幅 +1.43%, 净流入 0.6万，机构 0.0万
+   汽车: 涨幅 +1.67%, 净流入 -8.0万，机构 0.0万
+
+   板块涨幅 TOP5:
+   1. 创新药: +5.08% (净流入 15.9万)
+   2. 半导体: +2.83% (净流入 20.9万)
+   3. 医药生物: +2.69% (净流入 12.7万)
+   4. 消费电子: +2.63% (净流入 24.1万)
+   5. 软件: +2.57% (净流入 8.6万)
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 汽车: 🟡 中性 (得分：50.5)
+   2. 人工智能: 🟢 谨慎 (得分：17.2)
+   3. 医药生物: 🟢 谨慎 (得分：11.5)
+   4. 银行: 🟢 谨慎 (得分：4.7)
+   5. 新能源: 🟢 谨慎 (得分：0.0)
+
+🤖 获取 AI 行业新闻...
+[The Verge AI] 📡 获取新闻中...
+[TechCrunch AI] 📡 获取新闻中...
+[Anthropic News] 📡 获取新闻中...
+[Anthropic News] ✅ 获取 3 条
+[机器之心] 📡 获取新闻中...
+[量子位] 📡 获取新闻中...
+[量子位] ✅ 获取 6 条
+[Hacker News AI] 📡 获取新闻中...
+[Hacker News AI] ❌ 错误：HTTPSConnectionPool(host='news.ycombinator.com', port=443): Max retries exceeded with url: /front (Caused by NewConnectionError("HTTPSConnection(host='news.ycombinator.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Reddit ML] 📡 获取新闻中...
+[Reddit ML] ❌ 错误：HTTPSConnectionPool(host='www.reddit.com', port=443): Max retries exceeded with url: /r/MachineLearning/ (Caused by NewConnectionError("HTTPSConnection(host='www.reddit.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Import AI] 📡 获取新闻中...
+   ✅ 获取 9 条 AI 新闻
+   📊 情感得分：55.6 (🟡 neutral)
+
+📝 生成晚间总结报告...
+
+💰 获取龙虎榜数据...
+   获取到 262 只股票
+   龙虎榜股票：66 只
+   报告已保存：data/reports/evening_summary_2026-04-01.md
+   数据已保存：data/reports/evening_summary_2026-04-01.json
+📸 数据快照已保存：data/reports/evening_data_snapshot_2026-04-01_203115.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-04-01.md
+🤖 AI 新闻：9 条，情感得分：55.6
+[2026-04-01 20:31:16] ✅ 晚间分析完成
+[2026-04-01 20:31:16] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-04-01 20:31
+==================================================
+
+NOTIFICATION_READY
+TYPE: evening
+TITLE: 晚间市场总结
+MESSAGE: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3948.55 (+1.46%)
+
+要点：
+• 热点板块：创新药、半导体、医药生物
+• 资金流入第 1：创新药 (15.9万)
+
+📄 报告：`./data/reports/evening_summary_2026-04-01.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+🌙 *晚间市场总结* 已完成
+
+📌 上证：3948.55 (+1.46%)
+
+要点：
+• 热点板块：创新药、半导体、医药生物
+• 资金流入第 1：创新药 (15.9万)
+
+📄 报告：`./data/reports/evening_summary_2026-04-01.md`
+
+_投资有风险，决策需谨慎_
+📬 正在发送 QQ 通知...
+📬 准备发送 QQ 消息...
+   内容：🌙 *晚间市场总结* 已完成
+
+📌 上证：3948.55 (+1.46%)
+
+要点：
+• 热点板块：...
+✅ QQ 消息发送成功
+   [qqbot-channel-api] Registered QQ channel API proxy tool
+[qqbot-remind] Registered QQBot remind tool
+[qqbot] resolveAllowFrom: accountId=undefined, allowFrom=["*"]
+[qqbot:channel] sendText called — accountId=undefined, to=qqbot:c2c:6BD7A1BCF3F92369D0580647287C0D52, replyToId=undefined, text.length=155
+[qqbot:channel] sendText text preview: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3948.55 (+1.46%)
+
+要点：
+• 热点板块：创新药、半导体、医药生物
+• 资金流入第 1：创新药 (15.9万)
+
+📄 报告：`./dat...
+[qqbot:channel] sendText resolved account: id=default, appId=1903640780, enabled=true
+[qqbot] sendText ctx: {
+  "to": "qqbot:c2c:6BD7A1BCF3F92369D0580647287C0D52",
+  "text": "🌙 *晚间市场总结* 已完成\n\n📌 上证：3948.55 (+1.46%)\n\n要点：\n• 热点板",
+  "accountId": "default"
+}
+[qqbot] sendText: 发送主动消息到 qqbot:c2c:6BD7A1BCF3F92369D0580647287C0D52, 内容长度: 155
+[qqbot-api:1903640780] >>> POST https://bots.qq.com/app/getAppAccessToken
+[qqbot-api:1903640780] <<< Status: 200 OK | TraceId: f666739738451a1d2c46b67320236f53
+[qqbot-api:1903640780] <<< Body: {"access_token": "***","expires_in":"137"}
+[qqbot-api:1903640780] Token cached, expires at: 2026-04-01T12:33:45.158Z
+[2026-04-01T12:31:28.158Z] [qqbot] parseTarget: input=qqbot:c2c:6BD7A1BCF3F92369D0580647287C0D52
+[2026-04-01T12:31:28.158Z] [qqbot] parseTarget: c2c target, user ID=6BD7A1BCF3F92369D0580647287C0D52
+[qqbot] sendText target: {"type":"c2c","id":"6BD7A1BCF3F92369D0580647287C0D52"}
+[qqbot-api] >>> POST https://api.sgroup.qq.com/v2/users/6BD7A1BCF3F92369D0580647287C0D52/messages (timeout: 30000ms)
+[qqbot-api] >>> Body: {"markdown":{"content":"🌙 *晚间市场总结* 已完成\n\n📌 上证：3948.55 (+1.46%)\n\n要点：\n• 热点板块：创新药、半导体、医药生物\n• 资金流入第 1：创新药 (15.9万)\n\n📄 报告：`./data/reports/evening_summary_2026-04-01.md`\n\n_投资有风险，决策需谨慎_"},"msg_type":2}
+[qqbot-api] <<< Status: 200 OK | TraceId: 8950e13c9507592441ad76b47e33a8dd
+[qqbot-api] <<< Body: {"id":"ROBOT1.0_FsTKzFFld54oX1y5ou4C4ZkdBFQUHtOYelUQGHVMtelpHV6-9fppnnTOIwyEKffozAIHj5z02SKBxPUpkxFtPQ!!","timestamp":"2026-04-01T20:31:28+08:00","ext_info":{"ref_idx":"REFIDX_Qay8hCJ/iYWd2rwQ26d4Ng=="}}
+[qqbot:channel] sendText result: messageId=ROBOT1.0_FsTKzFFld54oX1y5ou4C4ZkdBFQUHtOYelUQGHVMtelpHV6-9fppnnTOIwyEKffozAIHj5z02SKBxPUpkxFtPQ!!, error=none
+✅ Sent via QQ Bot. Message ID: ROBOT1.0_FsTKzFFld54oX1y5ou4C4ZkdBFQUHtOYelUQGHVMtelpHV6-9fppnnTOIwyEKffozAIHj5z02SKBxPUpkxFtPQ!!
+✅ 通知已实时发送到 QQ
+[2026-04-01 20:31:28] ==========================================
+[2026-04-01 20:31:28] 晚间分析结束
+[2026-04-01 20:31:28] ==========================================

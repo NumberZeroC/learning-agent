@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+
+{% block title %}报告列表 - Stock-Agent 监控平台{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">
+    <i class="bi bi-file-earmark-text"></i> 报告列表
+</h2>
+
+<!-- 报告类型筛选 -->
+<div class="card mb-4">
+    <div class="card-body">
+        <ul class="nav nav-pills" id="reportTypeFilter">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" data-type="all">全部</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-type="morning">早盘分析</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-type="evening">晚间分析</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-type="monitor">持仓监控</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- 刷新按钮 -->
+<div class="mb-3">
+    <button class="btn btn-primary" onclick="loadReports()">
+        <i class="bi bi-arrow-clockwise"></i> 刷新
+    </button>
+    <span id="lastUpdate" class="ms-2 text-muted"></span>
+</div>
+
+<!-- 三类报告展示 -->
+<div id="reportsByType" style="display: none;">
+    <!-- 早盘分析 -->
+    <div class="card mb-4">
+        <div class="card-header bg-warning text-dark">
+            <i class="bi bi-sunrise"></i> 早盘分析
+        </div>
+        <div class="card-body">
+            <div id="morningReports" class="list-group"></div>
+        </div>
+    </div>
+    
+    <!-- 晚间分析 -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <i class="bi bi-moon-stars"></i> 晚间分析
+        </div>
+        <div class="card-body">
+            <div id="eveningReports" class="list-group"></div>
+        </div>
+    </div>
+    
+    <!-- 持仓监控 -->
+    <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <i class="bi bi-eye"></i> 持仓监控
+        </div>
+        <div class="card-body">
+            <div id="monitorReports" class="list-group"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 报告列表（默认视图） -->
+<div class="card" id="allReportsCard">
+    <div class="card-header">
+        <i class="bi bi-file-earmark-text"></i> 最新报告
+    </div>
+    <div class="card-body">
+        <div id="reportsList" class="list-group">
+            <div class="text-center py-4">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">加载中...</span>
+                </div>
+                <p class="mt-2 text-muted">正在加载报告...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentType = 'all';
+
+// 加载报告列表
+async function loadReports() {
+    const lastUpdate = document.getElementById('lastUpdate');
+    
+    try {
+        const url = currentType === 'all' 
+            ? '/api/v1/reports' 
+            : `/api/v1/reports?type=${currentType}`;
+        
+        const response = await fetch(url);
+        const result = await response.json();
+        
+        if (result.code === 200) {
+            // 如果是"全部"类型，按分类展示
+            if (currentType === 'all') {
+                renderReportsByType(result.data);
+            } else {
+                renderSingleList(result.data);
+            }
+        }
+        
+        // 更新最后更新时间
+        const now = new Date();
+        lastUpdate.textContent = `最后更新：${now.toLocaleTimeString('zh-CN')}`;
+        
+    } catch (error) {
+        console.error('加载报告失败:', error);
+        if (currentType === 'all') {
+            document.getElementById('reportsByType').innerHTML = `
+                <div class="alert alert-danger">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    加载报告失败：${error.message}
+                </div>
+            `;
+        } else {
+            document.getElementById('reportsList').innerHTML = `
+                <div class="alert alert-danger">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    加载报告失败：${error.message}
+                </div>
+            `;
+        }
+    }
+}
+
+// 按类型分组渲染报告
+function renderReportsByType(reports) {
+    const morningReports = reports.filter(r => r.type === 'morning' || (r.filename && r.filename.includes('morning')));
+    const eveningReports = reports.filter(r => r.type === 'evening' || (r.filename && r.filename.includes('evening')));
+    const monitorReports = reports.filter(r => r.type === 'monitor' || (r.filename && r.filename.includes('monitor')));
+    
+    // 显示分类视图，隐藏单一列表视图
+    document.getElementById('reportsByType').style.display = 'block';
+    document.getElementById('allReportsCard').style.display = 'none';
+    
+    // 渲染各类报告
+    renderReportSection('morningReports', morningReports);
+    renderReportSection('eveningReports', eveningReports);
+    renderReportSection('monitorReports', monitorReports);
+}
+
+// 渲染单个列表（筛选模式）
+function renderSingleList(reports) {
+    const container = document.getElementById('reportsList');
+    
+    // 显示单一列表视图，隐藏分类视图
+    document.getElementById('reportsByType').style.display = 'none';
+    document.getElementById('allReportsCard').style.display = 'block';
+    
+    if (reports.length > 0) {
+        let html = '';
+        reports.forEach(report => {
+            const date = new Date(report.created_at);
+            const dateStr = date.toLocaleString('zh-CN', { 
+                year: 'numeric', 
+                month: '2-digit', 
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            // 提取文件名（去掉路径）
+            const filename = report.filename || report.path.replace('/data/reports/', '').replace('/data/reports/monitor/', '');
+            
+            html += `
+                <a href="/read/${filename}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">
+                            <i class="bi ${report.icon}"></i>
+                            ${report.title}
+                        </h5>
+                        <small class="text-muted">${dateStr}</small>
+                    </div>
+                    <p class="mb-1">${report.description}</p>
+                    <small class="text-muted">${formatFileSize(report.size)}</small>
+                </a>
+            `;
+        });
+        container.innerHTML = html;
+    } else {
+        container.innerHTML = `
+            <div class="text-center py-4 text-muted">
+                <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+                <p class="mt-2">暂无报告</p>
+            </div>
+        `;
+    }
+}
+
+// 渲染报告分区
+function renderReportSection(containerId, reports) {
+    const container = document.getElementById(containerId);
+    
+    if (reports.length > 0) {
+        let html = '';
+        reports.forEach(report => {
+            const date = new Date(report.created_at);
+            const dateStr = date.toLocaleDateString('zh-CN', { 
+                month: '2-digit', 
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            // 提取文件名（去掉路径）
+            const filename = report.filename || report.path.replace('/data/reports/', '').replace('/data/reports/monitor/', '');
+            
+            html += `
+                <a href="/read/${filename}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1">
+                                <i class="bi ${report.icon}"></i>
+                                ${report.title}
+                            </h6>
+                            <small class="text-muted">${report.description}</small>
+                        </div>
+                        <div class="text-end">
+                            <small class="text-muted d-block">${dateStr}</small>
+                            <small class="text-muted">${formatFileSize(report.size)}</small>
+                        </div>
+                    </div>
+                </a>
+            `;
+        });
+        container.innerHTML = html;
+    } else {
+        container.innerHTML = `
+            <div class="text-center py-3 text-muted">
+                <i class="bi bi-inbox"></i> 暂无报告
+            </div>
+        `;
+    }
+}
+
+// 格式化文件大小
+function formatFileSize(bytes) {
+    if (!bytes) return '';
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+// 类型筛选
+document.getElementById('reportTypeFilter').addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+        e.preventDefault();
+        
+        // 更新激活状态
+        document.querySelectorAll('#reportTypeFilter .nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        
+        // 更新类型并加载
+        currentType = e.target.dataset.type;
+        loadReports();
+    }
+});
+
+// 页面加载时获取报告
+loadReports();
+
+// 每 30 秒自动刷新
+setInterval(loadReports, 30000);
+
+// 添加缓存 bust 参数
+const originalFetch = window.fetch;
+window.fetch = function(url, options) {
+    if (url.startsWith('/api/')) {
+        const separator = url.includes('?') ? '&' : '?';
+        url = `${url}${separator}_t=${Date.now()}`;
+    }
+    return originalFetch.call(this, url, options);
+};
+</script>
+{% endblock %}

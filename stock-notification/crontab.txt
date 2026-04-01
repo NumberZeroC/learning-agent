@@ -1,0 +1,69 @@
+# Stock-Agent Crontab 配置文件
+# 使用方法：
+#   crontab /home/admin/.openclaw/workspace/stock-notification/crontab.txt
+#
+# 查看当前 crontab: crontab -l
+# 编辑 crontab: crontab -e
+# 删除 crontab: crontab -r
+
+# 环境变量
+SHELL=/bin/bash
+PATH=/home/admin/.local/share/pnpm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+LANG=zh_CN.UTF-8
+
+# ============================================
+# Stock-Agent 定时任务
+# ============================================
+
+# 每个交易日 9:30 执行早盘推荐 + 监控（周一到周五）
+30 9 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_morning.sh >> /home/admin/.openclaw/workspace/stock-notification/logs/cron_morning.log 2>&1
+
+# 交易时间每 30 分钟监控一次持仓（周一到周五）
+# 上午：9:35, 10:00, 10:30, 11:00, 11:30（9:35 避免与早盘推荐冲突）
+35 9 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+0 10 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+30 10 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+0 11 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+30 11 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+
+# 下午：13:00, 13:30, 14:00, 14:30, 15:00
+0 13 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+30 13 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+0 14 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+30 14 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+0 15 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_monitor.sh
+
+# ============================================
+# 日志清理任务
+# ============================================
+
+# 每天早上 8:00 清理 10 天前的日志（每天执行）
+0 8 * * * /home/admin/.openclaw/workspace/stock-notification/cleanup_logs.sh >> /home/admin/.openclaw/workspace/stock-notification/logs/cron_cleanup.log 2>&1
+
+# ============================================
+# 晚间新闻分析任务
+# ============================================
+
+# 每天晚上 20:00 执行 AI 新闻推送（每天）
+0 20 * * * /home/admin/.openclaw/workspace/stock-notification/scripts/ai_news_daily.sh >> /home/admin/.openclaw/workspace/stock-notification/logs/ai_news_cron.log 2>&1
+
+# 每天晚上 20:30 执行晚间新闻综合分析（周一到周五）
+# 依赖 AI 新闻数据，所以在 AI 新闻推送后 30 分钟执行
+30 20 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/scheduled_evening.sh >> /home/admin/.openclaw/workspace/stock-notification/logs/cron_evening.log 2>&1
+
+# ============================================
+# Web API 测试任务
+# ============================================
+
+# 每天 19:00 执行 Web API 测试（每天）
+0 19 * * * /home/admin/.openclaw/workspace/stock-notification-web/scheduled_test.sh >> /home/admin/.openclaw/workspace/stock-notification-web/logs/cron_test.log 2>&1
+
+# ============================================
+# 可选任务（取消注释启用）
+# ============================================
+
+# 盘后分析（每个交易日 15:30）
+# 30 15 * * 1-5 /home/admin/.openclaw/workspace/stock-notification/recommend.py --once >> /home/admin/.openclaw/workspace/stock-notification/logs/cron_afternoon.log 2>&1
+
+# 周末总结（每周六 10:00）
+# 0 10 * * 6 /home/admin/.openclaw/workspace/stock-notification/recommend.py --report >> /home/admin/.openclaw/workspace/stock-notification/logs/cron_weekend.log 2>&1

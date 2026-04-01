@@ -1,0 +1,1704 @@
+[2026-03-26 09:30:01] ==========================================
+[2026-03-26 09:30:01] 早盘推荐任务开始
+[2026-03-26 09:30:01] ==========================================
+[2026-03-26 09:30:01] 📈 执行早盘推荐分析...
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 300s)
+[资金流] ✅ Tushare Pro 已连接 - 主数据源 (2000 积分)
+[资金流]    可用接口：moneyflow, top_list, top_inst, margin, margin_detail, stk_holdertrade
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用
+======================================================================
+📈 早盘推荐引擎
+======================================================================
+
+======================================================================
+📈 早盘推荐分析 - 2026-03-26 09:30
+======================================================================
+
+
+📋 加载晚间总结报告...
+   ✅ 已加载：2026-03-25 的晚间报告
+
+📰 获取早间新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 18 条新闻
+[新闻监控] 去重后共 75 条新闻
+[新闻监控] 分析完成，覆盖 8 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：17 条
+
+🔥 选择热点板块...
+   选定热点板块：5 个
+   1. 银行 (得分：30.5)
+   2. 消费电子 (得分：30.0)
+   3. 5G (得分：30.0)
+   4. 保险 (得分：30.0)
+   5. 券商 (得分：30.0)
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[Tushare] 获取股票列表 5493 只
+[资金流] 银行: Tushare Pro ✅ 5只
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[Tushare] 资金流获取失败 000807.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600893.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 001979.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300750.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603345.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300271.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600690.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002648.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603881.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000338.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000975.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600150.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601899.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000651.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600741.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002025.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600489.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002156.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600426.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601318.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000100.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000333.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600597.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600887.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300122.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000627.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002126.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002646.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603986.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300088.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000858.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600362.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601169.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300170.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002460.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601601.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688029.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688981.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000002.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600316.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002007.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600325.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600495.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300529.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601688.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300015.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000671.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600498.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300118.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601600.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300212.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002164.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002600.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601138.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000550.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002588.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600260.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600809.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002230.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000063.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002673.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601988.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603369.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002714.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600016.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300115.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002368.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002405.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000568.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002594.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002527.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002242.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002557.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603666.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600845.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300142.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002032.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300024.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600141.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300454.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300308.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300134.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600276.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600383.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600745.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000402.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600036.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002011.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603005.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601136.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300782.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600096.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600873.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600436.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000961.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002446.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600570.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300760.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300433.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300203.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600998.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601939.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300394.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600060.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600983.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[资金流] 消费电子: Tushare Pro ❌ 尝试其他数据源...
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:02,  1.44it/s] 50%|█████     | 2/4 [00:01<00:02,  1.03s/it] 75%|███████▌  | 3/4 [00:05<00:02,  2.40s/it]                                             [资金流] 消费电子: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 消费电子: AKShare ❌ 尝试其他数据源...
+[资金流] 消费电子: 使用本地成分股列表...
+[资金流] 消费电子: 本地列表 ✅ 10只
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[Tushare] 资金流获取失败 002709.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600835.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002216.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601339.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688363.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002747.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300624.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300033.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002384.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002013.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600104.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601689.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002050.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601778.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300383.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300595.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601336.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600850.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688180.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002466.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002241.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300014.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601398.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603960.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000768.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600732.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002610.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000963.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600705.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002129.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002065.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002153.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600765.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601328.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002194.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000738.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600547.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300482.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600048.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600823.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601375.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600837.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603392.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600030.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002036.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002056.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002508.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000776.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600438.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000878.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601360.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600410.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688520.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601628.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002497.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300633.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000625.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300274.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601238.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002179.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002475.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000630.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600584.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600000.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300166.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600309.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601155.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300059.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600588.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600999.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600779.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000538.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600116.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002371.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000799.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002001.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002281.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603882.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600519.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600702.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600352.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300661.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603799.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688266.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688396.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600958.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002459.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002958.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000807.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600893.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 001979.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300750.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603345.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300271.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600690.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002648.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603881.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000338.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000975.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600150.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601899.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000651.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600741.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002025.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600489.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002156.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600426.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601318.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000100.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000333.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600597.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600887.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300122.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000627.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002126.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002646.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603986.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300088.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000858.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600362.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601169.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300170.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002460.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601601.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688029.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688981.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000002.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600316.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002007.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600325.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600495.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300529.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601688.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300015.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000671.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600498.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300118.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601600.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300212.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002164.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002600.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601138.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000550.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002588.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600260.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600809.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002230.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000063.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002673.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601988.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603369.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002714.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600016.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300115.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002368.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002405.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000568.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002594.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002527.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002242.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002557.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603666.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600845.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300142.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002032.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300024.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600141.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300454.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300308.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300134.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600276.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600383.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600745.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000402.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600036.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002011.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603005.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601136.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300782.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600096.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600873.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600436.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000961.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002446.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600570.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300760.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300433.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300203.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600998.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601939.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300394.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600060.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600983.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[资金流] 5G: Tushare Pro ❌ 尝试其他数据源...
+[资金流] 5G: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 5G: AKShare ❌ 尝试其他数据源...
+[资金流] 5G: 使用本地成分股列表...
+[资金流] 5G: 本地列表 ✅ 10只
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[Tushare] 资金流获取失败 002709.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600835.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002216.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601339.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688363.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002747.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300624.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300033.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002384.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002013.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600104.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601689.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002050.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601778.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300383.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300595.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601336.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600850.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688180.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002466.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002241.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300014.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601398.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603960.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000768.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600732.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002610.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000963.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600705.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002129.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002065.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002153.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600765.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601328.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002194.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000738.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600547.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300482.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600048.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600823.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601375.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600837.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603392.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600030.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002036.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002056.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002508.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000776.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600438.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000878.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601360.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600410.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688520.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601628.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002497.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300633.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000625.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300274.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601238.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002179.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002475.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000630.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600584.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600000.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300166.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600309.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601155.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300059.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600588.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600999.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600779.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000538.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600116.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002371.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000799.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002001.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002281.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603882.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600519.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600702.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600352.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300661.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603799.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688266.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688396.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600958.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002459.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002958.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000807.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600893.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 001979.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300750.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603345.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300271.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600690.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002648.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603881.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000338.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000975.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600150.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601899.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000651.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600741.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002025.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600489.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002156.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600426.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601318.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000100.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000333.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600597.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600887.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300122.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000627.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002126.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002646.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603986.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300088.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000858.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600362.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601169.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300170.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002460.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601601.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688029.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688981.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000002.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600316.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002007.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600325.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600495.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300529.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601688.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300015.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000671.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600498.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300118.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601600.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300212.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002164.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002600.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601138.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000550.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002588.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600260.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600809.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002230.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000063.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002673.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601988.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603369.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002714.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600016.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300115.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002368.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002405.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000568.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002594.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002527.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002242.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002557.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603666.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600845.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300142.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002032.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300024.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600141.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300454.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300308.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300134.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600276.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600383.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600745.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000402.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600036.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002011.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603005.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601136.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300782.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600096.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600873.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600436.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000961.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002446.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600570.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300760.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300433.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300203.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600998.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601939.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300394.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600060.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600983.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[资金流] 保险: Tushare Pro ❌ 尝试其他数据源...
+[资金流] 保险: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 保险: AKShare ❌ 尝试其他数据源...
+[资金流] 保险: 使用本地成分股列表...
+[资金流] 保险: 本地列表 ✅ 10只
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[Tushare] 资金流获取失败 002709.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600835.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002216.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601339.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688363.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002747.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300624.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300033.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002384.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002013.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600104.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601689.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002050.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601778.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300383.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300595.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601336.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600850.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688180.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002466.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002241.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300014.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601398.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603960.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000768.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600732.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002610.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000963.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600705.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002129.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002065.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002153.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600765.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601328.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002194.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000738.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600547.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300482.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600048.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600823.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601375.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600837.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603392.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600030.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002036.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002056.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002508.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000776.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600438.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000878.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601360.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600410.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688520.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601628.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002497.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300633.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000625.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300274.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601238.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002179.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002475.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000630.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600584.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600000.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300166.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600309.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601155.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300059.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600588.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600999.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600779.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000538.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600116.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002371.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000799.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002001.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002281.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603882.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600519.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600702.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600352.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300661.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603799.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688266.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688396.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600958.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002459.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002958.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000807.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600893.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 001979.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300750.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603345.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300271.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600690.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002648.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603881.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000338.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000975.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600150.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601899.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000651.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600741.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002025.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600489.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002156.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600426.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601318.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000100.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000333.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600597.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600887.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300122.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000627.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002126.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002646.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603986.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300088.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000858.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600362.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601169.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300170.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002460.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601601.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688029.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688981.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000002.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600316.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002007.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600325.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600495.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300529.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601688.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300015.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000671.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600498.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300118.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601600.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300212.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002164.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002600.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601138.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000550.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002588.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600260.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600809.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002230.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000063.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002673.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601988.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603369.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002714.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600016.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300115.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002368.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002405.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000568.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002594.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002527.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002242.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002557.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603666.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600845.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300142.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002032.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300024.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600141.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300454.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300308.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300134.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600276.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600383.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600745.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000402.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600036.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002011.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603005.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601136.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300782.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600096.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600873.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600436.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000961.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002446.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600570.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300760.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300433.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300203.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600998.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601939.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300394.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600060.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600983.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[Tushare] 资金流获取失败 000686.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000712.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000728.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000750.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000776.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000783.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600030.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600061.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600095.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600109.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[资金流] 券商: Tushare Pro ✅ 10只
+
+🔔 获取竞价数据...
+   📊 分析竞价数据...
+   ✅ 获取 0 只股票竞价数据
+
+   📊 分析 银行 板块龙头...
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[Tushare] 资金流获取失败 002709.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600835.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002216.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601339.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688363.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002747.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300624.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300033.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002384.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002013.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600104.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601689.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002050.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601778.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300383.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300595.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601336.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600850.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688180.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002466.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002241.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300014.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601398.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603960.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000768.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600732.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002610.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000963.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600705.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002129.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002065.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002153.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600765.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601328.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002194.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000738.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600547.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300482.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600048.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600823.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601375.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600837.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603392.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600030.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002036.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002056.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002508.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000776.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600438.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000878.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601360.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600410.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688520.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601628.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002497.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300633.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000625.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300274.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601238.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002179.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002475.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000630.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600584.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600000.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300166.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600309.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601155.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300059.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600588.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600999.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600779.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000538.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600116.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002371.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000799.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002001.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002281.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603882.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600519.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600702.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600352.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300661.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603799.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688266.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688396.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600958.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002459.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002958.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000807.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600893.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 001979.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300750.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603345.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300271.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600690.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002648.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603881.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000338.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000975.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600150.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601899.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000651.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600741.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002025.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600489.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002156.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600426.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601318.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000100.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000333.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600597.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600887.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300122.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000627.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002126.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002646.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603986.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300088.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000858.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600362.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601169.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300170.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002460.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601601.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688029.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688981.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000002.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600316.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002007.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600325.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600495.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300529.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601688.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300015.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000671.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600498.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300118.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601600.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300212.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002164.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002600.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601138.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000550.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002588.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600260.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600809.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002230.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000063.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002673.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601988.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603369.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002714.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600016.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300115.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002368.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002405.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000568.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002594.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002527.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002242.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002557.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603666.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600845.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300142.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002032.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300024.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600141.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300454.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300308.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300134.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600276.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600383.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600745.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000402.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600036.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002011.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603005.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601136.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300782.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600096.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600873.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600436.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000961.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002446.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600570.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300760.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300433.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300203.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600998.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601939.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300394.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600060.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600983.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[资金流] 银行: Tushare Pro (缓存) ✅ 5只
+      1. 平安银行(000001) - 得分：0.0
+      2. 浦发银行(600000) - 得分：0.0
+      3. 华夏银行(600015) - 得分：0.0
+
+   📊 分析 消费电子 板块龙头...
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[Tushare] 资金流获取失败 002709.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600835.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002216.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601339.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688363.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002747.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300624.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300033.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002384.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002013.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600104.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601689.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002050.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601778.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300383.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300595.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601336.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600850.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688180.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002466.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002241.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300014.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601398.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603960.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000768.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600732.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002610.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000963.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600705.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002129.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002065.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002153.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600765.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601328.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002194.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000738.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600547.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300482.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600048.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600823.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601375.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600837.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603392.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600030.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002036.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002056.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002508.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000776.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600438.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000878.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601360.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600410.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688520.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601628.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002497.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300633.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000625.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300274.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601238.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002179.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002475.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000630.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600584.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600000.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300166.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600309.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601155.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300059.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600588.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600999.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600779.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000538.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600116.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002371.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000799.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002001.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002281.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603882.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600519.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600702.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600352.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300661.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603799.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688266.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688396.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600958.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002459.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002958.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000807.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600893.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 001979.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300750.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603345.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300271.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600690.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002648.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603881.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000338.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000975.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600150.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601899.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000651.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600741.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002025.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600489.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002156.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600426.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601318.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000100.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000333.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600597.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600887.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300122.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000627.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002126.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002646.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603986.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300088.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000858.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600362.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601169.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300170.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002460.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[资金流] 消费电子: Tushare Pro ❌ 尝试其他数据源...
+[资金流] 消费电子: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 消费电子: AKShare ❌ 尝试其他数据源...
+[资金流] 消费电子: 使用本地成分股列表...
+[资金流] 消费电子: 本地列表 ✅ 10只
+      1. (002475) - 得分：0.0
+      2. (002241) - 得分：0.0
+      3. (300433) - 得分：0.0
+
+   📊 分析 5G 板块龙头...
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[资金流] 5G: Tushare Pro ❌ 尝试其他数据源...
+[资金流] 5G: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 5G: AKShare ❌ 尝试其他数据源...
+[资金流] 5G: 使用本地成分股列表...
+[资金流] 5G: 本地列表 ✅ 10只
+      1. (000063) - 得分：0.0
+      2. (002792) - 得分：0.0
+      3. (300308) - 得分：0.0
+
+   📊 分析 保险 板块龙头...
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[Tushare] 资金流获取失败 002466.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002241.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300014.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601398.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603960.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000768.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600732.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002610.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000963.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600705.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002129.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002065.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002153.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600765.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601328.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002194.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000738.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600547.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300482.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600048.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600823.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601375.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600837.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603392.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600030.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002036.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002056.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002508.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000776.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600438.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000878.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601360.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600410.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688520.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601628.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002497.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300633.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000625.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300274.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601238.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002179.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002475.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000630.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600584.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600000.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300166.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600309.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601155.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300059.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600588.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600999.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600779.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000538.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600116.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002371.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000799.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002001.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002281.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603882.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600519.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600702.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600352.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300661.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603799.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688266.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688396.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600958.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002459.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002958.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000807.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600893.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 001979.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300750.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603345.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300271.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600690.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002648.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603881.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000338.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000975.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600150.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601899.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000651.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600741.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002025.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600489.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002156.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600426.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601318.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000100.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000333.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600597.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600887.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300122.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000627.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002126.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002646.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603986.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300088.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000858.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600362.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601169.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300170.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002460.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601601.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688029.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688981.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000002.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600316.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002007.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600325.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600495.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300529.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601688.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300015.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000671.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600498.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300118.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601600.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300212.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002164.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002600.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601138.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000550.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002588.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600260.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600809.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002230.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000063.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002673.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601988.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603369.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002714.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600016.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300115.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002368.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002405.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000568.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002594.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002527.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002242.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002557.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603666.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600845.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300142.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002032.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300024.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600141.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300454.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300308.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300134.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600276.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600383.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600745.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000402.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600036.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002011.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603005.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601136.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300782.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600096.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600873.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600436.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000961.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002446.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600570.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300760.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300433.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300203.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600998.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601939.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300394.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600060.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600983.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[资金流] 保险: Tushare Pro ❌ 尝试其他数据源...
+[资金流] 保险: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 保险: AKShare ❌ 尝试其他数据源...
+[资金流] 保险: 使用本地成分股列表...
+[资金流] 保险: 本地列表 ✅ 10只
+      1. (601318) - 得分：0.0
+      2. (601628) - 得分：0.0
+      3. (601601) - 得分：0.0
+
+   📊 分析 券商 板块龙头...
+[资金流] 获取全市场资金流数据...
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[Tushare] 资金流获取失败 002709.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600835.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002216.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601339.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688363.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002747.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300624.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300033.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002384.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002013.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600104.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601689.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002050.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601778.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300383.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300595.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601336.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600850.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688180.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002466.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002241.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300014.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601398.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603960.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000768.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600732.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002610.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000963.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600705.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002129.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002065.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002153.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600765.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601328.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002194.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000738.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600547.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300482.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600048.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600823.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601375.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600837.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603392.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600030.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002036.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002056.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002508.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000776.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600438.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000878.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601360.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600410.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688520.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601628.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002497.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300633.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000625.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300274.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601238.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002179.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002475.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000630.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600584.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600000.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300166.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600309.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601155.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300059.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600588.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600999.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600779.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000538.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600116.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002371.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000799.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002001.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002281.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603882.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600519.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600702.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600352.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300661.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603799.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688266.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688396.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600958.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002459.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002958.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000807.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600893.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 001979.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300750.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603345.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300271.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600690.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002648.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603881.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000338.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688166.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000975.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600150.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601899.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000651.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600741.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002025.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600489.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002156.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600426.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601318.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000100.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000333.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600597.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600887.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300122.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000627.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002126.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002646.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603986.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300088.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000858.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600362.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601169.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300170.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002460.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601601.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688029.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688981.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000002.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600316.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002007.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600325.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600495.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300529.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601688.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300015.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000671.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600498.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300118.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601600.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300212.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002164.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002600.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601138.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000550.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002588.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600260.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600809.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002230.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000063.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002673.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601988.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603369.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002714.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000792.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600016.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 688012.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300115.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002368.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002405.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000568.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002594.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002527.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002242.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002557.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603666.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600845.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300142.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002032.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300024.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600141.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300454.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300308.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300134.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603198.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603288.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600276.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600383.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600745.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000402.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600036.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002011.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603005.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601136.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300782.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 603196.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600096.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600873.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600436.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 000961.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 002446.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600570.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300760.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300433.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300203.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600998.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 601939.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 300394.SZ: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600060.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[Tushare] 资金流获取失败 600983.SH: 抱歉，您每分钟最多访问该接口300次，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。
+[资金流] ✅ 成功获取 0/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 0 只
+[资金流] 券商: Tushare Pro (缓存) ✅ 10只
+      1. 东北证券(000686) - 得分：0.0
+      2. 锦龙股份(000712) - 得分：0.0
+      3. 国元证券(000728) - 得分：0.0
+
+📝 生成早盘推荐报告...
+   报告已保存：data/reports/morning_recommend_2026-03-26.md
+   数据已保存：data/reports/morning_recommend_2026-03-26.json
+
+======================================================================
+✅ 早盘推荐完成
+======================================================================
+📄 报告：data/reports/morning_recommend_2026-03-26.md
+
+📋 推荐摘要:
+   热点板块：5 个
+   1. 银行: 平安银行 等 3 只龙头
+   2. 消费电子:  等 3 只龙头
+   3. 5G:  等 3 只龙头
+   4. 保险:  等 3 只龙头
+   5. 券商: 东北证券 等 3 只龙头
+[2026-03-26 09:31:39] ✅ 早盘推荐完成
+[2026-03-26 09:31:39] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-03-26 09:31
+==================================================
+
+NOTIFICATION_READY
+TYPE: morning
+TITLE: 早盘推荐
+MESSAGE: 📈 *早盘推荐* 已完成
+
+📌 今日热点：银行、消费电子、5G
+
+要点：
+• 银行 龙头：平安银行
+
+📄 报告：`./data/reports/morning_recommend_2026-03-26.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+📈 *早盘推荐* 已完成
+
+📌 今日热点：银行、消费电子、5G
+
+要点：
+• 银行 龙头：平安银行
+
+📄 报告：`./data/reports/morning_recommend_2026-03-26.md`
+
+_投资有风险，决策需谨慎_
+📬 正在发送 QQ 通知...
+📬 准备发送 QQ 消息...
+   内容：📈 *早盘推荐* 已完成
+
+📌 今日热点：银行、消费电子、5G
+
+要点：
+• 银行 龙头：平安银行
+...
+❌ 发送异常：[Errno 2] No such file or directory: 'openclaw': 'openclaw'
+⚠️ 发送失败，降级为写入通知文件（等待 Heartbeat 发送）
+   通知已写入：/home/admin/.openclaw/workspace/stock-agent/data/notifications/notify_20260326_093139.txt
+[2026-03-26 09:31:39] ==========================================
+[2026-03-26 09:31:39] 早盘推荐结束
+[2026-03-26 09:31:39] ==========================================

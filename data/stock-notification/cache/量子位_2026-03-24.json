@@ -1,0 +1,78 @@
+{
+  "news": [
+    {
+      "title": "LeCun的世界模型单GPU就能跑了",
+      "url": "https://www.qbitai.com/2026/03/391698.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T23:01:11.594993"
+    },
+    {
+      "title": "又一华为天才少年入局具身创业！用视频生成数据训家用机器人，首个模型登顶具身基模榜单",
+      "url": "https://www.qbitai.com/2026/03/391668.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T23:01:11.595020"
+    },
+    {
+      "title": "阿里在海外上了个“企业级龙虾”，我用它30分钟手搓了一家网店",
+      "url": "https://www.qbitai.com/2026/03/391584.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T23:01:11.595029"
+    },
+    {
+      "title": "字节版龙虾架构火爆GitHub！开源获35k+ Star，内置Skill全家桶，原生适配飞书",
+      "url": "https://www.qbitai.com/2026/03/391361.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T23:01:11.595037"
+    },
+    {
+      "title": "拜拜了SWE-Bench！Cursor刚发了个AI Coding评测基准，难哭Claude",
+      "url": "https://www.qbitai.com/2026/03/387756.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T23:01:11.595045"
+    },
+    {
+      "title": "AI全链路加持！一加15T打造全能小屏，售价4299元起",
+      "url": "https://www.qbitai.com/2026/03/391775.html",
+      "source": "量子位",
+      "language": "zh",
+      "focus": [
+        "前沿技术",
+        "融资新闻",
+        "产品发布"
+      ],
+      "fetched_at": "2026-03-24T23:01:11.595054"
+    }
+  ],
+  "cached_at": 1774364471.595137,
+  "source": "量子位"
+}

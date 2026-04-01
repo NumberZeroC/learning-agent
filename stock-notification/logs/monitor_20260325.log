@@ -1,0 +1,689 @@
+[2026-03-25 09:35:01] ==========================================
+[2026-03-25 09:35:01] Stock-Agent 定时监控启动
+[2026-03-25 09:35:01] ==========================================
+[2026-03-25 09:35:01] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 09:35:02
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                      [002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+[300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+[300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+[300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                      [600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:00<00:53,  1.07it/s]  3%|▎         | 2/58 [00:02<01:03,  1.13s/it]  5%|▌         | 3/58 [00:03<01:14,  1.35s/it]                                              [600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                        0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:24,  1.48s/it]                                              [600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 09:37:13] ✅ 监控完成
+[2026-03-25 09:37:13] ==========================================
+[2026-03-25 10:00:01] ==========================================
+[2026-03-25 10:00:01] Stock-Agent 定时监控启动
+[2026-03-25 10:00:01] ==========================================
+[2026-03-25 10:00:01] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 10:00:02
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:23,  1.46s/it]                                              [002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 持有 (得分：5.9, 置信度：中)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:03,  1.11s/it]  3%|▎         | 2/58 [00:01<00:52,  1.07it/s]                                              [300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:34,  1.66s/it]                                              [300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                        0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:06,  1.16s/it]                                              [300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                        0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:12,  1.28s/it]                                              [600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+[600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:01,  1.07s/it]  3%|▎         | 2/58 [00:02<01:00,  1.08s/it]  5%|▌         | 3/58 [00:03<00:54,  1.00it/s]                                              [600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 10:02:25] ✅ 监控完成
+[2026-03-25 10:02:25] ==========================================
+[2026-03-25 10:30:01] ==========================================
+[2026-03-25 10:30:01] Stock-Agent 定时监控启动
+[2026-03-25 10:30:01] ==========================================
+[2026-03-25 10:30:01] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 10:30:02
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+[002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:10,  1.24s/it]  3%|▎         | 2/58 [00:02<01:05,  1.17s/it]  5%|▌         | 3/58 [00:03<01:06,  1.21s/it]                                              [300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+[300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:00<00:50,  1.13it/s]  3%|▎         | 2/58 [00:01<00:51,  1.09it/s]  5%|▌         | 3/58 [00:02<00:48,  1.14it/s]                                              [300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:04,  1.13s/it]                                              [600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+[600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+[600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 10:32:09] ✅ 监控完成
+[2026-03-25 10:32:09] ==========================================
+[2026-03-25 11:00:01] ==========================================
+[2026-03-25 11:00:01] Stock-Agent 定时监控启动
+[2026-03-25 11:00:01] ==========================================
+[2026-03-25 11:00:01] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 11:00:01
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+[002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:19,  1.40s/it]                                              [300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:26,  1.52s/it]                                              [300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:00<00:54,  1.04it/s]                                              [300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+[600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                      [600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:36,  1.69s/it]                                              [600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 11:02:11] ✅ 监控完成
+[2026-03-25 11:02:11] ==========================================
+[2026-03-25 11:30:01] ==========================================
+[2026-03-25 11:30:01] Stock-Agent 定时监控启动
+[2026-03-25 11:30:01] ==========================================
+[2026-03-25 11:30:01] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 11:30:02
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                        0%|          | 0/58 [00:00<?, ?it/s]                                      [002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+[300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                      [300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+[300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+[600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+[600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+[600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 11:31:51] ✅ 监控完成
+[2026-03-25 11:31:51] ==========================================
+[2026-03-25 13:00:01] ==========================================
+[2026-03-25 13:00:01] Stock-Agent 定时监控启动
+[2026-03-25 13:00:01] ==========================================
+[2026-03-25 13:00:01] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 13:00:02
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+[002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+[300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+[300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+[300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+[600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+[600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+[600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 13:01:45] ✅ 监控完成
+[2026-03-25 13:01:45] ==========================================
+[2026-03-25 13:30:01] ==========================================
+[2026-03-25 13:30:01] Stock-Agent 定时监控启动
+[2026-03-25 13:30:01] ==========================================
+[2026-03-25 13:30:01] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 13:30:02
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+[002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+[300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                      [300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+[300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+[600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+[600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+[600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 13:31:52] ✅ 监控完成
+[2026-03-25 13:31:52] ==========================================
+[2026-03-25 14:00:02] ==========================================
+[2026-03-25 14:00:02] Stock-Agent 定时监控启动
+[2026-03-25 14:00:02] ==========================================
+[2026-03-25 14:00:02] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 14:00:02
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+[002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:03<03:35,  3.79s/it]                                              [300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                        0%|          | 0/58 [00:00<?, ?it/s]                                      [300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+[300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                      [600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                      [600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+[600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 14:02:04] ✅ 监控完成
+[2026-03-25 14:02:04] ==========================================
+[2026-03-25 14:30:01] ==========================================
+[2026-03-25 14:30:01] Stock-Agent 定时监控启动
+[2026-03-25 14:30:01] ==========================================
+[2026-03-25 14:30:01] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 14:30:02
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                      [002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:38,  1.72s/it]                                              [300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:08,  1.21s/it]  3%|▎         | 2/58 [00:02<00:56,  1.01s/it]                                              [300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:01<01:05,  1.15s/it]  3%|▎         | 2/58 [00:02<01:02,  1.11s/it]                                              [300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+  0%|          | 0/58 [00:00<?, ?it/s]  2%|▏         | 1/58 [00:02<02:44,  2.89s/it]  3%|▎         | 2/58 [00:06<03:02,  3.26s/it]                                              [600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+[600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+[600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 14:32:30] ✅ 监控完成
+[2026-03-25 14:32:30] ==========================================
+[2026-03-25 15:00:01] ==========================================
+[2026-03-25 15:00:01] Stock-Agent 定时监控启动
+[2026-03-25 15:00:01] ==========================================
+[2026-03-25 15:00:01] 🎯 执行持仓监控...
+[Tushare] ✅ 已连接
+[StockMonitor] ✅ 已初始化
+
+============================================================
+📊 持仓监控 - 2026-03-25 15:00:02
+============================================================
+
+📋 监控股票：7 只
+
+📈 粤传媒(002181)... [监控] 分析 粤传媒(002181)...
+  0%|          | 0/58 [00:00<?, ?it/s]                                      [002181] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] ✅ 新浪财经获取成功
+[002181] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[002181] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 蓝色光标(300058)... [监控] 分析 蓝色光标(300058)...
+[300058] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] ✅ 新浪财经获取成功
+[300058] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300058] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 天龙集团(300063)... [监控] 分析 天龙集团(300063)...
+[300063] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] ✅ 新浪财经获取成功
+[300063] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300063] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 中文在线(300364)... [监控] 分析 中文在线(300364)...
+[300364] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] ✅ 新浪财经获取成功
+[300364] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[300364] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 天下秀(600556)... [监控] 分析 天下秀(600556)...
+[600556] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] ✅ 新浪财经获取成功
+[600556] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600556] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：0.5, 置信度：高)
+⚠️ 数据暂不可用
+📈 塞力斯(600038)... [监控] 分析 塞力斯(600038)...
+[600038] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] ✅ 新浪财经获取成功
+[600038] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600038] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.0, 置信度：高)
+⚠️ 数据暂不可用
+📈 南京商旅(600250)... [监控] 分析 南京商旅(600250)...
+[600250] AKShare 失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] ✅ 新浪财经获取成功
+[600250] 获取 K 线数据失败：('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[600250] 资金流分析失败：stock_individual_fund_flow() got an unexpected keyword argument 'symbol'
+  → 强烈卖出 (得分：1.5, 置信度：高)
+⚠️ 数据暂不可用
+📄 报告已保存：data/reports/stock_monitor_2026-03-25.md
+📄 数据已保存：data/reports/stock_monitor_2026-03-25.json
+
+✅ 监控完成，共 7 只股票
+
+[2026-03-25 15:01:47] ✅ 监控完成
+[2026-03-25 15:01:47] ==========================================

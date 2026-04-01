@@ -1,0 +1,242 @@
+# ============================================
+# 🏮 股灵通 - Stock-Notification
+# 智能股票分析与通知推送助手
+# ============================================
+# 项目中文名：股灵通
+# 命名时间：2026-03-27
+# 寓意：股票消息灵通，先知先觉
+# ============================================
+
+# 🔥 Tushare Token 配置（从公共配置读取）
+# 公共配置文件：/home/admin/.openclaw/workspace/config/tushare.yaml
+# 如果此处未配置，将自动从公共配置读取
+tushare:
+  token: "0b8ed09db7d7e733c133a04fad31fc34ff4938afd57f7766cfc6a3f2"
+
+# 股票分析 Agent 配置
+
+# 监控的股票池（板块指数）- 扩展版
+sectors:
+  # 科技
+  - 半导体
+  - 人工智能
+  - 消费电子
+  - 5G
+  - 云计算
+  - 软件
+  # 新能源
+  - 新能源
+  - 光伏
+  - 锂电
+  - 储能
+  # 医药
+  - 医药生物
+  - 创新药
+  - 医疗器械
+  # 大消费
+  - 白酒
+  - 食品饮料
+  - 家电
+  # 金融
+  - 券商
+  - 银行
+  - 保险
+  # 周期
+  - 房地产
+  - 化工
+  - 有色
+  # 高端制造
+  - 军工
+  - 机器人
+  # 其他
+  - 汽车
+
+# 新闻监控关键词 - 扩展版
+news_keywords:
+  positive:
+    - "利好"
+    - "突破"
+    - "增长"
+    - "订单"
+    - "签约"
+    - "政策扶持"
+    - "业绩预增"
+    - "上涨"
+    - "创新高"
+    - "涨停"
+    - "放量"
+    - "重组"
+    - "中标"
+  negative:
+    - "利空"
+    - "下跌"
+    - "亏损"
+    - "处罚"
+    - "风险"
+    - "减持"
+    - "下滑"
+    - "跌停"
+    - "暴雷"
+    - "立案"
+    - "退市"
+    - "违约"
+
+# 资金流阈值（万元）
+capital_flow:
+  threshold_inflow: 5000     # 主力流入阈值（降低到 5000 万）
+  threshold_outflow: -5000   # 主力流出阈值
+  check_interval: 300        # 检查间隔（秒）
+
+# 数据源配置
+data_sources:
+  news:
+    - name: 新浪财经
+      priority: 1
+      enabled: true
+    - name: 东方财富
+      priority: 1
+      enabled: true
+    - name: 腾讯财经
+      priority: 2
+      enabled: true
+    - name: 同花顺
+      priority: 2
+      enabled: true
+    - name: 财联社
+      priority: 1
+      enabled: true
+    - name: 金十数据
+      priority: 2
+      enabled: true
+  capital_flow:
+    - name: 东方财富
+      priority: 1
+      enabled: true
+    - name: 腾讯财经
+      priority: 2
+      enabled: true
+    - name: 新浪财经
+      priority: 2
+      enabled: true
+
+# 输出配置
+output:
+  report_dir: ./data/reports
+  log_dir: ./logs
+  save_history: true
+  save_json: true
+
+# 交易时间（A 股）
+trading_hours:
+  morning_start: "09:30"
+  morning_end: "11:30"
+  afternoon_start: "13:00"
+  afternoon_end: "15:00"
+
+# 选股配置
+stock_selection:
+  weights:
+    news_sentiment: 0.3
+    capital_flow: 0.4
+    price_performance: 0.3
+  min_score: 5.0
+  max_recommendations: 10
+
+# 重试配置
+retry:
+  max_attempts: 3
+  delay_seconds: 1
+  timeout_seconds: 10
+
+# AKShare 配置（优先使用，免费开源）
+akshare:
+  enabled: true
+  # 缓存配置
+  cache_dir: "./data/cache"      # 缓存目录
+  cache_ttl: 300                 # 缓存有效期（秒）
+  # 重试配置
+  max_retries: 3                 # 最大重试次数
+  # 数据源优先级 (akshare > tushare > web)
+  priority: 1
+
+# Tushare Pro 配置（600 积分 - 资金流主数据源）
+tushare:
+  enabled: true                  # ✅ 已启用 - 资金流分析主数据源
+  token: "0b8ed09db7d7e733c133a04fad31fc34ff4938afd57f7766cfc6a3f2"
+  # 数据源优先级 - Tushare Pro 作为资金流主数据源 (2026-03-16 更新)
+  priority: 1                    # 第一优先级（资金流分析）
+  # 缓存配置（增加缓存时间减少 API 调用）
+  cache:
+    enabled: true
+    ttl_seconds: 600             # 10 分钟缓存（减少限流）
+  # 功能开关
+  features:
+    daily_quote: true            # 日线行情
+    moneyflow: true              # ✅ 资金流（300 分）- 主数据源
+    north_flow: true             # 北向资金（300 分）
+    top_list: true               # 龙虎榜（300 分）
+    margin: true                 # 融资融券（300 分）
+    financial: true              # 财务数据（120 分）
+    macro: true                  # 宏观经济（120 分）
+    news: false                  # ❌ 新闻限流严重，使用网页抓取
+
+# ============================================
+# 个股重点监控配置（新功能）
+# ============================================
+monitor_stocks:
+  # 重点监控股票清单
+  # 格式：code=股票代码，name=股票名称
+  stocks:
+    # ===== 用户持仓监控（7 只）=====
+    - code: '002181'
+      name: '粤传媒'
+    - code: '300058'
+      name: '蓝色光标'
+    - code: '300063'
+      name: '天龙集团'
+    - code: '300364'
+      name: '中文在线'
+    - code: '600556'
+      name: '天下秀'
+    - code: '600038'
+      name: '塞力斯'
+    - code: '600250'
+      name: '南京商旅'
+  
+  # 监控频率（秒）- 仅在定时监控模式下使用
+  check_interval: 300
+  
+  # 买卖信号配置
+  signals:
+    # 综合得分阈值（0-10 分）
+    strong_buy: 8.0      # 强烈买入
+    buy: 6.5             # 买入
+    hold: 4.5            # 持有
+    sell: 3.0            # 卖出
+    strong_sell: 1.5     # 强烈卖出
+  
+  # 技术指标权重
+  weights:
+    ma_trend: 0.15       # 均线趋势
+    macd: 0.20           # MACD
+    kdj: 0.15            # KDJ
+    rsi: 0.15            # RSI
+    volume: 0.15         # 成交量
+    capital_flow: 0.20   # 资金流
+  
+  # 风险提示配置
+  risk_alerts:
+    enabled: true
+    overbought_kdj: 80   # KDJ 超买阈值
+    overbought_rsi: 70   # RSI 超买阈值
+    oversold_kdj: 20     # KDJ 超卖阈值
+    oversold_rsi: 30     # RSI 超卖阈值
+
+# 报告导出配置
+report:
+  monitor:
+    enabled: true
+    output_dir: './data/reports/monitor'
+    format: 'markdown'   # markdown 或 json
+    include_news: true   # 是否包含新闻
+    include_technical: true  # 是否包含技术指标

@@ -1,0 +1,77 @@
+{
+  "date": "2026-03-30",
+  "evening_date": "20260327",
+  "hot_sectors": [
+    "银行"
+  ],
+  "sector_leaders": {
+    "银行": [
+      {
+        "code": "000001",
+        "name": "平安银行",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600000",
+        "name": "浦发银行",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      },
+      {
+        "code": "600015",
+        "name": "华夏银行",
+        "score": 0.0,
+        "main_force_in": 0,
+        "main_force_out": 0,
+        "main_force_net": 0,
+        "inst_net": 0,
+        "financing_net": 0,
+        "change_pct": 0,
+        "auction": "-"
+      }
+    ]
+  },
+  "news_count": 19,
+  "recommendations": [
+    {
+      "sector": "银行",
+      "stocks": [
+        {
+          "code": "000001",
+          "name": "平安银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600000",
+          "name": "浦发银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        },
+        {
+          "code": "600015",
+          "name": "华夏银行",
+          "reason": "",
+          "price": 0,
+          "change_pct": 0
+        }
+      ]
+    }
+  ],
+  "position_suggestion": 60
+}

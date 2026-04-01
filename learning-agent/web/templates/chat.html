@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>与主 Agent 对话 - Learning Agent</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .chat-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .chat-messages {
+            height: 500px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .message.user {
+            flex-direction: row-reverse;
+        }
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .message.agent .message-avatar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-right: 10px;
+        }
+        .message.user .message-avatar {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            margin-left: 10px;
+        }
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .message-time {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+        .typing-indicator {
+            display: none;
+            padding: 10px;
+            color: #666;
+        }
+        .typing-indicator.show {
+            display: flex;
+            align-items: center;
+        }
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #666;
+            margin: 0 3px;
+            animation: typing 1.4s infinite;
+        }
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+        .quick-commands {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .quick-command {
+            background: #e9ecef;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .quick-command:hover {
+            background: #667eea;
+            color: white;
+        }
+        /* 流式响应光标动画 */
+        .cursor-blink {
+            display: inline-block;
+            width: 2px;
+            height: 18px;
+            background: #667eea;
+            margin-left: 2px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-robot"></i> Learning Agent
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="bi bi-house"></i> 首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/chat"><i class="bi bi-chat-dots"></i> 对话 Agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/config"><i class="bi bi-gear"></i> 配置管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container my-5">
+        <div class="chat-container">
+            <!-- 标题 -->
+            <div class="text-center mb-4">
+                <h2><i class="bi bi-robot"></i> 与主 Agent 对话</h2>
+                <p class="text-muted">向主 Agent 发送指令，生成个性化学习路线</p>
+            </div>
+
+            <!-- 快捷指令 -->
+            <div class="quick-commands">
+                <button class="quick-command" onclick="sendQuickCommand('我想学习 AI Agent 开发')">🎯 AI Agent 开发</button>
+                <button class="quick-command" onclick="sendQuickCommand('我想学习 Python 编程')">🐍 Python 编程</button>
+                <button class="quick-command" onclick="sendQuickCommand('我想学习大模型原理')">🧠 大模型原理</button>
+                <button class="quick-command" onclick="sendQuickCommand('我想准备 AI 面试')">💼 AI 面试准备</button>
+            </div>
+
+            <!-- 聊天区域 -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- 欢迎消息 -->
+                <div class="message agent">
+                    <div class="message-avatar">
+                        <i class="bi bi-robot"></i>
+                    </div>
+                    <div>
+                        <div class="message-content">
+                            你好！我是 Learning Agent 的总架构师。
+                            <br><br>
+                            我可以为你制定个性化的 AI 学习路线。请告诉我：
+                            <br>
+                            • 你的当前基础（如：Python 初学者、有开发经验等）
+                            <br>
+                            • 学习目标（如：掌握 Agent 开发、面试 AI 岗位等）
+                            <br>
+                            • 可用时间（如：每天 2 小时、3 个月等）
+                            <br><br>
+                            我会为你生成完整的学习路线！
+                        </div>
+                        <div class="message-time">刚刚</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输入指示器 -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <span class="ms-2">主 Agent 正在思考...</span>
+            </div>
+
+            <!-- 输入框 -->
+            <div class="input-group">
+                <input type="text" class="form-control" id="messageInput" 
+                       placeholder="输入你的学习需求..." 
+                       onkeypress="if(event.keyCode===13) sendMessage()">
+                <button class="btn btn-primary" onclick="sendMessage()" id="sendBtn">
+                    <i class="bi bi-send"></i> 发送
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                <i class="bi bi-robot"></i> Learning Agent - AutoGen 多模型架构
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const typingIndicator = document.getElementById('typingIndicator');
+        const sendBtn = document.getElementById('sendBtn');
+
+        let currentAgentMessage = null;
+        let isStreaming = false;
+
+        // 添加消息到聊天
+        function addMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'agent'}`;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.innerHTML = isUser ? '<i class="bi bi-person"></i>' : '<i class="bi bi-robot"></i>';
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.innerHTML = `
+                <div class="message-content">${content}</div>
+                <div class="message-time">${new Date().toLocaleTimeString('zh-CN', {hour: '2-digit', minute:'2-digit'})}</div>
+            `;
+            
+            if (isUser) {
+                messageDiv.appendChild(contentDiv);
+                messageDiv.appendChild(avatar);
+            } else {
+                messageDiv.appendChild(avatar);
+                messageDiv.appendChild(contentDiv);
+            }
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            return contentDiv.querySelector('.message-content');
+        }
+
+        // 发送消息（流式）
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message || isStreaming) return;
+            
+            // 添加用户消息
+            addMessage(message, true);
+            messageInput.value = '';
+            
+            // 禁用输入
+            isStreaming = true;
+            sendBtn.disabled = true;
+            messageInput.disabled = true;
+            
+            // 显示输入指示
+            typingIndicator.classList.add('show');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // 创建 Agent 回复消息容器
+            currentAgentMessage = document.createElement('div');
+            currentAgentMessage.className = 'message agent';
+            currentAgentMessage.innerHTML = `
+                <div class="message-avatar"><i class="bi bi-robot"></i></div>
+                <div>
+                    <div class="message-content">
+                        <span class="cursor-blink"></span>
+                    </div>
+                    <div class="message-time">${new Date().toLocaleTimeString('zh-CN', {hour: '2-digit', minute:'2-digit'})}</div>
+                </div>
+            `;
+            chatMessages.appendChild(currentAgentMessage);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            const contentElement = currentAgentMessage.querySelector('.message-content');
+            let fullContent = '';
+            let streamEnded = false;
+            
+            try {
+                // 发送 POST 请求接收 SSE 流
+                const response = await fetch('/api/chat/stream', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        agent: 'master_agent'
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = '';
+                
+                // 处理流式响应
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    
+                    buffer += decoder.decode(value, { stream: true });
+                    const lines = buffer.split('\n');
+                    buffer = lines.pop() || '';
+                    
+                    for (const line of lines) {
+                        const trimmedLine = line.trim();
+                        if (!trimmedLine || trimmedLine.startsWith(':')) continue;
+                        
+                        if (trimmedLine.startsWith('data: ')) {
+                            const dataStr = trimmedLine.slice(6).trim();
+                            if (dataStr === '[DONE]') {
+                                streamEnded = true;
+                                break;
+                            }
+                            
+                            try {
+                                const data = JSON.parse(dataStr);
+                                
+                                if (data.type === 'start') {
+                                    console.log('Stream started');
+                                } else if (data.type === 'token') {
+                                    fullContent += data.content;
+                                    contentElement.innerHTML = formatAgentReply(fullContent) + '<span class="cursor-blink"></span>';
+                                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                                } else if (data.type === 'error') {
+                                    contentElement.innerHTML = `❌ 错误：${data.error}`;
+                                    streamEnded = true;
+                                    break;
+                                } else if (data.type === 'end') {
+                                    streamEnded = true;
+                                    break;
+                                }
+                            } catch (e) {
+                                console.error('Parse error:', e);
+                            }
+                        }
+                    }
+                    
+                    if (streamEnded) break;
+                }
+                
+                // 流结束，移除光标
+                contentElement.innerHTML = formatAgentReply(fullContent);
+                reader.releaseLock();
+                
+            } catch (error) {
+                console.error('Stream error:', error);
+                if (contentElement && !fullContent) {
+                    contentElement.innerHTML = `❌ 发送失败：${error.message}`;
+                } else if (contentElement) {
+                    contentElement.innerHTML = formatAgentReply(fullContent);
+                }
+            } finally {
+                // 总是清理状态
+                typingIndicator.classList.remove('show');
+                isStreaming = false;
+                sendBtn.disabled = false;
+                messageInput.disabled = false;
+                currentAgentMessage = null;
+                messageInput.focus();
+            }
+        }
+
+        // 发送快捷指令
+        function sendQuickCommand(command) {
+            messageInput.value = command;
+            sendMessage();
+        }
+
+        // 格式化 Agent 回复（支持简单的 Markdown）
+        function formatAgentReply(text) {
+            // 换行
+            text = text.replace(/\n/g, '<br>');
+            // 粗体
+            text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            // 列表
+            text = text.replace(/^- (.*?)/gm, '• $1<br>');
+            // 标题
+            text = text.replace(/^### (.*?)/gm, '<h6>$1</h6>');
+            text = text.replace(/^## (.*?)/gm, '<h5>$1</h5>');
+            text = text.replace(/^# (.*?)/gm, '<h4>$1</h4>');
+            // 代码块
+            text = text.replace(/```(\w*?)\n([\s\S]*?)```/g, '<pre><code class="language-$1">$2</code></pre>');
+            // 行内代码
+            text = text.replace(/`(.*?)`/g, '<code>$1</code>');
+            return text;
+        }
+
+        // 页面加载完成
+        document.addEventListener('DOMContentLoaded', () => {
+            messageInput.focus();
+        });
+    </script>
+</body>
+</html>

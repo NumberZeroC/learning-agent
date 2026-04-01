@@ -1,0 +1,1 @@
+{"value": {"ts_code": "000001.SZ", "name": "平安银行", "price": 11.02, "change": 0.08, "change_pct": 0.73, "volume": 884129.0, "turnover": 972821270.14, "high": 11.05, "low": 10.83, "open": 10.91, "pre_close": 10.94, "time": "2026-03-27T22:36:43.999722"}, "_cached_at": 1774622203.9998283, "_func": "get_realtime_quote"}

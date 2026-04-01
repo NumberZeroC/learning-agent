@@ -1,0 +1,215 @@
+[2026-03-23 20:00:01] ==========================================
+[2026-03-23 20:00:01] 晚间市场分析开始
+[2026-03-23 20:00:01] ==========================================
+[2026-03-23 20:00:01] 🌙 执行晚间市场综合分析...
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+[可靠数据源] ✅ 已初始化
+   缓存目录：data/cache
+   AKShare: ✅
+   Tushare: ✅
+    Requests: ✅
+[可靠数据源] ✅ 已初始化 - 用于大盘指数/股价/资金流
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-03-23 20:00
+======================================================================
+
+
+📊 获取大盘走势...
+
+📊 获取大盘指数数据 (2026-03-23)...
+   ✅ 上证指数: 3813.28 (-3.63%) [AKShare]
+   ✅ 深证成指: 13345.51 (-3.76%) [AKShare]
+   ✅ 创业板指: 3235.22 (-3.49%) [AKShare]
+   ✅ 沪深 300: 4418.00 (-3.26%) [AKShare]
+   ✅ 上证 50: 2792.33 (-3.17%) [AKShare]
+   ✅ 成功获取 5 个指数数据
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 16 条新闻
+[新闻监控] 去重后共 76 条新闻
+[新闻监控] 分析完成，覆盖 8 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：21 条
+   覆盖板块：8 个
+
+💰 分析板块资金流...
+[资金流] 半导体: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 半导体: AKShare ❌ 尝试其他数据源...
+[资金流] 半导体: 使用本地成分股列表...
+[资金流] 半导体: 本地列表 ✅ 10只
+[资金流] 人工智能: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 人工智能: AKShare ❌ 尝试其他数据源...
+[资金流] 人工智能: 使用本地成分股列表...
+[资金流] 人工智能: 本地列表 ✅ 10只
+[资金流] 消费电子: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 消费电子: AKShare ❌ 尝试其他数据源...
+[资金流] 消费电子: 使用本地成分股列表...
+[资金流] 消费电子: 本地列表 ✅ 10只
+[资金流] 5G: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 5G: AKShare ❌ 尝试其他数据源...
+[资金流] 5G: 使用本地成分股列表...
+[资金流] 5G: 本地列表 ✅ 10只
+[资金流] 云计算: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 云计算: AKShare ❌ 尝试其他数据源...
+[资金流] 云计算: 使用本地成分股列表...
+[资金流] 云计算: 本地列表 ✅ 10只
+[资金流] 软件: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 软件: AKShare ❌ 尝试其他数据源...
+[资金流] 软件: 使用本地成分股列表...
+[资金流] 软件: 本地列表 ✅ 10只
+[资金流] 新能源: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 新能源: AKShare ❌ 尝试其他数据源...
+[资金流] 新能源: 使用本地成分股列表...
+[资金流] 新能源: 本地列表 ✅ 10只
+[资金流] 光伏: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 光伏: AKShare ❌ 尝试其他数据源...
+[资金流] 光伏: 使用本地成分股列表...
+[资金流] 光伏: 本地列表 ✅ 10只
+[资金流] 锂电: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 锂电: AKShare ❌ 尝试其他数据源...
+[资金流] 锂电: 使用本地成分股列表...
+[资金流] 锂电: 本地列表 ✅ 10只
+[资金流] 储能: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 储能: AKShare ❌ 尝试其他数据源...
+[资金流] 储能: 使用本地成分股列表...
+[资金流] 储能: 本地列表 ✅ 10只
+[资金流] 医药生物: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 医药生物: AKShare ❌ 尝试其他数据源...
+[资金流] 医药生物: 使用本地成分股列表...
+[资金流] 医药生物: 本地列表 ✅ 10只
+[资金流] 创新药: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 创新药: AKShare ❌ 尝试其他数据源...
+[资金流] 创新药: 使用本地成分股列表...
+[资金流] 创新药: 本地列表 ✅ 10只
+[资金流] 医疗器械: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 医疗器械: AKShare ❌ 尝试其他数据源...
+[资金流] 医疗器械: 使用本地成分股列表...
+[资金流] 医疗器械: 本地列表 ✅ 10只
+[资金流] 白酒: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 白酒: AKShare ❌ 尝试其他数据源...
+[资金流] 白酒: 使用本地成分股列表...
+[资金流] 白酒: 本地列表 ✅ 10只
+[资金流] 食品饮料: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 食品饮料: AKShare ❌ 尝试其他数据源...
+[资金流] 食品饮料: 使用本地成分股列表...
+[资金流] 食品饮料: 本地列表 ✅ 10只
+[资金流] 家电: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 家电: AKShare ❌ 尝试其他数据源...
+[资金流] 家电: 使用本地成分股列表...
+[资金流] 家电: 本地列表 ✅ 10只
+[资金流] 券商: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 券商: AKShare ❌ 尝试其他数据源...
+[资金流] 券商: 使用本地成分股列表...
+[资金流] 券商: 本地列表 ✅ 10只
+[资金流] 银行: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 银行: AKShare ❌ 尝试其他数据源...
+[资金流] 银行: 使用本地成分股列表...
+[资金流] 银行: 本地列表 ✅ 10只
+[资金流] 保险: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 保险: AKShare ❌ 尝试其他数据源...
+[资金流] 保险: 使用本地成分股列表...
+[资金流] 保险: 本地列表 ✅ 10只
+[资金流] 房地产: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 房地产: AKShare ❌ 尝试其他数据源...
+[资金流] 房地产: 使用本地成分股列表...
+[资金流] 房地产: 本地列表 ✅ 10只
+[资金流] 化工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 化工: AKShare ❌ 尝试其他数据源...
+[资金流] 化工: 使用本地成分股列表...
+[资金流] 化工: 本地列表 ✅ 10只
+[资金流] 有色: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 有色: AKShare ❌ 尝试其他数据源...
+[资金流] 有色: 使用本地成分股列表...
+[资金流] 有色: 本地列表 ✅ 10只
+[资金流] 军工: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 军工: AKShare ❌ 尝试其他数据源...
+[资金流] 军工: 使用本地成分股列表...
+[资金流] 军工: 本地列表 ✅ 10只
+[资金流] 机器人: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 机器人: AKShare ❌ 尝试其他数据源...
+[资金流] 机器人: 使用本地成分股列表...
+[资金流] 机器人: 本地列表 ✅ 10只
+[资金流] 汽车: AKShare ❌ ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[资金流] 汽车: AKShare ❌ 尝试其他数据源...
+[资金流] 汽车: 使用本地成分股列表...
+[资金流] 汽车: 本地列表 ✅ 10只
+
+   资金净流入 TOP5:
+   1. 半导体: 0.0万
+   2. 人工智能: 0.0万
+   3. 消费电子: 0.0万
+   4. 5G: 0.0万
+   5. 云计算: 0.0万
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 医药生物: 🟢 谨慎 (得分：25.5)
+   2. 人工智能: 🟢 谨慎 (得分：0.5)
+   3. 券商: 🟢 谨慎 (得分：0.0)
+   4. 银行: 🟢 谨慎 (得分：0.0)
+   5. 消费电子: 🟢 谨慎 (得分：0.0)
+
+📝 生成晚间总结报告...
+   报告已保存：data/reports/evening_summary_2026-03-23.md
+   数据已保存：data/reports/evening_summary_2026-03-23.json
+📸 数据快照已保存：data/reports/evening_data_snapshot_2026-03-23_200223.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-03-23.md
+[2026-03-23 20:02:24] ✅ 晚间分析完成
+[2026-03-23 20:02:24] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-03-23 20:02
+==================================================
+
+NOTIFICATION_READY
+TYPE: evening
+TITLE: 晚间市场总结
+MESSAGE: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3813.28 (-3.63%)
+
+要点：
+• 资金流入第 1：半导体 (0.0万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-23.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+🌙 *晚间市场总结* 已完成
+
+📌 上证：3813.28 (-3.63%)
+
+要点：
+• 资金流入第 1：半导体 (0.0万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-23.md`
+
+_投资有风险，决策需谨慎_
+✅ 通知已写入：/home/admin/.openclaw/workspace/stock-agent/data/notifications/notify_20260323_200224.txt
+   OpenClaw heartbeat 将检查并发送此通知到 QQ
+[2026-03-23 20:02:24] ==========================================
+[2026-03-23 20:02:24] 晚间分析结束
+[2026-03-23 20:02:24] ==========================================

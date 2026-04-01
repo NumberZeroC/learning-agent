@@ -1,0 +1,211 @@
+[2026-03-25 21:17:53] ==========================================
+[2026-03-25 21:17:53] 晚间市场分析开始
+[2026-03-25 21:17:53] ==========================================
+[2026-03-25 21:17:53] 🌙 执行晚间市场综合分析...
+[AI 新闻监控] ✅ 模块已加载
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 300s)
+[资金流] ✅ Tushare Pro 已连接 - 主数据源 (2000 积分)
+[资金流]    可用接口：moneyflow, top_list, top_inst, margin, margin_detail, stk_holdertrade
+[资金流] ✅ AKShare 可用 - 备用数据源
+[Tushare Pro] ✅ 已连接
+   Token: 0b8ed09d...
+   积分：600
+   VIP: VIP
+   缓存：data/cache (TTL: 600s)
+[Tushare Pro] ✅ 已连接
+[增强数据源] ✅ 已初始化 - 缓存目录：data/cache
+[数据源] ✅ AKShare 可用 - 备用数据源
+[可靠数据源] ✅ 已初始化
+   缓存目录：data/cache
+   AKShare: ✅
+   Tushare: ✅
+    Requests: ✅
+[可靠数据源] ✅ 已初始化 - 用于大盘指数/股价/资金流
+[AI 新闻监控] ✅ 已初始化 - 用于 AI 行业动态分析
+======================================================================
+🌙 晚间新闻综合分析器
+======================================================================
+
+======================================================================
+🌙 晚间市场综合分析 - 2026-03-25 21:17
+======================================================================
+
+
+📊 获取大盘走势...
+
+📊 获取大盘指数数据 (2026-03-25)...
+   ✅ 上证指数: 3931.84 (+1.30%) [AKShare]
+   ✅ 深证成指: 13801.00 (+1.95%) [AKShare]
+   ✅ 创业板指: 3316.97 (+2.01%) [AKShare]
+   ✅ 沪深 300: 4537.47 (+1.40%) [AKShare]
+   ✅ 上证 50: 2859.53 (+1.01%) [AKShare]
+   ✅ 成功获取 5 个指数数据
+
+📰 获取全天新闻...
+[新闻监控] 开始抓取新闻...
+[新闻监控] 从 同花顺财经 获取 20 条新闻
+[新闻监控] 从 金融界 获取 20 条新闻
+[新闻监控] 从 证券时报 获取 20 条新闻
+[新闻监控] 从 上海证券报 获取 20 条新闻
+[新闻监控] 去重后共 80 条新闻
+[新闻监控] 分析完成，覆盖 5 个板块
+[新闻监控] 成功数据源：同花顺财经, 金融界, 证券时报, 上海证券报
+   获取新闻：14 条
+   覆盖板块：5 个
+
+💰 分析板块资金流 (Tushare 2000 积分)...
+[资金流] 获取全市场资金流数据...
+[Tushare] 获取龙虎榜 62 只
+[Tushare] 获取机构交易 59 只
+[资金流] 融资融券获取失败：TushareProSource.get_margin_detail() got an unexpected keyword argument 'trade_date'
+[资金流] 获取板块成分股主力资金流...
+[资金流] 获取 205 只成分股资金流...
+[资金流] ✅ 成功获取 196/205 只股票资金流
+[资金流] ✅ 获取全市场资金流 254 只
+   半导体: 净流入 2.0万，机构 0.0万
+   人工智能: 净流入 0.3万，机构 0.0万
+   消费电子: 净流入 22.8万，机构 76334.3万
+   5G: 净流入 21.0万，机构 0.0万
+   云计算: 净流入 -1.0万，机构 0.0万
+   软件: 净流入 -0.4万，机构 0.0万
+   新能源: 净流入 -19.5万，机构 0.0万
+   光伏: 净流入 -8.3万，机构 0.0万
+   锂电: 净流入 -17.1万，机构 0.0万
+   储能: 净流入 -17.4万，机构 0.0万
+   医药生物: 净流入 -1.9万，机构 0.0万
+   创新药: 净流入 -0.8万，机构 0.0万
+   医疗器械: 净流入 -1.1万，机构 0.0万
+   白酒: 净流入 0.2万，机构 0.0万
+   食品饮料: 净流入 1.2万，机构 0.0万
+   家电: 净流入 0.9万，机构 0.0万
+   券商: 净流入 2.2万，机构 0.0万
+   银行: 净流入 11.2万，机构 0.0万
+   保险: 净流入 2.8万，机构 0.0万
+   房地产: 净流入 -0.4万，机构 0.0万
+   化工: 净流入 -4.3万，机构 0.0万
+   有色: 净流入 -15.1万，机构 0.0万
+   军工: 净流入 -4.7万，机构 0.0万
+   机器人: 净流入 -0.6万，机构 0.0万
+   汽车: 净流入 -0.9万，机构 0.0万
+
+   资金净流入 TOP5:
+   1. 消费电子: 22.8万 (机构 76334万)
+   2. 5G: 21.0万
+   3. 银行: 11.2万
+   4. 保险: 2.8万
+   5. 券商: 2.2万
+
+📈 分析新闻情绪...
+
+   新闻情绪 TOP5:
+   1. 医药生物: 🟢 谨慎 (得分：34.3)
+   2. 军工: 🟢 谨慎 (得分：26.5)
+   3. 银行: 🟢 谨慎 (得分：1.0)
+   4. 人工智能: 🟢 谨慎 (得分：0.0)
+   5. 券商: 🟢 谨慎 (得分：0.0)
+
+🤖 获取 AI 行业新闻...
+[The Verge AI] 📡 获取新闻中...
+[TechCrunch AI] 📡 获取新闻中...
+[Anthropic News] 📡 获取新闻中...
+[Anthropic News] ✅ 获取 10 条
+[机器之心] 📡 获取新闻中...
+[机器之心] ✅ 获取 5 条
+[量子位] 📡 获取新闻中...
+[量子位] ✅ 获取 6 条
+[Hacker News AI] 📡 获取新闻中...
+[Hacker News AI] ❌ 错误：HTTPSConnectionPool(host='news.ycombinator.com', port=443): Max retries exceeded with url: /front (Caused by NewConnectionError("HTTPSConnection(host='news.ycombinator.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Reddit ML] 📡 获取新闻中...
+[Reddit ML] ❌ 错误：HTTPSConnectionPool(host='www.reddit.com', port=443): Max retries exceeded with url: /r/MachineLearning/ (Caused by NewConnectionError("HTTPSConnection(host='www.reddit.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
+[Import AI] 📡 获取新闻中...
+   ✅ 获取 21 条 AI 新闻
+   📊 情感得分：51.2 (🟡 neutral)
+
+📝 生成晚间总结报告...
+
+💰 获取龙虎榜数据...
+   获取到 254 只股票
+   龙虎榜股票：59 只
+   报告已保存：data/reports/evening_summary_2026-03-25.md
+   数据已保存：data/reports/evening_summary_2026-03-25.json
+📸 数据快照已保存：data/reports/evening_data_snapshot_2026-03-25_211907.json
+
+======================================================================
+✅ 晚间分析完成
+======================================================================
+📄 报告：data/reports/evening_summary_2026-03-25.md
+🤖 AI 新闻：21 条，情感得分：51.2
+[2026-03-25 21:19:08] ✅ 晚间分析完成
+[2026-03-25 21:19:08] 📬 准备发送通知...
+
+==================================================
+📬 准备发送报告通知 - 2026-03-25 21:19
+==================================================
+
+NOTIFICATION_READY
+TYPE: evening
+TITLE: 晚间市场总结
+MESSAGE: 🌙 *晚间市场总结* 已完成
+
+📌 上证：3931.84 (+1.30%)
+
+要点：
+• 热点板块：消费电子、5G、银行
+• 资金流入第 1：消费电子 (22.8万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-25.md`
+
+_投资有风险，决策需谨慎_
+
+✅ 通知准备完成
+
+🌙 *晚间市场总结* 已完成
+
+📌 上证：3931.84 (+1.30%)
+
+要点：
+• 热点板块：消费电子、5G、银行
+• 资金流入第 1：消费电子 (22.8万)
+
+📄 报告：`./data/reports/evening_summary_2026-03-25.md`
+
+_投资有风险，决策需谨慎_
+📬 正在发送 QQ 通知...
+📬 准备发送 QQ 消息...
+   内容：==================================================...
+✅ QQ 消息发送成功
+   [qqbot-channel-api] Registered QQ channel API proxy tool
+[qqbot-remind] Registered QQBot remind tool
+[qqbot] resolveAllowFrom: accountId=undefined, allowFrom=["*"]
+[qqbot:channel] sendText called — accountId=undefined, to=qqbot:c2c:6BD7A1BCF3F92369D0580647287C0D52, replyToId=undefined, text.length=510
+[qqbot:channel] sendText text preview: ==================================================
+📬 准备发送报告通知 - 2026-03-25 21:19
+==================...
+[qqbot:channel] sendText resolved account: id=default, appId=1903640780, enabled=true
+[qqbot] sendText ctx: {
+  "to": "qqbot:c2c:6BD7A1BCF3F92369D0580647287C0D52",
+  "text": "==================================================",
+  "accountId": "default"
+}
+[qqbot] sendText: 发送主动消息到 qqbot:c2c:6BD7A1BCF3F92369D0580647287C0D52, 内容长度: 510
+[qqbot-api:1903640780] >>> POST https://bots.qq.com/app/getAppAccessToken
+[qqbot-api:1903640780] <<< Status: 200 OK | TraceId: f1d67f9f05106d0de03146caeab9d619
+[qqbot-api:1903640780] <<< Body: {"access_token": "***","expires_in":"1300"}
+[qqbot-api:1903640780] Token cached, expires at: 2026-03-25T13:40:55.473Z
+[2026-03-25T13:19:15.474Z] [qqbot] parseTarget: input=qqbot:c2c:6BD7A1BCF3F92369D0580647287C0D52
+[2026-03-25T13:19:15.474Z] [qqbot] parseTarget: c2c target, user ID=6BD7A1BCF3F92369D0580647287C0D52
+[qqbot] sendText target: {"type":"c2c","id":"6BD7A1BCF3F92369D0580647287C0D52"}
+[qqbot-api] >>> POST https://api.sgroup.qq.com/v2/users/6BD7A1BCF3F92369D0580647287C0D52/messages (timeout: 30000ms)
+[qqbot-api] >>> Body: {"markdown":{"content":"==================================================\n📬 准备发送报告通知 - 2026-03-25 21:19\n==================================================\n\nNOTIFICATION_READY\nTYPE: evening\nTITLE: 晚间市场总结\nMESSAGE: 🌙 *晚间市场总结* 已完成\n\n📌 上证：3931.84 (+1.30%)\n\n要点：\n• 热点板块：消费电子、5G、银行\n• 资金流入第 1：消费电子 (22.8万)\n\n📄 报告：`./data/reports/evening_summary_2026-03-25.md`\n\n_投资有风险，决策需谨慎_\n\n✅ 通知准备完成\n\n🌙 *晚间市场总结* 已完成\n\n📌 上证：3931.84 (+1.30%)\n\n要点：\n• 热点板块：消费电子、5G、银行\n• 资金流入第 1：消费电子 (22.8万)\n\n📄 报告：`./data/reports/evening_summary_2026-03-25.md`\n\n_投资有风险，决策需谨慎_"},"msg_type":2}
+[qqbot-api] <<< Status: 200 OK | TraceId: cd4eace104f7367a83493d91a5b6b03e
+[qqbot-api] <<< Body: {"id":"ROBOT1.0_FsTKzFFld54oX1y5ou4C4UjINtvv7uObdpkOZBACq8qlnSVlPP0i72Z3gpvRMvs10cE8EdwgpOcVH8rYOn.LSw!!","timestamp":"2026-03-25T21:19:15+08:00","ext_info":{"ref_idx":"REFIDX_5gbD5v799Q5dUxDUyyhEAg=="}}
+[qqbot:channel] sendText result: messageId=ROBOT1.0_FsTKzFFld54oX1y5ou4C4UjINtvv7uObdpkOZBACq8qlnSVlPP0i72Z3gpvRMvs10cE8EdwgpOcVH8rYOn.LSw!!, error=none
+✅ Sent via QQ Bot. Message ID: ROBOT1.0_FsTKzFFld54oX1y5ou4C4UjINtvv7uObdpkOZBACq8qlnSVlPP0i72Z3gpvRMvs10cE8EdwgpOcVH8rYOn.LSw!!
+✅ 通知已实时发送到 QQ
+[2026-03-25 21:19:16] ==========================================
+[2026-03-25 21:19:16] 晚间分析结束
+[2026-03-25 21:19:16] ==========================================

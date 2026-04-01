@@ -1,0 +1,41 @@
+{
+  "news": {},
+  "flow": {
+    "sector_analysis": {
+      "半导体": {
+        "flow": {
+          "error": "无数据"
+        },
+        "leader": null
+      },
+      "人工智能": {
+        "flow": {
+          "error": "无数据"
+        },
+        "leader": null
+      },
+      "新能源": {
+        "flow": {
+          "error": "无数据"
+        },
+        "leader": null
+      },
+      "医药生物": {
+        "flow": {
+          "error": "无数据"
+        },
+        "leader": null
+      },
+      "消费电子": {
+        "flow": {
+          "error": "无数据"
+        },
+        "leader": null
+      }
+    },
+    "top_inflow_sectors": [],
+    "update_time": "2026-03-06T02:33:12.047523"
+  },
+  "recommendations": [],
+  "timestamp": "2026-03-06T02:33:12.048437"
+}
