@@ -499,6 +499,8 @@ agents:
     - file_read
     - knowledge_validator
 global:
+  cache_enabled: false
+  max_retries: 3
   timeout: 180
 hot_reload:
   auto_apply: true
@@ -522,7 +524,7 @@ performance:
     backend: memory
     enabled: true
     max_size: 1000
-    ttl: 14400  # 4 小时 = 14400 秒
+    ttl: 14400
   max_concurrent_agents: 6
 providers:
   dashscope:

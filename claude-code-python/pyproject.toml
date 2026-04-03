@@ -1,0 +1,102 @@
+[project]
+name = "claude-code-python"
+version = "0.1.0"
+description = "Python implementation of Claude Code CLI - Terminal AI programming assistant"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "小佳", email = "admin@localhost" }
+]
+keywords = ["claude", "ai", "cli", "terminal", "coding", "assistant"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    # Core
+    "textual>=0.50.0",
+    "httpx>=0.27.0",
+    "click>=8.1.0",
+    "pydantic>=2.6.0",
+    "structlog>=24.1.0",
+    
+    # LLM Providers
+    "anthropic>=0.25.0",
+    "openai>=1.12.0",
+    
+    # Utilities
+    "rich>=13.7.0",
+    "watchdog>=4.0.0",
+    "GitPython>=3.1.0",
+    "aiofiles>=23.2.0",
+    
+    # Web Server
+    "aiohttp>=3.9.0",
+    
+    # MCP/LSP (optional)
+    # "mcp>=0.1.0",
+    # "pylsp-client>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.12.0",
+    "ruff>=0.3.0",
+    "mypy>=1.8.0",
+    "pre-commit>=3.6.0",
+]
+
+[project.scripts]
+ccp = "src.cli.entry:cli"
+claude-code-py = "src.cli.entry:cli"
+ccp-web = "src.web_server:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/claude-code-python"
+Documentation = "https://github.com/yourusername/claude-code-python#readme"
+Repository = "https://github.com/yourusername/claude-code-python.git"
+Issues = "https://github.com/yourusername/claude-code-python/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = ["E501", "B008", "B904"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-v --cov=src --cov-report=term-missing"

@@ -15,14 +15,14 @@ build/
 logs/
 *.log
 
-# 数据
-data/
-!data/.gitkeep
+# 数据（运行时生成）
+data/workflow_results/*
+!data/workflow_results/.gitkeep
 
 # PID 文件
 *.pid
 
-# 环境配置
+# 环境配置（敏感！）
 .env
 .env.local
 
@@ -39,10 +39,10 @@ Thumbs.db
 # 临时文件
 *.tmp
 *.bak
-
-# 压缩包
 *.zip
 *.tar.gz
 
-# Git 子模块
-skills/self-improving-agent
+# 测试缓存
+.pytest_cache/
+.coverage
+htmlcov/

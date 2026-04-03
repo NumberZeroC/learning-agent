@@ -1,0 +1,35 @@
+# 缓存文件
+data/stock-notification/cache/
+data/stock-notification/reports/
+
+# 日志文件
+**/logs/*.log
+**/*.log
+
+# 测试文件
+test_agent/
+test_pkg/
+tests/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 临时文件
+*.tmp
+*.bak
+.swp
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# CCP
+.ccp_memory.json

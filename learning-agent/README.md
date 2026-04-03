@@ -2,6 +2,10 @@
 
 基于多 Agent 协作的 AI 知识体系生成工具，自动生成结构化学习内容。
 
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-2.3+-green.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 ## ✨ 核心功能
 
 ### 1. 知识生成工作流
@@ -17,20 +21,58 @@
 
 ## 🚀 快速开始
 
-### 安装依赖
+### 前置要求
+
+- **Python 3.8+**（推荐 3.11+）
+- **pip3**（Python 包管理器）
+- **阿里云 DashScope API Key**（用于大模型调用）
+
+> 💡 **检查 Python 版本：** `python3 --version`  
+> 如果版本低于 3.8，请使用 `python3.11` 或更高版本
+
+### 方式一：使用 Makefile（推荐）
 
 ```bash
+# 1. 创建虚拟环境（推荐）
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# 或：venv\Scripts\activate  # Windows
+
+# 2. 安装依赖
+make install
+
+# 3. 配置环境变量
+cp .env.example .env
+# 编辑 .env，填入你的 DASHSCOPE_API_KEY
+
+# 4. 运行工作流（可选，生成学习数据）
+make run
+
+# 5. 启动 Web 服务
+make web
+```
+
+### 方式二：手动安装
+
+#### 安装依赖
+
+```bash
+# 创建虚拟环境（推荐）
+python3 -m venv venv
+source venv/bin/activate
+
+# 安装依赖
 pip3 install -r requirements.txt
 ```
 
-### 配置环境变量
+#### 配置环境变量
 
 ```bash
 cp .env.example .env
 # 编辑 .env，填入你的 DASHSCOPE_API_KEY
 ```
 
-### 运行工作流
+#### 运行工作流
 
 ```bash
 # 方式 1：直接运行
@@ -40,7 +82,7 @@ python3 run_workflow.py
 ./start_workflow.sh
 ```
 
-### 启动 Web 服务
+#### 启动 Web 服务
 
 ```bash
 cd web
@@ -48,6 +90,16 @@ python3 app.py --host 0.0.0.0 --port 5001
 ```
 
 访问：http://localhost:5001
+
+### 其他 Makefile 命令
+
+```bash
+make help    # 查看所有可用命令
+make test    # 运行测试
+make clean   # 清理缓存和临时文件
+make lint    # 代码检查
+make format  # 代码格式化
+```
 
 ## 📁 项目结构
 
@@ -57,17 +109,17 @@ learning-agent/
 │   └── agent_config.yaml    # Agent 配置
 ├── web/
 │   ├── app.py               # Flask 主应用
-│   ├── routes/
-│   │   ├── chat_routes.py   # 聊天 API
-│   │   └── workflow_routes.py # 工作流 API
-│   └── templates/
-│       ├── index.html       # 主页（工作流展示）
-│       └── chat.html        # 聊天页面
-├── services/
-│   └── ask_service.py       # 问答服务
+│   ├── routes/              # API 路由
+│   └── templates/           # HTML 模板
+├── services/                # 业务服务
+├── tests/                   # 单元测试
+├── docs/                    # 开发文档
+├── data/                    # 数据目录（运行时生成）
+├── logs/                    # 日志目录
 ├── workflow_orchestrator.py # 工作流编排器
 ├── run_workflow.py          # 工作流启动脚本
 ├── requirements.txt         # Python 依赖
+├── Makefile                 # 快速命令入口
 └── .env.example             # 环境变量示例
 ```
 
@@ -165,9 +217,74 @@ data/workflow_results/
 
 编辑 `config/agent_config.yaml` 中的 `agents` 部分。
 
+## ❓ 常见问题
+
+### 1. 安装依赖失败
+
+**错误：** `No matching distribution found for flask>=2.3.0`
+
+**原因：** Python 版本低于 3.8
+
+**解决：**
+```bash
+# 检查版本
+python3 --version
+
+# 使用高版本 Python（如果有）
+python3.11 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+```
+
+### 2. API Key 未配置
+
+**错误：** `DASHSCOPE_API_KEY 未加载`
+
+**解决：**
+```bash
+# 复制示例配置
+cp .env.example .env
+
+# 编辑 .env 文件，填入真实的 API Key
+nano .env  # 或使用你喜欢的编辑器
+
+# 验证配置
+grep DASHSCOPE_API_KEY .env
+```
+
+### 3. Web 服务无法启动
+
+**检查端口占用：**
+```bash
+# Linux/Mac
+lsof -i :5001
+# 或
+netstat -tlnp | grep 5001
+
+# 如果端口被占用，停止旧进程或更换端口
+python3 web/app.py --port 5002
+```
+
+### 4. 工作流运行缓慢
+
+**原因：** 需要调用大模型 API 生成 17 个主题的知识内容
+
+**建议：**
+- 预计耗时 15-30 分钟
+- 可后台运行：`./start_workflow.sh`
+- 随时查看进度：`ls -lh data/workflow_results/`
+
+---
+
 ## 📄 许可证
 
-MIT License
+MIT License - 详见 [LICENSE](LICENSE) 文件
+
+## 📚 相关文档
+
+- [CHANGELOG.md](CHANGELOG.md) - 版本变更记录
+- [CONTRIBUTING.md](CONTRIBUTING.md) - 贡献指南
+- [docs/](docs/) - 开发文档
 
 ## 🙏 致谢
 

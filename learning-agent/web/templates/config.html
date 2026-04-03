@@ -406,12 +406,19 @@
                     <div class="agent-header">
                         <div>
                             <h5 class="mb-1">${agent.role || key}</h5>
-                            <small class="text-muted">Layer ${agent.layer || 0} • 
+                            <small class="text-muted">
+                                <span class="badge bg-secondary">Layer ${agent.layer || 0}</span>
+                                <span class="ms-2"><i class="bi bi-cpu"></i> 模型：</span>
                                 <input type="text" class="form-control form-select-sm d-inline-block" 
                                        style="width: 180px;" 
                                        value="${agent.model || 'qwen3.5-plus'}"
                                        data-agent="${key}" data-field="model"
-                                       placeholder="模型名称">
+                                       placeholder="模型名称"
+                                       disabled
+                                       title="模型配置已锁定，与默认模型保持一致">
+                                <small class="text-muted ms-2">
+                                    <i class="bi bi-info-circle"></i> 与默认模型保持一致
+                                </small>
                             </small>
                         </div>
                         <div class="form-check form-switch">
@@ -455,7 +462,26 @@
                     e.target.nextElementSibling.textContent = e.target.checked ? '已启用' : '已禁用';
                 });
             });
+            
+            // 同步默认模型到所有子 Agent
+            syncAgentModels();
         }
+        
+        // 同步默认模型到所有子 Agent
+        function syncAgentModels() {
+            const defaultModel = document.getElementById('defaultModel').value;
+            document.querySelectorAll('[data-field="model"]').forEach(el => {
+                el.value = defaultModel;
+            });
+        }
+        
+        // 监听默认模型变化
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultModelInput = document.getElementById('defaultModel');
+            if (defaultModelInput) {
+                defaultModelInput.addEventListener('input', syncAgentModels);
+            }
+        });
 
         // 收集配置数据
         function collectConfig() {
@@ -487,6 +513,8 @@
             
             // Agent 配置
             if (config.agents) {
+                const defaultModel = config.default_model || 'qwen3.5-plus';
+                
                 document.querySelectorAll('[data-agent]').forEach(el => {
                     const agentKey = el.dataset.agent;
                     const field = el.dataset.field;
@@ -494,6 +522,9 @@
                     if (config.agents[agentKey]) {
                         if (field === 'enabled') {
                             config.agents[agentKey][field] = el.checked;
+                        } else if (field === 'model') {
+                            // 模型字段：强制使用默认模型
+                            config.agents[agentKey][field] = defaultModel;
                         } else if (field !== 'description') { // 描述字段不可编辑，不保存
                             config.agents[agentKey][field] = el.value;
                         }
