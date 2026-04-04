@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第{{ layer_id }}层 - 学习详情</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .topic-card {
+            border-left: 4px solid #0d6efd;
+        }
+        .difficulty-badge {
+            font-size: 0.8rem;
+        }
+        .key-point {
+            background: #f8f9fa;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-radius: 4px;
+        }
+        .resource-link {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-robot"></i> Agent 学习路线
+            </a>
+            <span class="navbar-text text-white">
+                第{{ layer_id }}层详情
+            </span>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container my-5">
+        <!-- 返回按钮 -->
+        <a href="/" class="btn btn-outline-secondary mb-4">
+            <i class="bi bi-arrow-left"></i> 返回总览
+        </a>
+
+        <!-- 层级信息 -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3><i class="bi bi-layers"></i> <span id="layerName">加载中...</span></h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5><i class="bi bi-book"></i> 主题数量</h5>
+                        <h2 id="topicsCount">-</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <h5><i class="bi bi-clock"></i> 预计时长</h5>
+                        <h2 id="totalHours">-</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <h5><i class="bi bi-calendar"></i> 建议天数</h5>
+                        <h2 id="estimatedDays">-</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主题列表 -->
+        <h4 class="mb-3"><i class="bi bi-list-task"></i> 学习主题</h4>
+        <div id="topicsContainer">
+            <!-- 动态加载 -->
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="text-muted mb-0">Learning Agent</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const layerId = {{ layer_id }};
+        
+        // 加载层级数据
+        async function loadLayer() {
+            try {
+                const response = await fetch(`/api/layer/${layerId}`);
+                const data = await response.json();
+                
+                document.getElementById('layerName').textContent = data.layer_name;
+                document.getElementById('topicsCount').textContent = data.topics.length;
+                document.getElementById('totalHours').textContent = data.total_hours;
+                document.getElementById('estimatedDays').textContent = Math.ceil(data.total_hours / 3);
+                
+                loadTopics(data.topics);
+            } catch (error) {
+                console.error('加载失败:', error);
+            }
+        }
+        
+        // 加载主题
+        function loadTopics(topics) {
+            const container = document.getElementById('topicsContainer');
+            const difficultyColors = {
+                'beginner': 'success',
+                'intermediate': 'warning',
+                'advanced': 'danger'
+            };
+            const difficultyTexts = {
+                'beginner': '初级',
+                'intermediate': '中级',
+                'advanced': '高级'
+            };
+            
+            topics.forEach((topic, idx) => {
+                const diffColor = difficultyColors[topic.subtopics[0]?.difficulty] || 'secondary';
+                const diffText = difficultyTexts[topic.subtopics[0]?.difficulty] || '未知';
+                
+                let subtopicsHtml = '';
+                topic.subtopics.forEach(sub => {
+                    let keyPointsHtml = '';
+                    sub.key_points.forEach(point => {
+                        keyPointsHtml += `<li class="key-point"><i class="bi bi-check2 text-success"></i> ${point}</li>`;
+                    });
+                    
+                    let resourcesHtml = '';
+                    sub.resources.forEach(res => {
+                        if (res.startsWith('http')) {
+                            resourcesHtml += `<a href="${res}" target="_blank" class="resource-link"><i class="bi bi-link-45deg"></i> ${res.split('/')[2]}</a> `;
+                        } else {
+                            resourcesHtml += `<span class="text-muted"><i class="bi bi-book"></i> ${res}</span> `;
+                        }
+                    });
+                    
+                    subtopicsHtml += `
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h6 class="card-title">
+                                    <i class="bi bi-dot"></i> ${sub.name}
+                                    <span class="badge bg-${diffColor} difficulty-badge float-end">${diffText}</span>
+                                </h6>
+                                <p class="card-text text-muted">${sub.estimated_hours} 小时</p>
+                                <ul class="list-unstyled">
+                                    ${keyPointsHtml}
+                                </ul>
+                                <div class="mt-2">
+                                    <small class="text-muted"><i class="bi bi-link"></i> 资源：</small>
+                                    ${resourcesHtml}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                const card = `
+                    <div class="card topic-card mb-4" style="cursor: pointer;" onclick="window.location.href='/topic/${layerId}/${idx + 1}'">
+                        <div class="card-header bg-light">
+                            <h5>
+                                <span class="badge bg-primary me-2">${idx + 1}</span>
+                                ${topic.name}
+                                <span class="badge bg-${topic.priority === 'high' ? 'danger' : 'secondary'} float-end">
+                                    ${topic.priority === 'high' ? '高优先级' : topic.priority === 'medium' ? '中优先级' : '低优先级'}
+                                </span>
+                            </h5>
+                            <p class="mb-0 text-muted">${topic.description}</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-info mb-3">
+                                <i class="bi bi-info-circle"></i> 点击卡片查看完整知识点详情
+                            </div>
+                            ${subtopicsHtml}
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+        
+        // 页面加载
+        document.addEventListener('DOMContentLoaded', loadLayer);
+    </script>
+</body>
+</html>

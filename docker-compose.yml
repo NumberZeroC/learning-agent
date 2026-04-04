@@ -1,0 +1,50 @@
+version: '3.8'
+
+# ============================================
+# Learning Agent Docker Compose 配置
+# ============================================
+
+services:
+  # Learning Agent Web 服务
+  learning-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: learning-agent
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    environment:
+      # 必需配置
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY:-}
+      # 可选配置
+      - LEARNING_AGENT_TOKEN=${LEARNING_AGENT_TOKEN:-}
+      - FLASK_ENV=production
+      - FLASK_DEBUG=0
+      - LOG_LEVEL=INFO
+    volumes:
+      # 持久化数据
+      - learning-agent-data:/app/data
+      - learning-agent-logs:/app/logs
+      # 挂载配置文件（可选）
+      - ./config/agent_config.yaml:/app/config/agent_config.yaml:ro
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5001/api/workflow/status')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - learning-agent-network
+
+# 数据卷
+volumes:
+  learning-agent-data:
+    driver: local
+  learning-agent-logs:
+    driver: local
+
+# 网络
+networks:
+  learning-agent-network:
+    driver: bridge

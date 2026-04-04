@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配置管理 - Learning Agent</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .config-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        .config-header {
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .config-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .config-item:last-child {
+            border-bottom: none;
+        }
+        .config-label {
+            font-weight: 600;
+            color: #333;
+        }
+        .config-value {
+            color: #666;
+        }
+        .agent-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        .agent-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+        }
+        .agent-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .status-enabled {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-disabled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .api-key-input {
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-robot"></i> Learning Agent
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="bi bi-house"></i> 首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chat"><i class="bi bi-chat-dots"></i> 对话 Agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/config"><i class="bi bi-gear"></i> 配置管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2><i class="bi bi-gear"></i> 配置管理</h2>
+            <div>
+                <button class="btn btn-outline-secondary me-2" onclick="loadConfig()">
+                    <i class="bi bi-arrow-clockwise"></i> 刷新
+                </button>
+                <button class="btn btn-primary" onclick="saveAllConfig()">
+                    <i class="bi bi-save"></i> 保存全部配置
+                </button>
+            </div>
+        </div>
+        
+        <!-- 提示信息 -->
+        <div class="alert alert-success mb-4" role="alert">
+            <i class="bi bi-lightning-charge-fill"></i> 
+            <strong>✅ 热更新已启用：</strong> 修改 API Key 或模型配置后，<strong>立即生效</strong>，无需重启服务！
+            <br>
+            <small class="text-muted">配置保存后，下一次 API 请求将自动使用新配置。 | 
+            <i class="bi bi-speedometer"></i> 页面加载优化：异步加载，秒级响应</small>
+        </div>
+
+        <!-- API 配置 -->
+        <div class="config-section">
+            <div class="config-header">
+                <h4><i class="bi bi-key"></i> API 配置</h4>
+            </div>
+            <div id="apiConfig">
+                <div class="text-center text-muted">
+                    <div class="spinner-border spinner-border-sm" role="status"></div>
+                    加载中...
+                </div>
+            </div>
+        </div>
+
+        <!-- 全局设置 -->
+        <div class="config-section">
+            <div class="config-header">
+                <h4><i class="bi bi-sliders"></i> 全局设置</h4>
+            </div>
+            <div id="globalConfig">
+                <div class="text-center text-muted">
+                    <div class="spinner-border spinner-border-sm" role="status"></div>
+                    加载中...
+                </div>
+            </div>
+        </div>
+
+        <!-- 工具配置 -->
+        <div class="config-section">
+            <div class="config-header">
+                <h4><i class="bi bi-tools"></i> 工具配置</h4>
+            </div>
+            <div id="toolsConfig">
+                <div class="text-center text-muted">
+                    <div class="spinner-border spinner-border-sm" role="status"></div>
+                    加载中...
+                </div>
+            </div>
+        </div>
+
+        <!-- Agent 配置 -->
+        <div class="config-section">
+            <div class="config-header">
+                <h4><i class="bi bi-robot"></i> Agent 配置</h4>
+                <span class="badge bg-primary" id="agentCount">0 个</span>
+            </div>
+            <div id="agentsConfig">
+                <div class="text-center text-muted">
+                    <div class="spinner-border spinner-border-sm" role="status"></div>
+                    加载中...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 保存提示 -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="saveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-check-circle text-success me-2"></i>
+                <strong class="me-auto">保存成功</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                配置已保存到文件，部分配置需要重启后生效。
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                <i class="bi bi-robot"></i> Learning Agent - AutoGen 多模型架构
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 全局配置存储
+        let currentConfig = {};
+
+        // 加载配置
+        async function loadConfig() {
+            const btn = document.querySelector('button[onclick="loadConfig()"]');
+            const originalHtml = btn.innerHTML;
+            
+            try {
+                // 显示加载状态
+                btn.disabled = true;
+                btn.innerHTML = '<i class="bi bi-hourglass-split"></i> 加载中...';
+                
+                const startTime = Date.now();
+                const response = await fetch('/api/config');
+                const result = await response.json();
+                const loadTime = Date.now() - startTime;
+                
+                console.log(`配置加载耗时：${loadTime}ms`);
+                
+                if (result.success) {
+                    currentConfig = result.data;
+                    renderApiConfig(result.data);
+                    renderGlobalConfig(result.data);
+                    renderToolsConfig(result.data);
+                    renderAgentsConfig(result.data);
+                    
+                    console.log(`配置渲染完成，共 ${Object.keys(result.data.agents || {}).length} 个 Agent`);
+                } else {
+                    showError('加载配置失败：' + (result.error || '未知错误'));
+                }
+            } catch (error) {
+                showError('加载配置失败：' + error.message);
+            } finally {
+                // 恢复按钮状态
+                btn.disabled = false;
+                btn.innerHTML = originalHtml;
+            }
+        }
+
+        // 渲染 API 配置（可编辑）
+        function renderApiConfig(config) {
+            const container = document.getElementById('apiConfig');
+            const providers = config.providers || {};
+            const dashscope = providers.dashscope || {};
+            
+            const apiKeyValue = dashscope.api_key_value || '';
+            const apiKeyDisplay = apiKeyValue ? apiKeyValue : '未配置';
+            const apiKeyClass = apiKeyValue ? 'text-success' : 'text-danger';
+            
+            container.innerHTML = `
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">
+                            <i class="bi bi-key-fill text-primary"></i> API Key
+                            <span class="badge ${apiKeyClass} ms-2">${apiKeyDisplay === '未配置' ? '未配置' : '已配置'}</span>
+                        </div>
+                        <small class="text-muted">阿里云 DashScope 大模型密钥，格式：sk-xxxxxxxx</small>
+                    </div>
+                    <div class="config-value">
+                        <input type="text" class="form-control api-key-input" 
+                               id="apiKeyInput" 
+                               value="${apiKeyValue}" 
+                               placeholder="请输入 API Key（例如：sk-sp-1103f012953e45d9...）"
+                               style="width: 450px; font-family: monospace; letter-spacing: 0.5px;">
+                        <small class="text-muted mt-1">
+                            <i class="bi bi-info-circle"></i> 
+                            获取 API Key：<a href="https://dashscope.console.aliyun.com/apiKey" target="_blank">阿里云 DashScope 控制台</a>
+                        </small>
+                    </div>
+                </div>
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">API 状态</div>
+                    </div>
+                    <div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" 
+                                   id="apiEnabled" ${dashscope.enabled ? 'checked' : ''}>
+                            <label class="form-check-label" for="apiEnabled">
+                                ${dashscope.enabled ? '已启用' : '已禁用'}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">默认模型</div>
+                    </div>
+                    <div class="config-value">
+                        <input type="text" class="form-control" 
+                               id="defaultModel" 
+                               value="${config.default_model || 'qwen3.5-plus'}" 
+                               placeholder="例如：qwen3.5-plus"
+                               style="width: 250px;">
+                    </div>
+                </div>
+            `;
+            
+            // 监听开关变化
+            document.getElementById('apiEnabled').addEventListener('change', (e) => {
+                e.target.previousElementSibling.textContent = e.target.checked ? '已启用' : '已禁用';
+            });
+        }
+
+        // 渲染全局配置（可编辑）
+        function renderGlobalConfig(config) {
+            const container = document.getElementById('globalConfig');
+            const global = config.global || {};
+            
+            container.innerHTML = `
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">超时时间</div>
+                        <small class="text-muted">API 请求超时（秒）</small>
+                    </div>
+                    <div class="config-value">
+                        <input type="number" class="form-control" id="timeoutInput" 
+                               value="${global.timeout || 120}" 
+                               style="width: 120px;" min="10" max="600">
+                    </div>
+                </div>
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">最大重试次数</div>
+                    </div>
+                    <div class="config-value">
+                        <input type="number" class="form-control" id="maxRetriesInput" 
+                               value="${global.max_retries || 3}" 
+                               style="width: 120px;" min="0" max="10">
+                    </div>
+                </div>
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">缓存</div>
+                    </div>
+                    <div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" 
+                                   id="cacheEnabled" ${global.cache_enabled ? 'checked' : ''}>
+                            <label class="form-check-label" for="cacheEnabled">
+                                ${global.cache_enabled ? '已启用' : '已禁用'}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('cacheEnabled').addEventListener('change', (e) => {
+                e.target.previousElementSibling.textContent = e.target.checked ? '已启用' : '已禁用';
+            });
+        }
+
+        // 渲染工具配置（可编辑）
+        function renderToolsConfig(config) {
+            const container = document.getElementById('toolsConfig');
+            const tools = config.tools || {};
+            
+            container.innerHTML = `
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">联网搜索</div>
+                        <small class="text-muted">Web Search</small>
+                    </div>
+                    <div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" 
+                                   id="webSearchEnabled" ${tools.web_search?.enabled ? 'checked' : ''}>
+                            <label class="form-check-label" for="webSearchEnabled">
+                                ${tools.web_search?.enabled ? '已启用' : '已禁用'}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">文件操作</div>
+                    </div>
+                    <div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" 
+                                   id="fileOpsEnabled" ${tools.file_operations?.enabled ? 'checked' : ''}>
+                            <label class="form-check-label" for="fileOpsEnabled">
+                                ${tools.file_operations?.enabled ? '已启用' : '已禁用'}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">代码执行</div>
+                    </div>
+                    <div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" 
+                                   id="codeExecEnabled" ${tools.code_execution?.enabled ? 'checked' : ''}>
+                            <label class="form-check-label" for="codeExecEnabled">
+                                ${tools.code_execution?.enabled ? '已启用' : '已禁用'}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="config-item">
+                    <div>
+                        <div class="config-label">计算器</div>
+                    </div>
+                    <div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" 
+                                   id="calculatorEnabled" ${tools.calculator?.enabled ? 'checked' : ''}>
+                            <label class="form-check-label" for="calculatorEnabled">
+                                ${tools.calculator?.enabled ? '已启用' : '已禁用'}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // 监听所有开关
+            ['webSearchEnabled', 'fileOpsEnabled', 'codeExecEnabled', 'calculatorEnabled'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('change', (e) => {
+                        e.target.previousElementSibling.textContent = e.target.checked ? '已启用' : '已禁用';
+                    });
+                }
+            });
+        }
+
+        // 渲染 Agent 配置（可编辑）
+        function renderAgentsConfig(config) {
+            const container = document.getElementById('agentsConfig');
+            const agents = config.agents || {};
+            const agentList = Object.entries(agents);
+            
+            document.getElementById('agentCount').textContent = `${agentList.length}个`;
+            
+            container.innerHTML = agentList.map(([key, agent]) => `
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div>
+                            <h5 class="mb-1">${agent.role || key}</h5>
+                            <small class="text-muted">
+                                <span class="badge bg-secondary">Layer ${agent.layer || 0}</span>
+                                <span class="badge bg-primary ms-1">模型：${agent.model || 'qwen3.5-plus'}</span>
+                                <span class="text-muted ms-2">${agent.description || ''}</span>
+                            </small>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" 
+                                   data-agent="${key}" data-field="enabled"
+                                   ${agent.enabled ? 'checked' : ''}>
+                            <label class="form-check-label">
+                                ${agent.enabled ? '已启用' : '已禁用'}
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <small class="text-muted"><i class="bi bi-file-earmark-text"></i> 系统提示词:</small>
+                            <button class="btn btn-sm btn-outline-primary" type="button" 
+                                    onclick="togglePromptEdit(this)">
+                                <i class="bi bi-pencil"></i> 编辑
+                            </button>
+                        </div>
+                        <textarea class="form-control form-control-sm prompt-textarea" 
+                                  rows="2" 
+                                  data-agent="${key}" data-field="system_prompt"
+                                  placeholder="系统提示词"
+                                  readonly
+                                  style="background: #f8f9fa; cursor: not-allowed; font-size: 12px;">${agent.system_prompt || ''}</textarea>
+                    </div>
+                </div>
+            `).join('');
+            
+            // 监听 Agent 开关变化
+            container.querySelectorAll('input[data-field="enabled"]').forEach(el => {
+                el.addEventListener('change', (e) => {
+                    e.target.nextElementSibling.textContent = e.target.checked ? '已启用' : '已禁用';
+                });
+            });
+            
+            // 同步默认模型到所有子 Agent
+            syncAgentModels();
+        }
+        
+        // 同步默认模型到所有子 Agent
+        function syncAgentModels() {
+            const defaultModel = document.getElementById('defaultModel').value;
+            document.querySelectorAll('[data-field="model"]').forEach(el => {
+                el.value = defaultModel;
+            });
+        }
+        
+        // 监听默认模型变化
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultModelInput = document.getElementById('defaultModel');
+            if (defaultModelInput) {
+                defaultModelInput.addEventListener('input', syncAgentModels);
+            }
+        });
+
+        // 收集配置数据
+        function collectConfig() {
+            const config = JSON.parse(JSON.stringify(currentConfig));
+            
+            // API 配置
+            if (config.providers && config.providers.dashscope) {
+                config.providers.dashscope.api_key_value = document.getElementById('apiKeyInput').value;
+                config.providers.dashscope.enabled = document.getElementById('apiEnabled').checked;
+            }
+            
+            // 默认模型
+            config.default_model = document.getElementById('defaultModel').value;
+            
+            // 全局配置
+            if (config.global) {
+                config.global.timeout = parseInt(document.getElementById('timeoutInput').value);
+                config.global.max_retries = parseInt(document.getElementById('maxRetriesInput').value);
+                config.global.cache_enabled = document.getElementById('cacheEnabled').checked;
+            }
+            
+            // 工具配置
+            if (config.tools) {
+                if (config.tools.web_search) config.tools.web_search.enabled = document.getElementById('webSearchEnabled').checked;
+                if (config.tools.file_operations) config.tools.file_operations.enabled = document.getElementById('fileOpsEnabled').checked;
+                if (config.tools.code_execution) config.tools.code_execution.enabled = document.getElementById('codeExecEnabled').checked;
+                if (config.tools.calculator) config.tools.calculator.enabled = document.getElementById('calculatorEnabled').checked;
+            }
+            
+            // Agent 配置
+            if (config.agents) {
+                const defaultModel = config.default_model || 'qwen3.5-plus';
+                
+                document.querySelectorAll('[data-agent]').forEach(el => {
+                    const agentKey = el.dataset.agent;
+                    const field = el.dataset.field;
+                    
+                    if (config.agents[agentKey]) {
+                        if (field === 'enabled') {
+                            config.agents[agentKey][field] = el.checked;
+                        } else if (field === 'model') {
+                            // 模型字段：强制使用默认模型
+                            config.agents[agentKey][field] = defaultModel;
+                        } else if (field !== 'description') { // 描述字段不可编辑，不保存
+                            config.agents[agentKey][field] = el.value;
+                        }
+                    }
+                });
+            }
+            
+            return config;
+        }
+
+        // 保存配置
+        async function saveAllConfig() {
+            const btn = document.querySelector('button[onclick="saveAllConfig()"]');
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="bi bi-hourglass-split"></i> 保存中...';
+            
+            try {
+                const config = collectConfig();
+                
+                const response = await fetch('/api/config', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(config)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showToast('保存成功', 'success');
+                } else {
+                    showToast('保存失败：' + result.error, 'danger');
+                }
+            } catch (error) {
+                showToast('保存失败：' + error.message, 'danger');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+        }
+
+        // 切换提示词编辑状态
+        function togglePromptEdit(btn) {
+            const textarea = btn.closest('.agent-card').querySelector('.prompt-textarea');
+            const isReadonly = textarea.hasAttribute('readonly');
+            
+            if (isReadonly) {
+                // 进入编辑模式
+                textarea.removeAttribute('readonly');
+                textarea.style.background = 'white';
+                textarea.style.cursor = 'text';
+                btn.innerHTML = '<i class="bi bi-check-lg"></i> 完成';
+                btn.classList.remove('btn-outline-primary');
+                btn.classList.add('btn-success');
+                textarea.focus();
+            } else {
+                // 完成编辑
+                textarea.setAttribute('readonly', 'readonly');
+                textarea.style.background = '#f8f9fa';
+                textarea.style.cursor = 'not-allowed';
+                btn.innerHTML = '<i class="bi bi-pencil"></i> 编辑';
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-outline-primary');
+            }
+        }
+
+        // 显示提示
+        function showToast(message, type = 'success') {
+            const toastEl = document.getElementById('saveToast');
+            const toastBody = toastEl.querySelector('.toast-body');
+            const toastHeader = toastEl.querySelector('.toast-header');
+            
+            toastBody.textContent = message;
+            toastHeader.querySelector('i').className = `bi bi-${type === 'success' ? 'check-circle' : 'x-circle'} text-${type} me-2`;
+            
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+
+        function showError(message) {
+            document.getElementById('apiConfig').innerHTML = `
+                <div class="alert alert-danger">${message}</div>
+            `;
+            document.getElementById('globalConfig').innerHTML = '';
+            document.getElementById('toolsConfig').innerHTML = '';
+            document.getElementById('agentsConfig').innerHTML = '';
+        }
+
+        // 页面加载
+        document.addEventListener('DOMContentLoaded', loadConfig);
+    </script>
+</body>
+</html>

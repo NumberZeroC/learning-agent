@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+venv/
+ENV/
+env/
+.venv/
+
+# 日志
+logs/
+*.log
+
+# 数据（运行时生成，不打包）
+data/
+
+# PID 文件
+*.pid
+
+# 环境配置（敏感！）
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.bak
+
+# 测试（不打包到镜像）
+tests/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Git
+.git/
+.gitignore
+
+# 文档（开发文档不需要打包）
+docs/
+
+# Markdown 文档（保留 README 等核心文档）
+!README.md
+!CHANGELOG.md
+!CONTRIBUTING.md
