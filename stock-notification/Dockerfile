@@ -28,4 +28,4 @@ COPY . .
 RUN chmod +x *.py *.sh 2>/dev/null || true
 
 # 默认命令
-CMD ["python", "monitor.py"]
+CMD ["python3", "monitor.py"]
