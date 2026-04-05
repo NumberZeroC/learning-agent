@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LLM 客户端
+LLM 客户端（优化版 - 集成事件总线）
 
 统一的 LLM 调用客户端，支持：
 - DashScope/Qwen 等兼容 OpenAI API 格式的模型
@@ -8,6 +8,11 @@ LLM 客户端
 - 审计日志记录
 - Token 用量统计
 - 成本估算
+- 事件总线集成
+
+优化改进：
+- ✅ 发布 LLM 调用事件（开始/完成/错误）
+- ✅ 支持事件驱动的通知和监控
 """
 
 import os
@@ -82,7 +87,7 @@ class LLMClient:
         retry_delay: float = 1.0
     ) -> Dict[str, Any]:
         """
-        发送聊天请求
+        发送聊天请求（集成事件总线）
         
         Args:
             messages: 对话消息列表
@@ -115,6 +120,17 @@ class LLMClient:
         
         last_error = None
         start_time = time.time()
+        
+        # 📢 发布 LLM 调用开始事件
+        try:
+            from utils.event_bus import publish_event, EventType
+            publish_event(EventType.LLM_CALL_START, {
+                "agent": self.agent_name,
+                "model": self.model,
+                "messages_count": len(full_messages)
+            }, source="llm_client")
+        except Exception:
+            pass  # 事件总线不可用时不影晌主流程
         
         for attempt in range(max_retries):
             try:
@@ -189,6 +205,20 @@ class LLMClient:
                         except Exception as e:
                             pass  # 审计日志记录失败不影响主流程
                         
+                        # 📢 发布 LLM 调用完成事件
+                        try:
+                            from utils.event_bus import publish_event, EventType
+                            publish_event(EventType.LLM_CALL_COMPLETE, {
+                                "agent": self.agent_name,
+                                "model": self.model,
+                                "tokens": total_tokens,
+                                "cost": cost,
+                                "duration_ms": (time.time() - start_time) * 1000,
+                                "success": True
+                            }, source="llm_client")
+                        except Exception:
+                            pass
+                        
                         return {
                             "success": True,
                             "content": content,
@@ -243,6 +273,19 @@ class LLMClient:
             if attempt < max_retries - 1:
                 wait_time = retry_delay * (2 ** attempt)
                 time.sleep(wait_time)
+        
+        # 📢 发布 LLM 调用错误事件
+        try:
+            from utils.event_bus import publish_event, EventType
+            publish_event(EventType.LLM_CALL_ERROR, {
+                "agent": self.agent_name,
+                "model": self.model,
+                "error": last_error,
+                "retries": max_retries,
+                "duration_ms": (time.time() - start_time) * 1000
+            }, source="llm_client")
+        except Exception:
+            pass
         
         return {
             "success": False,
