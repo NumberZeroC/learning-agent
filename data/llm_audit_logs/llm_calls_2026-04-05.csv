@@ -57,3 +57,4 @@ timestamp,request_id,agent_name,model,base_url,success,prompt_tokens,completion_
 2026-04-05T00:16:35.333549,20260405001635333651,theory_worker,qwen3.5-plus,https://coding.dashscope.aliyuncs.com/v1,True,726,1286,2012,0.018335999999999998,15998.725175857544,0,
 2026-04-05T00:17:34.600843,20260405001734600874,theory_worker,qwen3.5-plus,https://coding.dashscope.aliyuncs.com/v1,True,726,5234,5960,0.065712,59266.308069229126,0,
 2026-04-05T00:18:32.576377,20260405001832576410,theory_worker,qwen3.5-plus,https://coding.dashscope.aliyuncs.com/v1,True,726,5192,5918,0.065208,57974.5728969574,0,
+2026-04-05T22:07:56.451002,20260405220756451026,web_chat_agent,qwen3.5-plus,https://coding.dashscope.aliyuncs.com/v1,True,311,1081,1392,0.014216,18065.422534942627,0,
