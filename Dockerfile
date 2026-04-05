@@ -10,22 +10,33 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1
 
-# 安装依赖
+# 安装系统依赖
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    sqlite3 \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# 复制依赖文件
 COPY requirements.txt .
+
+# 安装 Python 依赖
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 复制项目文件
 COPY . .
 
-# 创建数据目录
-RUN mkdir -p data/workflow_results logs
+# 创建日志和数据目录
+RUN mkdir -p logs data data/llm_audit_logs data/workflow_results config/backups
+
+# 初始化数据库
+RUN python3 -c "from models.database import initialize; initialize()"
 
 # 暴露端口
 EXPOSE 5001
 
 # 健康检查
-HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
-    CMD python3 -c "import urllib.request; urllib.request.urlopen('http://localhost:5001/api/workflow/status')" || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:5001/health || exit 1
 
 # 启动命令
 CMD ["python3", "web/app.py", "--host", "0.0.0.0", "--port", "5001"]

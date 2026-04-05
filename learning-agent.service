@@ -7,19 +7,28 @@ Type=simple
 User=admin
 Group=admin
 WorkingDirectory=/home/admin/.openclaw/workspace/learning-agent
-Environment="PATH=/home/admin/.openclaw/workspace/learning-agent/venv/bin:/usr/local/bin:/usr/bin:/bin"
-ExecStart=/home/admin/.openclaw/workspace/learning-agent/venv/bin/python3 web/app.py --host 0.0.0.0 --port 5001
-Restart=always
-RestartSec=5
 
-# 内存限制（防止 OOM）
-MemoryLimit=512M
-MemoryHigh=400M
+# 加载环境变量
+EnvironmentFile=/home/admin/.openclaw/workspace/learning-agent/.env
+
+# 激活虚拟环境并启动服务
+ExecStart=/home/admin/.openclaw/workspace/learning-agent/venv/bin/python3 web/app.py --host 0.0.0.0 --port 5001
+
+# 自动重启
+Restart=always
+RestartSec=10
+
+# 资源限制
+LimitNOFILE=65535
 
 # 日志
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=learning-agent
+
+# 安全
+NoNewPrivileges=true
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
