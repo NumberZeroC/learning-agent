@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-🤖 知识生成工作流编排器 (加固版 - 同步 + 实时保存)
+🤖 知识生成工作流编排器 (优化版 - 集成事件总线)
 
 功能：
 - 根据 KNOWLEDGE_FRAMEWORK 架构图定义工作流
@@ -8,7 +8,8 @@
 - 子 Agent 调用大模型进行回答
 - 工作流记录所有回答并保存
 
-加固改进：
+优化改进：
+- ✅ 集成事件总线（发布工作流进度事件）
 - ✅ 每层完成后立即保存（防止中断丢失）
 - ✅ 线程日志前缀区分（清晰看到并发进度）
 - ✅ 更好的错误处理和重试机制
@@ -33,6 +34,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
 from logging.handlers import RotatingFileHandler
 import traceback
+
+# 导入事件总线
+try:
+    from utils.event_bus import publish_event, EventType
+    EVENT_BUS_AVAILABLE = True
+except Exception:
+    EVENT_BUS_AVAILABLE = False
 
 # ============================================
 # 线程安全的日志 formatter
@@ -355,13 +363,25 @@ class WorkflowOrchestrator:
                 self.tasks.append(task)
     
     def execute_workflow(self) -> WorkflowResult:
-        """执行完整工作流"""
+        """执行完整工作流（集成事件总线）"""
         workflow_id = datetime.now().strftime('%Y%m%d_%H%M%S')
+        self._current_workflow_id = workflow_id  # 保存为实例变量供任务使用
         started_at = datetime.now()
         
         logger.info("="*60)
         logger.info(f"🎯 开始执行工作流：{workflow_id}")
         logger.info("="*60)
+        
+        # 📢 发布工作流开始事件
+        if EVENT_BUS_AVAILABLE:
+            try:
+                publish_event(EventType.WORKFLOW_START, {
+                    "workflow_id": workflow_id,
+                    "total_tasks": len(self.tasks),
+                    "total_layers": len(set(t.layer_num for t in self.tasks))
+                }, source="workflow_orchestrator")
+            except Exception as e:
+                logger.warning(f"⚠️  发布 WORKFLOW_START 事件失败：{e}")
         
         # 按层级分组任务
         layer_tasks: Dict[int, List[Task]] = {}
@@ -440,6 +460,20 @@ class WorkflowOrchestrator:
         logger.info(f"   跳过：{skipped_count}/{len(self.tasks)}")
         logger.info("="*60)
         
+        # 📢 发布工作流完成事件
+        if EVENT_BUS_AVAILABLE:
+            try:
+                publish_event(EventType.WORKFLOW_COMPLETE, {
+                    "workflow_id": workflow_id,
+                    "success_count": success_count,
+                    "failed_count": failed_count,
+                    "skipped_count": skipped_count,
+                    "total_tasks": len(self.tasks),
+                    "duration_seconds": duration
+                }, source="workflow_orchestrator")
+            except Exception as e:
+                logger.warning(f"⚠️  发布 WORKFLOW_COMPLETE 事件失败：{e}")
+        
         return result
     
     def _execute_layer(self, layer_num: int, tasks: List[Task], 
@@ -470,6 +504,20 @@ class WorkflowOrchestrator:
                 # ✅ 关键改进：每任务完成后立即保存（独立文件）
                 if task.status == "completed" and task.result:
                     self._save_task_result(layer_num, i, task.result)
+                    
+                    # 📢 发布任务进度事件
+                    if EVENT_BUS_AVAILABLE:
+                        try:
+                            publish_event(EventType.WORKFLOW_PROGRESS, {
+                                "workflow_id": getattr(self, '_current_workflow_id', 'unknown'),
+                                "layer_num": layer_num,
+                                "task_index": i,
+                                "total_tasks": len(tasks),
+                                "topic_name": task.topic_name,
+                                "status": "completed"
+                            }, source="workflow_orchestrator")
+                        except Exception:
+                            pass
                     
             except Exception as e:
                 logger.error(f"[Layer-{layer_num}] 任务异常：{task.topic_name} - {e}")
