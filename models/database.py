@@ -122,7 +122,7 @@ def init_db():
 @contextmanager
 def get_db():
     """获取数据库连接上下文管理器"""
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(str(DB_PATH))
     conn.row_factory = sqlite3.Row  # 支持字典访问
     try:
         yield conn
