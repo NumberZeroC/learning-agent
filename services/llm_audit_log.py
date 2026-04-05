@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LLM 调用审计日志
+LLM 调用审计日志（优化版）
 
 独立记录所有 LLM 调用，用于：
 - 成本审计
@@ -8,7 +8,10 @@ LLM 调用审计日志
 - 性能分析
 - 安全合规
 
-与主进程日志分离，独立存储
+优化改进：
+- ✅ 使用 SQLite 存储（替代 JSONL/CSV 文件）
+- ✅ 保留文件导出功能（用于备份）
+- ✅ 支持复杂查询和统计
 """
 
 import os
@@ -99,7 +102,7 @@ class LLMAuditLogger:
         self.log_dir = Path("data/llm_audit_logs")
         self.log_dir.mkdir(parents=True, exist_ok=True)
         
-        # 当前日志文件
+        # 当前日志文件（保留文件日志用于备份）
         self._current_date = datetime.now().strftime("%Y-%m-%d")
         self._json_log_path = self.log_dir / f"llm_calls_{self._current_date}.jsonl"
         self._csv_log_path = self.log_dir / f"llm_calls_{self._current_date}.csv"
@@ -118,14 +121,28 @@ class LLMAuditLogger:
             "cost", "duration_ms", "retries", "error_message"
         ]
         
+        # 初始化 SQLite 数据库
+        self._init_database()
+        
         # 初始化 CSV 文件（如果不存在）
         self._init_csv()
         
         self._initialized = True
         
-        print(f"✅ LLM 审计日志初始化完成")
+        print(f"✅ LLM 审计日志初始化完成（SQLite + 文件备份）")
+        print(f"   SQLite 数据库：data/learning_agent.db (llm_audit_logs 表)")
         print(f"   JSON 日志：{self._json_log_path}")
         print(f"   CSV 日志：{self._csv_log_path}")
+    
+    def _init_database(self):
+        """初始化 SQLite 数据库"""
+        try:
+            from models.database import initialize, LLMAuditLogDAO
+            initialize()
+            self.audit_dao = LLMAuditLogDAO
+        except Exception as e:
+            print(f"⚠️  SQLite 初始化失败：{e}，将仅使用文件日志")
+            self.audit_dao = None
     
     def _init_csv(self):
         """初始化 CSV 文件（添加表头）"""
@@ -146,7 +163,7 @@ class LLMAuditLogger:
     
     def log(self, record: LLMAuditRecord):
         """
-        记录一条 LLM 调用审计日志
+        记录一条 LLM 调用审计日志（SQLite + 文件备份）
         
         Args:
             record: 审计记录
@@ -154,11 +171,30 @@ class LLMAuditLogger:
         self._rotate_file_if_needed()
         
         with self._file_lock:
-            # 写入 JSONL 文件
+            # 写入 SQLite 数据库（主要存储）
+            if self.audit_dao:
+                try:
+                    self.audit_dao.log_call(
+                        agent_name=record.agent_name,
+                        model=record.model,
+                        base_url=record.base_url,
+                        success=record.success,
+                        prompt_tokens=record.prompt_tokens,
+                        completion_tokens=record.completion_tokens,
+                        total_tokens=record.total_tokens,
+                        cost=record.cost,
+                        duration_ms=record.duration_ms,
+                        retries=record.retries,
+                        error_message=record.error_message
+                    )
+                except Exception as e:
+                    print(f"⚠️  SQLite 写入失败：{e}")
+            
+            # 写入 JSONL 文件（备份）
             with open(self._json_log_path, 'a', encoding='utf-8') as f:
                 f.write(json.dumps(record.to_dict(), ensure_ascii=False) + '\n')
             
-            # 写入 CSV 文件
+            # 写入 CSV 文件（备份）
             with open(self._csv_log_path, 'a', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
                 writer.writerow(record.to_csv_row())

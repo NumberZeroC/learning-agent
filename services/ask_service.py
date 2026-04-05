@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """
-Ask Service - Web 问答助手服务（精简版）
+Ask Service - Web 问答助手服务（优化版）
 
 核心功能：
-- 对话历史管理
-- Agent 回复生成
+- 对话历史管理（SQLite）
+- Agent 回复生成（使用统一 LLMClient）
 - 多轮对话支持
 - 流式响应
+
+优化改进：
+- ✅ 使用 LLMClient 统一调用（带审计日志）
+- ✅ 使用 SQLite 存储对话历史
+- ✅ 支持会话管理
 """
 
 import os
@@ -18,8 +23,6 @@ import logging
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional
-import urllib.request
-import urllib.error
 from logging.handlers import RotatingFileHandler
 
 # 项目路径
@@ -48,20 +51,23 @@ logger.setLevel(logging.INFO)
 logger.addHandler(handler)
 logger.addHandler(logging.StreamHandler())
 
-logger.info("🔧 Ask Service 初始化")
+logger.info("🔧 Ask Service 初始化（优化版：LLMClient + SQLite）")
 logger.info(f"📝 日志文件：{log_file}")
 
 
 class AskService:
     """
-    Ask 服务 - Web 问答助手
+    Ask 服务 - Web 问答助手（优化版）
     """
     
     def __init__(self, config_path: str = "config/agent_config.yaml"):
         self.config_path = Path(config_path)
         self.config = self._load_config()
         
-        # 对话历史存储
+        # 初始化数据库
+        self._init_database()
+        
+        # 对话历史存储（内存缓存 + SQLite 持久化）
         self._histories: Dict[str, List[Dict]] = {}
         
         # API 配置（热更新：每次调用时从配置文件读取）
@@ -70,15 +76,27 @@ class AskService:
         
         # Agent 配置
         self.agents = self._init_agents()
+        
+        # LLM 客户端缓存（按 Agent 名称）
+        self._llm_clients: Dict[str, Any] = {}
+    
+    def _init_database(self):
+        """初始化数据库"""
+        try:
+            from models.database import initialize, ChatHistoryDAO
+            initialize()
+            self.chat_dao = ChatHistoryDAO
+            logger.info("✅ 数据库初始化完成")
+        except Exception as e:
+            logger.warning(f"⚠️ 数据库初始化失败：{e}，将使用内存存储")
+            self.chat_dao = None
     
     def _get_api_config(self) -> Dict[str, str]:
         """获取最新的 API 配置（支持热更新）"""
-        # 每次调用时重新加载配置文件，确保获取最新配置
         config = self._load_config()
         providers = config.get('providers', {})
         dashscope = providers.get('dashscope', {})
         
-        # 优先从配置文件读取，其次从环境变量读取
         api_key = dashscope.get('api_key_value', '') or os.getenv('DASHSCOPE_API_KEY', '')
         base_url = dashscope.get('base_url', self._default_base_url)
         model = config.get('default_model', self._default_model)
@@ -88,6 +106,22 @@ class AskService:
             'base_url': base_url,
             'model': model
         }
+    
+    def _get_llm_client(self, agent_name: str) -> Any:
+        """获取或创建 LLM 客户端（按 Agent 缓存）"""
+        if agent_name not in self._llm_clients:
+            from services.llm_client import LLMClient
+            api_config = self._get_api_config()
+            agent_config = self.agents.get(agent_name, {})
+            
+            self._llm_clients[agent_name] = LLMClient(
+                api_key=api_config['api_key'],
+                base_url=api_config['base_url'],
+                model=agent_config.get('model', api_config['model']),
+                agent_name=agent_name
+            )
+        
+        return self._llm_clients[agent_name]
     
     def _load_config(self) -> Dict:
         """加载配置文件"""
@@ -117,36 +151,55 @@ class AskService:
         """获取可用 Agent 列表"""
         return list(self.agents.values())
     
-    def chat(self, message: str, agent_name: str = "master_agent") -> Dict:
+    def chat(self, message: str, agent_name: str = "master_agent", 
+             session_id: Optional[str] = None) -> Dict:
         """
-        发送消息并获取回复
+        发送消息并获取回复（使用统一 LLMClient）
         
         Args:
             message: 用户消息
             agent_name: Agent 名称
+            session_id: 可选的会话 ID
             
         Returns:
-            Dict: {success, reply, agent, timestamp}
+            Dict: {success, reply, agent, timestamp, usage, cost}
         """
         try:
-            # 获取 Agent 配置
             agent = self.agents.get(agent_name, {})
             system_prompt = agent.get('system_prompt', '你是一个有帮助的 AI 助手。')
             
-            # 调用 LLM API
-            reply = self._call_llm(message, system_prompt)
+            # 使用统一的 LLMClient 调用
+            llm_client = self._get_llm_client(agent_name)
+            result = llm_client.chat(
+                messages=[{"role": "user", "content": message}],
+                system_prompt=system_prompt,
+                max_retries=2
+            )
             
-            # 保存历史
-            self._save_history(agent_name, message, reply)
-            
-            return {
-                "success": True,
-                "reply": reply,
-                "agent": agent_name,
-                "timestamp": datetime.now().isoformat()
-            }
+            if result.get('success'):
+                reply = result['content']
+                self._save_history(agent_name, message, reply, session_id)
+                
+                return {
+                    "success": True,
+                    "reply": reply,
+                    "agent": agent_name,
+                    "timestamp": datetime.now().isoformat(),
+                    "usage": result.get('usage', {}),
+                    "cost": result.get('cost', 0)
+                }
+            else:
+                error_msg = result.get('error', 'Unknown error')
+                logger.error(f"LLM 调用失败：{error_msg}")
+                return {
+                    "success": False,
+                    "error": error_msg,
+                    "agent": agent_name,
+                    "timestamp": datetime.now().isoformat()
+                }
             
         except Exception as e:
+            logger.error(f"chat 异常：{e}")
             return {
                 "success": False,
                 "error": str(e),
@@ -154,201 +207,70 @@ class AskService:
                 "timestamp": datetime.now().isoformat()
             }
     
-    def _call_llm(self, user_message: str, system_prompt: str, timeout: int = 120) -> str:
-        """调用大模型 API（非流式，支持热更新）"""
-        # 获取最新 API 配置（热更新）
-        api_config = self._get_api_config()
+    def _save_history(self, agent_name: str, user_msg: str, reply: str, 
+                     session_id: Optional[str] = None):
+        """保存对话历史到内存 + SQLite"""
+        timestamp = datetime.now().isoformat()
         
-        url = f"{api_config['base_url']}/chat/completions"
-        
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {api_config['api_key']}"
-        }
-        
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_message}
-        ]
-        
-        payload = {
-            "model": api_config['model'],
-            "messages": messages,
-            "temperature": 0.7,
-            "max_tokens": 4000,
-            "stream": False
-        }
-        
-        data = json.dumps(payload).encode('utf-8')
-        req = urllib.request.Request(url, data=data, headers=headers, method='POST')
-        
-        with urllib.request.urlopen(req, timeout=timeout) as response:
-            result = json.loads(response.read().decode('utf-8'))
-            
-            if 'choices' in result and len(result['choices']) > 0:
-                return result['choices'][0]['message']['content']
-            else:
-                return "抱歉，我无法回答这个问题。"
-    
-    def chat_stream(self, user_message: str, system_prompt: str, timeout: int = 120):
-        """
-        流式调用大模型 API（支持热更新）
-        
-        Yields:
-            Dict: {type: 'token', content: '...'} 或 {type: 'error', error: '...'}
-        """
-        # 获取最新 API 配置（热更新）
-        api_config = self._get_api_config()
-        
-        url = f"{api_config['base_url']}/chat/completions"
-        
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {api_config['api_key']}"
-        }
-        
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_message}
-        ]
-        
-        payload = {
-            "model": api_config['model'],
-            "messages": messages,
-            "temperature": 0.7,
-            "max_tokens": 4000,
-            "stream": True
-        }
-        
-        data = json.dumps(payload).encode('utf-8')
-        req = urllib.request.Request(url, data=data, headers=headers, method='POST')
-        
-        try:
-            with urllib.request.urlopen(req, timeout=timeout) as response:
-                full_content = ""
-                
-                # 读取 SSE 流
-                while True:
-                    line = response.readline()
-                    if not line:
-                        break
-                    
-                    line = line.decode('utf-8').strip()
-                    
-                    # 跳过空行和注释
-                    if not line or line.startswith(':'):
-                        continue
-                    
-                    # 解析 SSE 数据
-                    if line.startswith('data: '):
-                        data_str = line[6:]
-                        
-                        # 检查结束标记
-                        if data_str.strip() == '[DONE]':
-                            break
-                        
-                        try:
-                            chunk = json.loads(data_str)
-                            
-                            # 提取 token 内容
-                            if 'choices' in chunk and len(chunk['choices']) > 0:
-                                delta = chunk['choices'][0].get('delta', {})
-                                content = delta.get('content', '')
-                                
-                                if content:
-                                    full_content += content
-                                    yield {
-                                        "type": "token",
-                                        "content": content
-                                    }
-                        except json.JSONDecodeError:
-                            continue
-                
-                # 保存完整回复到历史
-                if full_content:
-                    self._save_history_to_file(user_message, full_content)
-                
-                # 发送结束事件
-                yield {
-                    "type": "end",
-                    "timestamp": datetime.now().isoformat()
-                }
-                    
-        except Exception as e:
-            yield {
-                "type": "error",
-                "error": str(e)
-            }
-            # 出错时也发送结束事件
-            yield {
-                "type": "end",
-                "timestamp": datetime.now().isoformat()
-            }
-    
-    def _save_history(self, agent_name: str, user_msg: str, reply: str):
-        """保存对话历史到内存"""
+        # 保存到内存
         if agent_name not in self._histories:
             self._histories[agent_name] = []
         
         self._histories[agent_name].append({
             "role": "user",
             "content": user_msg,
-            "timestamp": datetime.now().isoformat()
+            "timestamp": timestamp
         })
         self._histories[agent_name].append({
             "role": "assistant",
             "content": reply,
-            "timestamp": datetime.now().isoformat()
+            "timestamp": timestamp
         })
         
-        # 限制历史长度（最多 20 条）
+        # 限制内存历史长度（最多 20 条）
         if len(self._histories[agent_name]) > 20:
             self._histories[agent_name] = self._histories[agent_name][-20:]
-    
-    def _save_history_to_file(self, user_msg: str, reply: str, agent_name: str = "master_agent"):
-        """保存对话历史到文件（用于流式模式）"""
-        # 保存到内存
-        self._save_history(agent_name, user_msg, reply)
         
-        # 保存到文件
-        history_file = project_dir / "data" / "chat_history" / f"{agent_name}.json"
-        history_file.parent.mkdir(parents=True, exist_ok=True)
-        
-        history = []
-        if history_file.exists():
+        # 保存到 SQLite
+        if self.chat_dao:
             try:
-                with open(history_file, 'r', encoding='utf-8') as f:
-                    history = json.load(f)
-            except:
-                history = []
-        
-        history.append({
-            "role": "user",
-            "content": user_msg,
-            "timestamp": datetime.now().isoformat()
-        })
-        history.append({
-            "role": "assistant",
-            "content": reply,
-            "timestamp": datetime.now().isoformat()
-        })
-        
-        # 限制长度
-        if len(history) > 100:
-            history = history[-100:]
-        
-        with open(history_file, 'w', encoding='utf-8') as f:
-            json.dump(history, f, ensure_ascii=False, indent=2)
+                self.chat_dao.add_message(agent_name, "user", user_msg, timestamp, session_id)
+                self.chat_dao.add_message(agent_name, "assistant", reply, timestamp, session_id)
+            except Exception as e:
+                logger.warning(f"SQLite 保存失败：{e}")
     
-    def get_history(self, agent_name: str = "master_agent", limit: int = 20) -> List[Dict]:
-        """获取对话历史"""
+    def get_history(self, agent_name: str = "master_agent", limit: int = 20,
+                   session_id: Optional[str] = None) -> List[Dict]:
+        """获取对话历史（优先从 SQLite 读取）"""
+        if self.chat_dao:
+            try:
+                db_history = self.chat_dao.get_history(agent_name, limit * 2, session_id)
+                if db_history:
+                    history = []
+                    for row in db_history[-limit:]:
+                        history.append({
+                            "role": row['role'],
+                            "content": row['content'],
+                            "timestamp": row['timestamp']
+                        })
+                    return history
+            except Exception as e:
+                logger.warning(f"SQLite 读取失败：{e}")
+        
         history = self._histories.get(agent_name, [])
         return history[-limit:] if limit else history
     
-    def clear_history(self, agent_name: str = "master_agent"):
+    def clear_history(self, agent_name: str = "master_agent", 
+                     session_id: Optional[str] = None):
         """清空对话历史"""
         if agent_name in self._histories:
             self._histories[agent_name] = []
+        
+        if self.chat_dao:
+            try:
+                self.chat_dao.clear_history(agent_name, session_id)
+            except Exception as e:
+                logger.warning(f"SQLite 清空失败：{e}")
 
 
 # 单例模式
