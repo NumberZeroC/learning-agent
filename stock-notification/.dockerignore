@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+venv311/
+*.egg-info/
+.eggs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Data (使用外部挂载)
+data/
+
+# Git
+.git/
+.gitignore
+
+# Docs
+docs/
+*.md
+!README.md
+
+# Test files
+test_*.py
+*_test.py
+
+# Shell scripts (cron 相关)
+scheduled_*.sh
+cleanup_logs.sh
+send_notify.sh
+crontab.txt
+
+# Config examples
+config.yaml.example
