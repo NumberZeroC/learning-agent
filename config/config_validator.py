@@ -14,7 +14,7 @@
 - 默认值填充
 """
 
-from pydantic import BaseModel, Field, validator, ValidationError
+from pydantic import BaseModel, Field, field_validator, ValidationError, ConfigDict
 from typing import Dict, List, Optional, Any
 from pathlib import Path
 import yaml
@@ -36,7 +36,8 @@ class ProviderConfig(BaseModel):
     base_url: str = "https://api.dashscope.aliyuncs.com/v1"
     models: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
     
-    @validator('base_url')
+    @field_validator('base_url')
+    @classmethod
     def validate_base_url(cls, v):
         if v and not v.startswith(('http://', 'https://')):
             raise ValueError('base_url 必须是有效的 HTTP/HTTPS URL')
@@ -49,7 +50,8 @@ class AgentLLMConfig(BaseModel):
     max_tokens: int = Field(default=4000, ge=1, le=32000)
     top_p: float = Field(default=0.9, ge=0.0, le=1.0)
     
-    @validator('temperature')
+    @field_validator('temperature')
+    @classmethod
     def validate_temperature(cls, v):
         if not 0 <= v <= 2:
             raise ValueError('temperature 必须在 0 到 2 之间')
@@ -68,7 +70,8 @@ class AgentConfig(BaseModel):
     tools: List[str] = Field(default_factory=list)
     llm_config: Optional[AgentLLMConfig] = None
     
-    @validator('layer')
+    @field_validator('layer')
+    @classmethod
     def validate_layer(cls, v):
         if not 0 <= v <= 10:
             raise ValueError('layer 必须在 0 到 10 之间')
@@ -96,7 +99,8 @@ class LoggingConfig(BaseModel):
     backup_count: int = Field(default=5, ge=1, le=100)
     console: bool = True
     
-    @validator('level')
+    @field_validator('level')
+    @classmethod
     def validate_level(cls, v):
         valid_levels = ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']
         if v.upper() not in valid_levels:
@@ -152,8 +156,7 @@ class AppConfig(BaseModel):
     performance: Optional[PerformanceConfig] = None
     tools: Optional[ToolsConfig] = None
     
-    class Config:
-        populate_by_name = True
+    model_config = ConfigDict(populate_by_name=True)
 
 
 # ============================================
