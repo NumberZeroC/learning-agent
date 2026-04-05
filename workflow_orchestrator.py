@@ -31,6 +31,7 @@ from typing import Dict, List, Any, Optional
 from dataclasses import dataclass, asdict, field
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
+from logging.handlers import RotatingFileHandler
 import traceback
 
 # ============================================
@@ -47,14 +48,35 @@ class ThreadLogFormatter(logging.Formatter):
 
 
 # 配置日志
-log_handler = logging.StreamHandler()
-log_handler.setFormatter(ThreadLogFormatter(
+# 日志配置
+log_dir = Path(__file__).parent / "logs"
+log_dir.mkdir(exist_ok=True)
+
+# 控制台日志
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(ThreadLogFormatter(
+    '%(asctime)s - [%(thread_name)s] - %(levelname)s - %(message)s'
+))
+
+# 文件日志（轮转：最多保留 10 个文件，每个文件最大 10MB）
+log_file = log_dir / "workflow.log"
+file_handler = RotatingFileHandler(
+    log_file,
+    maxBytes=10*1024*1024,  # 10MB
+    backupCount=10,  # 保留 10 个备份文件
+    encoding='utf-8'
+)
+file_handler.setFormatter(logging.Formatter(
     '%(asctime)s - [%(thread_name)s] - %(name)s - %(levelname)s - %(message)s'
 ))
 
+# 配置 logger
 logger = logging.getLogger('workflow')
 logger.setLevel(logging.INFO)
-logger.handlers = [log_handler]
+logger.handlers = [console_handler, file_handler]
+
+logger.info(f"📝 日志文件：{log_file}")
+logger.info(f"📊 日志策略：最多保留 10 个文件，每个文件最大 10MB")
 
 
 # ============================================

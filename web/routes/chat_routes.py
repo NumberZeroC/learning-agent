@@ -73,10 +73,14 @@ def stream_message():
     请求体:
     {
         "message": "用户消息",
-        "agent": "master_agent"  # 可选，默认 master_agent
+        "agent": "web_chat_agent"  # 可选，默认 web_chat_agent（专门用于聊天）
     }
     
     返回 Server-Sent Events 流
+    
+    注意：
+    - web_chat_agent: 专门用于聊天问答，输出自然语言
+    - master_agent: 用于工作流任务分解，输出 JSON
     """
     data = request.get_json()
     
@@ -87,7 +91,9 @@ def stream_message():
         }), 400
     
     message = data.get('message', '')
-    agent_name = data.get('agent', 'master_agent')
+    # 默认使用 web_chat_agent 而不是 master_agent
+    # master_agent 用于工作流任务分解（输出 JSON），不适合聊天
+    agent_name = data.get('agent', 'web_chat_agent')
     
     if not message:
         return jsonify({

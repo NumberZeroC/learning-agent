@@ -26,17 +26,30 @@ workflow_run_bp = Blueprint('workflow_run', __name__, url_prefix='/api/workflow/
 def check_api_config():
     """检查大模型 API 配置"""
     try:
-        # 检查环境变量
-        api_key = os.getenv('DASHSCOPE_API_KEY', '')
+        # 优先检查配置文件（用户通过配置页面设置的）
+        config_path = project_dir / "config" / "agent_config.yaml"
+        api_key = ''
+        
+        if config_path.exists():
+            import yaml
+            with open(config_path, 'r', encoding='utf-8') as f:
+                config = yaml.safe_load(f)
+                providers = config.get('providers', {})
+                dashscope = providers.get('dashscope', {})
+                api_key = dashscope.get('api_key_value', '')
+        
+        # 如果配置文件没有，再检查环境变量
+        if not api_key:
+            api_key = os.getenv('DASHSCOPE_API_KEY', '')
+        
         if not api_key:
             return {
                 "ok": False,
                 "error": "API Key 未配置",
-                "detail": "请在配置页面设置 DASHSCOPE_API_KEY"
+                "detail": "请在配置页面设置 API Key"
             }
         
-        # 检查配置文件
-        config_path = project_dir / "config" / "agent_config.yaml"
+        # 检查配置文件是否存在
         if not config_path.exists():
             return {
                 "ok": False,
@@ -44,40 +57,59 @@ def check_api_config():
                 "detail": f"缺少文件：{config_path}"
             }
         
-        # 尝试导入并测试 API（使用 chat/completions 接口测试）
+        # 尝试导入并测试 API（使用配置文件中的端点）
         import urllib.request
         import json
         
-        url = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
+        # 使用配置文件中的 base_url，如果没有则使用默认值
+        base_url = dashscope.get('base_url', 'https://dashscope.aliyuncs.com/api/v1')
+        # 兼容新旧 API 格式
+        if 'coding.dashscope.aliyuncs.com' in base_url:
+            # 新版 API（兼容 OpenAI 格式）
+            url = f"{base_url}/chat/completions"
+            # 使用配置文件中配置的模型，如果没有则使用默认值
+            test_model = dashscope.get('models', {}).get('qwen3.5-plus', {}).get('name', 'qwen3.5-plus')
+            payload = {
+                "model": test_model,
+                "messages": [
+                    {"role": "user", "content": "Hi"}
+                ],
+                "max_tokens": 1,
+                "stream": False
+            }
+        else:
+            # 旧版 API
+            url = f"{base_url}/services/aigc/text-generation/generation"
+            payload = {
+                "model": "qwen-turbo",
+                "input": {
+                    "messages": [
+                        {"role": "user", "content": "Hi"}
+                    ]
+                },
+                "parameters": {
+                    "max_tokens": 1
+                }
+            }
+        
         headers = {
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json"
-        }
-        
-        # 简单测试 payload
-        payload = {
-            "model": "qwen-turbo",
-            "input": {
-                "messages": [
-                    {"role": "user", "content": "Hi"}
-                ]
-            },
-            "parameters": {
-                "max_tokens": 1
-            }
         }
         
         data = json.dumps(payload).encode('utf-8')
         req = urllib.request.Request(url, data=data, headers=headers, method='POST')
         
         try:
-            with urllib.request.urlopen(req, timeout=10) as response:
+            with urllib.request.urlopen(req, timeout=30) as response:
                 result = json.loads(response.read().decode('utf-8'))
-                if 'output' in result or 'request_id' in result:
+                # 兼容新旧 API 格式
+                if 'output' in result or 'request_id' in result or 'choices' in result:
+                    model_name = 'qwen-plus' if 'coding.dashscope' in base_url else 'qwen-turbo'
                     return {
                         "ok": True,
                         "message": "API 连接测试成功",
-                        "model": "qwen-turbo"
+                        "model": model_name
                     }
         except urllib.error.HTTPError as e:
             error_code = e.code

@@ -10,9 +10,11 @@ Learning Agent Web 应用
 import os
 import sys
 import json
+import logging
 from pathlib import Path
 from flask import Flask, render_template, jsonify, send_from_directory
 from dotenv import load_dotenv
+from logging.handlers import RotatingFileHandler
 
 # 加载 .env 文件
 project_dir = Path(__file__).parent.parent
@@ -29,17 +31,61 @@ project_dir = web_dir.parent
 sys.path.insert(0, str(project_dir))
 sys.path.insert(0, str(web_dir))
 
+# 配置日志
+log_dir = project_dir / "logs"
+log_dir.mkdir(exist_ok=True)
+
+# 日志配置：最多保留 10 个文件，每个文件最大 10MB
+log_file = log_dir / "web.log"
+handler = RotatingFileHandler(
+    log_file,
+    maxBytes=10*1024*1024,  # 10MB
+    backupCount=10,  # 保留 10 个备份文件
+    encoding='utf-8'
+)
+handler.setFormatter(logging.Formatter(
+    '%(asctime)s - [%(levelname)s] - %(name)s - %(message)s'
+))
+handler.setLevel(logging.INFO)
+
+# 配置 Flask app 的 logger
 app = Flask(__name__)
+app.logger.addHandler(handler)
+app.logger.setLevel(logging.INFO)
+
+# 同时输出到控制台
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(logging.Formatter(
+    '%(asctime)s - [%(levelname)s] - %(message)s'
+))
+app.logger.addHandler(console_handler)
+
+app.logger.info("🚀 Learning Agent Web 服务启动")
+app.logger.info(f"📝 日志文件：{log_file}")
+app.logger.info(f"📊 日志策略：最多保留 10 个文件，每个文件最大 10MB")
 
 # 数据目录
 DATA_DIR = project_dir / "data" / "workflow_results"
 
-# 验证 API Key 是否加载
-api_key = os.getenv('DASHSCOPE_API_KEY', '')
+# 验证 API Key 是否加载（优先检查配置文件）
+api_key = ''
+config_path = project_dir / "config" / "agent_config.yaml"
+if config_path.exists():
+    import yaml
+    with open(config_path, 'r', encoding='utf-8') as f:
+        config = yaml.safe_load(f)
+        providers = config.get('providers', {})
+        dashscope = providers.get('dashscope', {})
+        api_key = dashscope.get('api_key_value', '')
+
+# 如果配置文件没有，检查环境变量
+if not api_key:
+    api_key = os.getenv('DASHSCOPE_API_KEY', '')
+
 if api_key:
-    print(f"✅ DASHSCOPE_API_KEY 已加载 (前缀：{api_key[:15]}...)")
+    print(f"✅ API Key 已加载 (前缀：{api_key[:15]}...)")
 else:
-    print("❌ DASHSCOPE_API_KEY 未加载，请检查 .env 文件")
+    print("❌ API Key 未配置，请在配置页面设置")
 
 # 注册路由蓝图
 from routes.chat_routes import chat_bp

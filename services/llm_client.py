@@ -10,6 +10,7 @@ LLM 客户端
 - 成本估算
 """
 
+import os
 import json
 import urllib.request
 import urllib.error
@@ -58,7 +59,7 @@ class LLMClient:
     def __init__(
         self,
         api_key: str,
-        base_url: str = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        base_url: str = os.environ.get("DASHSCOPE_BASE_URL", "https://coding.dashscope.aliyuncs.com/v1"),
         model: str = "qwen-plus",
         temperature: float = 0.7,
         max_tokens: int = 4000,

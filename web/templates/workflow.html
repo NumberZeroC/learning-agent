@@ -6,6 +6,13 @@
     <title>AI Agent 学习路线 - Learning Agent</title>
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Markdown 渲染 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/marked/12.0.0/marked.min.js"></script>
+    <!-- HTML 安全过滤 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/dompurify/3.0.9/purify.min.js"></script>
+    <!-- 代码高亮 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <style>
         :root {
             --sidebar-width: 260px;
@@ -671,15 +678,24 @@
         
         /* 代码块 */
         .code-block {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 15px;
+            background: #0d1117 !important;
+            color: #c9d1d9 !important;
+            padding: 16px !important;
             border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+            font-size: 13px !important;
             overflow-x: auto;
             margin: 15px 0;
-            line-height: 1.5;
+            line-height: 1.5 !important;
+            white-space: pre !important;
+            word-wrap: normal !important;
+            position: relative;
+        }
+        
+        .code-block code {
+            display: block;
+            white-space: pre !important;
+            line-height: 1.5 !important;
         }
         
         /* 资源链接 */
@@ -1105,7 +1121,7 @@
                                                 </div>
                                             ` : ''}
                                             ${kp.detailed_content.code_example ? `
-                                                <div class="code-block">${escapeHtml(kp.detailed_content.code_example)}</div>
+                                                <div class="code-block"><code class="language-python">${marked.parse(kp.detailed_content.code_example)}</code></div>
                                             ` : ''}
                                         ` : ''}
                                     </div>
@@ -1160,6 +1176,13 @@
             
             document.getElementById('mainContent').innerHTML = html;
             
+            // 代码高亮
+            document.querySelectorAll('.code-block code').forEach((block) => {
+                hljs.highlightElement(block);
+                // 添加复制按钮
+                addCopyButtonToCode(block);
+            });
+            
             // 更新右侧 TOC
             updateTOC(tocHtml);
         }
@@ -1211,6 +1234,28 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+        
+        // 添加代码复制按钮
+        function addCopyButtonToCode(codeBlock) {
+            const pre = codeBlock.parentElement;
+            const existingBtn = pre.querySelector('.copy-code-btn');
+            if (existingBtn) return;
+            
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'copy-code-btn';
+            copyBtn.innerHTML = '📋 复制';
+            copyBtn.style.cssText = 'position:absolute;top:8px;right:8px;background:rgba(255,255,255,0.1);border:none;color:white;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px;transition:background 0.3s;';
+            copyBtn.onclick = () => {
+                navigator.clipboard.writeText(codeBlock.textContent);
+                copyBtn.textContent = '✅ 已复制';
+                copyBtn.style.background = 'rgba(76, 175, 80, 0.3)';
+                setTimeout(() => {
+                    copyBtn.textContent = '📋 复制';
+                    copyBtn.style.background = 'rgba(255,255,255,0.1)';
+                }, 2000);
+            };
+            pre.appendChild(copyBtn);
         }
 
         // 显示错误
@@ -1408,6 +1453,12 @@
         
         document.addEventListener('DOMContentLoaded', loadKnowledgeTree);
         document.addEventListener('DOMContentLoaded', checkWorkflowStatus);
+        
+        // 配置 marked
+        marked.setOptions({
+            breaks: true,
+            gfm: true
+        });
         
         // 监听主内容区滚动，自动更新 TOC 激活状态
         document.addEventListener('scroll', function() {

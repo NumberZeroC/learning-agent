@@ -82,6 +82,8 @@ DASHSCOPE_API_KEY=sk-your-real-api-key
 4. ✅ **立即生效**，无需重启服务！
 
 > 💡 **热更新支持：** 修改 API Key 或模型配置后，下一次 API 请求将自动使用新配置，无需重启服务。
+> 
+> 🌐 **支持多种大模型：** 阿里云 DashScope（通义千问）、OpenAI GPT、DeepSeek（深度求索）、智谱 AI（GLM）等
 
 #### 运行工作流
 

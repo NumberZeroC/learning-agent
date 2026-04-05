@@ -14,15 +14,42 @@ import sys
 import json
 import threading
 import yaml
+import logging
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional
 import urllib.request
 import urllib.error
+from logging.handlers import RotatingFileHandler
 
 # 项目路径
 web_dir = Path(__file__).parent
 project_dir = web_dir.parent
+
+# 配置日志
+log_dir = project_dir / "logs"
+log_dir.mkdir(exist_ok=True)
+
+# 日志配置（轮转：最多保留 10 个文件，每个文件最大 10MB）
+log_file = log_dir / "ask_service.log"
+handler = RotatingFileHandler(
+    log_file,
+    maxBytes=10*1024*1024,  # 10MB
+    backupCount=10,  # 保留 10 个备份文件
+    encoding='utf-8'
+)
+handler.setFormatter(logging.Formatter(
+    '%(asctime)s - [%(levelname)s] - %(name)s - %(message)s'
+))
+
+# 配置 logger
+logger = logging.getLogger('ask_service')
+logger.setLevel(logging.INFO)
+logger.addHandler(handler)
+logger.addHandler(logging.StreamHandler())
+
+logger.info("🔧 Ask Service 初始化")
+logger.info(f"📝 日志文件：{log_file}")
 
 
 class AskService:

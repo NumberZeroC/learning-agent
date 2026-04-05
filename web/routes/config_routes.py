@@ -123,9 +123,16 @@ def get_providers_config():
 
 @config_bp.route('/api/config', methods=['PUT'])
 def save_config():
-    """保存配置"""
+    """保存配置（增强安全版）"""
+    import logging
+    from datetime import datetime
+    
     try:
         config_path = project_dir / "config" / "agent_config.yaml"
+        audit_log_path = project_dir / "logs" / "config_audit.log"
+        
+        # 确保日志目录存在
+        audit_log_path.parent.mkdir(exist_ok=True)
         
         if not config_path.exists():
             return jsonify({
@@ -136,6 +143,7 @@ def save_config():
         new_config = request.get_json()
         
         if not new_config:
+            logging.warning(f"[{datetime.now()}] 配置保存失败：空数据")
             return jsonify({
                 "success": False,
                 "error": "配置数据为空"
@@ -144,6 +152,17 @@ def save_config():
         # 读取现有配置
         with open(config_path, 'r', encoding='utf-8') as f:
             current_config = yaml.safe_load(f)
+        
+        # 记录 API Key 变更审计日志
+        api_key_changed = False
+        if 'providers' in new_config and 'dashscope' in new_config['providers']:
+            new_api_key = new_config['providers']['dashscope'].get('api_key_value', '')
+            old_api_key = current_config.get('providers', {}).get('dashscope', {}).get('api_key_value', '')
+            if new_api_key and new_api_key != old_api_key:
+                api_key_changed = True
+                # 只记录前缀，不记录完整 Key
+                key_prefix = new_api_key[:10] + '***' if len(new_api_key) > 10 else '***'
+                logging.info(f"[{datetime.now()}] API Key 已更新：{key_prefix} (来源 IP: {request.remote_addr})")
         
         # 更新配置（保留原有结构）
         if 'global' in new_config:
@@ -154,7 +173,14 @@ def save_config():
                 if provider_key in current_config['providers']:
                     # 特殊处理 API Key：如果前端传了完整 Key，直接覆盖
                     if 'api_key_value' in provider_config:
-                        current_config['providers'][provider_key]['api_key_value'] = provider_config['api_key_value']
+                        new_key = provider_config['api_key_value']
+                        # 验证 API Key 格式（基本校验）
+                        if new_key and not new_key.startswith('sk-'):
+                            return jsonify({
+                                "success": False,
+                                "error": "API Key 格式不正确，应以 sk- 开头"
+                            }), 400
+                        current_config['providers'][provider_key]['api_key_value'] = new_key
                     # 其他字段正常更新
                     for key, value in provider_config.items():
                         if key != 'api_key_value':
@@ -174,12 +200,19 @@ def save_config():
         with open(config_path, 'w', encoding='utf-8') as f:
             yaml.dump(current_config, f, allow_unicode=True, default_flow_style=False)
         
+        # 记录成功日志
+        if api_key_changed:
+            logging.info(f"[{datetime.now()}] 配置保存成功，API Key 已更新")
+        else:
+            logging.info(f"[{datetime.now()}] 配置保存成功")
+        
         return jsonify({
             "success": True,
-            "message": "配置已保存"
+            "message": "配置已保存" + ("，API Key 已更新" if api_key_changed else "")
         })
         
     except Exception as e:
+        logging.error(f"[{datetime.now()}] 配置保存失败：{str(e)}")
         return jsonify({
             "success": False,
             "error": str(e)

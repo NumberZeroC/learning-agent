@@ -1,0 +1,25 @@
+[Unit]
+Description=Learning Agent Web Service
+After=network.target
+
+[Service]
+Type=simple
+User=admin
+Group=admin
+WorkingDirectory=/home/admin/.openclaw/workspace/learning-agent
+Environment="PATH=/home/admin/.openclaw/workspace/learning-agent/venv/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/home/admin/.openclaw/workspace/learning-agent/venv/bin/python3 web/app.py --host 0.0.0.0 --port 5001
+Restart=always
+RestartSec=5
+
+# 内存限制（防止 OOM）
+MemoryLimit=512M
+MemoryHigh=400M
+
+# 日志
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=learning-agent
+
+[Install]
+WantedBy=multi-user.target

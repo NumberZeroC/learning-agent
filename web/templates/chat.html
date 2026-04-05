@@ -94,6 +94,225 @@
                 transform: translateY(-10px);
             }
         }
+        /* Markdown 内容美化 */
+        .markdown-body {
+            line-height: 1.7;
+            color: #333;
+        }
+        
+        .markdown-body h1,
+        .markdown-body h2,
+        .markdown-body h3,
+        .markdown-body h4,
+        .markdown-body h5,
+        .markdown-body h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+            color: #24292e;
+        }
+        
+        .markdown-body h1 {
+            font-size: 2em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        
+        .markdown-body h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        
+        .markdown-body h3 {
+            font-size: 1.25em;
+        }
+        
+        .markdown-body p {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        
+        .markdown-body ul,
+        .markdown-body ol {
+            padding-left: 2em;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        
+        .markdown-body li {
+            margin-top: 0.25em;
+        }
+        
+        .markdown-body blockquote {
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+            margin: 0 0 16px 0;
+        }
+        
+        .markdown-body table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+        }
+        
+        .markdown-body table th,
+        .markdown-body table td {
+            border: 1px solid #dfe2e5;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        .markdown-body table th {
+            background: #f6f8fa;
+            font-weight: 600;
+        }
+        
+        .markdown-body strong {
+            font-weight: 600;
+            color: #24292e;
+        }
+        
+        /* 工作流卡片样式 */
+        .workflow-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+        
+        .workflow-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+        }
+        
+        .workflow-icon {
+            font-size: 24px;
+        }
+        
+        .workflow-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            flex: 1;
+        }
+        
+        .workflow-status {
+            font-size: 14px;
+            padding: 4px 12px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .workflow-topics {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .topic-card {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .topic-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .topic-icon {
+            font-size: 18px;
+        }
+        
+        .topic-tasks {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding-left: 26px;
+        }
+        
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .task-icon {
+            font-size: 16px;
+        }
+        
+        .workflow-footer {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .extra-text {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        /* 代码块样式 - 统一使用 .markdown-body 选择器 */
+        .markdown-body pre {
+            position: relative;
+            background: #0d1117 !important;
+            border-radius: 8px;
+            padding: 16px !important;
+            margin: 12px 0;
+            overflow-x: auto;
+            white-space: pre !important;  /* 保持换行 */
+            word-wrap: normal !important; /* 不自动换行 */
+        }
+        
+        .markdown-body pre code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+            font-size: 13px !important;
+            line-height: 1.5 !important;  /* 行高 */
+            color: #c9d1d9 !important;
+            display: block !important;
+            white-space: pre !important;  /* 保持换行 */
+            padding: 0 !important;
+            background: transparent !important;
+        }
+        
+        /* 代码复制按钮 */
+        .copy-code-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.3s;
+            z-index: 10;
+        }
+        
+        .copy-code-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
         .quick-commands {
             display: flex;
             gap: 10px;
@@ -125,6 +344,66 @@
         @keyframes blink {
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
+        }
+        
+        /* 流式内容样式 */
+        .message-content.streaming {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        /* 流式阶段的代码块样式 */
+        .message-content pre {
+            background: #0d1117;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            overflow-x: auto;
+        }
+        
+        .message-content code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            background: rgba(110, 118, 129, 0.4);
+            padding: 0.2em 0.4em;
+            border-radius: 6px;
+        }
+        
+        .message-content pre code {
+            background: transparent;
+            padding: 0;
+            color: #c9d1d9;
+            line-height: 1.5;
+            white-space: pre;
+        }
+        
+        .message-content h1,
+        .message-content h2,
+        .message-content h3 {
+            margin: 16px 0 8px 0;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        
+        .message-content h1 { font-size: 2em; }
+        .message-content h2 { font-size: 1.5em; }
+        .message-content h3 { font-size: 1.25em; }
+        
+        .message-content blockquote {
+            border-left: 4px solid #dfe2e5;
+            padding-left: 16px;
+            margin: 16px 0;
+            color: #6a737d;
+        }
+        
+        .message-content ul,
+        .message-content ol {
+            padding-left: 2em;
+            margin: 8px 0;
+        }
+        
+        .message-content li {
+            margin: 4px 0;
         }
         
         /* Markdown 内容样式 */
@@ -450,7 +729,7 @@
             currentAgentMessage.innerHTML = `
                 <div class="message-avatar"><i class="bi bi-robot"></i></div>
                 <div>
-                    <div class="message-content">
+                    <div class="message-content markdown-body">
                         <span class="cursor-blink"></span>
                     </div>
                     <div class="message-time">${new Date().toLocaleTimeString('zh-CN', {hour: '2-digit', minute:'2-digit'})}</div>
@@ -472,7 +751,7 @@
                     },
                     body: JSON.stringify({
                         message: message,
-                        agent: 'master_agent'
+                        agent: 'web_chat_agent'  // 使用专门的聊天 Agent，不是 master_agent
                     })
                 });
                 
@@ -511,8 +790,9 @@
                                     console.log('Stream started');
                                 } else if (data.type === 'token') {
                                     fullContent += data.content;
-                                    // 流式阶段：纯文本 + 光标
-                                    contentElement.textContent = fullContent + '▌';
+                                    // 流式阶段：渲染基本 Markdown + 光标
+                                    let displayContent = renderStreamingMarkdown(fullContent);
+                                    contentElement.innerHTML = displayContent + '<span class="cursor-blink">▌</span>';
                                     chatMessages.scrollTop = chatMessages.scrollHeight;
                                 } else if (data.type === 'error') {
                                     contentElement.innerHTML = `❌ 错误：${data.error}`;
@@ -531,14 +811,16 @@
                     if (streamEnded) break;
                 }
                 
-                // 流结束：渲染 Markdown
+                // 流结束：智能格式化
                 if (fullContent) {
-                    const htmlContent = DOMPurify.sanitize(marked.parse(fullContent));
-                    contentElement.innerHTML = htmlContent;
+                    const formatted = formatAgentResponse(fullContent);
+                    contentElement.innerHTML = formatted;
                     
                     // 代码高亮
                     contentElement.querySelectorAll('pre code').forEach((block) => {
                         hljs.highlightElement(block);
+                        // 添加复制按钮
+                        addCopyButton(block);
                     });
                 }
                 reader.releaseLock();
@@ -573,6 +855,149 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+        
+        // 流式 Markdown 渲染（基本格式）
+        function renderStreamingMarkdown(text) {
+            // 转义 HTML 防止 XSS
+            let html = text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+            
+            // 代码块（```language ... ```）
+            html = html.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, lang, code) => {
+                return `<pre><code class="language-${lang || 'plaintext'}">${code.trim()}</code></pre>`;
+            });
+            
+            // 行内代码（`code`）
+            html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+            
+            // 粗体（**text**）
+            html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+            
+            // 斜体（*text*）
+            html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+            
+            // 标题（# H1, ## H2, ### H3）
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // 无序列表（- item）
+            html = html.replace(/^\- (.*$)/gim, '<li>$1</li>');
+            
+            // 有序列表（1. item）
+            html = html.replace(/^\d+\. (.*$)/gim, '<li>$1</li>');
+            
+            // 引用（> text）
+            html = html.replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>');
+            
+            // 换行（保留段落）
+            html = html.replace(/\n/g, '<br>');
+            
+            return html;
+        }
+        
+        // 格式化 Agent 回复（智能检测 JSON）
+        function formatAgentResponse(content) {
+            // 1. 尝试检测是否包含工作流 JSON 数据
+            const jsonMatch = content.match(/\{[\s\S]*"layer"[\s\S]*\}/);
+            if (jsonMatch) {
+                try {
+                    const jsonData = JSON.parse(jsonMatch[0]);
+                    if (jsonData.layer && jsonData.layer_name) {
+                        // 是工作流数据，渲染为美化卡片
+                        return renderWorkflowCard(jsonData, content.replace(jsonMatch[0], ''));
+                    }
+                } catch (e) {
+                    // JSON 解析失败，使用 Markdown
+                }
+            }
+            
+            // 2. 默认：Markdown 渲染
+            return DOMPurify.sanitize(marked.parse(content));
+        }
+        
+        // 渲染工作流卡片
+        function renderWorkflowCard(data, extraText = '') {
+            const statusIcon = data.status === 'completed' ? '✅' : '⏳';
+            
+            let html = `
+                <div class="workflow-card">
+                    <div class="workflow-header">
+                        <span class="workflow-icon">📚</span>
+                        <span class="workflow-title">第${data.layer}层：${escapeHtml(data.layer_name)}</span>
+                        <span class="workflow-status">${statusIcon}</span>
+                    </div>
+                    <div class="workflow-topics">
+            `;
+            
+            if (data.topics && Array.isArray(data.topics)) {
+                data.topics.forEach(topic => {
+                    html += `
+                        <div class="topic-card">
+                            <div class="topic-header">
+                                <span class="topic-icon">🤖</span>
+                                <strong>${escapeHtml(topic.name)}</strong>
+                            </div>
+                            <div class="topic-tasks">
+                    `;
+                    
+                    if (topic.tasks && Array.isArray(topic.tasks)) {
+                        topic.tasks.forEach(task => {
+                            const taskIcon = task.status === 'completed' ? '✅' : '⏳';
+                            html += `
+                                <div class="task-item">
+                                    <span class="task-icon">${taskIcon}</span>
+                                    <span class="task-name">${escapeHtml(task.name)}</span>
+                                </div>
+                            `;
+                        });
+                    }
+                    
+                    html += `
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            html += `
+                    </div>
+            `;
+            
+            if (data.completed_at) {
+                const date = new Date(data.completed_at);
+                html += `
+                    <div class="workflow-footer">
+                        <small>完成时间：${date.toLocaleString('zh-CN')}</small>
+                    </div>
+                `;
+            }
+            
+            html += `</div>`;
+            
+            // 添加额外文本（如果有）
+            if (extraText && extraText.trim()) {
+                html += `<div class="extra-text">${DOMPurify.sanitize(marked.parse(extraText))}</div>`;
+            }
+            
+            return html;
+        }
+        
+        // 添加代码复制按钮
+        function addCopyButton(codeBlock) {
+            const pre = codeBlock.parentElement;
+            const copyBtn = document.createElement('button');
+            copyBtn.className = 'copy-code-btn';
+            copyBtn.innerHTML = '📋 复制';
+            copyBtn.onclick = () => {
+                navigator.clipboard.writeText(codeBlock.textContent);
+                copyBtn.textContent = '✅ 已复制';
+                setTimeout(() => copyBtn.textContent = '📋 复制', 2000);
+            };
+            pre.appendChild(copyBtn);
         }
         
         // 页面加载完成
