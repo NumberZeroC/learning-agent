@@ -277,11 +277,41 @@ def preflight_check():
     })
 
 
+def verify_admin_key(provided_key):
+    """验证管理员密钥"""
+    if not provided_key:
+        return False
+    
+    # 从环境变量获取预设密钥
+    env_key = os.getenv('WEB_ADMIN_KEY', '')
+    
+    if not env_key:
+        # 如果没有配置密钥，则不验证（兼容旧版本）
+        logger.warning("WEB_ADMIN_KEY 未配置，跳过密钥验证")
+        return True
+    
+    # 比较密钥（使用常量时间比较防止时序攻击）
+    import hmac
+    return hmac.compare_digest(provided_key.strip(), env_key.strip())
+
+
 @workflow_run_bp.route('/start', methods=['POST'])
 def start_workflow():
     """启动知识生成工作流"""
     try:
-        # 1. 检查是否已经在运行
+        # 1. 验证管理员密钥（如果配置了 WEB_ADMIN_KEY）
+        data = request.get_json() or {}
+        admin_key = data.get('admin_key', '')
+        
+        if not verify_admin_key(admin_key):
+            logger.warning(f"❌ 密钥验证失败：IP={request.remote_addr}")
+            return jsonify({
+                "success": False,
+                "error": "密钥验证失败",
+                "detail": "管理员密钥错误，无权执行此操作"
+            }), 403
+        
+        # 2. 检查是否已经在运行
         status = get_workflow_status()
         if status["running"]:
             return jsonify({
@@ -290,7 +320,7 @@ def start_workflow():
                 "detail": f"进程 ID: {status.get('pid', 'unknown')}"
             }), 400
         
-        # 2. 前置检查
+        # 3. 前置检查
         api_check = check_api_config()
         if not api_check["ok"]:
             return jsonify({
@@ -307,8 +337,7 @@ def start_workflow():
                 "detail": script_check.get("error", "") + ": " + script_check.get("detail", "")
             }), 400
         
-        # 3. 获取请求参数
-        data = request.get_json() or {}
+        # 4. 获取请求参数
         layers = data.get('layers', [1, 2, 3, 4, 5])
         regenerate = data.get('regenerate', True)
         
