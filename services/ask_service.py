@@ -97,7 +97,19 @@ class AskService:
         providers = config.get('providers', {})
         dashscope = providers.get('dashscope', {})
         
-        api_key = dashscope.get('api_key_value', '') or os.getenv('DASHSCOPE_API_KEY', '')
+        # 优先从 KeyVault 获取 API Key（加密存储）
+        api_key = ''
+        try:
+            from services.key_vault import get_key_vault
+            vault = get_key_vault()
+            api_key = vault.get_key('dashscope') or ''
+        except Exception as e:
+            logger.warning(f"KeyVault 未就绪，使用环境变量：{e}")
+        
+        # 降级：从环境变量读取
+        if not api_key:
+            api_key = os.getenv('DASHSCOPE_API_KEY', '')
+        
         base_url = dashscope.get('base_url', self._default_base_url)
         model = config.get('default_model', self._default_model)
         
