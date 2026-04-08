@@ -174,7 +174,18 @@ def create_sub_agents(config: Dict) -> Dict[str, SubAgent]:
     """根据配置创建子 Agent"""
     providers = config.get('providers', {})
     dashscope = providers.get('dashscope', {})
-    api_key = dashscope.get('api_key_value', os.getenv('DASHSCOPE_API_KEY', ''))
+    
+    # 优先从 KeyVault 获取（加密存储）
+    api_key = ''
+    try:
+        from services.key_vault import get_key_vault
+        vault = get_key_vault()
+        api_key = vault.get_key('dashscope') or ''
+    except Exception as e:
+        logger.warning(f"KeyVault 未就绪，降级到配置文件：{e}")
+        # 降级：从配置文件读取
+        api_key = dashscope.get('api_key_value', '') or os.getenv('DASHSCOPE_API_KEY', '')
+    
     base_url = dashscope.get('base_url', 'https://coding.dashscope.aliyuncs.com/v1')
     
     agents_config = config.get('agents', {})

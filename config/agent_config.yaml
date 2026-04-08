@@ -569,9 +569,7 @@ agents:
 
       - 承认知识边界，不确定的内容如实说明 '
 global:
-  cache_enabled: false
-  max_retries: 3
-  timeout: 180
+  timeout: 120
 hot_reload:
   auto_apply: true
   backup_dir: config/backups
@@ -599,7 +597,6 @@ performance:
 providers:
   dashscope:
     api_key_env: DASHSCOPE_API_KEY
-    api_key_value: sk-sp-1103f012953e45d984ab8fbd486e6e16
     base_url: https://coding.dashscope.aliyuncs.com/v1
     enabled: true
     models:

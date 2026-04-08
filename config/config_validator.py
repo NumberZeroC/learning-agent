@@ -32,7 +32,7 @@ class ProviderConfig(BaseModel):
     """LLM 提供者配置"""
     enabled: bool = True
     api_key_env: str = ""
-    api_key_value: str = ""
+    api_key_value: str = ""  # 已废弃，仅用于向后兼容，实际从 KeyVault 获取
     base_url: str = "https://api.dashscope.aliyuncs.com/v1"
     models: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
     

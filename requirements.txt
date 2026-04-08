@@ -13,6 +13,9 @@ pydantic==2.12.5
 # HTTP 请求
 # (使用 Python 内置 urllib，无需额外依赖)
 
+# 加密（Key Vault 使用）
+cryptography==42.0.0
+
 # 测试 (可选)
 pytest==7.4.3
 pytest-flask==1.3.0

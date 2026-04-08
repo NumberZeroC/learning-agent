@@ -14,6 +14,10 @@ import sys
 import os
 import subprocess
 import signal
+import logging
+
+# 配置日志
+logger = logging.getLogger('workflow_run_routes')
 
 # 项目路径
 web_dir = Path(__file__).parent.parent
@@ -29,18 +33,29 @@ def check_api_config():
         # 优先检查配置文件（用户通过配置页面设置的）
         config_path = project_dir / "config" / "agent_config.yaml"
         api_key = ''
+        base_url = 'https://coding.dashscope.aliyuncs.com/v1'  # 默认值
         
-        if config_path.exists():
-            import yaml
-            with open(config_path, 'r', encoding='utf-8') as f:
-                config = yaml.safe_load(f)
-                providers = config.get('providers', {})
-                dashscope = providers.get('dashscope', {})
-                api_key = dashscope.get('api_key_value', '')
-        
-        # 如果配置文件没有，再检查环境变量
-        if not api_key:
-            api_key = os.getenv('DASHSCOPE_API_KEY', '')
+        # 优先从 KeyVault 获取（加密存储）
+        try:
+            from services.key_vault import get_key_vault
+            vault = get_key_vault()
+            api_key = vault.get_key('dashscope') or ''
+        except Exception as e:
+            logger.warning(f"KeyVault 未就绪，尝试从配置文件读取：{e}")
+            
+            # 降级：从配置文件读取
+            if config_path.exists():
+                import yaml
+                with open(config_path, 'r', encoding='utf-8') as f:
+                    config = yaml.safe_load(f)
+                    providers = config.get('providers', {})
+                    dashscope = providers.get('dashscope', {})
+                    api_key = dashscope.get('api_key_value', '')
+                    base_url = dashscope.get('base_url', base_url)
+            
+            # 再降级：从环境变量读取
+            if not api_key:
+                api_key = os.getenv('DASHSCOPE_API_KEY', '')
         
         if not api_key:
             return {
@@ -61,8 +76,14 @@ def check_api_config():
         import urllib.request
         import json
         
-        # 使用配置文件中的 base_url，如果没有则使用默认值
-        base_url = dashscope.get('base_url', 'https://dashscope.aliyuncs.com/api/v1')
+        # 从配置文件读取 dashscope 配置
+        dashscope = {}
+        if config_path.exists():
+            import yaml
+            with open(config_path, 'r', encoding='utf-8') as f:
+                config = yaml.safe_load(f)
+                dashscope = config.get('providers', {}).get('dashscope', {})
+        
         # 兼容新旧 API 格式
         if 'coding.dashscope.aliyuncs.com' in base_url:
             # 新版 API（兼容 OpenAI 格式）
