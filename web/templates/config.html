@@ -7,75 +7,203 @@
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #667eea;
+            --success-color: #48bb78;
+            --danger-color: #f56565;
+            --warning-color: #ed8936;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
         .config-section {
             background: white;
-            border-radius: 10px;
-            padding: 25px;
+            border-radius: 15px;
+            padding: 30px;
             margin-bottom: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
         }
+        
+        .config-section:hover {
+            transform: translateY(-2px);
+        }
+        
         .config-header {
-            border-bottom: 2px solid #667eea;
+            border-bottom: 3px solid var(--primary-color);
             padding-bottom: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .config-header h4 {
+            color: #2d3748;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .provider-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
             margin-bottom: 20px;
-        }
-        .config-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        .config-item:last-child {
-            border-bottom: none;
-        }
-        .config-label {
-            font-weight: 600;
-            color: #333;
-        }
-        .config-value {
-            color: #666;
-        }
-        .agent-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
             transition: all 0.3s;
+            background: #f8fafc;
         }
-        .agent-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+        
+        .provider-card.configured {
+            border-color: var(--success-color);
+            background: linear-gradient(135deg, #f0fff4 0%, #ffffff 100%);
         }
-        .agent-header {
+        
+        .provider-card:hover {
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .provider-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
-        .status-badge {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
+        
+        .provider-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .status-enabled {
-            background: #d4edda;
-            color: #155724;
-        }
-        .status-disabled {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        .api-key-input {
-            font-family: monospace;
+        
+        .key-display {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            color: #4a5568;
             letter-spacing: 1px;
+            margin: 15px 0;
+        }
+        
+        .key-display.configured {
+            border-color: var(--success-color);
+            background: #f0fff4;
+            color: #2f855a;
+        }
+        
+        .status-badge {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .status-configured {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+        
+        .status-not-configured {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .edit-form {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+            border: 2px solid var(--primary-color);
+            display: none;
+        }
+        
+        .edit-form.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .audit-log-item {
+            padding: 12px;
+            border-left: 3px solid var(--primary-color);
+            background: #f7fafc;
+            margin-bottom: 10px;
+            border-radius: 0 8px 8px 0;
+            font-size: 13px;
+        }
+        
+        .audit-log-item.success {
+            border-left-color: var(--success-color);
+        }
+        
+        .audit-log-item.failed {
+            border-left-color: var(--danger-color);
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .test-result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .test-result.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <i class="bi bi-robot"></i> Learning Agent
@@ -102,58 +230,35 @@
     <!-- 主要内容 -->
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2><i class="bi bi-gear"></i> 配置管理</h2>
+            <h2 class="text-white">
+                <i class="bi bi-gear"></i> 配置管理
+            </h2>
             <div>
-                <button class="btn btn-outline-secondary me-2" onclick="loadConfig()">
+                <button class="btn btn-light me-2" onclick="loadConfig()">
                     <i class="bi bi-arrow-clockwise"></i> 刷新
                 </button>
-                <button class="btn btn-primary" onclick="saveAllConfig()">
-                    <i class="bi bi-save"></i> 保存全部配置
+                <button class="btn btn-outline-light" onclick="showAuditLogs()">
+                    <i class="bi bi-clock-history"></i> 审计日志
                 </button>
             </div>
         </div>
         
-        <!-- 提示信息 -->
-        <div class="alert alert-success mb-4" role="alert">
-            <i class="bi bi-lightning-charge-fill"></i> 
-            <strong>✅ 热更新已启用：</strong> 修改配置后，<strong>立即生效</strong>，无需重启服务！
+        <!-- 安全提示 -->
+        <div class="alert alert-success mb-4" role="alert" style="background: rgba(255,255,255,0.95);">
+            <i class="bi bi-shield-check"></i> 
+            <strong>🔐 安全加密存储：</strong> API Key 使用 Fernet 加密存储，前端仅显示前缀，保障安全！
         </div>
 
         <!-- API 配置 -->
         <div class="config-section">
             <div class="config-header">
-                <h4><i class="bi bi-key"></i> API 配置</h4>
+                <h4><i class="bi bi-key"></i> 大模型提供商配置</h4>
+                <span class="badge bg-primary" id="providerCount">0 个</span>
             </div>
-            <div id="apiConfig">
-                <div class="text-center text-muted">
-                    <div class="spinner-border spinner-border-sm" role="status"></div>
-                    加载中...
-                </div>
-            </div>
-        </div>
-
-        <!-- 全局设置 -->
-        <div class="config-section">
-            <div class="config-header">
-                <h4><i class="bi bi-sliders"></i> 全局设置</h4>
-            </div>
-            <div id="globalConfig">
-                <div class="text-center text-muted">
-                    <div class="spinner-border spinner-border-sm" role="status"></div>
-                    加载中...
-                </div>
-            </div>
-        </div>
-
-        <!-- 工具配置 -->
-        <div class="config-section">
-            <div class="config-header">
-                <h4><i class="bi bi-tools"></i> 工具配置</h4>
-            </div>
-            <div id="toolsConfig">
-                <div class="text-center text-muted">
-                    <div class="spinner-border spinner-border-sm" role="status"></div>
-                    加载中...
+            <div id="providersConfig">
+                <div class="text-center text-muted py-5">
+                    <div class="loading-spinner mb-2"></div>
+                    <div>加载中...</div>
                 </div>
             </div>
         </div>
@@ -165,265 +270,155 @@
                 <span class="badge bg-primary" id="agentCount">0 个</span>
             </div>
             <div id="agentsConfig">
-                <div class="text-center text-muted">
-                    <div class="spinner-border spinner-border-sm" role="status"></div>
-                    加载中...
+                <div class="text-center text-muted py-5">
+                    <div class="loading-spinner mb-2"></div>
+                    <div>加载中...</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 保存提示 -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="saveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <i class="bi bi-check-circle text-success me-2"></i>
-                <strong class="me-auto">保存成功</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
-            </div>
-            <div class="toast-body">
-                配置已保存到文件，部分配置需要重启后生效。
+    <!-- 审计日志模态框 -->
+    <div class="modal fade" id="auditLogModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-clock-history"></i> 配置审计日志</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="auditLogContent">
+                    <div class="text-center text-muted">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- 页脚 -->
-    <footer class="bg-light py-4 mt-5">
-        <div class="container text-center">
-            <p class="text-muted mb-0">
-                <i class="bi bi-robot"></i> Learning Agent - AutoGen 多模型架构
-            </p>
+    <!-- 提示框 -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="configToast" class="toast" role="alert">
+            <div class="toast-header">
+                <i class="bi bi-check-circle text-success me-2"></i>
+                <strong class="me-auto">操作成功</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body"></div>
         </div>
-    </footer>
+    </div>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        // 全局配置存储
         let currentConfig = {};
 
         // 加载配置
         async function loadConfig() {
-            const btn = document.querySelector('button[onclick="loadConfig()"]');
-            const originalHtml = btn.innerHTML;
-            
             try {
-                // 显示加载状态
-                btn.disabled = true;
-                btn.innerHTML = '<i class="bi bi-hourglass-split"></i> 加载中...';
-                
-                const startTime = Date.now();
                 const response = await fetch('/api/config');
                 const result = await response.json();
-                const loadTime = Date.now() - startTime;
-                
-                console.log(`配置加载耗时：${loadTime}ms`);
                 
                 if (result.success) {
                     currentConfig = result.data;
-                    renderApiConfig(result.data);
-                    renderGlobalConfig(result.data);
-                    renderToolsConfig(result.data);
+                    renderProvidersConfig(result.data);
                     renderAgentsConfig(result.data);
-                    
-                    console.log(`配置渲染完成，共 ${Object.keys(result.data.agents || {}).length} 个 Agent`);
                 } else {
-                    showError('加载配置失败：' + (result.error || '未知错误'));
+                    showToast('加载失败：' + result.error, 'danger');
                 }
             } catch (error) {
-                showError('加载配置失败：' + error.message);
-            } finally {
-                // 恢复按钮状态
-                btn.disabled = false;
-                btn.innerHTML = originalHtml;
+                showToast('加载失败：' + error.message, 'danger');
             }
         }
 
-        // 渲染 API 配置（可编辑）
-        function renderApiConfig(config) {
-            const container = document.getElementById('apiConfig');
+        // 渲染 Provider 配置
+        function renderProvidersConfig(config) {
+            const container = document.getElementById('providersConfig');
             const providers = config.providers || {};
-            const dashscope = providers.dashscope || {};
+            const providerList = Object.entries(providers);
             
-            const apiKeyValue = dashscope.api_key_value || '';
-            const apiKeyClass = apiKeyValue ? 'text-success' : 'text-danger';
+            document.getElementById('providerCount').textContent = `${providerList.length}个`;
             
-            container.innerHTML = `
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">
-                            <i class="bi bi-key-fill text-primary"></i> API Key
-                            <span class="badge ${apiKeyClass} ms-2">${apiKeyValue ? '已配置' : '未配置'}</span>
+            if (providerList.length === 0) {
+                container.innerHTML = '<div class="alert alert-info">暂无 Provider 配置</div>';
+                return;
+            }
+            
+            container.innerHTML = providerList.map(([key, provider]) => {
+                const configured = provider.key_configured || false;
+                const prefix = provider.key_prefix || '未配置';
+                
+                return `
+                <div class="provider-card ${configured ? 'configured' : ''}">
+                    <div class="provider-header">
+                        <div class="provider-title">
+                            <i class="bi bi-${configured ? 'check-circle-fill' : 'x-circle-fill'} ${configured ? 'text-success' : 'text-danger'}"></i>
+                            ${provider.name || key}
+                        </div>
+                        <span class="status-badge ${configured ? 'status-configured' : 'status-not-configured'}">
+                            <i class="bi bi-${configured ? 'shield-check' : 'shield-exclamation'}"></i>
+                            ${configured ? '已配置' : '未配置'}
+                        </span>
+                    </div>
+                    
+                    ${configured ? `
+                        <div class="key-display configured">
+                            <i class="bi bi-key"></i> ${prefix}
+                        </div>
+                    ` : `
+                        <div class="alert alert-warning mb-3">
+                            <i class="bi bi-exclamation-triangle"></i> 尚未配置 API Key，请先配置
+                        </div>
+                    `}
+                    
+                    <div class="action-buttons">
+                        ${configured ? `
+                            <button class="btn btn-primary" onclick="showEditForm('${key}')">
+                                <i class="bi bi-pencil"></i> 修改
+                            </button>
+                            <button class="btn btn-outline-success" onclick="testApiKey('${key}')">
+                                <i class="bi bi-wifi"></i> 测试连接
+                            </button>
+                            <button class="btn btn-outline-danger" onclick="deleteApiKey('${key}')">
+                                <i class="bi bi-trash"></i> 删除
+                            </button>
+                        ` : `
+                            <button class="btn btn-success" onclick="showEditForm('${key}')">
+                                <i class="bi bi-plus-lg"></i> 添加 API Key
+                            </button>
+                        `}
+                        <button class="btn btn-outline-secondary" onclick="showProviderDetails('${key}')">
+                            <i class="bi bi-info-circle"></i> 详情
+                        </button>
+                    </div>
+                    
+                    <!-- 编辑表单 -->
+                    <div id="editForm-${key}" class="edit-form">
+                        <h6><i class="bi bi-key-fill"></i> ${configured ? '修改' : '添加'} API Key</h6>
+                        <div class="mb-3">
+                            <label class="form-label">API Key</label>
+                            <input type="password" class="form-control" id="apiKeyInput-${key}" 
+                                   placeholder="请输入 API Key（sk-开头）" autocomplete="off">
+                            <div class="form-text">
+                                <i class="bi bi-info-circle"></i> API Key 将加密存储，仅显示前缀
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-success" onclick="saveApiKey('${key}')">
+                                <i class="bi bi-check-lg"></i> 保存
+                            </button>
+                            <button class="btn btn-secondary" onclick="hideEditForm('${key}')">
+                                <i class="bi bi-x-lg"></i> 取消
+                            </button>
                         </div>
                     </div>
-                    <div class="config-value">
-                        <input type="text" class="form-control api-key-input" 
-                               id="apiKeyInput" 
-                               value="${apiKeyValue}" 
-                               placeholder="sk-..."
-                               style="width: 350px; font-family: 'Courier New', monospace; letter-spacing: 1px;">
-                    </div>
+                    
+                    <!-- 测试结果 -->
+                    <div id="testResult-${key}" class="test-result"></div>
                 </div>
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">启用状态</div>
-                    </div>
-                    <div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" 
-                                   id="apiEnabled" ${dashscope.enabled ? 'checked' : ''}>
-                            <label class="form-check-label" for="apiEnabled">
-                                ${dashscope.enabled ? '已启用' : '已禁用'}
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">
-                            <i class="bi bi-cpu-fill text-primary"></i> 默认模型
-                        </div>
-                    </div>
-                    <div class="config-value">
-                        <input type="text" class="form-control" 
-                               id="defaultModel" 
-                               value="${config.default_model || 'qwen3.5-plus'}" 
-                               placeholder="qwen3.5-plus"
-                               style="width: 250px; font-family: monospace;">
-                    </div>
-                </div>
-            `;
-            
-            // 监听开关变化
-            document.getElementById('apiEnabled').addEventListener('change', (e) => {
-                e.target.previousElementSibling.textContent = e.target.checked ? '已启用' : '已禁用';
-            });
+                `;
+            }).join('');
         }
 
-        // 渲染全局配置（可编辑）
-        function renderGlobalConfig(config) {
-            const container = document.getElementById('globalConfig');
-            const global = config.global || {};
-            
-            container.innerHTML = `
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">超时时间</div>
-                        <small class="text-muted">API 请求超时（秒）</small>
-                    </div>
-                    <div class="config-value">
-                        <input type="number" class="form-control" id="timeoutInput" 
-                               value="${global.timeout || 120}" 
-                               style="width: 120px;" min="10" max="600">
-                    </div>
-                </div>
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">最大重试次数</div>
-                    </div>
-                    <div class="config-value">
-                        <input type="number" class="form-control" id="maxRetriesInput" 
-                               value="${global.max_retries || 3}" 
-                               style="width: 120px;" min="0" max="10">
-                    </div>
-                </div>
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">缓存</div>
-                    </div>
-                    <div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" 
-                                   id="cacheEnabled" ${global.cache_enabled ? 'checked' : ''}>
-                            <label class="form-check-label" for="cacheEnabled">
-                                ${global.cache_enabled ? '已启用' : '已禁用'}
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            document.getElementById('cacheEnabled').addEventListener('change', (e) => {
-                e.target.previousElementSibling.textContent = e.target.checked ? '已启用' : '已禁用';
-            });
-        }
-
-        // 渲染工具配置（可编辑）
-        function renderToolsConfig(config) {
-            const container = document.getElementById('toolsConfig');
-            const tools = config.tools || {};
-            
-            container.innerHTML = `
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">联网搜索</div>
-                        <small class="text-muted">Web Search</small>
-                    </div>
-                    <div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" 
-                                   id="webSearchEnabled" ${tools.web_search?.enabled ? 'checked' : ''}>
-                            <label class="form-check-label" for="webSearchEnabled">
-                                ${tools.web_search?.enabled ? '已启用' : '已禁用'}
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">文件操作</div>
-                    </div>
-                    <div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" 
-                                   id="fileOpsEnabled" ${tools.file_operations?.enabled ? 'checked' : ''}>
-                            <label class="form-check-label" for="fileOpsEnabled">
-                                ${tools.file_operations?.enabled ? '已启用' : '已禁用'}
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">代码执行</div>
-                    </div>
-                    <div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" 
-                                   id="codeExecEnabled" ${tools.code_execution?.enabled ? 'checked' : ''}>
-                            <label class="form-check-label" for="codeExecEnabled">
-                                ${tools.code_execution?.enabled ? '已启用' : '已禁用'}
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="config-item">
-                    <div>
-                        <div class="config-label">计算器</div>
-                    </div>
-                    <div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" 
-                                   id="calculatorEnabled" ${tools.calculator?.enabled ? 'checked' : ''}>
-                            <label class="form-check-label" for="calculatorEnabled">
-                                ${tools.calculator?.enabled ? '已启用' : '已禁用'}
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            // 监听所有开关
-            ['webSearchEnabled', 'fileOpsEnabled', 'codeExecEnabled', 'calculatorEnabled'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.addEventListener('change', (e) => {
-                        e.target.previousElementSibling.textContent = e.target.checked ? '已启用' : '已禁用';
-                    });
-                }
-            });
-        }
-
-        // 渲染 Agent 配置（可编辑）
+        // 渲染 Agent 配置
         function renderAgentsConfig(config) {
             const container = document.getElementById('agentsConfig');
             const agents = config.agents || {};
@@ -432,200 +427,224 @@
             document.getElementById('agentCount').textContent = `${agentList.length}个`;
             
             container.innerHTML = agentList.map(([key, agent]) => `
-                <div class="agent-card">
-                    <div class="agent-header">
-                        <div>
-                            <h5 class="mb-1">${agent.role || key}</h5>
-                            <small class="text-muted">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="card-title mb-1">${agent.role || key}</h5>
+                                <p class="card-text text-muted mb-2">${agent.description || ''}</p>
                                 <span class="badge bg-secondary">Layer ${agent.layer || 0}</span>
-                                <span class="badge bg-primary ms-1">模型：${agent.model || 'qwen3.5-plus'}</span>
-                                <span class="text-muted ms-2">${agent.description || ''}</span>
-                            </small>
+                                <span class="badge bg-primary ms-1">${agent.model || 'qwen3.5-plus'}</span>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" 
+                                       data-agent="${key}" data-field="enabled"
+                                       ${agent.enabled ? 'checked' : ''}
+                                       onchange="toggleAgentEnabled('${key}', this.checked)">
+                            </div>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" 
-                                   data-agent="${key}" data-field="enabled"
-                                   ${agent.enabled ? 'checked' : ''}>
-                            <label class="form-check-label">
-                                ${agent.enabled ? '已启用' : '已禁用'}
-                            </label>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <small class="text-muted"><i class="bi bi-file-earmark-text"></i> 系统提示词:</small>
-                            <button class="btn btn-sm btn-outline-primary" type="button" 
-                                    onclick="togglePromptEdit(this)">
-                                <i class="bi bi-pencil"></i> 编辑
-                            </button>
-                        </div>
-                        <textarea class="form-control form-control-sm prompt-textarea" 
-                                  rows="2" 
-                                  data-agent="${key}" data-field="system_prompt"
-                                  placeholder="系统提示词"
-                                  readonly
-                                  style="background: #f8f9fa; cursor: not-allowed; font-size: 12px;">${agent.system_prompt || ''}</textarea>
                     </div>
                 </div>
             `).join('');
-            
-            // 监听 Agent 开关变化
-            container.querySelectorAll('input[data-field="enabled"]').forEach(el => {
-                el.addEventListener('change', (e) => {
-                    e.target.nextElementSibling.textContent = e.target.checked ? '已启用' : '已禁用';
-                });
-            });
-            
-            // 同步默认模型到所有子 Agent
-            syncAgentModels();
-        }
-        
-        // 同步默认模型到所有子 Agent
-        function syncAgentModels() {
-            const defaultModel = document.getElementById('defaultModel').value;
-            document.querySelectorAll('[data-field="model"]').forEach(el => {
-                el.value = defaultModel;
-            });
-        }
-        
-        // 监听默认模型变化
-        document.addEventListener('DOMContentLoaded', () => {
-            const defaultModelInput = document.getElementById('defaultModel');
-            if (defaultModelInput) {
-                defaultModelInput.addEventListener('input', syncAgentModels);
-            }
-        });
-
-        // 收集配置数据
-        function collectConfig() {
-            const config = JSON.parse(JSON.stringify(currentConfig));
-            
-            // API 配置
-            if (config.providers && config.providers.dashscope) {
-                config.providers.dashscope.api_key_value = document.getElementById('apiKeyInput').value;
-                config.providers.dashscope.enabled = document.getElementById('apiEnabled').checked;
-            }
-            
-            // 默认模型
-            config.default_model = document.getElementById('defaultModel').value;
-            
-            // 全局配置
-            if (config.global) {
-                config.global.timeout = parseInt(document.getElementById('timeoutInput').value);
-                config.global.max_retries = parseInt(document.getElementById('maxRetriesInput').value);
-                config.global.cache_enabled = document.getElementById('cacheEnabled').checked;
-            }
-            
-            // 工具配置
-            if (config.tools) {
-                if (config.tools.web_search) config.tools.web_search.enabled = document.getElementById('webSearchEnabled').checked;
-                if (config.tools.file_operations) config.tools.file_operations.enabled = document.getElementById('fileOpsEnabled').checked;
-                if (config.tools.code_execution) config.tools.code_execution.enabled = document.getElementById('codeExecEnabled').checked;
-                if (config.tools.calculator) config.tools.calculator.enabled = document.getElementById('calculatorEnabled').checked;
-            }
-            
-            // Agent 配置
-            if (config.agents) {
-                const defaultModel = config.default_model || 'qwen3.5-plus';
-                
-                document.querySelectorAll('[data-agent]').forEach(el => {
-                    const agentKey = el.dataset.agent;
-                    const field = el.dataset.field;
-                    
-                    if (config.agents[agentKey]) {
-                        if (field === 'enabled') {
-                            config.agents[agentKey][field] = el.checked;
-                        } else if (field === 'model') {
-                            // 模型字段：强制使用默认模型
-                            config.agents[agentKey][field] = defaultModel;
-                        } else if (field !== 'description') { // 描述字段不可编辑，不保存
-                            config.agents[agentKey][field] = el.value;
-                        }
-                    }
-                });
-            }
-            
-            return config;
         }
 
-        // 保存配置
-        async function saveAllConfig() {
-            const btn = document.querySelector('button[onclick="saveAllConfig()"]');
-            const originalText = btn.innerHTML;
-            btn.disabled = true;
-            btn.innerHTML = '<i class="bi bi-hourglass-split"></i> 保存中...';
+        // 显示编辑表单
+        function showEditForm(provider) {
+            const form = document.getElementById(`editForm-${provider}`);
+            form.classList.add('show');
+            document.getElementById(`apiKeyInput-${provider}`).focus();
+        }
+
+        // 隐藏编辑表单
+        function hideEditForm(provider) {
+            const form = document.getElementById(`editForm-${provider}`);
+            form.classList.remove('show');
+            document.getElementById(`apiKeyInput-${provider}`).value = '';
+        }
+
+        // 保存 API Key
+        async function saveApiKey(provider) {
+            const input = document.getElementById(`apiKeyInput-${provider}`);
+            const apiKey = input.value.trim();
+            
+            if (!apiKey) {
+                showToast('请输入 API Key', 'warning');
+                return;
+            }
+            
+            if (!apiKey.startsWith('sk-')) {
+                showToast('API Key 格式错误，应以 sk- 开头', 'danger');
+                return;
+            }
             
             try {
-                const config = collectConfig();
-                
-                const response = await fetch('/api/config', {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(config)
+                const response = await fetch(`/api/config/providers/${provider}/key`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ api_key: apiKey })
                 });
                 
                 const result = await response.json();
                 
                 if (result.success) {
-                    showToast('保存成功', 'success');
+                    showToast('API Key 已安全保存', 'success');
+                    hideEditForm(provider);
+                    setTimeout(() => loadConfig(), 1000);
                 } else {
                     showToast('保存失败：' + result.error, 'danger');
                 }
             } catch (error) {
                 showToast('保存失败：' + error.message, 'danger');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = originalText;
             }
         }
 
-        // 切换提示词编辑状态
-        function togglePromptEdit(btn) {
-            const textarea = btn.closest('.agent-card').querySelector('.prompt-textarea');
-            const isReadonly = textarea.hasAttribute('readonly');
+        // 删除 API Key
+        async function deleteApiKey(provider) {
+            if (!confirm(`确定要删除 ${provider} 的 API Key 吗？`)) {
+                return;
+            }
             
-            if (isReadonly) {
-                // 进入编辑模式
-                textarea.removeAttribute('readonly');
-                textarea.style.background = 'white';
-                textarea.style.cursor = 'text';
-                btn.innerHTML = '<i class="bi bi-check-lg"></i> 完成';
-                btn.classList.remove('btn-outline-primary');
-                btn.classList.add('btn-success');
-                textarea.focus();
-            } else {
-                // 完成编辑
-                textarea.setAttribute('readonly', 'readonly');
-                textarea.style.background = '#f8f9fa';
-                textarea.style.cursor = 'not-allowed';
-                btn.innerHTML = '<i class="bi bi-pencil"></i> 编辑';
-                btn.classList.remove('btn-success');
-                btn.classList.add('btn-outline-primary');
+            try {
+                const response = await fetch(`/api/config/providers/${provider}/key`, {
+                    method: 'DELETE'
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showToast('API Key 已删除', 'success');
+                    setTimeout(() => loadConfig(), 1000);
+                } else {
+                    showToast('删除失败：' + result.error, 'danger');
+                }
+            } catch (error) {
+                showToast('删除失败：' + error.message, 'danger');
+            }
+        }
+
+        // 测试 API Key
+        async function testApiKey(provider) {
+            const resultDiv = document.getElementById(`testResult-${provider}`);
+            resultDiv.innerHTML = '<div class="text-center"><div class="loading-spinner"></div> 测试中...</div>';
+            resultDiv.classList.add('show');
+            
+            try {
+                const response = await fetch(`/api/config/providers/${provider}/test`, {
+                    method: 'POST'
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    resultDiv.className = 'test-result show alert alert-success';
+                    resultDiv.innerHTML = `
+                        <i class="bi bi-check-circle-fill"></i> 
+                        <strong>连接测试成功！</strong><br>
+                        <small>${JSON.stringify(result.response || {}, null, 2)}</small>
+                    `;
+                } else {
+                    resultDiv.className = 'test-result show alert alert-danger';
+                    resultDiv.innerHTML = `
+                        <i class="bi bi-x-circle-fill"></i> 
+                        <strong>连接测试失败</strong><br>
+                        ${result.error || '未知错误'}
+                    `;
+                }
+            } catch (error) {
+                resultDiv.className = 'test-result show alert alert-danger';
+                resultDiv.innerHTML = `
+                    <i class="bi bi-x-circle-fill"></i> 
+                    <strong>测试失败</strong><br>
+                    ${error.message}
+                `;
+            }
+        }
+
+        // 切换 Agent 启用状态
+        async function toggleAgentEnabled(agentKey, enabled) {
+            try {
+                const response = await fetch('/api/config', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        agents: {
+                            [agentKey]: { enabled: enabled }
+                        }
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showToast(`Agent ${enabled ? '已启用' : '已禁用'}`, 'success');
+                }
+            } catch (error) {
+                showToast('操作失败：' + error.message, 'danger');
+            }
+        }
+
+        // 显示 Provider 详情
+        function showProviderDetails(provider) {
+            const config = currentConfig.providers?.[provider] || {};
+            const info = `
+                <div class="modal-body">
+                    <h5>${config.name || provider}</h5>
+                    <table class="table">
+                        <tr><td>Base URL</td><td>${config.base_url || '-'}</td></tr>
+                        <tr><td>默认模型</td><td>${config.model || '-'}</td></tr>
+                        <tr><td>状态</td><td>${config.enabled ? '✅ 已启用' : '❌ 已禁用'}</td></tr>
+                    </table>
+                </div>
+            `;
+            // 这里可以创建一个模态框显示详情
+            alert(info);
+        }
+
+        // 显示审计日志
+        async function showAuditLogs() {
+            const modal = new bootstrap.Modal(document.getElementById('auditLogModal'));
+            modal.show();
+            
+            try {
+                const response = await fetch('/api/config/audit-logs?limit=50');
+                const result = await response.json();
+                
+                const container = document.getElementById('auditLogContent');
+                
+                if (result.success && result.data.logs.length > 0) {
+                    container.innerHTML = result.data.logs.map(log => `
+                        <div class="audit-log-item ${log.result === 'success' ? 'success' : 'failed'}">
+                            <div><strong>${log.action}</strong> - ${log.provider || '-'}</div>
+                            <div class="text-muted">
+                                <small>
+                                    ${new Date(log.created_at).toLocaleString()} | 
+                                    IP: ${log.user_ip || '-'} | 
+                                    结果：${log.result}
+                                </small>
+                            </div>
+                            ${log.details ? `<div class="mt-1"><small>详情：${JSON.stringify(log.details)}</small></div>` : ''}
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = '<div class="text-center text-muted">暂无审计日志</div>';
+                }
+            } catch (error) {
+                document.getElementById('auditLogContent').innerHTML = 
+                    '<div class="alert alert-danger">加载失败：' + error.message + '</div>';
             }
         }
 
         // 显示提示
         function showToast(message, type = 'success') {
-            const toastEl = document.getElementById('saveToast');
+            const toastEl = document.getElementById('configToast');
             const toastBody = toastEl.querySelector('.toast-body');
-            const toastHeader = toastEl.querySelector('.toast-header');
+            const icon = toastEl.querySelector('.toast-header i');
             
             toastBody.textContent = message;
-            toastHeader.querySelector('i').className = `bi bi-${type === 'success' ? 'check-circle' : 'x-circle'} text-${type} me-2`;
+            icon.className = `bi bi-${type === 'success' ? 'check-circle' : type === 'danger' ? 'x-circle' : 'exclamation-triangle'} text-${type} me-2`;
             
             const toast = new bootstrap.Toast(toastEl);
             toast.show();
-        }
-
-        function showError(message) {
-            document.getElementById('apiConfig').innerHTML = `
-                <div class="alert alert-danger">${message}</div>
-            `;
-            document.getElementById('globalConfig').innerHTML = '';
-            document.getElementById('toolsConfig').innerHTML = '';
-            document.getElementById('agentsConfig').innerHTML = '';
         }
 
         // 页面加载

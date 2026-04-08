@@ -19,7 +19,7 @@ services:
     environment:
       - FLASK_ENV=production
       # 从 .env 文件加载
-      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY:-}
+      - LEARNING_AGENT_MASTER_KEY=${LEARNING_AGENT_MASTER_KEY:-}
       - DASHSCOPE_BASE_URL=${DASHSCOPE_BASE_URL:-https://coding.dashscope.aliyuncs.com/v1}
     networks:
       - learning-network

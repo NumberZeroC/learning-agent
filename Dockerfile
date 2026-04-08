@@ -1,5 +1,6 @@
 # Learning Agent Docker 镜像
-FROM python:3.11-slim
+# 使用 DaoCloud 镜像源加速
+FROM docker.m.daocloud.io/library/python:3.11-slim
 
 # 设置工作目录
 WORKDIR /app
@@ -19,7 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # 复制依赖文件
 COPY requirements.txt .
 
-# 安装 Python 依赖
+# 安装 Python 依赖（使用官方 PyPI 源）
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 复制项目文件
@@ -38,5 +39,5 @@ EXPOSE 5001
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:5001/health || exit 1
 
-# 启动命令
+# 启动命令（直接运行 web/app.py）
 CMD ["python3", "web/app.py", "--host", "0.0.0.0", "--port", "5001"]
