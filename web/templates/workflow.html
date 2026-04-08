@@ -913,6 +913,27 @@
                     </ul>
                 </div>
                 
+                <!-- 管理员密钥输入框 -->
+                <div class="admin-key-input" style="margin: 20px 0;">
+                    <label for="adminKeyInput" style="display: block; font-weight: 600; margin-bottom: 8px; color: #333;">
+                        🔐 管理员密钥
+                    </label>
+                    <input 
+                        type="password" 
+                        id="adminKeyInput" 
+                        class="form-control" 
+                        placeholder="请输入管理员密钥"
+                        style="padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem;"
+                        oninput="checkAdminKey()"
+                    >
+                    <div id="adminKeyError" style="display: none; color: #dc3545; font-size: 0.85rem; margin-top: 5px;">
+                        <i class="bi bi-exclamation-circle"></i> 密钥错误
+                    </div>
+                    <div id="adminKeySuccess" style="display: none; color: #28a745; font-size: 0.85rem; margin-top: 5px;">
+                        <i class="bi bi-check-circle"></i> 密钥验证通过
+                    </div>
+                </div>
+                
                 <div class="confirm-check">
                     <label>
                         <input type="checkbox" id="confirmCheckbox" onchange="toggleConfirmButton()">
@@ -1273,11 +1294,18 @@
         // ========== 工作流控制 ==========
         
         // 显示确认弹窗
+        // 管理员密钥验证状态
+        let adminKeyValidated = false;
+        
         function showRunConfirm() {
             document.getElementById('runConfirmModal').classList.add('show');
             document.getElementById('confirmCheckbox').checked = false;
             document.getElementById('confirmRunBtn').disabled = true;
             document.getElementById('preflightCheck').style.display = 'none';
+            document.getElementById('adminKeyInput').value = '';
+            document.getElementById('adminKeyError').style.display = 'none';
+            document.getElementById('adminKeySuccess').style.display = 'none';
+            adminKeyValidated = false;
         }
         
         // 隐藏确认弹窗
@@ -1285,16 +1313,52 @@
             document.getElementById('runConfirmModal').classList.remove('show');
         }
         
+        // 检查管理员密钥（前端简单验证，后端会再次验证）
+        function checkAdminKey() {
+            const keyInput = document.getElementById('adminKeyInput');
+            const errorDiv = document.getElementById('adminKeyError');
+            const successDiv = document.getElementById('adminKeySuccess');
+            const key = keyInput.value.trim();
+            
+            if (key.length === 0) {
+                errorDiv.style.display = 'none';
+                successDiv.style.display = 'none';
+                adminKeyValidated = false;
+            } else if (key.length < 8) {
+                errorDiv.style.display = 'block';
+                errorDiv.innerHTML = '<i class="bi bi-exclamation-circle"></i> 密钥长度至少 8 位';
+                successDiv.style.display = 'none';
+                adminKeyValidated = false;
+            } else {
+                // 前端只做格式检查，实际验证在后端
+                errorDiv.style.display = 'none';
+                successDiv.style.display = 'block';
+                successDiv.innerHTML = '<i class="bi bi-check-circle"></i> 密钥格式正确';
+                adminKeyValidated = true;
+            }
+            
+            updateConfirmButton();
+        }
+        
         // 切换确认按钮状态
         function toggleConfirmButton() {
-            const checkbox = document.getElementById('confirmCheckbox');
-            const btn = document.getElementById('confirmRunBtn');
-            btn.disabled = !checkbox.checked;
+            updateConfirmButton();
             
-            // 如果勾选，执行前置检查
-            if (checkbox.checked) {
+            // 如果勾选且密钥已验证，执行前置检查
+            const checkbox = document.getElementById('confirmCheckbox');
+            if (checkbox.checked && adminKeyValidated) {
                 runPreflightCheck();
             }
+        }
+        
+        // 更新确认按钮状态
+        function updateConfirmButton() {
+            const checkbox = document.getElementById('confirmCheckbox');
+            const btn = document.getElementById('confirmRunBtn');
+            const keyInput = document.getElementById('adminKeyInput');
+            
+            // 需要同时满足：勾选确认 + 密钥已验证
+            btn.disabled = !(checkbox.checked && adminKeyValidated && keyInput.value.trim().length >= 8);
         }
         
         // 启动前检查
@@ -1363,6 +1427,8 @@
             btn.innerHTML = '<i class="bi bi-hourglass-split"></i> 启动中...';
             
             try {
+                const adminKey = document.getElementById('adminKeyInput').value.trim();
+                
                 const response = await fetch('/api/workflow/run/start', {
                     method: 'POST',
                     headers: {
@@ -1370,7 +1436,8 @@
                     },
                     body: JSON.stringify({
                         layers: [1, 2, 3, 4, 5],
-                        regenerate: true
+                        regenerate: true,
+                        admin_key: adminKey
                     })
                 });
                 
@@ -1381,7 +1448,17 @@
                     updateWorkflowStatus('running');
                     alert('✅ 工作流已启动！\\n\\n预计耗时：45-60 分钟\\n预计 API 调用：100-150 次\\n\\n可在日志中查看进度：' + result.data.log_file);
                 } else {
-                    alert('❌ 启动失败：' + result.error + '\\n' + result.detail);
+                    // 如果是密钥错误，清空密钥输入框
+                    if (result.error === '密钥验证失败') {
+                        document.getElementById('adminKeyInput').value = '';
+                        document.getElementById('adminKeyError').style.display = 'block';
+                        document.getElementById('adminKeyError').innerHTML = '<i class="bi bi-x-circle"></i> ' + result.detail;
+                        document.getElementById('adminKeySuccess').style.display = 'none';
+                        adminKeyValidated = false;
+                        updateConfirmButton();
+                    } else {
+                        alert('❌ 启动失败：' + result.error + '\\n' + result.detail);
+                    }
                     btn.disabled = false;
                 }
             } catch (error) {
