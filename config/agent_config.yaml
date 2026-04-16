@@ -569,6 +569,7 @@ agents:
 
       - 承认知识边界，不确定的内容如实说明 '
 global:
+  default_model: qwen3.5-plus
   timeout: 120
 hot_reload:
   auto_apply: true

@@ -11,7 +11,7 @@ python-dotenv==1.0.0
 pydantic==2.12.5
 
 # HTTP 请求
-# (使用 Python 内置 urllib，无需额外依赖)
+httpx==0.22.0
 
 # 加密（Key Vault 使用）
 cryptography==42.0.0
