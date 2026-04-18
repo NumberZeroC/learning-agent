@@ -20,22 +20,6 @@ from functools import wraps
 # 缓存存储
 _cache = {}
 _CACHE_TTL = 14400  # 4 小时 = 14400 秒
-_CACHE_TTL_SHORT = 300  # 5 分钟（工作流运行期间）
-
-def clear_cache(pattern=None):
-    """清除缓存（支持按模式清除）"""
-    global _cache
-    if pattern:
-        # 清除匹配模式的缓存
-        keys_to_remove = [k for k in _cache.keys() if pattern in k]
-        for k in keys_to_remove:
-            del _cache[k]
-        return len(keys_to_remove)
-    else:
-        # 清除所有缓存
-        count = len(_cache)
-        _cache = {}
-        return count
 
 def cached(ttl=None):
     """缓存装饰器"""
@@ -294,45 +278,6 @@ def get_workflow_summary():
             "layers": layer_stats
         }
     })
-
-
-@workflow_bp.route('/cache/clear', methods=['POST'])
-def clear_cache_api():
-    """清除数据缓存（工作流完成后调用）"""
-    try:
-        count = clear_cache()
-        return jsonify({
-            "success": True,
-            "message": f"已清除 {count} 条缓存记录"
-        })
-    except Exception as e:
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
-
-
-@workflow_bp.route('/refresh', methods=['POST'])
-def refresh_data():
-    """刷新数据（清除缓存并重新加载）"""
-    try:
-        # 清除缓存
-        clear_cache()
-        
-        # 重新获取数据
-        from flask import request
-        layers_response = get_all_layers()
-        
-        return jsonify({
-            "success": True,
-            "message": "数据已刷新",
-            "data": layers_response.get_json()
-        })
-    except Exception as e:
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
 
 
 # 注册蓝图

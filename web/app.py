@@ -49,6 +49,18 @@ app.logger.addHandler(logging.StreamHandler())
 
 DATA_DIR = project_dir / "data" / "workflow_results"
 
+# ============================================
+# 公开模式配置（public-release 分支）
+# ============================================
+PUBLIC_MODE = os.getenv('PUBLIC_MODE', 'false').lower() == 'true'
+HIDE_WORKFLOW_EXECUTION = os.getenv('HIDE_WORKFLOW_EXECUTION', 'false').lower() == 'true'
+HIDE_CONFIG_PAGE = os.getenv('HIDE_CONFIG_PAGE', 'false').lower() == 'true'
+
+if PUBLIC_MODE:
+    app.logger.info("🔒 公开模式已启用")
+    app.logger.info("   隐藏：工作流执行、配置管理")
+    app.logger.info("   保留：知识展示、聊天问答")
+
 
 @app.errorhandler(Exception)
 def handle_exception(e):
@@ -101,12 +113,9 @@ except Exception:
             api_key = os.getenv("DASHSCOPE_API_KEY", "")
 
 if api_key:
-    app.logger.info(f"✅ API Key 已加载 (前缀：{api_key[:15]}...)")
-    app.logger.info("🎉 完整功能可用（Web 展示 + 聊天 + 工作流）")
+    app.logger.info(f"API Key 已加载 (前缀：{api_key[:15]}...)")
 else:
-    app.logger.info("ℹ️  Web 服务已启动（知识展示模式）")
-    app.logger.info("💡 提示：配置 API Key 后可启用聊天和工作流功能")
-    app.logger.info("💡 配置方法：export DASHSCOPE_API_KEY=sk-xxx 或编辑 .env 文件")
+    app.logger.warning("API Key 未配置")
 
 from routes.chat_routes import chat_bp
 from routes.workflow_routes import (
@@ -116,15 +125,22 @@ from routes.workflow_routes import (
 from routes.config_routes import config_bp
 from routes.workflow_run_routes import workflow_run_bp
 
+# 注册蓝图
 app.register_blueprint(chat_bp)
 register_workflow_bp(app)
-app.register_blueprint(config_bp)
-app.register_blueprint(workflow_run_bp)
+
+# 公开模式：隐藏配置页面
+if not HIDE_CONFIG_PAGE:
+    app.register_blueprint(config_bp)
+else:
+    @app.route("/config")
+    def config_disabled():
+        return jsonify({"error": "此功能在公开模式下已禁用"}), 403
 
 
 @app.route("/")
 def index():
-    return render_template("workflow.html")
+    return render_template("workflow.html", public_mode=PUBLIC_MODE)
 
 
 @app.route("/chat")
@@ -134,6 +150,8 @@ def chat_page():
 
 @app.route("/config")
 def config_page():
+    if HIDE_CONFIG_PAGE:
+        return jsonify({"error": "此功能在公开模式下已禁用"}), 403
     return render_template("config.html")
 
 

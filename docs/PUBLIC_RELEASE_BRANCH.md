@@ -2,319 +2,246 @@
 
 **分支定位：** 对外公开发布的生产分支  
 **创建日期：** 2026-04-18  
-**运行模式：** 只读展示
+**基础：** main 分支完整 Web 功能  
+**模式：** 只读展示（隐藏后台管理）
 
 ---
 
-## 🎯 分支用途
+## 🎯 功能定位
 
-### 核心功能
+### ✅ 保留功能（对外展示）
 
-✅ **保留功能：**
-- 知识架构展示（主页）
-- 层级详情浏览
-- 主题详情查看
-- 公开统计数据
+- ✅ **知识架构展示** - 5 层知识体系可视化
+- ✅ **知识点详情** - 完整的学习内容
+- ✅ **Web 聊天问答** - AI 知识问答助手
+- ✅ **层级导航** - 侧边栏层级切换
+- ✅ **搜索功能** - 知识点搜索
 
-❌ **已禁用功能：**
-- 聊天问答
-- 配置管理
-- 工作流执行
-- API Key 配置
-- 后台管理
+### ❌ 隐藏功能（仅内部使用）
+
+- ❌ **工作流执行按钮** - 隐藏"生成知识"按钮
+- ❌ **配置管理页面** - `/config` 返回 403
+- ❌ **API Key 配置** - 不暴露配置界面
+- ❌ **后台管理** - 隐藏管理功能
 
 ---
 
-## 🚀 快速部署
+## 🔧 配置方式
 
-### 方式 1：生产环境部署（推荐）
+### 环境变量控制
 
 ```bash
-# 切换到公开分支
+# .env 文件
+PUBLIC_MODE=true
+HIDE_WORKFLOW_EXECUTION=true
+HIDE_CONFIG_PAGE=true
+```
+
+### 启动脚本
+
+```bash
+# 公开模式启动
+./web/start_public_release.sh --port 32015
+```
+
+---
+
+## 📁 代码变更
+
+### 1. web/app.py
+
+```python
+# 公开模式配置
+PUBLIC_MODE = os.getenv('PUBLIC_MODE', 'false').lower() == 'true'
+HIDE_CONFIG_PAGE = os.getenv('HIDE_CONFIG_PAGE', 'false').lower() == 'true'
+
+# 隐藏配置页面
+if not HIDE_CONFIG_PAGE:
+    app.register_blueprint(config_bp)
+else:
+    @app.route("/config")
+    def config_disabled():
+        return jsonify({"error": "此功能在公开模式下已禁用"}), 403
+
+# 传递 public_mode 到模板
+@app.route("/")
+def index():
+    return render_template("workflow.html", public_mode=PUBLIC_MODE)
+```
+
+### 2. web/templates/workflow.html
+
+```html
+<!-- 隐藏工作流执行按钮 -->
+{% if not public_mode %}
+<div class="workflow-control">
+    <button class="btn-run" onclick="showRunConfirm()" id="runWorkflowBtn">
+        <i class="bi bi-play-fill"></i> 生成知识
+    </button>
+</div>
+{% endif %}
+
+<!-- 隐藏配置管理菜单 -->
+{% if not public_mode %}
+<a class="nav-link" href="/config"><i class="bi bi-gear"></i> 配置管理</a>
+{% endif %}
+```
+
+---
+
+## 🚀 部署步骤
+
+### 1. 切换到 public-release 分支
+
+```bash
 git checkout public-release
-
-# 启动 Web 服务（80 端口）
-./web/start_public_web.sh
-
-# 或使用自定义端口
-./web/start_public_web.sh --port 8080
+git merge main  # 同步最新代码
 ```
 
-**访问地址：** http://localhost:80 或 http://your-domain.com
-
----
-
-### 方式 2：Systemd 服务部署
+### 2. 配置环境变量
 
 ```bash
-# 创建 systemd 服务
-sudo cat > /etc/systemd/system/learning-agent-public.service << EOF
-[Unit]
-Description=Learning Agent Public Website
-After=network.target
+cat >> .env << EOF
 
-[Service]
-Type=simple
-User=admin
-WorkingDirectory=/home/admin/.openclaw/workspace/learning-agent
-ExecStart=/home/admin/.openclaw/workspace/learning-agent/venv/bin/python web/public_app.py --port 80
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
+# 公开模式配置
+PUBLIC_MODE=true
+HIDE_WORKFLOW_EXECUTION=true
+HIDE_CONFIG_PAGE=true
 EOF
-
-# 启动服务
-sudo systemctl daemon-reload
-sudo systemctl enable learning-agent-public
-sudo systemctl start learning-agent-public
-
-# 查看状态
-sudo systemctl status learning-agent-public
 ```
 
----
-
-### 方式 3：Docker 部署
+### 3. 启动服务
 
 ```bash
-# 构建镜像
-docker build -t learning-agent-public .
-
-# 运行容器
-docker run -d \
-  --name learning-agent-public \
-  -p 80:80 \
-  -v $(pwd)/data:/app/data \
-  learning-agent-public
+# 使用公开模式启动
+./web/start_public_release.sh --port 32015
 ```
 
----
-
-## 📁 文件结构
-
-```
-learning-agent/
-├── web/
-│   ├── public_app.py              # 公开版 Web 应用（只读）
-│   ├── start_public_web.sh        # 启动脚本
-│   └── templates/
-│       ├── public_index.html      # 主页（知识架构展示）
-│       ├── public_layer.html      # 层级详情页
-│       └── public_topic.html      # 主题详情页
-├── config/
-│   └── knowledge_framework.yaml   # 知识架构配置
-├── data/
-│   └── workflow_results/          # 工作流生成结果
-└── docs/
-    └── PUBLIC_RELEASE_BRANCH.md   # 本文档
-```
-
----
-
-## 🔒 安全特性
-
-### 只读模式
-
-- ✅ 无写操作 API
-- ✅ 不暴露内部配置
-- ✅ 不暴露 API Key
-- ✅ 简化的错误信息（不暴露堆栈）
-
-### 安全头配置
-
-```python
-response.headers["X-Content-Type-Options"] = "nosniff"
-response.headers["X-Frame-Options"] = "DENY"
-response.headers["X-XSS-Protection"] = "1; mode=block"
-response.headers["Cache-Control"] = "public, max-age=300"
-```
-
-### 数据过滤
-
-API 返回数据经过过滤，只公开必要信息：
-
-```python
-# 内部数据（不公开）
-- API Key
-- 详细错误信息
-- 系统配置
-- 用户数据
-
-# 公开数据
-- 知识架构
-- 主题列表
-- 统计信息
-- 生成内容
-```
-
----
-
-## 📊 页面预览
-
-### 主页 (/)
-
-```
-┌─────────────────────────────────────────────────┐
-│     🤖 AI Agent 开发知识体系                      │
-│   从基础理论到面试准备的全链路学习路径            │
-├─────────────────────────────────────────────────┤
-│  📊 5 知识层级  │  📚 17 核心主题  │  ✅ 12 已生成  │
-├─────────────────────────────────────────────────┤
-│  ┌───────────┐ ┌───────────┐ ┌───────────┐     │
-│  │ Layer 1   │ │ Layer 2   │ │ Layer 3   │     │
-│  │ 基础理论层 │ │ 技术栈层  │ │ 核心能力层 │     │
-│  │ AI 基础... │ │ Python... │ │ 任务规划..│     │
-│  └───────────┘ └───────────┘ └───────────┘     │
-│  ┌───────────┐ ┌───────────┐                    │
-│  │ Layer 4   │ │ Layer 5   │                    │
-│  │ 工程实践层 │ │ 面试准备层 │                    │
-│  │ 项目经验..│ │ 算法题... │                    │
-│  └───────────┘ └───────────┘                    │
-└─────────────────────────────────────────────────┘
-```
-
-### 层级页 (/layer/1)
-
-```
-┌─────────────────────────────────────────────────┐
-│ ← 返回首页                                       │
-├─────────────────────────────────────────────────┤
-│  ① 基础理论层                                    │
-│  机器学习和深度学习基础理论                      │
-├─────────────────────────────────────────────────┤
-│  ┌─────────────────────────────────────────┐    │
-│  │ AI 基础                                  │    │
-│  │ 机器学习和深度学习基础概念和原理          │    │
-│  │ 🔥 核心  📚 3 个子主题                    │    │
-│  └─────────────────────────────────────────┘    │
-│  ┌─────────────────────────────────────────┐    │
-│  │ LLM 原理                                 │    │
-│  │ 大语言模型核心原理和技术                 │    │
-│  │ 🔥 核心  📚 3 个子主题                    │    │
-│  └─────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────┘
-```
-
----
-
-## 🌐 Nginx 反向代理配置
+### 4. 配置 Nginx（可选增强）
 
 ```nginx
-server {
-    listen 80;
-    server_name your-domain.com;
+# 在 nginx/conf.d/learning-agent.conf 中添加
 
-    location / {
-        proxy_pass http://127.0.0.1:80;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
+# 隐藏配置页面
+location /config {
+    return 403;
+}
 
-    # 启用 HTTPS（推荐）
-    # listen 443 ssl;
-    # ssl_certificate /path/to/cert.pem;
-    # ssl_certificate_key /path/to/key.pem;
+# 隐藏工作流执行 API
+location ~ ^/api/workflow/(execute|start|stop) {
+    return 403;
 }
 ```
 
 ---
 
-## 📈 监控与维护
+## 🧪 测试清单
 
-### 查看日志
+### 功能测试
 
-```bash
-# 实时日志
-tail -f logs/web_public.log
+- [ ] 主页正常显示知识架构
+- [ ] 层级导航正常工作
+- [ ] 知识点详情正常显示
+- [ ] 聊天功能正常
+- [ ] 搜索功能正常
 
-# 错误日志
-grep ERROR logs/web_public.log
+### 安全测试
 
-# 访问统计
-wc -l logs/web_public.log
-```
+- [ ] `/config` 返回 403
+- [ ] 工作流执行按钮隐藏
+- [ ] 工作流执行 API 返回 403
+- [ ] API Key 不暴露
+- [ ] 配置页面无法访问
 
-### 健康检查
+---
 
-```bash
-# 检查服务状态
-curl http://localhost/health
+## 📊 功能对比
 
-# 检查 API
-curl http://localhost/api/stats
-curl http://localhost/api/layers
-```
-
-### 更新部署
-
-```bash
-# 拉取最新代码
-git checkout public-release
-git pull origin public-release
-
-# 重启服务
-sudo systemctl restart learning-agent-public
-
-# 或手动重启
-./web/stop_web.sh
-./web/start_public_web.sh
-```
+| 功能 | main 分支 | public-release |
+|------|---------|----------------|
+| **知识展示** | ✅ | ✅ |
+| **聊天问答** | ✅ | ✅ |
+| **层级导航** | ✅ | ✅ |
+| **搜索** | ✅ | ✅ |
+| **工作流执行** | ✅ | ❌ 隐藏 |
+| **配置管理** | ✅ | ❌ 隐藏 |
+| **API Key 配置** | ✅ | ❌ 隐藏 |
+| **后台管理** | ✅ | ❌ 隐藏 |
 
 ---
 
 ## 🔄 与 main 分支同步
 
-定期从 main 分支同步知识内容和 bug 修复：
-
 ```bash
-# 切换到公开分支
+# 定期同步知识内容和 bug 修复
 git checkout public-release
-
-# 合并 main 分支的变更
 git merge main
 
-# 解决冲突（如有）
-# ...
-
+# 解决冲突时保留 public_mode 相关配置
 # 推送更新
 git push origin public-release
-
-# 重启服务
-sudo systemctl restart learning-agent-public
 ```
 
-**注意：** 合并时保留 `public-release` 分支的简化 Web 应用，不要覆盖 `public_app.py`。
+**注意：** 合并时保留 `PUBLIC_MODE` 相关配置和模板条件判断。
 
 ---
 
 ## ⚠️ 注意事项
 
-### 生产环境部署
+### 1. 不要删除功能代码
 
-1. **禁用调试模式**
-   ```bash
-   # 不要使用 --debug 参数
-   ./web/start_public_web.sh
-   ```
+- 只是隐藏，不是删除
+- 保持与 main 分支的代码同步
+- 方便后续功能更新
 
-2. **配置防火墙**
-   ```bash
-   sudo ufw allow 80/tcp
-   sudo ufw allow 443/tcp  # HTTPS
-   ```
+### 2. 使用环境变量控制
 
-3. **启用 HTTPS**（强烈推荐）
-   - 使用 Let's Encrypt 免费证书
-   - 配置 Nginx 反向代理
+- 便于切换模式
+- 便于不同环境配置
+- 便于测试
 
-4. **定期备份**
-   ```bash
-   # 备份生成的知识内容
-   tar -czf backup_$(date +%Y%m%d).tar.gz data/workflow_results/
-   ```
+### 3. Nginx 作为最后防线
+
+- 即使后端配置错误，Nginx 也能拦截
+- 双重保护更安全
+
+---
+
+## 📝 快速部署脚本
+
+```bash
+#!/bin/bash
+# deploy_public_release.sh
+
+echo "🚀 部署 public-release 分支..."
+
+# 1. 切换分支
+git checkout public-release
+git pull origin public-release
+
+# 2. 安装依赖
+source venv/bin/activate
+pip install -r requirements.txt
+
+# 3. 配置环境变量
+cat >> .env << EOF
+
+# 公开模式配置
+PUBLIC_MODE=true
+HIDE_WORKFLOW_EXECUTION=true
+HIDE_CONFIG_PAGE=true
+EOF
+
+# 4. 重启服务
+./web/stop_web.sh 2>/dev/null
+./web/start_public_release.sh --port 32015
+
+# 5. 重载 Nginx
+docker exec nginx-proxy nginx -s reload
+
+echo "✅ 部署完成"
+echo "🌐 访问地址：http://agentlearn.net/"
+```
 
 ---
 
@@ -324,27 +251,22 @@ sudo systemctl restart learning-agent-public
 
 | 特性 | 说明 |
 |------|------|
-| **定位** | 对外公开发布的生产分支 |
-| **功能** | 只读展示知识内容 |
-| **安全** | 不暴露配置和 API Key |
-| **部署** | 支持多种部署方式 |
-| **维护** | 定期从 main 分支同步 |
+| **定位** | 对外公开发布 |
+| **基础** | main 分支完整功能 |
+| **模式** | 只读展示 |
+| **隐藏** | 工作流执行、配置管理 |
+| **保留** | 知识展示、聊天问答 |
+| **安全** | 后端 + Nginx 双重保护 |
 
 **适用场景：**
 
-- ✅ 对外展示学习成果
-- ✅ 公开知识分享网站
+- ✅ 对外知识分享网站
 - ✅ 生产环境部署
 - ✅ 演示和展示
-
-**不适用场景：**
-
-- ❌ 内部开发测试
-- ❌ 工作流执行
-- ❌ 聊天问答
-- ❌ 配置管理
+- ❌ 内部开发测试（使用 main 分支）
 
 ---
 
-**文档版本：** 1.0  
-**最后更新：** 2026-04-18
+**文档版本：** 2.0  
+**最后更新：** 2026-04-18  
+**状态：** ✅ 重新设计完成
