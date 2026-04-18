@@ -2,17 +2,37 @@
 # 分支：public-release
 # 功能：只读知识展示（隐藏工作流、聊天、配置）
 
-# 基于已有的 learning-agent 镜像构建
-FROM learning-agent:latest
+# 使用华为云镜像源（国内访问快速稳定）
+FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/python:3.11-slim
 
 # 设置工作目录
 WORKDIR /app
 
-# 设置环境变量
-ENV PUBLIC_MODE=true \
+# 设置环境变量（使用阿里云镜像源）
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PUBLIC_MODE=true \
     HIDE_WORKFLOW_EXECUTION=true \
     HIDE_CONFIG_PAGE=true \
-    PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+    PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/
+
+# 使用阿里云 apt 源加速
+RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources && \
+    sed -i 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources
+
+# 安装系统依赖（使用阿里云源，速度快）
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# 复制依赖文件
+COPY requirements.txt .
+
+# 安装 Python 依赖（使用阿里云 PyPI 源）
+RUN pip install --no-cache-dir -r requirements.txt
 
 # 复制应用代码
 COPY . .
@@ -25,7 +45,7 @@ EXPOSE 80
 
 # 健康检查
 HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:80/health')" || exit 1
+    CMD curl -f http://localhost:80/health || exit 1
 
 # 启动命令
 CMD ["python", "web/app.py", "--host", "0.0.0.0", "--port", "80"]
