@@ -1,0 +1,57 @@
+version: '3.8'
+
+# Learning Agent 公开知识展示网站 - Docker Compose 部署配置
+# 用途：生产环境长期运行
+# 端口：32015
+
+services:
+  learning-agent-public:
+    image: learning-agent:public-release
+    container_name: learning-agent-public
+    build:
+      context: .
+      dockerfile: Dockerfile.public
+    restart: unless-stopped
+    ports:
+      - "32015:80"
+    volumes:
+      # 持久化知识数据
+      - ./data/workflow_results:/app/data/workflow_results:rw
+      - ./data/llm_audit_logs:/app/data/llm_audit_logs:rw
+      # 日志持久化
+      - ./logs:/app/logs:rw
+      # 配置文件（可选）
+      - ./config:/app/config:ro
+    environment:
+      - PUBLIC_MODE=true
+      - HIDE_WORKFLOW_EXECUTION=true
+      - HIDE_CONFIG_PAGE=true
+      - TZ=Asia/Shanghai
+      # API Key 从环境变量或 .env 文件加载
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY:-}
+    networks:
+      - learning-agent-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:80/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+networks:
+  learning-agent-network:
+    driver: bridge
+    name: learning-agent-network
