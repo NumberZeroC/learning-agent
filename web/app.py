@@ -130,12 +130,12 @@ app.register_blueprint(chat_bp)
 register_workflow_bp(app)
 
 # 公开模式：隐藏配置页面
-if not HIDE_CONFIG_PAGE:
-    app.register_blueprint(config_bp)
-else:
+if HIDE_CONFIG_PAGE:
     @app.route("/config")
     def config_disabled():
         return jsonify({"error": "此功能在公开模式下已禁用"}), 403
+else:
+    app.register_blueprint(config_bp)
 
 
 @app.route("/")
@@ -146,13 +146,6 @@ def index():
 @app.route("/chat")
 def chat_page():
     return render_template("chat.html")
-
-
-@app.route("/config")
-def config_page():
-    if HIDE_CONFIG_PAGE:
-        return jsonify({"error": "此功能在公开模式下已禁用"}), 403
-    return render_template("config.html")
 
 
 @app.route("/layer/<int:layer_id>")
