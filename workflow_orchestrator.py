@@ -167,7 +167,9 @@ def create_sub_agents(
         from services.key_vault import get_key_vault
 
         vault = get_key_vault()
-        api_key = vault.get_key("dashscope") or ""
+        api_key = vault.get_key("dashscope")
+        if not api_key:
+            raise ValueError("Key Vault 中未找到 API Key")
     except Exception:
         api_key = dashscope.get("api_key_value", "") or os.getenv(
             "DASHSCOPE_API_KEY", ""
@@ -489,6 +491,13 @@ class WorkflowOrchestrator:
 
         layer_results = {}
 
+        # ============================================
+        # 🚀 关键改动：5 个 Agent 层间并发执行
+        # ============================================
+        # 准备所有层的 coroutine
+        layer_coroutines = []
+        layer_info_list = []  # 保存 (layer_num, layer_name) 用于后续处理
+
         for layer_num in sorted(layer_tasks.keys()):
             tasks = layer_tasks[layer_num]
             if not tasks:
@@ -512,13 +521,30 @@ class WorkflowOrchestrator:
                 f"\n📚 [Layer-{layer_num}] {layer_name} - {len(tasks)}任务 (并发={self.max_concurrent})"
             )
 
-            layer_result = await self._async_execute_layer(
-                layer_num, tasks, agent, layer_name
+            # 收集 coroutine，不立即 await
+            layer_coroutines.append(
+                self._async_execute_layer(layer_num, tasks, agent, layer_name)
             )
-            layer_results[str(layer_num)] = layer_result
+            layer_info_list.append((layer_num, layer_name))
 
-            self._merge_layer_results(layer_num, layer_result)
-            logger.info(f"   ✅ [Layer-{layer_num}] 完成")
+        # ✅ 5 层并发执行（5 个 Agent 同时工作）
+        logger.info("\n" + "=" * 60)
+        logger.info(f"🔥 启动层间并发：{len(layer_coroutines)} 层同时执行")
+        logger.info("=" * 60)
+
+        layer_results_list = await asyncio.gather(
+            *layer_coroutines, return_exceptions=True
+        )
+
+        # 处理结果
+        for i, layer_result in enumerate(layer_results_list):
+            layer_num, layer_name = layer_info_list[i]
+            if isinstance(layer_result, Exception):
+                logger.error(f"❌ [Layer-{layer_num}] 执行异常：{layer_result}")
+            else:
+                layer_results[str(layer_num)] = layer_result
+                self._merge_layer_results(layer_num, layer_result)
+                logger.info(f"   ✅ [Layer-{layer_num}] 完成")
 
         completed_at = datetime.now()
         duration = (completed_at - started_at).total_seconds()
@@ -957,6 +983,9 @@ class WorkflowOrchestrator:
 
         # 更新汇总文件
         self._update_summary(result)
+        
+        # 清除 Web 前端缓存（通知 Web 服务刷新数据）
+        self._clear_web_cache()
 
     def _update_summary(self, result: WorkflowResult):
         """更新汇总文件"""
@@ -995,6 +1024,29 @@ class WorkflowOrchestrator:
             json.dump(summary, f, ensure_ascii=False, indent=2)
 
         logger.info(f"📊 汇总已更新：{summary_file}")
+
+    def _clear_web_cache(self):
+        """清除 Web 前端缓存"""
+        try:
+            import urllib.request
+            import json
+            
+            # 尝试调用 Web 服务的清除缓存 API
+            web_url = "http://127.0.0.1:5001/api/workflow/cache/clear"
+            
+            req = urllib.request.Request(
+                web_url,
+                data=b'',
+                method='POST',
+                headers={'Content-Type': 'application/json'}
+            )
+            
+            with urllib.request.urlopen(req, timeout=5) as response:
+                result = json.loads(response.read().decode('utf-8'))
+                logger.info(f"🔄 Web 缓存已清除：{result.get('message', '')}")
+        except Exception as e:
+            # 缓存清除失败不影响主流程，只记录日志
+            logger.warning(f"⚠️ 清除 Web 缓存失败（Web 服务可能未运行）: {e}")
 
 
 # ============================================
