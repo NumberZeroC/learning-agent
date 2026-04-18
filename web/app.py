@@ -145,6 +145,8 @@ def index():
 
 @app.route("/chat")
 def chat_page():
+    if PUBLIC_MODE:
+        return jsonify({"error": "此功能在公开模式下已禁用"}), 403
     return render_template("chat.html")
 
 
