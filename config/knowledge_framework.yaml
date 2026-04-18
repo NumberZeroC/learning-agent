@@ -1,0 +1,212 @@
+# Agent 开发面试知识体系架构
+# 版本：1.0
+# 创建日期：2026-04-18
+# 
+# 说明：
+# - 定义 5 层知识架构（基础理论→技术栈→核心能力→工程实践→面试准备）
+# - 每层包含若干主题，每个主题有描述和优先级
+# - 如无此文件，工作流将自动调用大模型生成框架
+
+name: Agent 开发面试知识体系
+version: "1.0"
+description: AI Agent 开发岗位面试知识体系，覆盖从基础理论到面试准备的全链路
+
+# ============================================
+# 知识架构层级
+# ============================================
+layers:
+  # ────────────────────────────────────────────
+  # 第 1 层：基础理论层
+  # Agent: theory_worker (AI 理论基础专家)
+  # ────────────────────────────────────────────
+  - layer: 1
+    name: 基础理论层
+    agent: theory_worker
+    description: 机器学习和深度学习基础理论
+    topics:
+      - name: AI 基础
+        description: 机器学习、深度学习基础概念和原理
+        priority: high
+        subtopics:
+          - 监督学习与无监督学习
+          - 神经网络基础
+          - 优化算法
+      - name: LLM 原理
+        description: 大语言模型核心原理和技术
+        priority: high
+        subtopics:
+          - Transformer 架构
+          - 预训练与微调
+          - 词元化技术
+      - name: Agent 概念
+        description: AI Agent 核心概念和特性
+        priority: high
+        subtopics:
+          - 智能体定义
+          - 感知 - 行动循环
+          - 智能体类型
+      - name: 架构模式
+        description: 常见 Agent 架构设计模式
+        priority: medium
+        subtopics:
+          - 微服务架构
+          - 事件驱动架构
+          - 分层架构
+
+  # ────────────────────────────────────────────
+  # 第 2 层：技术栈层
+  # Agent: tech_stack_worker (AI 技术栈专家)
+  # ────────────────────────────────────────────
+  - layer: 2
+    name: 技术栈层
+    agent: tech_stack_worker
+    description: Agent 开发所需的技术栈和工具
+    topics:
+      - name: Python 编程
+        description: Python 核心技能和高级特性
+        priority: high
+        subtopics:
+          - 异步编程 (asyncio)
+          - 装饰器与元编程
+          - 性能优化
+      - name: Agent 框架
+        description: 主流 Agent 开发框架和工具
+        priority: high
+        subtopics:
+          - LangChain
+          - AutoGen
+          - LlamaIndex
+      - name: 向量数据库
+        description: 向量存储与检索技术
+        priority: high
+        subtopics:
+          - 向量索引原理
+          - Milvus/Pinecone
+          - 相似度计算
+
+  # ────────────────────────────────────────────
+  # 第 3 层：核心能力层
+  # Agent: core_skill_worker (Agent 核心能力专家)
+  # ────────────────────────────────────────────
+  - layer: 3
+    name: 核心能力层
+    agent: core_skill_worker
+    description: Agent 系统的核心能力模块
+    topics:
+      - name: 任务规划
+        description: 复杂任务分解与规划能力
+        priority: high
+        subtopics:
+          - 思维链 (CoT)
+          - 树形思考 (ToT)
+          - ReAct 算法
+      - name: 工具调用
+        description: Function Calling 和工具集成技术
+        priority: high
+        subtopics:
+          - Function Calling 原理
+          - 工具注册与发现
+          - API 集成
+      - name: 记忆管理
+        description: 短期记忆与长期记忆管理
+        priority: high
+        subtopics:
+          - 上下文窗口管理
+          - 向量检索记忆
+          - 记忆压缩技术
+      - name: 多 Agent 协作
+        description: 多 Agent 系统设计与协作机制
+        priority: medium
+        subtopics:
+          - 角色分配
+          - 通信协议
+          - 冲突解决
+
+  # ────────────────────────────────────────────
+  # 第 4 层：工程实践层
+  # Agent: engineering_worker (AI 工程实践专家)
+  # ────────────────────────────────────────────
+  - layer: 4
+    name: 工程实践层
+    agent: engineering_worker
+    description: Agent 系统的工程化实践
+    topics:
+      - name: 项目经验
+        description: 典型 Agent 项目案例和实战经验
+        priority: high
+        subtopics:
+          - RAG 系统开发
+          - 智能客服系统
+          - 代码助手
+      - name: 性能优化
+        description: Agent 系统性能优化技巧
+        priority: medium
+        subtopics:
+          - 响应时间优化
+          - 成本控制
+          - 缓存策略
+      - name: 部署运维
+        description: 生产环境部署和运维
+        priority: medium
+        subtopics:
+          - 容器化部署
+          - 监控告警
+          - CI/CD 流程
+
+  # ────────────────────────────────────────────
+  # 第 5 层：面试准备层
+  # Agent: interview_worker (AI 面试准备专家)
+  # ────────────────────────────────────────────
+  - layer: 5
+    name: 面试准备层
+    agent: interview_worker
+    description: AI 岗位面试准备和技巧
+    topics:
+      - name: 算法题
+        description: 数据结构和算法面试题
+        priority: high
+        subtopics:
+          - LeetCode 高频题
+          - 动态规划
+          - 图算法
+      - name: 系统设计
+        description: Agent 系统设计面试
+        priority: high
+        subtopics:
+          - 架构设计
+          - Scalability
+          - Agent 系统设计
+      - name: 行为面试
+        description: 行为面试技巧和项目阐述
+        priority: medium
+        subtopics:
+          - STAR 法则
+          - 项目经验阐述
+          - 职业规划
+
+# ============================================
+# 生成配置（用于自动生成框架）
+# ============================================
+generation_config:
+  # 限定 5 个层级
+  total_layers: 5
+  
+  # 每层 Agent 角色定义
+  layer_agents:
+    1: AI 理论基础专家
+    2: AI 技术栈专家
+    3: Agent 核心能力专家
+    4: AI 工程实践专家
+    5: AI 面试准备专家
+  
+  # 生成提示词
+  prompt_template: |
+    你是 AI 教育专家，请为"AI Agent 开发岗位面试"设计一个完整的知识体系架构。
+    
+    要求：
+    1. 分为 5 个层级：基础理论层、技术栈层、核心能力层、工程实践层、面试准备层
+    2. 每层包含 3-4 个核心主题
+    3. 每个主题包含 2-4 个子主题
+    4. 标注优先级（high/medium）
+    
+    请以 YAML 格式输出完整的知识架构。

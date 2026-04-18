@@ -205,10 +205,13 @@ class WorkflowOrchestrator:
     def __init__(
         self,
         config_path: str = "config/agent_config.yaml",
+        framework_path: str = "config/knowledge_framework.yaml",
         max_concurrent: int = 1,  # 暂停层内并发，避免 API 限流（2026-04-18）
         enable_cache: bool = True,
+        auto_generate_framework: bool = True,
     ):
         self.config_path = Path(config_path)
+        self.framework_path = Path(framework_path)
         self.config = self._load_config()
         self.agents: Dict[str, AsyncSubAgent] = {}
         self.tasks: List[Task] = []
@@ -216,7 +219,8 @@ class WorkflowOrchestrator:
         self.output_dir = Path("data/workflow_results")
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        self.architecture = self._load_architecture()
+        # 加载或生成知识架构
+        self.architecture = self._load_or_generate_architecture(auto_generate_framework)
         self.max_concurrent = max_concurrent
         self.enable_cache = enable_cache
         self._current_workflow_id = ""
@@ -225,8 +229,162 @@ class WorkflowOrchestrator:
         with open(self.config_path, "r", encoding="utf-8") as f:
             return yaml.safe_load(f)
 
-    def _load_architecture(self) -> Dict:
-        """加载学习架构图"""
+    def _load_or_generate_architecture(self, auto_generate: bool = True) -> Dict:
+        """加载知识架构，如果不存在则自动生成"""
+        if self.framework_path.exists():
+            logger.info(f"📐 从配置文件加载知识架构：{self.framework_path}")
+            return self._load_architecture_from_file()
+        elif auto_generate:
+            logger.warning("⚠️  知识架构配置文件不存在，开始自动生成...")
+            return self._generate_architecture()
+        else:
+            logger.error("❌ 知识架构配置文件不存在且未启用自动生成")
+            raise FileNotFoundError(f"知识架构配置文件不存在：{self.framework_path}")
+
+    def _load_architecture_from_file(self) -> Dict:
+        """从 YAML 文件加载知识架构"""
+        with open(self.framework_path, "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+        
+        logger.info(f"✅ 成功加载知识架构：{data.get('name', 'Unknown')} v{data.get('version', '1.0')}")
+        logger.info(f"   层级数：{len(data.get('layers', []))}")
+        
+        # 转换为内部格式
+        return {
+            "name": data.get("name", "Agent 开发面试知识体系"),
+            "version": data.get("version", "1.0"),
+            "layers": data.get("layers", [])
+        }
+
+    def _generate_architecture(self) -> Dict:
+        """调用大模型生成知识架构"""
+        logger.info("🤖 调用大模型生成知识架构...")
+        
+        # 创建临时 Agent 用于生成架构
+        from services.llm_client import LLMClient
+        
+        # 获取 API Key
+        try:
+            from services.key_vault import get_key_vault
+            vault = get_key_vault()
+            api_key = vault.get_key("dashscope") or ""
+        except Exception:
+            api_key = self.config.get("providers", {}).get("dashscope", {}).get("api_key_value", "") or os.getenv("DASHSCOPE_API_KEY", "")
+        
+        base_url = self.config.get("providers", {}).get("dashscope", {}).get("base_url", "https://coding.dashscope.aliyuncs.com/v1")
+        
+        llm = LLMClient(
+            api_key=api_key,
+            base_url=base_url,
+            model="qwen3.5-plus",
+            agent_name="framework_generator",
+            enable_cache=False
+        )
+        
+        # 生成提示词
+        system_prompt = """你是 AI 教育专家和知识架构师，擅长设计系统化的学习路径。
+
+请为"AI Agent 开发岗位面试"设计一个完整的知识体系架构。
+
+## 要求
+1. **严格分为 5 个层级**（必须按顺序）：
+   - 第 1 层：基础理论层（机器学习、深度学习基础）
+   - 第 2 层：技术栈层（Python、框架、工具）
+   - 第 3 层：核心能力层（任务规划、工具调用、记忆、多 Agent）
+   - 第 4 层：工程实践层（项目、优化、部署）
+   - 第 5 层：面试准备层（算法题、系统设计、行为面试）
+
+2. **每层 3-4 个主题**，每个主题包含：
+   - name: 主题名称（简洁，2-6 字）
+   - description: 主题描述（15-30 字）
+   - priority: 优先级（high/medium）
+   - subtopics: 2-4 个子主题（列表）
+
+3. **输出格式**：严格的 YAML 格式，可直接保存到配置文件
+
+## 输出示例
+```yaml
+name: Agent 开发面试知识体系
+version: "1.0"
+description: AI Agent 开发岗位面试知识体系
+layers:
+  - layer: 1
+    name: 基础理论层
+    agent: theory_worker
+    topics:
+      - name: 主题名
+        description: 描述
+        priority: high
+        subtopics:
+          - 子主题 1
+          - 子主题 2
+```
+
+请生成完整的知识架构 YAML。"""
+
+        user_prompt = "请生成 AI Agent 开发面试的完整知识体系架构，分为 5 个层级，每层 3-4 个主题。"
+        
+        try:
+            import asyncio
+            
+            async def generate():
+                result = await llm.async_chat(
+                    messages=[{"role": "user", "content": user_prompt}],
+                    system_prompt=system_prompt,
+                    max_retries=2
+                )
+                return result
+            
+            # 运行异步调用
+            try:
+                loop = asyncio.get_event_loop()
+            except RuntimeError:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+            
+            result = loop.run_until_complete(generate())
+            
+            if result.get("success"):
+                content = result.get("content", "")
+                logger.info("✅ 大模型生成成功，解析 YAML...")
+                
+                # 提取 YAML 内容（移除可能的 markdown 代码块标记）
+                yaml_content = content
+                if "```yaml" in content:
+                    yaml_content = content.split("```yaml")[1].split("```")[0]
+                elif "```" in content:
+                    yaml_content = content.split("```")[1].split("```")[0]
+                
+                # 解析 YAML
+                data = yaml.safe_load(yaml_content)
+                
+                # 保存到配置文件
+                self.framework_path.parent.mkdir(parents=True, exist_ok=True)
+                with open(self.framework_path, "w", encoding="utf-8") as f:
+                    f.write("# AI Agent 开发面试知识体系架构\n")
+                    f.write(f"# 自动生成时间：{datetime.now().isoformat()}\n")
+                    f.write(f"# 生成模型：qwen3.5-plus\n\n")
+                    yaml.dump(data, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
+                
+                logger.info(f"📄 知识架构已保存到：{self.framework_path}")
+                
+                return {
+                    "name": data.get("name", "Agent 开发面试知识体系"),
+                    "version": data.get("version", "1.0"),
+                    "layers": data.get("layers", [])
+                }
+            else:
+                logger.error(f"❌ 大模型调用失败：{result.get('error')}")
+                raise RuntimeError(f"知识架构生成失败：{result.get('error')}")
+                
+        except Exception as e:
+            logger.error(f"❌ 知识架构生成异常：{e}")
+            # 降级：使用默认架构
+            logger.warning("⚠️  使用默认知识架构")
+            return self._get_default_architecture()
+
+    def _get_default_architecture(self) -> Dict:
+        """返回默认知识架构（降级方案）"""
         return {
             "name": "Agent 开发面试知识体系",
             "version": "1.0",
