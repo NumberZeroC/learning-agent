@@ -8,7 +8,7 @@ base_url = "https://coding.dashscope.aliyuncs.com/v1"
 
 payload = {
     "model": "qwen3.5-plus",
-    "messages": [{"role": "user", "content": "你好，请用一句话介绍你自己"}],
+    "messages": [{"role": "user", "content": "agent架构设计有哪些"}],
 }
 
 headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}

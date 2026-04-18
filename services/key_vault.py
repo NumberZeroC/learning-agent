@@ -278,7 +278,8 @@ class KeyVault:
                 return None
                 
         except Exception as e:
-            logger.error(f"获取 {provider} API Key 失败：{e}")
+            # 只在 debug 级别打印，避免正常情况（key 不存在）打印错误日志
+            logger.debug(f"获取 {provider} API Key 时出现异常（可能是 key 不存在）：{e}")
             return None
     
     def get_key_prefix(self, provider: str) -> Optional[str]:

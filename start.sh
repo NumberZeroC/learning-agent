@@ -48,8 +48,9 @@ show_help() {
 选项:
   -d, --daemon      后台运行（守护进程模式）
   -f, --foreground  前台运行（默认）
-  -p, --port PORT   指定端口（默认：5001）
+  -p, --port PORT   指定端口（默认：5001，公开版默认80）
   -h, --host HOST   指定主机（默认：0.0.0.0）
+  --public          公开版模式（只读展示，禁用聊天/配置/工作流）
   -c, --check       只检查环境，不启动
   -s, --status      查看运行状态
   -k, --kill        停止运行中的服务
@@ -57,11 +58,18 @@ show_help() {
   --help            显示此帮助信息
 
 示例:
-  $0                     # 前台启动
+  $0                     # 前台启动（开发版）
   $0 -d                  # 后台启动
+  $0 --public            # 公开版启动（端口80）
+  $0 --public -p 32015   # 公开版启动（自定义端口）
   $0 -p 8080             # 指定端口 8080
   $0 -r                  # 重启服务
   $0 -c                  # 检查环境
+  $0 -s                  # 查看状态
+
+模式说明:
+  - 开发版（默认）：全功能，包含聊天/配置/工作流执行
+  - 公开版（--public）：只读展示，禁用聊天/配置/工作流，适合生产部署
 
 EOF
 }
@@ -176,11 +184,31 @@ stop_service() {
 # 启动服务
 start_service() {
     HOST=${CUSTOM_HOST:-"0.0.0.0"}
-    PORT=${CUSTOM_PORT:-5001}
     DAEMON=$1
+    PUBLIC=$2
     
-    log_info "启动 Learning Agent Web 服务..."
+    # 公开版默认端口80，开发版默认端口5001
+    if [ "$PUBLIC" = "true" ]; then
+        PORT=${CUSTOM_PORT:-80}
+        APP_FILE="web/public_app.py"
+        log_info "启动 Learning Agent 公开版 Web 服务..."
+        log_info "模式：公开版（只读展示，禁用聊天/配置/工作流）"
+    else
+        PORT=${CUSTOM_PORT:-5001}
+        APP_FILE="web/app.py"
+        log_info "启动 Learning Agent 开发版 Web 服务..."
+        log_info "模式：开发版（全功能）"
+    fi
+    
     log_info "主机：$HOST, 端口：$PORT"
+    log_info "应用：$APP_FILE"
+    
+    # 设置公开模式环境变量
+    if [ "$PUBLIC" = "true" ]; then
+        export PUBLIC_MODE=true
+        export HIDE_WORKFLOW_EXECUTION=true
+        export HIDE_CONFIG_PAGE=true
+    fi
     
     # 激活虚拟环境
     source venv/bin/activate
@@ -194,12 +222,15 @@ start_service() {
         mkdir -p logs
         
         # 启动后台进程
-        nohup python3 web/app.py --host "$HOST" --port "$PORT" > "$LOG_FILE" 2>&1 &
+        nohup python3 $APP_FILE --host "$HOST" --port "$PORT" > "$LOG_FILE" 2>&1 &
         PID=$!
         
         # 保存 PID
         echo "$PID" > "$PID_FILE"
         echo "port $PORT" >> "$PID_FILE"
+        if [ "$PUBLIC" = "true" ]; then
+            echo "public" >> "$PID_FILE"
+        fi
         
         sleep 2
         
@@ -208,6 +239,7 @@ start_service() {
             echo ""
             echo "PID: $PID"
             echo "端口：$PORT"
+            echo "模式：$([ "$PUBLIC" = "true" ] && echo "公开版" || echo "开发版")"
             echo "日志：$LOG_FILE"
             echo ""
             echo "访问地址:"
@@ -227,11 +259,12 @@ start_service() {
         log_info "访问地址:"
         echo "  - 本地：http://localhost:$PORT"
         echo "  - 远程：http://$(hostname -I | awk '{print $1}'):${PORT}"
+        echo "  - 模式：$([ "$PUBLIC" = "true" ] && echo "公开版" || echo "开发版")"
         echo ""
         log_info "按 Ctrl+C 停止服务"
         echo ""
         
-        python3 web/app.py --host "$HOST" --port "$PORT"
+        python3 $APP_FILE --host "$HOST" --port "$PORT"
     fi
 }
 
@@ -240,7 +273,7 @@ restart_service() {
     log_info "重启服务..."
     stop_service
     sleep 2
-    start_service "$DAEMON_MODE"
+    start_service "$DAEMON_MODE" "$PUBLIC_MODE"
 }
 
 # 主函数
@@ -249,6 +282,7 @@ main() {
     DAEMON_MODE="false"
     CUSTOM_HOST=""
     CUSTOM_PORT=""
+    PUBLIC_MODE="false"
     ACTION="start"
     
     # 解析参数
@@ -269,6 +303,10 @@ main() {
             -h|--host)
                 CUSTOM_HOST="$2"
                 shift 2
+                ;;
+            --public)
+                PUBLIC_MODE="true"
+                shift
                 ;;
             -c|--check)
                 ACTION="check"
@@ -315,7 +353,7 @@ main() {
         start|*)
             check_environment
             if [ "$ACTION" = "start" ]; then
-                start_service "$DAEMON_MODE"
+                start_service "$DAEMON_MODE" "$PUBLIC_MODE"
             fi
             ;;
     esac

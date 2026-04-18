@@ -9,15 +9,27 @@
 ## ✨ 核心功能
 
 ### 1. 知识生成工作流
-- 5 层知识架构（基础理论 → 技术栈 → 核心能力 → 工程实践 → 面试准备）
-- 多 Agent 并发执行，自动生成知识点
+- **三轮生成策略**（结构 → 详情 → 关联）
+- **5 层知识架构**（基础理论 → 技术栈 → 核心能力 → 工程实践 → 面试准备）
+- 5 个子 Agent 并发执行，效率提升
 - 断点续传，防止中断丢失
-- 实时保存进度
+- 知识关联图谱 + 实践项目 + 面试亮点
 
-### 2. Web 聊天问答
+### 2. 部分生成工具
+- 单主题生成：`python regenerate_topic.py "机器学习"`
+- 单层级生成：`python regenerate_topic.py --layer-only 1`
+- 跳过选项：`--skip-details` / `--skip-relation`
+
+### 3. 知识框架管理
+- 自动生成 YAML 配置：`python generate_framework.py`
+- 预览/强制覆盖：`--preview` / `--force`
+
+### 4. Web 聊天问答
 - 与 AI Agent 实时对话
 - 支持多个专家角色（理论/技术/工程/面试）
 - 对话历史记录
+
+> 📘 **详细功能说明请查阅：[docs/FEATURES.md](docs/FEATURES.md)**
 
 ## 🚀 快速开始
 
@@ -300,9 +312,9 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 📚 相关文档
 
+- **[docs/FEATURES.md](docs/FEATURES.md)** - **完整功能说明文档（推荐阅读）**
 - [CHANGELOG.md](CHANGELOG.md) - 版本变更记录
 - [CONTRIBUTING.md](CONTRIBUTING.md) - 贡献指南
-- [docs/](docs/) - 开发文档
 
 ## 🙏 致谢
 

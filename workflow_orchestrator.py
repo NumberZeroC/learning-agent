@@ -649,6 +649,13 @@ layers:
 
         layer_results = {}
 
+        # 从架构中获取每层的主题名称列表（用于知识关联）
+        layer_topic_names: Dict[int, List[str]] = {}
+        for layer_data in self.architecture.get("layers", []):
+            layer_num = layer_data.get("layer")
+            topics = layer_data.get("topics", [])
+            layer_topic_names[layer_num] = [t.get("name", "") for t in topics]
+
         # ============================================
         # 🚀 关键改动：5 个 Agent 层间并发执行
         # ============================================
@@ -675,13 +682,18 @@ layers:
             agent = self.agents[agent_name]
             layer_name = layer_data.get("name", f"第{layer_num}层")
 
+            # 获取上一层的主题名称列表（用于知识关联）
+            previous_layer_topics = layer_topic_names.get(layer_num - 1, []) if layer_num > 1 else None
+
             logger.info(
                 f"\n📚 [Layer-{layer_num}] {layer_name} - {len(tasks)}任务 (并发={self.max_concurrent})"
             )
+            if previous_layer_topics:
+                logger.info(f"   🔗 前置层主题：{', '.join(previous_layer_topics)}")
 
             # 收集 coroutine，不立即 await
             layer_coroutines.append(
-                self._async_execute_layer(layer_num, tasks, agent, layer_name)
+                self._async_execute_layer(layer_num, tasks, agent, layer_name, previous_layer_topics)
             )
             layer_info_list.append((layer_num, layer_name))
 
@@ -750,15 +762,286 @@ layers:
         await self._close_agents()
         return result
 
+    def execute_single_topic(self, topic_name: str, layer_num: int = None, skip_details: bool = False, skip_relation: bool = False) -> Dict:
+        """执行单个主题（公开方法）"""
+        import asyncio
+        
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+        
+        return loop.run_until_complete(
+            self._async_execute_single_topic(topic_name, layer_num, skip_details, skip_relation)
+        )
+
+    async def _async_execute_single_topic(self, topic_name: str, layer_num: int = None, skip_details: bool = False, skip_relation: bool = False) -> Dict:
+        """异步执行单个主题"""
+        # 查找任务
+        task = None
+        for t in self.tasks:
+            if t.topic_name == topic_name or t.topic_name.lower() == topic_name.lower():
+                if layer_num is None or t.layer_num == layer_num:
+                    task = t
+                    break
+        
+        if not task:
+            logger.error(f"❌ 未找到主题：{topic_name}")
+            return {"success": False, "error": f"未找到主题: {topic_name}"}
+        
+        # 获取 Agent
+        layer_data = next(
+            (l for l in self.architecture["layers"] if l["layer"] == task.layer_num),
+            None
+        )
+        if not layer_data:
+            return {"success": False, "error": f"未找到第{task.layer_num}层配置"}
+        
+        agent_name = layer_data.get("agent")
+        if not agent_name or agent_name not in self.agents:
+            return {"success": False, "error": f"Agent {agent_name} 不存在"}
+        
+        agent = self.agents[agent_name]
+        layer_name = layer_data.get("name", f"第{task.layer_num}层")
+        
+        logger.info("=" * 60)
+        logger.info(f"🔄 生成单个主题：{task.topic_name}")
+        logger.info("=" * 60)
+        logger.info(f"   层级：第{task.layer_num}层 - {layer_name}")
+        logger.info(f"   Agent：{agent_name}")
+        
+        # 获取前置层主题
+        previous_layer_topics = None
+        if task.layer_num > 1:
+            for layer in self.architecture.get("layers", []):
+                if layer["layer"] == task.layer_num - 1:
+                    previous_layer_topics = [t.get("name", "") for t in layer.get("topics", [])]
+                    break
+        
+        # 执行任务（使用临时标记控制是否跳过第二轮/第三轮）
+        original_skip_details = getattr(self, '_skip_details', False)
+        original_skip_relation = getattr(self, '_skip_relation', False)
+        self._skip_details = skip_details
+        self._skip_relation = skip_relation
+        
+        try:
+            result = await self._async_execute_task(task, agent, 1, 1, previous_layer_topics)
+            
+            if result.get("success"):
+                knowledge = result.get("knowledge")
+                self._save_task_result(task.layer_num, 1, knowledge)
+                
+                # 更新层文件
+                self._merge_single_topic(task.layer_num, task.topic_name, knowledge)
+                
+                logger.info("=" * 60)
+                logger.info(f"✅ 主题生成完成：{task.topic_name}")
+                logger.info("=" * 60)
+                
+                return {
+                    "success": True,
+                    "layer": task.layer_num,
+                    "topic_name": task.topic_name,
+                    "agent": agent_name,
+                    "keypoint_count": self._count_keypoints(knowledge),
+                    "has_practice_project": "practice_project" in knowledge,
+                    "has_interview_highlights": "interview_highlights" in knowledge,
+                    "knowledge": knowledge,
+                }
+            else:
+                return result
+        finally:
+            self._skip_details = original_skip_details
+            self._skip_relation = original_skip_relation
+
+    def execute_layer(self, layer_num: int, skip_details: bool = False, skip_relation: bool = False) -> Dict:
+        """执行整个层级（公开方法）"""
+        import asyncio
+        
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+        
+        return loop.run_until_complete(
+            self._async_execute_layer_only(layer_num, skip_details, skip_relation)
+        )
+
+    async def _async_execute_layer_only(self, layer_num: int, skip_details: bool = False, skip_relation: bool = False) -> Dict:
+        """异步执行单个层级"""
+        logger.info("=" * 60)
+        logger.info(f"🔄 生成整个层级：第{layer_num}层")
+        logger.info("=" * 60)
+        
+        # 获取层级信息
+        layer_data = next(
+            (l for l in self.architecture["layers"] if l["layer"] == layer_num),
+            None
+        )
+        if not layer_data:
+            logger.error(f"❌ 第{layer_num}层不存在")
+            return {"success": False, "error": f"第{layer_num}层不存在"}
+        
+        layer_name = layer_data.get("name", f"第{layer_num}层")
+        agent_name = layer_data.get("agent", "")
+        
+        if not agent_name or agent_name not in self.agents:
+            return {"success": False, "error": f"Agent {agent_name} 不存在"}
+        
+        agent = self.agents[agent_name]
+        
+        # 获取该层的任务
+        layer_tasks = [t for t in self.tasks if t.layer_num == layer_num and t.status != "skipped"]
+        
+        if not layer_tasks:
+            logger.warning(f"⚠️  第{layer_num}层无待执行任务")
+            return {"success": True, "layer": layer_num, "total_topics": 0, "success_count": 0, "failed_count": 0}
+        
+        logger.info(f"   层级：第{layer_num}层 - {layer_name}")
+        logger.info(f"   Agent：{agent_name}")
+        logger.info(f"   主题数：{len(layer_tasks)}")
+        
+        # 获取前置层主题
+        previous_layer_topics = None
+        if layer_num > 1:
+            for layer in self.architecture.get("layers", []):
+                if layer["layer"] == layer_num - 1:
+                    previous_layer_topics = [t.get("name", "") for t in layer.get("topics", [])]
+                    break
+        
+        # 设置跳过标记
+        original_skip_details = getattr(self, '_skip_details', False)
+        original_skip_relation = getattr(self, '_skip_relation', False)
+        self._skip_details = skip_details
+        self._skip_relation = skip_relation
+        
+        try:
+            # 执行层级
+            layer_result = await self._async_execute_layer(
+                layer_num, layer_tasks, agent, layer_name, previous_layer_topics
+            )
+            
+            # 合并结果
+            self._merge_layer_results(layer_num, layer_result)
+            
+            success_count = sum(1 for t in layer_tasks if t.status == "completed")
+            failed_count = sum(1 for t in layer_tasks if t.status == "failed")
+            
+            logger.info("=" * 60)
+            logger.info(f"✅ 第{layer_num}层生成完成")
+            logger.info("=" * 60)
+            logger.info(f"   ✅ 成功：{success_count}/{len(layer_tasks)}")
+            logger.info(f"   ❌ 失败：{failed_count}/{len(layer_tasks)}")
+            
+            return {
+                "success": True,
+                "layer": layer_num,
+                "layer_name": layer_name,
+                "agent": agent_name,
+                "total_topics": len(layer_tasks),
+                "success_count": success_count,
+                "failed_count": failed_count,
+                "layer_result": layer_result,
+            }
+        finally:
+            self._skip_details = original_skip_details
+            self._skip_relation = original_skip_relation
+
+    def _merge_single_topic(self, layer_num: int, topic_name: str, knowledge: Dict):
+        """合并单个主题到层文件"""
+        layer_file = self.output_dir / f"layer_{layer_num}_workflow.json"
+        
+        if not layer_file.exists():
+            layer_data = {
+                "layer": layer_num,
+                "layer_name": self._get_layer_name(layer_num),
+                "agent": self._get_layer_agent(layer_num),
+                "topics": [knowledge],
+            }
+        else:
+            with open(layer_file, "r", encoding="utf-8") as f:
+                layer_data = json.load(f)
+            
+            topics = layer_data.get("topics", [])
+            updated = False
+            for i, topic in enumerate(topics):
+                if topic.get("topic_name") == topic_name:
+                    topics[i] = knowledge
+                    updated = True
+                    break
+            
+            if not updated:
+                topics.append(knowledge)
+            
+            layer_data["topics"] = topics
+        
+        layer_data["updated_at"] = datetime.now().isoformat()
+        
+        with open(layer_file, "w", encoding="utf-8") as f:
+            json.dump(layer_data, f, ensure_ascii=False, indent=2)
+        
+        logger.info(f"   💾 已更新：{layer_file}")
+
+    def list_all_topics(self) -> List[Dict]:
+        """列出所有主题"""
+        topics = []
+        for layer in self.architecture.get("layers", []):
+            layer_num = layer["layer"]
+            layer_name = layer["name"]
+            agent_name = layer.get("agent", "")
+            for topic in layer.get("topics", []):
+                topics.append({
+                    "layer": layer_num,
+                    "layer_name": layer_name,
+                    "agent": agent_name,
+                    "topic_name": topic["name"],
+                    "priority": topic.get("priority", "medium"),
+                })
+        return topics
+
+    def list_layer_topics(self, layer_num: int) -> List[Dict]:
+        """列出指定层级的主题"""
+        topics = []
+        for layer in self.architecture.get("layers", []):
+            if layer["layer"] == layer_num:
+                layer_name = layer["name"]
+                agent_name = layer.get("agent", "")
+                for topic in layer.get("topics", []):
+                    topics.append({
+                        "layer": layer_num,
+                        "layer_name": layer_name,
+                        "agent": agent_name,
+                        "topic_name": topic["name"],
+                        "priority": topic.get("priority", "medium"),
+                    })
+                break
+        return topics
+
+    def _get_layer_name(self, layer_num: int) -> str:
+        """获取层级名称"""
+        for layer in self.architecture.get("layers", []):
+            if layer["layer"] == layer_num:
+                return layer["name"]
+        return f"第{layer_num}层"
+
+    def _get_layer_agent(self, layer_num: int) -> str:
+        """获取层级 Agent"""
+        for layer in self.architecture.get("layers", []):
+            if layer["layer"] == layer_num:
+                return layer.get("agent", "")
+        return ""
+
     async def _async_execute_layer(
-        self, layer_num: int, tasks: List[Task], agent: AsyncSubAgent, layer_name: str
+        self, layer_num: int, tasks: List[Task], agent: AsyncSubAgent, layer_name: str, previous_layer_topics: List[str] = None
     ) -> Dict:
         """异步执行单层任务（并发）"""
         semaphore = asyncio.Semaphore(self.max_concurrent)
 
         async def run_task_with_semaphore(task: Task, index: int):
             async with semaphore:
-                return await self._async_execute_task(task, agent, index, len(tasks))
+                return await self._async_execute_task(task, agent, index, len(tasks), previous_layer_topics)
 
         results = await asyncio.gather(
             *[run_task_with_semaphore(task, i) for i, task in enumerate(tasks, 1)],
@@ -802,6 +1085,8 @@ layers:
                                 "topic_name": task.topic_name,
                                 "status": "completed",
                                 "keypoints_count": self._count_keypoints(knowledge),
+                                "has_practice_project": "practice_project" in knowledge,
+                                "has_interview_highlights": "interview_highlights" in knowledge,
                             },
                             source="workflow_orchestrator",
                         )
@@ -815,17 +1100,20 @@ layers:
         return layer_result
 
     async def _async_execute_task(
-        self, task: Task, agent: AsyncSubAgent, index: int, total: int
+        self, task: Task, agent: AsyncSubAgent, index: int, total: int, previous_layer_topics: List[str] = None
     ) -> Dict:
-        """异步执行单个任务（两轮生成）"""
+        """异步执行单个任务（三轮生成）"""
         task.start_time = datetime.now().isoformat()
         task.status = "running"
+
+        skip_details = getattr(self, '_skip_details', False)
+        skip_relation = getattr(self, '_skip_relation', False)
 
         logger.info(f"   [{index}/{total}] 生成：{task.topic_name}")
 
         try:
             # 第一轮：生成主题结构
-            question = self._build_question(task.topic_name, task.layer_num)
+            question = self._build_question(task.topic_name, task.layer_num, previous_layer_topics)
             answer = await agent.ask(question, max_retries=2)
 
             if not answer.get("success"):
@@ -838,17 +1126,33 @@ layers:
             knowledge = self._parse_knowledge(answer.get("content", ""), task.topic_name)
 
             # 第二轮：为每个关键知识点生成详细内容
-            logger.info(f"   [{index}/{total}] 📝 已生成结构，开始生成关键知识点详情...")
-            knowledge = await self._generate_keypoint_details_async(
-                agent, knowledge, task.topic_name
-            )
+            if skip_details:
+                logger.info(f"   [{index}/{total}] ⏭️  跳过知识点详情生成")
+            else:
+                logger.info(f"   [{index}/{total}] 📝 已生成结构，开始生成关键知识点详情...")
+                knowledge = await self._generate_keypoint_details_async(
+                    agent, knowledge, task.topic_name, task.layer_num
+                )
+
+            # 第三轮：生成知识关联、实践项目和面试亮点
+            if skip_relation:
+                logger.info(f"   [{index}/{total}] ⏭️  跳过知识关联生成")
+            else:
+                logger.info(f"   [{index}/{total}] 🔗 开始生成知识关联和实践项目...")
+                knowledge = await self._generate_knowledge_relation_async(
+                    agent, knowledge, task.topic_name, task.layer_num
+                )
 
             task.status = "completed"
             task.result = answer
             task.end_time = datetime.now().isoformat()
             keypoint_count = self._count_keypoints(knowledge)
+            has_project = "practice_project" in knowledge
+            has_interview = "interview_highlights" in knowledge
             logger.info(
-                f"   [{index}/{total}] ✅ {task.topic_name}（含{keypoint_count}个知识点详情）"
+                f"   [{index}/{total}] ✅ {task.topic_name}（{keypoint_count}个知识点，"
+                f"{'含实践项目' if has_project else '无项目'}，"
+                f"{'含面试亮点' if has_interview else '无面试'})"
             )
 
             # 返回包含详细内容的 knowledge
@@ -883,17 +1187,39 @@ layers:
                 cleaned += 1
         logger.debug(f"🧹 清理临时文件：{cleaned}个")
 
-    def _build_question(self, topic_name: str, layer_num: int) -> str:
+    def _build_question(self, topic_name: str, layer_num: int, previous_layer_topics: List[str] = None) -> str:
         """构建提问（第一轮：生成主题结构）"""
+        layer_names = {
+            1: "基础理论层",
+            2: "技术栈层",
+            3: "核心能力层",
+            4: "工程实践层",
+            5: "面试准备层"
+        }
+        layer_name = layer_names.get(layer_num, f"第{layer_num}层")
+        
+        previous_context = ""
+        if previous_layer_topics and layer_num > 1:
+            previous_context = f"""
+## 已学习的上层知识
+第{layer_num-1}层已学习主题：{', '.join(previous_layer_topics)}
+这些知识是本主题的前置基础，请在本主题内容中适当引用和关联。
+"""
+        
         return f"""
 ## 任务
-生成第{layer_num}层"{topic_name}"主题的详细学习内容。
+生成第{layer_num}层"{layer_name}"中"{topic_name}"主题的详细学习内容。
+
+## 背景
+这是 AI Agent 开发者学习路径的第{layer_num}层。
+该层定位：{layer_name} - {"构建后续所有知识的理论基础" if layer_num == 1 else "承上启下的能力构建层" if layer_num in [2, 3] else "实践应用层"}
+{previous_context}
 
 ## 输出要求
 请严格按照以下 JSON 格式输出：
 {{
-    "topic_name": "主题名称",
-    "description": "详细描述（300-500 字）",
+    "topic_name": "{topic_name}",
+    "description": "详细描述（300-500 字，说明该主题在学习路径中的定位和价值）",
     "subtopics": [
         {{
             "name": "子主题名称",
@@ -904,23 +1230,32 @@ layers:
                 {{"type": "doc", "title": "文档名", "url": "链接"}}
             ],
             "estimated_hours": 10,
-            "difficulty": "beginner"
+            "difficulty": "beginner/intermediate/advanced"
         }}
     ],
-    "total_hours": 总学习时长，
-    "prerequisites": ["前置知识 1", "前置知识 2"],
-    "learning_outcomes": ["学习成果 1", "学习成果 2"]
+    "total_hours": 总学习时长（数字），
+    "prerequisites": [
+        {{
+            "knowledge": "前置知识点名称",
+            "from_layer": 来源层级（数字）,
+            "from_topic": "来源主题名称（如有）",
+            "reason": "为什么需要这个前置知识"
+        }}
+    ],
+    "learning_outcomes": ["学习成果 1", "学习成果 2"],
+    "learning_sequence": ["建议的学习顺序：先学知识点A，再学知识点B..."]
 }}
 
 注意：
 1. 只输出 JSON，不要其他内容
 2. 确保 JSON 格式正确
-3. 内容要详细、实用
-4. 资源要真实有效
+3. 内容要详细、实用，体现知识点之间的关联性
+4. prerequisites 要具体，指明前置知识来自哪个层级/主题
+5. 资源要真实有效，优先推荐官方文档和经典书籍
 """
 
     def _build_keypoint_question(
-        self, topic_name: str, subtopic_name: str, key_point: str, difficulty: str
+        self, topic_name: str, subtopic_name: str, key_point: str, difficulty: str, layer_num: int = 3
     ) -> str:
         """构建提问（第二轮：生成关键知识点详细内容）"""
         difficulty_map = {
@@ -929,10 +1264,20 @@ layers:
             "advanced": "高级",
         }
         diff_cn = difficulty_map.get(difficulty, "中级")
+        
+        interview_context = ""
+        if layer_num >= 3:
+            interview_context = """
+    "interview_frequency": "high/medium/low（该知识点在面试中出现的频率）",
+    "interview_questions": ["面试中常见的相关问题"],
+"""
 
         return f"""
 ## 任务
 针对"{topic_name}"主题中"{subtopic_name}"子主题的关键知识点进行详细讲解。
+
+## 背景
+这是 AI Agent 开发者学习内容，面向求职者，需要兼顾理论深度和面试实用性。
 
 ## 关键知识点
 **{key_point}**
@@ -941,12 +1286,13 @@ layers:
 请严格按照以下 JSON 格式输出详细学习内容：
 {{
     "key_point": "{key_point}",
-    "explanation": "详细解释（500-800 字，包括概念定义、原理说明、为什么重要）",
+    "explanation": "详细解释（500-800 字，包括概念定义、原理说明、为什么重要、与其他知识点的关联）",
     "core_concepts": [
         {{
             "name": "核心概念名",
             "definition": "概念定义",
-            "example": "具体例子或代码示例"
+            "example": "具体例子或代码示例",
+            "related_to": ["关联的其他概念"]
         }}
     ],
     "common_misunderstandings": [
@@ -955,30 +1301,31 @@ layers:
             "correction": "正确理解"
         }}
     ],
-    "practical_application": "实际应用场景（1-2 个具体案例）",
-    "code_example": "Python 代码示例（如果适用）",
+    "practical_application": "实际应用场景（1-2 个具体案例，Agent开发中的应用）",
+    "code_example": "Python 代码示例（如果适用，要可运行、有注释）",
     "difficulty": "{diff_cn}",
     "estimated_study_time": "建议学习时长（分钟）",
     "self_check_questions": [
-        "自测问题 1",
-        "自测问题 2",
-        "自测问题 3"
-    ],
+        "自测问题 1（检验核心概念理解）",
+        "自测问题 2（检验实际应用能力）",
+        "自测问题 3（检验知识关联）"
+    ],{interview_context}
     "further_reading": [
-        {{"type": "article", "title": "文章标题", "url": "链接"}},
-        {{"type": "video", "title": "视频标题", "url": "链接"}}
+        {{ "type": "article", "title": "文章标题", "url": "链接" }},
+        {{ "type": "video", "title": "视频标题", "url": "链接" }}
     ]
 }}
 
 注意：
 1. 只输出 JSON，不要其他内容
 2. 解释要通俗易懂，避免过度使用专业术语
-3. 代码示例要可运行、有注释
-4. 自测问题要能检验理解程度
+3. 代码示例要可运行、有注释，最好是 Agent 开发相关的代码
+4. 自测问题要能检验理解程度和实际应用能力
+5. 强调该知识点与前后知识点的关联关系
 """
 
     async def _generate_keypoint_details_async(
-        self, agent: AsyncSubAgent, knowledge: Dict, topic_name: str
+        self, agent: AsyncSubAgent, knowledge: Dict, topic_name: str, layer_num: int = 3
     ) -> Dict:
         """为每个关键知识点生成详细学习内容（异步版本）"""
         subtopics = knowledge.get("subtopics", [])
@@ -1002,7 +1349,7 @@ layers:
 
                 # 构建第二轮问题
                 question = self._build_keypoint_question(
-                    topic_name, subtopic_name, key_point, difficulty
+                    topic_name, subtopic_name, key_point, difficulty, layer_num
                 )
 
                 # 向 Agent 提问（异步）
@@ -1038,6 +1385,132 @@ layers:
         for subtopic in knowledge.get("subtopics", []):
             count += len(subtopic.get("detailed_keypoints", []))
         return count
+
+    def _build_relation_question(self, topic_name: str, knowledge: Dict, layer_num: int) -> str:
+        """构建提问（第三轮：生成知识关联和实践项目）"""
+        keypoints_summary = []
+        for subtopic in knowledge.get("subtopics", []):
+            subtopic_name = subtopic.get("name", "")
+            for kp in subtopic.get("key_points", []):
+                keypoints_summary.append(f"- [{subtopic_name}] {kp}")
+        
+        keypoints_text = "\n".join(keypoints_summary)
+        
+        layer_names = {
+            1: "基础理论层", 2: "技术栈层", 3: "核心能力层", 4: "工程实践层", 5: "面试准备层"
+        }
+        layer_name = layer_names.get(layer_num, f"第{layer_num}层")
+        
+        return f"""
+## 任务
+为"{topic_name}"主题（第{layer_num}层-{layer_name}）生成知识关联关系、实践项目和面试亮点。
+
+## 已生成的知识点列表
+{keypoints_text}
+
+## 前置知识
+{json.dumps(knowledge.get("prerequisites", []), ensure_ascii=False, indent=2)}
+
+## 输出要求
+请严格按照以下 JSON 格式输出：
+
+{{
+    "knowledge_graph": {{
+        "dependencies": [
+            {{
+                "from": "知识点名称A",
+                "to": "知识点名称B", 
+                "strength": "strong/medium/weak",
+                "reason": "依赖原因（为什么学B之前要先学A）"
+            }}
+        ],
+        "cross_topic_relations": [
+            {{
+                "concept": "跨主题共享的核心概念",
+                "related_topics": ["相关主题名称列表"],
+                "related_layers": [相关层级列表]
+            }}
+        ],
+        "learning_sequence": ["知识点A → 知识点B → 知识点C（建议的学习顺序）"]
+    }},
+    "practice_project": {{
+        "name": "实践项目名称",
+        "description": "项目描述（100-150字，说明项目背景和目标）",
+        "tasks": [
+            "任务1：具体任务描述",
+            "任务2：具体任务描述", 
+            "任务3：具体任务描述"
+        ],
+        "skills_covered": ["涉及的知识点列表"],
+        "difficulty": "beginner/intermediate/advanced",
+        "estimated_hours": 预计完成时间（小时）,
+        "deliverables": ["项目交付物"],
+        "evaluation_criteria": ["完成标准"]
+    }},
+    "interview_highlights": {{
+        "frequently_asked": [
+            {{
+                "question": "高频面试问题",
+                "key_knowledge_points": ["涉及的核心知识点"],
+                "answer_outline": "回答要点（简短概括）"
+            }}
+        ],
+        "coding_challenges": [
+            {{
+                "title": "编程挑战题",
+                "description": "题目描述",
+                "key_knowledge_points": ["涉及的知识点"],
+                "difficulty": "easy/medium/hard"
+            }}
+        ],
+        "system_design": [
+            {{
+                "title": "系统设计题",
+                "description": "题目描述",
+                "key_knowledge_points": ["涉及的知识点"],
+                "design_hints": ["设计思路提示"]
+            }}
+        ]
+    }}
+}}
+
+注意：
+1. 只输出 JSON，不要其他内容
+2. dependencies 要体现知识点之间的逻辑依赖关系
+3. practice_project 要结合 Agent 开发实际场景
+4. interview_highlights 要标注面试高频考点
+5. coding_challenges 和 system_design 主要在面试准备层（第5层），其他层可适当简化
+"""
+
+    async def _generate_knowledge_relation_async(
+        self, agent: AsyncSubAgent, knowledge: Dict, topic_name: str, layer_num: int
+    ) -> Dict:
+        """第三轮：生成知识关联、实践项目和面试亮点"""
+        logger.info(f"       🔗 第三轮：生成知识关联和实践项目...")
+        
+        question = self._build_relation_question(topic_name, knowledge, layer_num)
+        answer = await agent.ask(question, max_retries=2)
+        
+        if answer.get("success"):
+            relation_data = self._parse_knowledge(answer.get("content", ""), "knowledge_relation")
+            
+            if "knowledge_graph" in relation_data:
+                knowledge["knowledge_graph"] = relation_data["knowledge_graph"]
+                logger.info(f"       ✅ 已生成知识图谱（{len(relation_data['knowledge_graph'].get('dependencies', []))}个依赖关系）")
+            
+            if "practice_project" in relation_data:
+                knowledge["practice_project"] = relation_data["practice_project"]
+                logger.info(f"       ✅ 已生成实践项目：{relation_data['practice_project'].get('name', '未知')}")
+            
+            if "interview_highlights" in relation_data:
+                knowledge["interview_highlights"] = relation_data["interview_highlights"]
+                faq_count = len(relation_data['interview_highlights'].get('frequently_asked', []))
+                logger.info(f"       ✅ 已生成面试亮点（{faq_count}个高频问题）")
+            
+            return knowledge
+        else:
+            logger.warning(f"       ⚠️ 第三轮生成失败：{answer.get('error', 'Unknown')[:50]}")
+            return knowledge
 
     def _parse_knowledge(self, content: str, topic_name: str) -> Dict:
         """解析知识内容（容错版）"""
