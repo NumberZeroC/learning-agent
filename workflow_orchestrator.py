@@ -205,7 +205,7 @@ class WorkflowOrchestrator:
     def __init__(
         self,
         config_path: str = "config/agent_config.yaml",
-        max_concurrent: int = 3,
+        max_concurrent: int = 1,  # 暂停层内并发，避免 API 限流（2026-04-18）
         enable_cache: bool = True,
     ):
         self.config_path = Path(config_path)
@@ -1083,7 +1083,7 @@ def main():
     print("=" * 70)
     print()
 
-    orchestrator = WorkflowOrchestrator(max_concurrent=3, enable_cache=True)
+    orchestrator = WorkflowOrchestrator(max_concurrent=1, enable_cache=True)  # 暂停层内并发，避免 API 限流
 
     print("初始化工作流...")
     orchestrator.initialize()
