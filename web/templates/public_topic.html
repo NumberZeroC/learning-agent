@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主题详情 - Learning Agent</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 { font-size: 2em; color: #333; margin-bottom: 15px; }
+        .meta { color: #888; margin-bottom: 20px; font-size: 0.9em; }
+        .section { margin: 30px 0; }
+        .section-title {
+            font-size: 1.3em;
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .subtopic {
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .subtopic-name { font-weight: bold; color: #333; margin-bottom: 5px; }
+        .subtopic-desc { color: #666; line-height: 1.6; }
+        .loading { text-align: center; padding: 50px; color: white; font-size: 1.5em; }
+        .coming-soon {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        .coming-soon h2 { font-size: 2em; margin-bottom: 15px; }
+        .coming-soon p { opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/layer/{{ layer_id }}" class="back-link">← 返回层级</a>
+        
+        <div class="content-card">
+            <h1 id="topicName">加载中...</h1>
+            <div class="meta" id="topicMeta"></div>
+
+            <div class="section">
+                <div class="section-title">📖 主题描述</div>
+                <p id="topicDesc" style="line-height: 1.8; color: #555;"></p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">📚 子主题</div>
+                <div id="subtopicsList">
+                    <p style="color: #888;">加载中...</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">📝 详细内容</div>
+                <div class="coming-soon">
+                    <h2>🚧 内容生成中</h2>
+                    <p>该主题的详细知识内容正在生成中，请稍后查看</p>
+                    <p style="margin-top: 20px; font-size: 0.9em;">
+                        💡 提示：完整内容包括核心原理、代码示例、应用场景等
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const layerId = {{ layer_id }};
+        const topicIndex = {{ topic_index }};
+
+        async function loadTopic() {
+            try {
+                const res = await fetch(`/api/layer/${layerId}`);
+                const data = await res.json();
+
+                if (data.success) {
+                    const topics = data.data.topics;
+                    const topic = topics[topicIndex - 1];
+
+                    if (topic) {
+                        document.getElementById('topicName').textContent = topic.name;
+                        document.getElementById('topicDesc').textContent = topic.description;
+                        document.getElementById('topicMeta').textContent = 
+                            `第${layerId}层 · ${topic.priority === 'high' ? '🔥 核心主题' : '📌 重要主题'}`;
+
+                        const subtopicsList = document.getElementById('subtopicsList');
+                        if (topic.subtopics && topic.subtopics.length > 0) {
+                            subtopicsList.innerHTML = topic.subtopics.map((sub, i) => `
+                                <div class="subtopic">
+                                    <div class="subtopic-name">${i + 1}. ${sub}</div>
+                                    <div class="subtopic-desc">详细内容生成中...</div>
+                                </div>
+                            `).join('');
+                        } else {
+                            subtopicsList.innerHTML = '<p style="color: #888;">暂无子主题</p>';
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('加载失败:', error);
+                document.getElementById('topicName').textContent = '加载失败';
+            }
+        }
+
+        loadTopic();
+    </script>
+</body>
+</html>

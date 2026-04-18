@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第<span id="layerNum"></span>层 - Learning Agent</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .back-link:hover { background: rgba(255,255,255,0.3); }
+        .layer-header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        .layer-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .layer-title { font-size: 2em; color: #333; margin-bottom: 10px; }
+        .layer-desc { color: #666; line-height: 1.6; }
+        .topics-list { display: grid; gap: 15px; }
+        .topic-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .topic-card:hover { transform: translateX(5px); }
+        .topic-name { font-size: 1.3em; color: #333; margin-bottom: 8px; }
+        .topic-desc { color: #666; margin-bottom: 10px; }
+        .topic-meta { display: flex; gap: 15px; font-size: 0.9em; }
+        .priority-high { color: #e74c3c; }
+        .priority-medium { color: #f39c12; }
+        .subtopics { 
+            margin-top: 10px; 
+            padding-left: 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        .loading { text-align: center; color: white; padding: 50px; font-size: 1.5em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← 返回首页</a>
+        
+        <div class="layer-header">
+            <div class="layer-number" id="layerNumDisplay"></div>
+            <h1 class="layer-title" id="layerTitle">加载中...</h1>
+            <p class="layer-desc" id="layerDesc"></p>
+        </div>
+
+        <div class="topics-list" id="topicsList">
+            <div class="loading">加载主题列表...</div>
+        </div>
+    </div>
+
+    <script>
+        const layerId = {{ layer_id }};
+
+        async function loadLayer() {
+            try {
+                const res = await fetch(`/api/layer/${layerId}`);
+                const data = await res.json();
+
+                if (data.success) {
+                    const { layer, name, description, topics } = data.data;
+                    
+                    document.getElementById('layerNum').textContent = layer;
+                    document.getElementById('layerNumDisplay').textContent = layer;
+                    document.getElementById('layerTitle').textContent = name;
+                    document.getElementById('layerDesc').textContent = description;
+
+                    const topicsList = document.getElementById('topicsList');
+                    topicsList.innerHTML = topics.map((topic, index) => `
+                        <div class="topic-card" onclick="window.location.href='/topic/${layer}/${index+1}'">
+                            <div class="topic-name">${topic.name}</div>
+                            <div class="topic-desc">${topic.description}</div>
+                            <div class="topic-meta">
+                                <span class="priority-${topic.priority}">
+                                    ${topic.priority === 'high' ? '🔥 核心' : '📌 重要'}
+                                </span>
+                                ${topic.subtopics ? `<span>📚 ${topic.subtopics.length} 个子主题</span>` : ''}
+                            </div>
+                            ${topic.subtopics ? `
+                                <div class="subtopics">
+                                    ${topic.subtopics.slice(0, 3).join(' · ')}
+                                    ${topic.subtopics.length > 3 ? ` +${topic.subtopics.length - 3} 更多` : ''}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('加载失败:', error);
+                document.getElementById('topicsList').innerHTML = 
+                    '<div class="loading">加载失败，请刷新重试</div>';
+            }
+        }
+
+        loadLayer();
+    </script>
+</body>
+</html>

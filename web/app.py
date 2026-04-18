@@ -101,9 +101,12 @@ except Exception:
             api_key = os.getenv("DASHSCOPE_API_KEY", "")
 
 if api_key:
-    app.logger.info(f"API Key 已加载 (前缀：{api_key[:15]}...)")
+    app.logger.info(f"✅ API Key 已加载 (前缀：{api_key[:15]}...)")
+    app.logger.info("🎉 完整功能可用（Web 展示 + 聊天 + 工作流）")
 else:
-    app.logger.warning("API Key 未配置")
+    app.logger.info("ℹ️  Web 服务已启动（知识展示模式）")
+    app.logger.info("💡 提示：配置 API Key 后可启用聊天和工作流功能")
+    app.logger.info("💡 配置方法：export DASHSCOPE_API_KEY=sk-xxx 或编辑 .env 文件")
 
 from routes.chat_routes import chat_bp
 from routes.workflow_routes import (

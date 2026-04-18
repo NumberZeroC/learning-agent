@@ -746,6 +746,11 @@
             100% { transform: rotate(360deg); }
         }
         
+        .spin {
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+        
         /* 面包屑导航 */
         .breadcrumb-custom {
             display: flex;
@@ -814,6 +819,37 @@
             color: #999;
             font-size: 0.95rem;
         }
+        
+        /* 刷新按钮 - 圆形图标样式 */
+        .btn-refresh-icon {
+            background: white;
+            border: 1px solid #ddd;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #999;
+            transition: all 0.2s;
+            padding: 0;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        
+        .btn-refresh-icon:hover {
+            background: #667eea;
+            border-color: #667eea;
+            color: white;
+            transform: rotate(90deg);
+        }
+        
+        .btn-refresh-icon:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
     </style>
 </head>
 <body>
@@ -847,8 +883,15 @@
         <!-- 左侧边栏 -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <div class="sidebar-title">📚 知识体系</div>
-                <div class="sidebar-subtitle">5 层 · 17 主题 · 完整学习路线</div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div class="sidebar-title">📚 知识体系</div>
+                        <div class="sidebar-subtitle">5 层 · 17 主题 · 完整学习路线</div>
+                    </div>
+                    <button onclick="refreshData()" class="btn-refresh-icon" title="刷新数据">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
             </div>
             <!-- 工作流控制按钮 -->
             <div class="workflow-control">
@@ -1513,6 +1556,8 @@
         }
         
         // 页面加载时检查工作流状态
+        let statusPollingInterval = null;
+        
         async function checkWorkflowStatus() {
             try {
                 const response = await fetch('/api/workflow/run/status');
@@ -1520,9 +1565,109 @@
                 
                 if (result.success && result.data.running) {
                     updateWorkflowStatus('running');
+                    // 运行中时启动轮询（每 10 秒）
+                    if (!statusPollingInterval) {
+                        statusPollingInterval = setInterval(pollWorkflowStatus, 10000);
+                    }
+                } else {
+                    updateWorkflowStatus('idle');
+                    // 停止轮询
+                    if (statusPollingInterval) {
+                        clearInterval(statusPollingInterval);
+                        statusPollingInterval = null;
+                    }
+                    // 工作流完成后，清除缓存并重新加载数据
+                    if (knowledgeTreeCache) {
+                        knowledgeTreeCache = null;
+                        knowledgeTreeCacheTime = 0;
+                        loadKnowledgeTree();
+                    }
                 }
             } catch (error) {
                 console.error('检查工作流状态失败:', error);
+            }
+        }
+        
+        // 轮询工作流状态
+        async function pollWorkflowStatus() {
+            try {
+                const response = await fetch('/api/workflow/run/status');
+                const result = await response.json();
+                
+                if (result.success && !result.data.running) {
+                    // 工作流完成了
+                    updateWorkflowStatus('idle');
+                    if (statusPollingInterval) {
+                        clearInterval(statusPollingInterval);
+                        statusPollingInterval = null;
+                    }
+                    // 清除缓存并重新加载数据
+                    knowledgeTreeCache = null;
+                    knowledgeTreeCacheTime = 0;
+                    loadKnowledgeTree();
+                    // 显示完成通知
+                    if (window.Notification && Notification.permission === 'granted') {
+                        new Notification('🎉 知识生成完成', {
+                            body: 'AI Agent 学习路线已生成完毕，点击查看详情',
+                            icon: '/favicon.ico'
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error('轮询状态失败:', error);
+            }
+        }
+        
+        // 请求通知权限
+        function requestNotificationPermission() {
+            if (window.Notification && Notification.permission === 'default') {
+                Notification.requestPermission();
+            }
+        }
+        
+        // 手动刷新数据
+        async function refreshData() {
+            const btn = event.currentTarget;
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = '<i class="bi bi-arrow-repeat spin"></i>';
+            btn.disabled = true;
+            
+            try {
+                // 清除前端缓存
+                knowledgeTreeCache = null;
+                knowledgeTreeCacheTime = 0;
+                
+                // 调用后端刷新 API
+                const response = await fetch('/api/workflow/refresh', { method: 'POST' });
+                const result = await response.json();
+                
+                if (result.success) {
+                    // 重新加载数据
+                    await loadKnowledgeTree();
+                    // 显示成功提示
+                    btn.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
+                    btn.style.color = '#28a745';
+                    btn.style.borderColor = '#28a745';
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="bi bi-arrow-clockwise"></i>';
+                        btn.style.color = '';
+                        btn.style.borderColor = '';
+                        btn.disabled = false;
+                    }, 2000);
+                } else {
+                    throw new Error(result.error || '刷新失败');
+                }
+            } catch (error) {
+                console.error('刷新失败:', error);
+                btn.innerHTML = '<i class="bi bi-x-circle-fill"></i>';
+                btn.style.color = '#dc3545';
+                btn.style.borderColor = '#dc3545';
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="bi bi-arrow-clockwise"></i>';
+                    btn.style.color = '';
+                    btn.style.borderColor = '';
+                    btn.disabled = false;
+                }, 2000);
             }
         }
         
@@ -1530,6 +1675,7 @@
         
         document.addEventListener('DOMContentLoaded', loadKnowledgeTree);
         document.addEventListener('DOMContentLoaded', checkWorkflowStatus);
+        document.addEventListener('DOMContentLoaded', requestNotificationPermission);
         
         // 配置 marked
         marked.setOptions({

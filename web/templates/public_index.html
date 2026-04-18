@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent 开发知识体系 - Learning Agent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .stats-bar {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .layers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .layer-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .layer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .layer-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .layer-name {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .layer-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .topics-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .topic-tag {
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+            opacity: 0.8;
+        }
+
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+            padding: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Agent 开发知识体系</h1>
+            <p>从基础理论到面试准备的全链路学习路径</p>
+        </header>
+
+        <div class="stats-bar" id="statsBar">
+            <div class="stat-item">
+                <div class="stat-value" id="totalLayers">-</div>
+                <div class="stat-label">知识层级</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="totalTopics">-</div>
+                <div class="stat-label">核心主题</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="generatedTopics">-</div>
+                <div class="stat-label">已生成内容</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="lastUpdate">-</div>
+                <div class="stat-label">最后更新</div>
+            </div>
+        </div>
+
+        <div class="layers-grid" id="layersGrid">
+            <div class="loading">加载中...</div>
+        </div>
+
+        <footer>
+            <p>Learning Agent · AI 知识学习系统</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Powered by Qwen3.5-Plus</p>
+        </footer>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                // 加载架构数据
+                const layersRes = await fetch('/api/layers');
+                const layersData = await layersRes.json();
+
+                // 加载统计数据
+                const statsRes = await fetch('/api/stats');
+                const statsData = await statsRes.json();
+
+                if (layersData.success) {
+                    const { name, version, layers } = layersData.data;
+                    
+                    // 更新统计
+                    document.getElementById('totalLayers').textContent = layers.length;
+                    document.getElementById('totalTopics').textContent = layers.reduce((sum, l) => sum + l.topics_count, 0);
+                    
+                    if (statsData.success) {
+                        document.getElementById('generatedTopics').textContent = statsData.stats.generated_topics;
+                        const lastUpdated = statsData.stats.last_updated;
+                        if (lastUpdated) {
+                            const date = new Date(lastUpdated);
+                            document.getElementById('lastUpdate').textContent = 
+                                `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
+                        }
+                    }
+
+                    // 渲染层级卡片
+                    const grid = document.getElementById('layersGrid');
+                    grid.innerHTML = layers.map(layer => `
+                        <div class="layer-card" onclick="window.location.href='/layer/${layer.layer}'">
+                            <div class="layer-number">${layer.layer}</div>
+                            <div class="layer-name">${layer.name}</div>
+                            <div class="layer-description">${layer.description || ''}</div>
+                            <div class="topics-preview">
+                                ${getTopicsPreview(layer.layer)}
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('加载数据失败:', error);
+                document.getElementById('layersGrid').innerHTML = 
+                    '<div class="loading">加载失败，请刷新页面重试</div>';
+            }
+        }
+
+        function getTopicsPreview(layerNum) {
+            const topics = {
+                1: ['AI 基础', 'LLM 原理', 'Agent 概念', '架构模式'],
+                2: ['Python 编程', 'Agent 框架', '向量数据库'],
+                3: ['任务规划', '工具调用', '记忆管理', '多 Agent 协作'],
+                4: ['项目经验', '性能优化', '部署运维'],
+                5: ['算法题', '系统设计', '行为面试']
+            };
+            return (topics[layerNum] || [])
+                .map(t => `<span class="topic-tag">${t}</span>`)
+                .join('');
+        }
+
+        // 页面加载时获取数据
+        loadData();
+    </script>
+</body>
+</html>
