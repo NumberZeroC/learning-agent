@@ -37,6 +37,7 @@ fi
 
 echo "📋 同步策略:"
 echo "   ✅ 保留：layer_*.json (5 个层级的知识数据)"
+echo "   ✅ 保留：*.db (SQLite 数据库，防止数据丢失)"
 echo "   ❌ 删除：其他冗余文件"
 echo ""
 
@@ -69,6 +70,18 @@ for i in 1 2 3 4 5; do
         cp "$src_file" "$dst_file"
         echo "   ✅ layer_${i}_workflow.json"
         ((SYNCED++)) || true
+    fi
+done
+
+# 同步数据库文件
+echo ""
+echo -e "${BLUE}💾 同步数据库文件...${NC}"
+for db_file in learning_agent.db secrets.db; do
+    src_db="$SCRIPT_DIR/data/$db_file"
+    dst_db="$DEPLOY_DIR/data/$db_file"
+    if [ -f "$src_db" ]; then
+        cp "$src_db" "$dst_db"
+        echo "   ✅ $db_file"
     fi
 done
 
