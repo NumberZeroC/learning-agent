@@ -891,7 +891,7 @@ layers:
 
 ## 输出要求
 请严格按照以下 JSON 格式输出：
-{{
+ {{
     "topic_name": "主题名称",
     "description": "详细描述（300-500 字）",
     "subtopics": [
@@ -899,9 +899,9 @@ layers:
             "name": "子主题名称",
             "key_points": ["知识点 1", "知识点 2", "知识点 3"],
             "resources": [
-                {{"type": "book", "title": "书名", "author": "作者"}},
-                {{"type": "course", "title": "课程名", "platform": "平台"}},
-                {{"type": "doc", "title": "文档名", "url": "链接"}}
+                {{ "type": "book", "title": "书名", "author": "作者"}},
+                {{ "type": "course", "title": "课程名", "platform": "平台"}},
+                {{ "type": "doc", "title": "文档名", "url": "链接"}}
             ],
             "estimated_hours": 10,
             "difficulty": "beginner"
@@ -914,9 +914,10 @@ layers:
 
 注意：
 1. 只输出 JSON，不要其他内容
-2. 确保 JSON 格式正确
+2. 确保 JSON 格式正确，所有引号必须是 ASCII 双引号（"），禁止使用中文引号（""）
 3. 内容要详细、实用
 4. 资源要真实有效
+5. 字符串值中如需引用，请使用单引号或转义双引号，不要使用中文引号
 """
 
     def _build_keypoint_question(
@@ -1040,15 +1041,26 @@ layers:
         return count
 
     def _parse_knowledge(self, content: str, topic_name: str) -> Dict:
-        """解析知识内容（容错版）"""
+        """解析知识内容（容错版，智能修复 JSON 错误）"""
         import re
 
         match = re.search(r"\{[\s\S]*\}", content)
         if match:
+            raw_json = match.group()
             try:
-                return json.loads(match.group())
+                return json.loads(raw_json)
             except json.JSONDecodeError as e:
-                logger.warning(f"JSON 解析失败：{e}")
+                logger.warning(f"JSON 解析失败：{e}，尝试智能修复...")
+                
+                # 智能修复：删除字符串值内部的中文引号（不影响 JSON 结构）
+                fixed_json = self._fix_json_quotes(raw_json)
+                
+                try:
+                    result = json.loads(fixed_json)
+                    logger.info(f"✅ JSON 修复成功")
+                    return result
+                except json.JSONDecodeError as e2:
+                    logger.warning(f"JSON 修复后仍失败：{e2}")
 
         return {
             "topic_name": topic_name,
@@ -1056,6 +1068,47 @@ layers:
             "subtopics": [],
             "raw_content": content,
         }
+    
+    def _fix_json_quotes(self, raw_json: str) -> str:
+        """修复 JSON：删除字符串值内部的中文引号等非法字符
+        
+        中文引号（unicode 8220/8221）在 JSON 中是非法字符，
+        但它们在字符串值中只是用于强调，删除不影响语义。
+        此方法只删除字符串值内部的中文引号，保留 JSON 结构的 ASCII 双引号。
+        """
+        result = []
+        in_string = False
+        escape_next = False
+        
+        for i, c in enumerate(raw_json):
+            if escape_next:
+                result.append(c)
+                escape_next = False
+                continue
+            
+            if c == '\\':
+                result.append(c)
+                escape_next = True
+                continue
+            
+            # ASCII 双引号（unicode 34）：切换字符串状态
+            if ord(c) == 34 and not escape_next:
+                in_string = not in_string
+                result.append(c)
+                continue
+            
+            # 如果在字符串内部，遇到中文引号等非法字符就删除
+            if in_string:
+                # 中文引号 " " (unicode 8220/8221)
+                if ord(c) == 8220 or ord(c) == 8221:
+                    continue
+                # 中文单引号 ' ' (unicode 8216/8217) - 也删除，避免混淆
+                if ord(c) == 8216 or ord(c) == 8217:
+                    continue
+            
+            result.append(c)
+        
+        return ''.join(result)
 
     def _get_task_file(self, layer_num: int, task_index: int) -> Path:
         """获取指定任务的独立文件路径"""

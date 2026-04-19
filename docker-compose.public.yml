@@ -22,6 +22,7 @@ services:
       - ./logs:/app/logs:rw
       # 配置文件（可选）
       - ./config:/app/config:ro
+    command: ["python", "web/app.py", "--host", "0.0.0.0", "--port", "80"]
     environment:
       - PUBLIC_MODE=true
       - HIDE_WORKFLOW_EXECUTION=true
