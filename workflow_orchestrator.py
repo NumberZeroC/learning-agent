@@ -200,13 +200,11 @@ def create_sub_agents(
 class WorkflowOrchestrator:
     """工作流编排器（asyncio 版本）"""
 
-    MAX_CONCURRENT_TASKS = 3
-
     def __init__(
         self,
         config_path: str = "config/agent_config.yaml",
         framework_path: str = "config/knowledge_framework.yaml",
-        max_concurrent: int = 1,  # 暂停层内并发，避免 API 限流（2026-04-18）
+        max_concurrent: int = None,
         enable_cache: bool = True,
         auto_generate_framework: bool = True,
     ):
@@ -221,7 +219,7 @@ class WorkflowOrchestrator:
 
         # 加载或生成知识架构
         self.architecture = self._load_or_generate_architecture(auto_generate_framework)
-        self.max_concurrent = max_concurrent
+        self.max_concurrent = max_concurrent if max_concurrent is not None else self.config.get("performance", {}).get("max_concurrent_tasks", 1)
         self.enable_cache = enable_cache
         self._current_workflow_id = ""
 
@@ -1767,7 +1765,7 @@ def main():
     print("=" * 70)
     print()
 
-    orchestrator = WorkflowOrchestrator(max_concurrent=1, enable_cache=True)  # 暂停层内并发，避免 API 限流
+    orchestrator = WorkflowOrchestrator(enable_cache=True)
 
     print("初始化工作流...")
     orchestrator.initialize()

@@ -455,7 +455,7 @@ class CustomTopicGenerator:
             prompt_type = "知识体系"
         
         return """## 任务
-根据用户的描述内容，生成"{topic}"主题的{type}内容。
+根据用户的描述内容，生成"{topic}"主题的{type}内容（{layer}）。
 
 ## 用户需求（核心依据）
 {desc}
@@ -474,6 +474,7 @@ class CustomTopicGenerator:
 """.format(
             topic=topic_name,
             type=prompt_type,
+            layer=layer_name,
             desc=desc_context,
             json_template=json_template.replace("{topic_name}", topic_name)
         )

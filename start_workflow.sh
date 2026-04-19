@@ -160,6 +160,22 @@ start_workflow() {
     CMD="python3 run_workflow.py"
     
     if [ -n "$TOPIC_NAME" ]; then
+        # 🔒 安全验证：检查主题名称是否有效
+        echo -e "${BLUE}🔍 验证主题名称...${NC}"
+        VALID_TOPICS=$(python3 regenerate_topic.py --list 2>&1 | grep "^\s*\[" | awk -F'- ' '{print $NF}' | sed 's/^ *//')
+        
+        if ! echo "$VALID_TOPICS" | grep -qx "$TOPIC_NAME"; then
+            echo -e "${RED}❌ 错误：无效的主题名称 '$TOPIC_NAME'${NC}"
+            echo ""
+            echo -e "${BLUE}✅ 有效的主题列表：${NC}"
+            python3 regenerate_topic.py --list 2>&1 | grep -v "^2026-"
+            echo ""
+            echo -e "${YELLOW}💡 提示：使用 --list 查看所有主题${NC}"
+            exit 1
+        fi
+        echo -e "${GREEN}✅ 主题名称验证通过${NC}"
+        echo ""
+        
         CMD="python3 regenerate_topic.py \"$TOPIC_NAME\""
         if [ "$SKIP_DETAILS" = "true" ]; then
             CMD="$CMD --skip-details"

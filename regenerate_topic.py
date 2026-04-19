@@ -103,6 +103,21 @@ def main():
         parser.print_help()
         return
 
+    # 🔒 安全验证：检查主题名称是否有效
+    all_topics = orchestrator.list_all_topics()
+    valid_topic_names = [t['topic_name'] for t in all_topics]
+    
+    if args.topic not in valid_topic_names:
+        print(f"\n❌ 错误：无效的主题名称 '{args.topic}'")
+        print(f"\n✅ 有效的主题列表：")
+        print("-" * 60)
+        for t in all_topics:
+            marker = "★" if t['priority'] == 'high' else "○"
+            print(f"  [{t['layer']}] {t['layer_name']} - {marker} {t['topic_name']}")
+        print("-" * 60)
+        print(f"\n💡 提示：使用 --list 查看所有主题，使用 --layer-only 生成整个层级")
+        return
+
     print(f"\n🔄 开始生成主题：{args.topic}")
     
     result = orchestrator.execute_single_topic(
