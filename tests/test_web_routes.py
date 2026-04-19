@@ -320,7 +320,7 @@ class TestAppRoutes:
             assert response.status_code == 200
             assert data["status"] == "healthy"
             assert "timestamp" in data
-            assert data["version"] == "1.0.0"
+            assert data["version"] == "2.0.0"
     
     @patch('web.app.DATA_DIR')
     def test_api_summary_success(self, mock_data_dir, tmp_path):

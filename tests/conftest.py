@@ -14,6 +14,11 @@ import pytest
 project_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(project_dir))
 
+# 在所有测试开始前禁用公开模式
+os.environ['PUBLIC_MODE'] = 'false'
+os.environ['HIDE_WORKFLOW_EXECUTION'] = 'false'
+os.environ['HIDE_CONFIG_PAGE'] = 'false'
+
 
 @pytest.fixture
 def project_dir_path():

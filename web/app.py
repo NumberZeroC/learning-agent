@@ -157,7 +157,7 @@ def layer_detail(layer_id):
 
 @app.route("/topic/<int:layer_id>/<int:topic_index>")
 def topic_detail(layer_id, topic_index):
-    return render_template("topic.html", layer_id=layer_id, topic_index=topic_index)
+    return render_template("workflow.html", public_mode=PUBLIC_MODE)
 
 
 @app.route("/api/summary")

@@ -92,8 +92,8 @@ class TestWorkflowOrchestrator:
         orchestrator = WorkflowOrchestrator()
         orchestrator._create_tasks()
         
-        # 应该有 17 个任务（5 层架构）
-        assert len(orchestrator.tasks) == 17
+        # 应该有 20 个任务（5 层架构，每层 4 个主题）
+        assert len(orchestrator.tasks) == 20
         
         # 检查任务分布
         layer_counts = {}
@@ -101,10 +101,10 @@ class TestWorkflowOrchestrator:
             layer_counts[task.layer_num] = layer_counts.get(task.layer_num, 0) + 1
         
         assert layer_counts[1] == 4  # 第 1 层 4 个主题
-        assert layer_counts[2] == 3  # 第 2 层 3 个主题
+        assert layer_counts[2] == 4  # 第 2 层 4 个主题
         assert layer_counts[3] == 4  # 第 3 层 4 个主题
-        assert layer_counts[4] == 3  # 第 4 层 3 个主题
-        assert layer_counts[5] == 3  # 第 5 层 3 个主题
+        assert layer_counts[4] == 4  # 第 4 层 4 个主题
+        assert layer_counts[5] == 4  # 第 5 层 4 个主题
     
     def test_build_question_format(self):
         """测试问题构建格式"""
