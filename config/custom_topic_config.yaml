@@ -1,0 +1,137 @@
+# 自定义主题知识生成配置
+# 版本：1.0
+# 创建日期：2026-04-19
+#
+# 说明：
+# - 用户可输入任意主题进行知识生成
+# - 支持智能分类或手动指定 Agent
+# - 结果存储在独立目录，不影响固定架构
+
+name: 自定义主题扩展层
+version: '1.0'
+description: 用户自定义主题的知识生成功能，支持智能分类和多轮生成
+
+enabled: true
+
+# 智能分类配置
+classifier:
+  enabled: true
+  agent: topic_classifier
+  description: 分析主题内容，智能选择最合适的生成 Agent
+  
+  # 分类规则（关键词匹配）
+  rules:
+    theory_worker:
+      keywords:
+        - 算法
+        - 数学
+        - 原理
+        - 理论
+        - 基础
+        - 概念
+        - 模型
+      description: 基础理论、算法原理、数学基础相关主题
+      
+    tech_stack_worker:
+      keywords:
+        - 框架
+        - 工具
+        - 语言
+        - 编程
+        - 库
+        - SDK
+        - API
+        - 数据库
+      description: 技术栈、开发工具、编程语言相关主题
+      
+    core_skill_worker:
+      keywords:
+        - 设计
+        - 规划
+        - 协作
+        - 架构
+        - 模式
+        - 优化
+        - 策略
+      description: 核心能力、系统设计、架构模式相关主题
+      
+    engineering_worker:
+      keywords:
+        - 项目
+        - 实战
+        - 部署
+        - 运维
+        - 监控
+        - 测试
+        - 工程化
+      description: 工程实践、项目实战、部署运维相关主题
+      
+    interview_worker:
+      keywords:
+        - 面试
+        - 简历
+        - 软技能
+        - 求职
+        - 面试题
+        - 算法题
+      description: 面试准备、求职技巧、软技能相关主题
+
+# 生成策略配置
+generation:
+  # 三轮生成控制
+  rounds:
+    structure:
+      enabled: true
+      description: 第一轮：知识结构生成（核心概念、知识图谱）
+      
+    details:
+      enabled: true
+      description: 第二轮：知识点详情生成（深入讲解每个知识点）
+      
+    relation:
+      enabled: false  # 默认关闭（自定义主题可能无跨层依赖）
+      description: 第三轮：知识关联生成（与其他主题的关联关系）
+  
+  # LLM 参数
+  llm_params:
+    max_tokens: 4000
+    temperature: 0.7
+    top_p: 0.9
+  
+  # 并发控制
+  concurrency:
+    enabled: false  # 单主题无需并发
+    max_concurrent: 1
+
+# 存储配置
+storage:
+  output_dir: data/custom_topics/
+  file_prefix: custom_
+  index_file: custom_topics_index.json
+  
+  # 结果格式
+  format:
+    include_metadata: true
+    include_timestamp: true
+    include_agent_info: true
+
+# Web 界面配置
+web_interface:
+  enabled: true
+  route_prefix: /custom
+  
+  # 表单选项
+  form_options:
+    allow_agent_selection: true  # 允许用户手动选择 Agent
+    show_advanced_options: true  # 显示高级选项
+    default_skip_relation: true  # 默认跳过关联生成
+
+# CLI 配置
+cli:
+  enabled: true
+  script_name: generate_custom.py
+  
+  # 默认参数
+  defaults:
+    auto_classify: true  # 默认自动分类
+    skip_relation: true  # 默认跳过关联生成

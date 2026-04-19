@@ -124,10 +124,11 @@ from routes.workflow_routes import (
 )
 from routes.config_routes import config_bp
 from routes.workflow_run_routes import workflow_run_bp
+from routes.custom_topic_routes import custom_bp
 
-# 注册蓝图
 app.register_blueprint(chat_bp)
 register_workflow_bp(app)
+app.register_blueprint(custom_bp)
 
 # 公开模式：隐藏配置页面
 if HIDE_CONFIG_PAGE:
@@ -158,6 +159,13 @@ def layer_detail(layer_id):
 @app.route("/topic/<int:layer_id>/<int:topic_index>")
 def topic_detail(layer_id, topic_index):
     return render_template("topic.html", layer_id=layer_id, topic_index=topic_index)
+
+
+@app.route("/custom")
+def custom_topic_page():
+    if PUBLIC_MODE:
+        return jsonify({"error": "此功能在公开模式下已禁用"}), 403
+    return render_template("custom_topic.html")
 
 
 @app.route("/api/summary")

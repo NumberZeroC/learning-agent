@@ -29,6 +29,13 @@
 - 支持多个专家角色（理论/技术/工程/面试）
 - 对话历史记录
 
+### 5. 自定义主题生成 🆕
+- 用户可输入任意主题进行知识生成
+- 智能分类：系统自动分析并选择合适的 Agent
+- 支持手动指定 Agent（理论/技术栈/核心能力/工程/面试）
+- 结果独立存储于 `data/custom_topics/`
+- Web 界面 + CLI 工具双重支持
+
 > 📘 **详细功能说明请查阅：[docs/FEATURES.md](docs/FEATURES.md)**
 
 ## 🚀 快速开始
@@ -131,21 +138,40 @@ make format  # 代码格式化
 ```
 learning-agent/
 ├── config/
-│   └── agent_config.yaml    # Agent 配置
+│   ├── agent_config.yaml       # Agent 配置
+│   ├── knowledge_framework.yaml # 知识架构配置
+│   └── custom_topic_config.yaml # 自定义主题配置 🆕
 ├── web/
-│   ├── app.py               # Flask 主应用
-│   ├── routes/              # API 路由
-│   └── templates/           # HTML 模板
-├── services/                # 业务服务
-├── tests/                   # 单元测试
-├── docs/                    # 开发文档
-├── data/                    # 数据目录（运行时生成）
-├── logs/                    # 日志目录
-├── workflow_orchestrator.py # 工作流编排器
-├── run_workflow.py          # 工作流启动脚本
-├── requirements.txt         # Python 依赖
-├── Makefile                 # 快速命令入口
-└── .env.example             # 环境变量示例
+│   ├── app.py                  # Flask 主应用
+│   ├── routes/
+│   │   ├── chat_routes.py      # 聊天 API
+│   │   ├── config_routes.py    # 配置管理 API
+│   │   ├── workflow_routes.py  # 工作流查询 API
+│   │   ├── workflow_run_routes.py # 工作流执行 API
+│   │   └── custom_topic_routes.py # 自定义主题 API 🆕
+│   └── templates/
+│       ├── workflow.html       # 工作流页面
+│       ├── chat.html           # 聊天页面
+│       ├── config.html         # 配置页面
+│       └── custom_topic.html   # 自定义主题页面 🆕
+├── services/                   # 业务服务
+│   ├── llm_client.py           # LLM 客户端
+│   ├── ask_service.py          # 问答服务
+│   └── key_vault.py            # API 密钥管理
+├── tests/                      # 单元测试
+├── docs/                       # 开发文档
+├── data/
+│   ├── workflow_results/       # 工作流输出
+│   └── custom_topics/          # 自定义主题输出 🆕
+├── logs/                       # 日志目录
+├── workflow_orchestrator.py    # 工作流编排器
+├── custom_topic_generator.py   # 自定义主题生成器 🆕
+├── generate_custom.py          # 自定义主题 CLI 🆕
+├── run_workflow.py             # 工作流启动脚本
+├── regenerate_topic.py         # 单主题重新生成
+├── requirements.txt            # Python 依赖
+├── Makefile                    # 快速命令入口
+└── .env.example                # 环境变量示例
 ```
 
 ## 🔧 配置说明
@@ -222,6 +248,35 @@ data/workflow_results/
 |------|------|------|
 | `/api/chat/send` | POST | 发送消息给 Agent |
 | `/api/chat/history` | GET | 获取对话历史 |
+
+### 自定义主题 API 🆕
+
+| 接口 | 方法 | 说明 |
+|------|------|------|
+| `/api/custom/generate` | POST | 生成自定义主题知识 |
+| `/api/custom/classify` | POST | 智能分类主题 |
+| `/api/custom/list` | GET | 获取已生成的自定义主题列表 |
+| `/api/custom/<topic_id>` | GET | 获取单个主题详情 |
+| `/api/custom/agents` | GET | 获取可用 Agent 列表 |
+| `/custom` | GET | 自定义主题生成页面 |
+
+**CLI 工具：**
+```bash
+# 生成主题
+python generate_custom.py "微服务架构"
+
+# 指定 Agent
+python generate_custom.py "微服务架构" --agent engineering_worker
+
+# 智能分类
+python generate_custom.py "微服务架构" --classify
+
+# 查看历史
+python generate_custom.py --list
+
+# 查看详情
+python generate_custom.py --get custom_20260419_001
+```
 
 ## 🤝 开发
 
