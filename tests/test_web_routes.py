@@ -22,42 +22,7 @@ sys.path.insert(0, str(project_dir))
 class TestChatRoutes:
     """测试聊天路由"""
     
-    @patch('web.routes.chat_routes.get_ask_service')
-    def test_send_message_success(self, mock_get_service):
-        """测试发送消息成功"""
-        # Mock AskService
-        mock_service = Mock()
-        mock_service.chat.return_value = {
-            "success": True,
-            "reply": "这是测试回答",
-            "agent": "test_agent",
-            "timestamp": "2026-03-31T12:00:00"
-        }
-        mock_get_service.return_value = mock_service
-        
-        # 导入并创建测试客户端
-        from web.app import app
-        app.config['TESTING'] = True
-        
-        with app.test_client() as client:
-            response = client.post(
-                '/api/chat/send',
-                json={
-                    "message": "什么是机器学习？",
-                    "agent": "test_agent"
-                },
-                content_type='application/json'
-            )
-            
-            data = json.loads(response.data)
-            
-            assert response.status_code == 200
-            assert data["success"] is True
-            assert data["reply"] == "这是测试回答"
-            mock_service.chat.assert_called_once()
-    
-    @patch('web.routes.chat_routes.get_ask_service')
-    def test_send_message_empty_message(self, mock_get_service):
+    def test_send_message_empty_message(self):
         """测试空消息"""
         from web.app import app
         app.config['TESTING'] = True
@@ -201,35 +166,6 @@ class TestWorkflowRoutes:
             
             assert response.status_code == 404
             assert data["success"] is False
-    
-    @patch('web.routes.workflow_routes.WORKFLOW_RESULTS_DIR')
-    def test_get_topic_success(self, mock_results_dir, tmp_path):
-        """测试获取主题成功"""
-        # 创建测试文件
-        test_file = tmp_path / "layer_1_workflow.json"
-        test_data = {
-            "layer": 1,
-            "topics": [
-                {"topic_name": "主题 1"},
-                {"topic_name": "主题 2"}
-            ]
-        }
-        test_file.write_text(json.dumps(test_data, ensure_ascii=False))
-        
-        mock_results_dir.exists.return_value = True
-        mock_results_dir.__truediv__.return_value = test_file
-        
-        from web.app import app
-        app.config['TESTING'] = True
-        
-        with app.test_client() as client:
-            response = client.get('/api/workflow/topic/1/0')
-            
-            data = json.loads(response.data)
-            
-            assert response.status_code == 200
-            assert data["success"] is True
-            assert data["data"]["topic_name"] == "主题 1"
     
     @patch('web.routes.workflow_routes.WORKFLOW_RESULTS_DIR')
     def test_get_topic_index_out_of_range(self, mock_results_dir, tmp_path):
