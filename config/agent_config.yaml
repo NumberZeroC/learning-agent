@@ -117,6 +117,20 @@ agents:
     provider: dashscope
     role: AI 知识问答助手
     system_prompt: '你是 AI 知识问答助手，擅长解答 AI、机器学习、Agent 开发相关的技术问题。回答时用通俗易懂的方式解释概念，提供实用的代码示例。保持友好、专业的态度，鼓励用户探索学习。'
+  topic_classifier:
+    description: 分析主题内容，智能选择最合适的生成 Agent
+    enabled: true
+    hot_reload: true
+    layer: 0
+    llm_config:
+      max_tokens: 1000
+      temperature: 0.3
+      top_p: 0.9
+    model: qwen3.5-plus
+    provider: dashscope
+    role: 主题分类专家
+    system_prompt: '你是主题分类专家。根据用户输入的主题名称和描述，判断最适合生成该主题知识的 Agent 类型。可选的 Agent 类型：theory_worker（基础理论）、tech_stack_worker（技术栈）、core_skill_worker（核心能力）、engineering_worker（工程实践）、interview_worker（面试准备）。分析时关注主题关键词，如"算法""原理"属于理论类，"框架""工具"属于技术栈类，"设计""架构"属于核心能力类，"项目""部署"属于工程类，"面试""简历"属于面试类。返回格式：{"agent": "xxx_worker", "reason": "分类原因"}'
+    tools: []
 global:
   default_model: qwen3.5-plus
   timeout: 120

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义主题生成 - Learning Agent</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --success-color: #48bb78;
+            --danger-color: #f56565;
+            --warning-color: #ed8936;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        .page-header {
+            background: white;
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .page-title {
+            color: #2d3748;
+            font-weight: 700;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .page-title i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            padding: 5px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .generate-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .section-title {
+            color: #2d3748;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        
+        .form-control {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px 15px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .topic-input {
+            font-size: 1.2rem;
+            padding: 15px 20px;
+        }
+        
+        .agent-select {
+            padding: 12px 15px;
+        }
+        
+        .advanced-options {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .advanced-toggle {
+            color: #718096;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .advanced-toggle:hover {
+            color: var(--primary-color);
+        }
+        
+        .btn-generate {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-generate:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        
+        .btn-classify {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-classify:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .classify-result {
+            background: #f0fff4;
+            border: 2px solid var(--success-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .classify-result.error {
+            background: #fff5f5;
+            border-color: var(--danger-color);
+        }
+        
+        .progress-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: none;
+        }
+        
+        .progress-section.active {
+            display: block;
+        }
+        
+        .progress-bar-container {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .progress-bar-fill {
+            background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+            height: 100%;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .progress-log {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .progress-log .log-item {
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+        
+        .progress-log .log-success {
+            color: var(--success-color);
+        }
+        
+        .progress-log .log-error {
+            color: var(--danger-color);
+        }
+        
+        .result-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: none;
+        }
+        
+        .result-section.active {
+            display: block;
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, #f0fff4 0%, #ffffff 100%);
+            border: 2px solid var(--success-color);
+            border-radius: 15px;
+            padding: 25px;
+        }
+        
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .result-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        
+        .result-stats {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .stat-item {
+            background: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        
+        .result-content {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .result-json {
+            font-family: monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+        }
+        
+        .history-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .history-list {
+            margin-top: 20px;
+        }
+        
+        .history-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .history-item:hover {
+            transform: translateX(5px);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .history-item.success {
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .history-item.failed {
+            border-left: 4px solid var(--danger-color);
+        }
+        
+        .history-info {
+            flex: 1;
+        }
+        
+        .history-name {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
+        
+        .history-meta {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 5px;
+        }
+        
+        .history-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-view {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-view:hover {
+            background: #5a67d8;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #a0aec0;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .agent-info-tooltip {
+            font-size: 0.85rem;
+            color: #718096;
+            margin-top: 5px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .checkbox-item label {
+            color: #4a5568;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="page-header">
+            <h1 class="page-title">
+                <i class="bi bi-lightbulb"></i>
+                自定义主题知识生成
+            </h1>
+            <div class="nav-links">
+                <a href="/"><i class="bi bi-house"></i> 首页</a>
+                <a href="/workflow"><i class="bi bi-diagram-3"></i> 工作流</a>
+                <a href="/chat"><i class="bi bi-chat-dots"></i> 聊天</a>
+                <a href="/config"><i class="bi bi-gear"></i> 配置</a>
+            </div>
+        </div>
+        
+        <div class="generate-section">
+            <h3 class="section-title"><i class="bi bi-plus-circle"></i> 生成新主题</h3>
+            
+            <div class="form-group">
+                <label class="form-label">主题名称 *</label>
+                <input type="text" class="form-control topic-input" id="topicInput" 
+                       placeholder="输入您想学习的主题，例如：微服务架构、Rust编程、分布式系统...">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">主题描述（可选）</label>
+                <textarea class="form-control" id="descriptionInput" rows="3"
+                          placeholder="补充描述，帮助系统更好地理解您的学习需求..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">生成 Agent</label>
+                <div class="d-flex gap-2 align-items-center">
+                    <select class="form-control agent-select" id="agentSelect" style="flex:1">
+                        <option value="">-- 自动智能分类 --</option>
+                        <option value="theory_worker">基础理论层（算法、原理、数学）</option>
+                        <option value="tech_stack_worker">技术栈层（框架、工具、语言）</option>
+                        <option value="core_skill_worker">核心能力层（设计、架构、规划）</option>
+                        <option value="engineering_worker">工程实践层（项目、部署、运维）</option>
+                        <option value="interview_worker">面试准备层（面试、简历、软技能）</option>
+                    </select>
+                    <button class="btn-classify" id="classifyBtn">
+                        <i class="bi bi-magic"></i> 智能分类
+                    </button>
+                </div>
+                <div class="agent-info-tooltip">
+                    系统会自动分析主题内容，选择最合适的 Agent 进行知识生成
+                </div>
+                <div class="classify-result" id="classifyResult" style="display:none"></div>
+            </div>
+            
+            <div class="advanced-options" id="advancedOptions">
+                <div class="advanced-toggle" id="advancedToggle">
+                    <i class="bi bi-chevron-down"></i>
+                    <span>高级选项</span>
+                </div>
+                <div id="advancedContent" style="display:none">
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skipDetails">
+                            <label for="skipDetails">跳过知识点详情生成（加快速度）</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skipRelation" checked>
+                            <label for="skipRelation">跳过知识关联生成</label>
+                        </div>
+                    </div>
+                    <div class="agent-info-tooltip mt-2">
+                        <i class="bi bi-info-circle"></i>
+                        详情生成会为每个知识点生成详细讲解，关联生成会生成知识点间的关系图谱
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn-generate" id="generateBtn">
+                <i class="bi bi-rocket"></i> 开始生成知识内容
+            </button>
+        </div>
+        
+        <div class="progress-section" id="progressSection">
+            <h3 class="section-title"><i class="bi bi-hourglass-split"></i> 生成进度</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBar">0%</div>
+            </div>
+            <div class="progress-log" id="progressLog"></div>
+        </div>
+        
+        <div class="result-section" id="resultSection">
+            <h3 class="section-title"><i class="bi bi-check-circle"></i> 生成结果</h3>
+            <div class="result-card">
+                <div class="result-header">
+                    <div class="result-title" id="resultTitle">主题名称</div>
+                    <div class="result-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="keypointCount">0</div>
+                            <div class="stat-label">知识点</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="agentUsed">-</div>
+                            <div class="stat-label">Agent</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <pre class="result-json" id="resultJson"></pre>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-outline-primary" id="downloadBtn">
+                        <i class="bi bi-download"></i> 下载 JSON
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="history-section">
+            <h3 class="section-title"><i class="bi bi-history"></i> 生成历史</h3>
+            <div class="history-list" id="historyList">
+                <div class="empty-state">
+                    <i class="bi bi-inbox"></i>
+                    <p>暂无生成历史，开始生成您的第一个主题吧！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            loadHistory();
+            
+            $('#advancedToggle').click(function() {
+                $('#advancedContent').slideToggle();
+                $(this).find('i').toggleClass('bi-chevron-down bi-chevron-up');
+            });
+            
+            $('#classifyBtn').click(function() {
+                const topic = $('#topicInput').val();
+                if (!topic) {
+                    alert('请先输入主题名称');
+                    return;
+                }
+                
+                const description = $('#descriptionInput').val();
+                
+                $('#classifyResult').hide();
+                
+                $.ajax({
+                    url: '/api/custom/classify',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({topic: topic, description: description}),
+                    success: function(res) {
+                        if (res.success) {
+                            const data = res.data;
+                            $('#classifyResult').html(
+                                '<i class="bi bi-check-circle"></i> 推荐使用：' +
+                                '<strong>' + data.agent_name + '</strong> (' + data.agent + ')<br>' +
+                                '<small>' + data.reason + '</small>'
+                            ).show();
+                            $('#agentSelect').val(data.agent);
+                        } else {
+                            $('#classifyResult').addClass('error').html(
+                                '<i class="bi bi-exclamation-circle"></i> 分类失败：' + res.error
+                            ).show();
+                        }
+                    },
+                    error: function() {
+                        $('#classifyResult').addClass('error').html(
+                            '<i class="bi bi-exclamation-circle"></i> 网络错误，请稍后重试'
+                        ).show();
+                    }
+                });
+            });
+            
+            $('#generateBtn').click(function() {
+                const topic = $('#topicInput').val();
+                if (!topic) {
+                    alert('请输入主题名称');
+                    return;
+                }
+                
+                const agent = $('#agentSelect').val() || null;
+                const description = $('#descriptionInput').val();
+                const skipDetails = $('#skipDetails').is(':checked');
+                const skipRelation = $('#skipRelation').is(':checked');
+                
+                $('#generateBtn').prop('disabled', true).html(
+                    '<span class="loading-spinner"></span> 正在生成...'
+                );
+                
+                $('#progressSection').addClass('active');
+                $('#resultSection').removeClass('active');
+                $('#progressBar').css('width', '10%').text('10%');
+                $('#progressLog').html('<div class="log-item">开始生成主题：' + topic + '</div>');
+                
+                simulateProgress();
+                
+                $.ajax({
+                    url: '/api/custom/generate',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        topic: topic,
+                        agent: agent,
+                        description: description,
+                        skip_details: skipDetails,
+                        skip_relation: skipRelation
+                    }),
+                    success: function(res) {
+                        $('#generateBtn').prop('disabled', false).html(
+                            '<i class="bi bi-rocket"></i> 开始生成知识内容'
+                        );
+                        
+                        if (res.success) {
+                            $('#progressBar').css('width', '100%').text('100%');
+                            addLog('生成完成！', 'success');
+                            
+                            setTimeout(function() {
+                                showResult(res.data);
+                                loadHistory();
+                            }, 500);
+                        } else {
+                            addLog('生成失败：' + res.error, 'error');
+                        }
+                    },
+                    error: function(xhr) {
+                        $('#generateBtn').prop('disabled', false).html(
+                            '<i class="bi bi-rocket"></i> 开始生成知识内容'
+                        );
+                        addLog('网络错误：' + (xhr.responseJSON?.error || '请稍后重试'), 'error');
+                    }
+                });
+            });
+            
+            function simulateProgress() {
+                let progress = 10;
+                const interval = setInterval(function() {
+                    if (progress < 90) {
+                        progress += Math.random() * 15;
+                        if (progress > 90) progress = 90;
+                        $('#progressBar').css('width', progress + '%').text(Math.round(progress) + '%');
+                    }
+                }, 500);
+                
+                setTimeout(function() {
+                    clearInterval(interval);
+                }, 60000);
+            }
+            
+            function addLog(message, type) {
+                const logClass = type === 'success' ? 'log-success' : type === 'error' ? 'log-error' : '';
+                $('#progressLog').append(
+                    '<div class="log-item ' + logClass + '">' + message + '</div>'
+                );
+            }
+            
+            function showResult(data) {
+                $('#progressSection').removeClass('active');
+                $('#resultSection').addClass('active');
+                
+                $('#resultTitle').text(data.topic_name);
+                $('#keypointCount').text(data.keypoint_count);
+                $('#agentUsed').text(data.agent);
+                $('#resultJson').text(JSON.stringify(data.knowledge, null, 2));
+            }
+            
+            function loadHistory() {
+                $.ajax({
+                    url: '/api/custom/list',
+                    method: 'GET',
+                    success: function(res) {
+                        if (res.success && res.data.topics.length > 0) {
+                            renderHistory(res.data.topics);
+                        } else {
+                            $('#historyList').html(
+                                '<div class="empty-state">' +
+                                '<i class="bi bi-inbox"></i>' +
+                                '<p>暂无生成历史，开始生成您的第一个主题吧！</p>' +
+                                '</div>'
+                            );
+                        }
+                    }
+                });
+            }
+            
+            function renderHistory(topics) {
+                let html = '';
+                topics.forEach(function(t) {
+                    const statusClass = t.success ? 'success' : 'failed';
+                    const statusIcon = t.success ? 'bi-check-circle' : 'bi-x-circle';
+                    const statusColor = t.success ? 'var(--success-color)' : 'var(--danger-color)';
+                    
+                    html += '<div class="history-item ' + statusClass + '">' +
+                        '<div class="history-info">' +
+                            '<div class="history-name">' +
+                                '<i class="bi ' + statusIcon + '" style="color:' + statusColor + '"></i> ' +
+                                t.topic_name +
+                            '</div>' +
+                            '<div class="history-meta">' +
+                                'Agent: ' + t.agent + ' | ' +
+                                'ID: ' + t.topic_id + ' | ' +
+                                new Date(t.created_at).toLocaleString() +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="history-actions">' +
+                            '<button class="btn-view" onclick="viewTopic(\'' + t.topic_id + '\')">' +
+                                '<i class="bi bi-eye"></i> 查看' +
+                            '</button>' +
+                        '</div>' +
+                    '</div>';
+                });
+                $('#historyList').html(html);
+            }
+            
+            window.viewTopic = function(topicId) {
+                $.ajax({
+                    url: '/api/custom/' + topicId,
+                    method: 'GET',
+                    success: function(res) {
+                        if (res.success) {
+                            showResult({
+                                topic_name: res.data.topic_name,
+                                keypoint_count: countKeypoints(res.data.knowledge),
+                                agent: res.data.knowledge.agent || '-',
+                                knowledge: res.data.knowledge
+                            });
+                        }
+                    }
+                });
+            };
+            
+            function countKeypoints(knowledge) {
+                let count = 0;
+                if (knowledge.subtopics) {
+                    knowledge.subtopics.forEach(function(s) {
+                        if (s.detailed_keypoints) {
+                            count += s.detailed_keypoints.length;
+                        }
+                    });
+                }
+                return count;
+            }
+            
+            $('#downloadBtn').click(function() {
+                const data = JSON.parse($('#resultJson').text());
+                const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+                const url = URL.createObjectURL(blob);
+                const a = $('<a>').attr('href', url).attr('download', 'custom_topic.json');
+                a[0].click();
+                URL.revokeObjectURL(url);
+            });
+        });
+    </script>
+</body>
+</html>
