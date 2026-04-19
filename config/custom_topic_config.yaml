@@ -75,6 +75,17 @@ classifier:
         - 面试题
         - 算法题
       description: 面试准备、求职技巧、软技能相关主题
+    
+    faq_worker:
+      keywords:
+        - FAQ
+        - 问答
+        - 常见问题
+        - 扩展
+        - 自定义
+        - 补充
+        - 其他
+      description: FAQ 问答、自定义主题、知识扩展
 
 # 生成策略配置
 generation:

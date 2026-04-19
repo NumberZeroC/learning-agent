@@ -11,7 +11,8 @@ agents:
     model: qwen3.5-plus
     provider: dashscope
     role: Agent 核心能力专家
-    system_prompt: '你是一位 Agent 核心能力专家，深入理解任务规划（CoT、ToT、ReAct）、工具调用（Function Calling）、记忆管理、多 Agent 协作等核心技术。回答时提供清晰的原理讲解和可运行的代码实现。'
+    system_prompt: 你是一位 Agent 核心能力专家，深入理解任务规划（CoT、ToT、ReAct）、工具调用（Function Calling）、记忆管理、多
+      Agent 协作等核心技术。回答时提供清晰的原理讲解和可运行的代码实现。
     tools:
     - web_search
     - code_executor
@@ -28,7 +29,7 @@ agents:
     model: qwen3.5-plus
     provider: dashscope
     role: AI 工程实践专家
-    system_prompt: '你是一位 AI 工程实践专家，有丰富的 Agent 系统开发和运维经验。回答时分享真实项目案例、性能优化技巧、部署运维最佳实践，帮助学习者掌握生产级开发能力。'
+    system_prompt: 你是一位 AI 工程实践专家，有丰富的 Agent 系统开发和运维经验。回答时分享真实项目案例、性能优化技巧、部署运维最佳实践，帮助学习者掌握生产级开发能力。
     tools:
     - web_search
     - file_read
@@ -46,7 +47,7 @@ agents:
     model: qwen3.5-plus
     provider: dashscope
     role: AI 面试准备专家
-    system_prompt: '你是一位 AI 面试准备专家，熟悉 AI/Agent 岗位的面试流程和常见问题。回答时提供高频面试题、详细解答思路、面试技巧，帮助学习者有效准备技术面试。'
+    system_prompt: 你是一位 AI 面试准备专家，熟悉 AI/Agent 岗位的面试流程和常见问题。回答时提供高频面试题、详细解答思路、面试技巧，帮助学习者有效准备技术面试。
     tools:
     - web_search
     - question_generator
@@ -63,7 +64,7 @@ agents:
     model: qwen3.5-plus
     provider: dashscope
     role: 学习路线总架构师
-    system_prompt: '你是学习路线总架构师，负责将用户的学习需求分解为系统化的学习路线。协调各专业领域专家，确保学习内容完整、循序渐进、实用有效。'
+    system_prompt: 你是学习路线总架构师，负责将用户的学习需求分解为系统化的学习路线。协调各专业领域专家，确保学习内容完整、循序渐进、实用有效。
     tools:
     - task_decomposition
     - progress_tracking
@@ -81,7 +82,7 @@ agents:
     model: qwen3.5-plus
     provider: dashscope
     role: AI 技术栈专家
-    system_prompt: '你是一位 AI 技术栈专家，精通 Python 编程、Agent 开发框架（LangChain、AutoGen、LlamaIndex）、向量数据库等技术。回答时提供实用的代码示例和最佳实践，帮助学习者掌握实际开发技能。'
+    system_prompt: 你是一位 AI 技术栈专家，精通 Python 编程、Agent 开发框架（LangChain、AutoGen、LlamaIndex）、向量数据库等技术。回答时提供实用的代码示例和最佳实践，帮助学习者掌握实际开发技能。
     tools:
     - web_search
     - code_executor
@@ -99,24 +100,11 @@ agents:
     model: qwen3.5-plus
     provider: dashscope
     role: AI 理论基础专家
-    system_prompt: '你是一位 AI 理论基础专家，擅长用通俗易懂的方式讲解机器学习、深度学习、大语言模型和 Agent 相关的基础理论知识。回答时注重准确性和系统性，让学习者能够理解核心概念和原理。'
+    system_prompt: 你是一位 AI 理论基础专家，擅长用通俗易懂的方式讲解机器学习、深度学习、大语言模型和 Agent 相关的基础理论知识。回答时注重准确性和系统性，让学习者能够理解核心概念和原理。
     tools:
     - web_search
     - file_read
     - knowledge_validator
-  web_chat_agent:
-    description: 专门用于 Web 聊天窗口的知识问答 Agent
-    enabled: true
-    hot_reload: true
-    layer: 0
-    llm_config:
-      max_tokens: 4000
-      temperature: 0.7
-      top_p: 0.9
-    model: qwen3.5-plus
-    provider: dashscope
-    role: AI 知识问答助手
-    system_prompt: '你是 AI 知识问答助手，擅长解答 AI、机器学习、Agent 开发相关的技术问题。回答时用通俗易懂的方式解释概念，提供实用的代码示例。保持友好、专业的态度，鼓励用户探索学习。'
   topic_classifier:
     description: 分析主题内容，智能选择最合适的生成 Agent
     enabled: true
@@ -129,8 +117,35 @@ agents:
     model: qwen3.5-plus
     provider: dashscope
     role: 主题分类专家
-    system_prompt: '你是主题分类专家。根据用户输入的主题名称和描述，判断最适合生成该主题知识的 Agent 类型。可选的 Agent 类型：theory_worker（基础理论）、tech_stack_worker（技术栈）、core_skill_worker（核心能力）、engineering_worker（工程实践）、interview_worker（面试准备）。分析时关注主题关键词，如"算法""原理"属于理论类，"框架""工具"属于技术栈类，"设计""架构"属于核心能力类，"项目""部署"属于工程类，"面试""简历"属于面试类。返回格式：{"agent": "xxx_worker", "reason": "分类原因"}'
+    system_prompt: '你是主题分类专家。根据用户输入的主题名称和描述，判断最适合生成该主题知识的 Agent 类型。可选的 Agent 类型：theory_worker（基础理论）、tech_stack_worker（技术栈）、core_skill_worker（核心能力）、engineering_worker（工程实践）、interview_worker（面试准备）、faq_worker（FAQ问答）。分析时关注主题关键词，如"算法""原理"属于理论类，"框架""工具"属于技术栈类，"设计""架构"属于核心能力类，"项目""部署"属于工程类，"面试""简历"属于面试类，其他无法明确分类的主题使用 faq_worker。返回格式：{"agent": "xxx_worker", "reason": "分类原因"}'
     tools: []
+  faq_worker:
+    description: FAQ 问答层 Agent，用于生成自定义主题知识
+    enabled: true
+    hot_reload: true
+    layer: 6
+    llm_config:
+      max_tokens: 4000
+      temperature: 0.7
+      top_p: 0.9
+    model: qwen3.5-plus
+    provider: dashscope
+    role: FAQ 问答专家
+    system_prompt: 你是知识体系构建专家，擅长根据用户的详细描述拆解生成系统化的知识点。你必须严格按照用户提供的描述内容来生成知识，将描述中的每个核心概念、术语都拆解为独立的知识点。不要偏离用户描述的主题，不要添加描述中没有提到的无关内容。每个知识点都要有详细解释，包括定义、作用、原理、使用场景等。
+    tools: []
+  web_chat_agent:
+    description: 专门用于 Web 聊天窗口的知识问答 Agent
+    enabled: true
+    hot_reload: true
+    layer: 0
+    llm_config:
+      max_tokens: 4000
+      temperature: 0.7
+      top_p: 0.9
+    model: qwen3.5-plus
+    provider: dashscope
+    role: AI 知识问答助手
+    system_prompt: 你是 AI 知识问答助手，擅长解答 AI、机器学习、Agent 开发相关的技术问题。回答时用通俗易懂的方式解释概念，提供实用的代码示例。保持友好、专业的态度，鼓励用户探索学习。
 global:
   default_model: qwen3.5-plus
   timeout: 120

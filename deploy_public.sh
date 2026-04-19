@@ -133,7 +133,10 @@ User=$(whoami)
 Group=$(whoami)
 WorkingDirectory=$DEPLOY_DIR
 Environment="PATH=$DEPLOY_DIR/venv/bin:/usr/local/bin:/usr/bin:/bin"
-ExecStart=$DEPLOY_DIR/venv/bin/python web/public_app.py --host 0.0.0.0 --port $PORT
+Environment="PUBLIC_MODE=true"
+Environment="HIDE_WORKFLOW_EXECUTION=true"
+Environment="HIDE_CONFIG_PAGE=true"
+ExecStart=$DEPLOY_DIR/venv/bin/python web/app.py --host 0.0.0.0 --port $PORT
 Restart=always
 RestartSec=10
 StandardOutput=journal
@@ -292,7 +295,7 @@ EOF
         -w /app \
         --env PUBLIC_MODE=true \
         python:3.11-slim \
-        bash -c "pip install -r requirements.txt && python web/public_app.py --host 0.0.0.0 --port 5001"
+        bash -c "pip install -r requirements.txt && PUBLIC_MODE=true python web/app.py --host 0.0.0.0 --port 5001"
     
     echo "   ✅ 完成"
     echo ""

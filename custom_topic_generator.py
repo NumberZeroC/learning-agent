@@ -89,6 +89,7 @@ class CustomTopicGenerator:
         "core_skill_worker": {"layer": 3, "name": "核心能力层"},
         "engineering_worker": {"layer": 4, "name": "工程实践层"},
         "interview_worker": {"layer": 5, "name": "面试准备层"},
+        "faq_worker": {"layer": 6, "name": "FAQ 问答层"},
     }
 
     def __init__(
@@ -356,6 +357,7 @@ class CustomTopicGenerator:
 - core_skill_worker：核心能力、系统设计、架构模式
 - engineering_worker：工程实践、项目实战、部署运维
 - interview_worker：面试准备、求职技巧、软技能
+- faq_worker：FAQ 问答、自定义主题、知识扩展
 
 请直接返回 JSON 格式：
 {{"agent": "xxx_worker", "reason": "分类原因"}}
@@ -401,16 +403,40 @@ class CustomTopicGenerator:
             3: "核心能力层",
             4: "工程实践层",
             5: "面试准备层",
+            6: "FAQ 问答层",
         }
         layer_name = layer_names.get(layer_num, "自定义主题")
         
         desc_context = ""
         if description:
-            desc_context = f"\n主题补充描述：{description}"
+            desc_context = f"""用户描述内容：
+{description}
+
+请严格按照以上描述内容生成知识点。每个核心概念、术语、名词都应该成为独立的知识条目。"""
         
-        json_template = """{
+        if "名词解释" in topic_name or "术语" in topic_name or "概念" in topic_name:
+            json_template = """{
     "topic_name": "{topic_name}",
-    "description": "详细描述（300-500字，说明该主题的学习价值和核心内容）",
+    "description": "简要说明这个名词解释集的内容范围",
+    "terms": [
+        {
+            "name": "中文术语名称",
+            "english": "英文全称或缩写",
+            "abbreviation": "常用缩写（如有）",
+            "definition": "简洁的定义（50-100字）",
+            "detailed_explanation": "详细解释（200-400字，包括作用、原理、特点）",
+            "usage_scenario": "使用场景说明",
+            "related_terms": ["相关术语1", "相关术语2"],
+            "example": "实际应用示例或代码片段（可选）"
+        }
+    ],
+    "total_terms": 术语总数（数字）
+}"""
+            prompt_type = "名词解释"
+        else:
+            json_template = """{
+    "topic_name": "{topic_name}",
+    "description": "详细描述（200-300字，说明该主题的核心内容）",
     "subtopics": [
         {
             "name": "子主题名称",
@@ -424,38 +450,31 @@ class CustomTopicGenerator:
             "difficulty": "beginner/intermediate/advanced"
         }
     ],
-    "total_hours": 总学习时长（数字），
-    "prerequisites": [
-        {
-            "knowledge": "前置知识点名称",
-            "reason": "为什么需要这个前置知识"
-        }
-    ],
-    "learning_outcomes": ["学习成果1", "学习成果2"],
-    "learning_sequence": ["建议的学习顺序"]
+    "total_hours": 总学习时长（数字）
 }"""
+            prompt_type = "知识体系"
         
         return """## 任务
-生成"{topic}"主题的详细学习内容。{desc}
+根据用户的描述内容，生成"{topic}"主题的{type}内容。
 
-## 背景
-这是用户自定义的学习主题，归类到{layer_name}（第{layer_num}层）。
-请根据主题特性，提供系统化的知识体系和学习路径。
+## 用户需求（核心依据）
+{desc}
 
 ## 输出要求
 请严格按照以下 JSON 格式输出：
 {json_template}
 
-注意：
+## 重要提示
 1. 只输出 JSON，不要其他内容
 2. 确保 JSON 格式正确
-3. 内容要详细、实用，体现知识点的系统性和实用性
-4. 资源要真实有效，优先推荐官方文档和经典资源
+3. 知识条目必须基于用户描述内容，不要偏离主题
+4. 每个术语/概念都要有详细解释，内容要实用易懂
+5. 如果用户描述中提到了具体领域（如"AI Agent开发领域"），请列出该领域的核心术语
+
 """.format(
             topic=topic_name,
+            type=prompt_type,
             desc=desc_context,
-            layer_name=layer_name,
-            layer_num=layer_num,
             json_template=json_template.replace("{topic_name}", topic_name)
         )
 
@@ -463,6 +482,17 @@ class CustomTopicGenerator:
         self, agent: AsyncSubAgent, knowledge: Dict, topic_name: str, layer_num: int
     ) -> Dict:
         """生成知识点详情"""
+        # 如果是 terms 格式，已经包含了详细解释，不需要再生成
+        if "terms" in knowledge:
+            terms = knowledge.get("terms", [])
+            logger.info(f"   📝 名词解释格式，共 {len(terms)} 个术语")
+            for term in terms:
+                term_name = term.get("name", "")
+                english = term.get("english", "")
+                logger.info(f"      📖 {term_name} ({english})")
+            return knowledge
+        
+        # 如果是 subtopics 格式，需要生成详情
         subtopics = knowledge.get("subtopics", [])
         
         for subtopic in subtopics:
@@ -639,9 +669,16 @@ class CustomTopicGenerator:
 
     def _count_keypoints(self, knowledge: Dict) -> int:
         """统计知识点数量"""
+        # 如果是 terms 格式
+        if "terms" in knowledge:
+            return len(knowledge.get("terms", []))
+        
+        # 如果是 subtopics 格式
         count = 0
         for subtopic in knowledge.get("subtopics", []):
             count += len(subtopic.get("detailed_keypoints", []))
+            if count == 0:
+                count += len(subtopic.get("key_points", []))
         return count
 
     def _save_result(self, topic_id: str, knowledge: Dict):

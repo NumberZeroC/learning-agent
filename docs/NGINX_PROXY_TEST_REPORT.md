@@ -167,7 +167,7 @@ curl -H "Host: agentlearn.net" http://localhost/api/stats
 
 ```bash
 # 进程状态
-ps aux | grep public_app.py
+ps aux | grep "web/app.py"
 
 # 监听端口
 netstat -tlnp | grep 32015
@@ -251,7 +251,7 @@ curl http://agentlearn.net/
 ```bash
 # 重启 public-app
 cd /home/admin/.openclaw/workspace/learning-agent
-./web/stop_public_web.sh 2>/dev/null || pkill -f "public_app.py"
+./web/stop_public_web.sh 2>/dev/null || pkill -f "web/app.py"
 ./web/start_public_web.sh --port 32015
 
 # 重载 nginx

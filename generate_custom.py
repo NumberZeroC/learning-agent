@@ -84,6 +84,7 @@ def main():
                 "core_skill_worker": "核心能力层",
                 "engineering_worker": "工程实践层",
                 "interview_worker": "面试准备层",
+                "faq_worker": "FAQ 问答层",
             }
             agent_display = agent_names.get(t.get("agent"), t.get("agent"))
             

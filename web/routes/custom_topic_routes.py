@@ -288,6 +288,7 @@ def get_available_agents():
             {"name": "core_skill_worker", "display_name": "核心能力层", "layer": 3, "description": "设计、架构、规划能力"},
             {"name": "engineering_worker", "display_name": "工程实践层", "layer": 4, "description": "项目、部署、运维实践"},
             {"name": "interview_worker", "display_name": "面试准备层", "layer": 5, "description": "面试、简历、软技能"},
+            {"name": "faq_worker", "display_name": "FAQ 问答层", "layer": 6, "description": "自定义主题、知识扩展"},
         ]
         
         return jsonify({

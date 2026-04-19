@@ -124,8 +124,7 @@ python generate_framework.py           # 框架不存在时自动生成
 
 | 文件 | 功能 | 使用场景 |
 |-----|------|---------|
-| `web/app.py` | 开发版（全功能） | 开发测试，包含配置管理、聊天、工作流执行 |
-| `web/public_app.py` | 公开版（只读） | 生产部署，只展示知识内容，无配置/执行功能 |
+| `web/app.py` | 全功能版（支持公开模式） | 开发测试和生产部署，通过 `PUBLIC_MODE=true` 启用公开模式 |
 
 ### 3.2 API路由
 
@@ -365,7 +364,7 @@ python generate_framework.py --force
 python web/app.py
 
 # 公开版（只读展示）
-python web/public_app.py
+PUBLIC_MODE=true python web/app.py
 ```
 
 ### 10.3 API Key管理
@@ -390,7 +389,7 @@ python -c "from services.key_vault import get_key_vault; print(get_key_vault().g
 │  ┌──────────────────┐     ┌──────────────────┐                      │
 │  │   命令行工具      │     │    Web应用        │                      │
 │  │ run_workflow.py  │     │  web/app.py      │                      │
-│  │ regenerate_topic │     │  web/public_app  │                      │
+│  │ regenerate_topic │     │                  │                      │
 │  │ generate_framework│     │                  │                      │
 │  └────────┬─────────┘     └────────┬─────────┘                      │
 │           │                        │                                 │

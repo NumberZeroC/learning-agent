@@ -478,6 +478,7 @@
                         <option value="core_skill_worker">核心能力层（设计、架构、规划）</option>
                         <option value="engineering_worker">工程实践层（项目、部署、运维）</option>
                         <option value="interview_worker">面试准备层（面试、简历、软技能）</option>
+                        <option value="faq_worker">FAQ 问答层（自定义主题、知识扩展）</option>
                     </select>
                     <button class="btn-classify" id="classifyBtn">
                         <i class="bi bi-magic"></i> 智能分类
@@ -615,13 +616,19 @@
             
             $('#generateBtn').click(function() {
                 const topic = $('#topicInput').val();
+                const description = $('#descriptionInput').val();
+                
                 if (!topic) {
                     alert('请输入主题名称');
                     return;
                 }
                 
+                if (!description || description.trim().length < 20) {
+                    alert('请输入详细的主题描述（至少20字），系统将根据描述拆解知识点');
+                    return;
+                }
+                
                 const agent = $('#agentSelect').val() || null;
-                const description = $('#descriptionInput').val();
                 const skipDetails = $('#skipDetails').is(':checked');
                 const skipRelation = $('#skipRelation').is(':checked');
                 

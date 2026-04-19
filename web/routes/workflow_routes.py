@@ -15,6 +15,7 @@ import sys
 import json
 import os
 import time
+import yaml
 from functools import wraps
 
 # 缓存存储
@@ -52,49 +53,66 @@ workflow_bp = Blueprint('workflow', __name__, url_prefix='/api/workflow')
 # 工作流结果目录 - 使用相对路径（基于项目根目录）
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 WORKFLOW_RESULTS_DIR = PROJECT_ROOT / "data" / "workflow_results"
+KNOWLEDGE_FRAMEWORK_FILE = PROJECT_ROOT / "config" / "knowledge_framework.yaml"
 
 
 @workflow_bp.route('/layers')
 @cached(ttl=_CACHE_TTL)
 def get_all_layers():
-    """获取所有已完成的层（从合并文件读取）"""
-    if not WORKFLOW_RESULTS_DIR.exists():
-        return jsonify({
-            "success": True,
-            "data": {
-                "layers": [],
-                "total": 0
-            }
-        })
-    
+    """获取所有层（合并知识框架定义和已生成的数据）"""
     layers = []
     seen_layers = set()
     
-    # 扫描所有合并文件（支持两种命名：layer_X_workflow.json 和 layer_X_merged.json）
-    for pattern in ["layer_*_workflow.json", "layer_*_merged.json"]:
-        for merged_file in sorted(WORKFLOW_RESULTS_DIR.glob(pattern)):
-            try:
-                # 提取层号，避免重复
-                layer_num = int(merged_file.stem.split('_')[1])
-                if layer_num in seen_layers:
-                    continue  # 跳过重复的层
+    # 1. 先从知识框架读取所有层定义
+    if KNOWLEDGE_FRAMEWORK_FILE.exists():
+        try:
+            with open(KNOWLEDGE_FRAMEWORK_FILE, 'r', encoding='utf-8') as f:
+                framework = yaml.safe_load(f)
+            
+            for layer_def in framework.get('layers', []):
+                layer_num = layer_def.get('layer', 0)
                 seen_layers.add(layer_num)
-                
-                with open(merged_file, 'r', encoding='utf-8') as f:
-                    layer_data = json.load(f)
-                
                 layers.append({
-                    "layer": layer_data.get('layer', layer_num),
-                    "layer_name": layer_data.get('layer_name', ''),
-                    "agent": layer_data.get('agent', ''),
-                    "topics": layer_data.get('topics', []),
-                    "task_count": layer_data.get('task_count', len(layer_data.get('topics', []))),
-                    "completed_at": layer_data.get('completed_at', '')
+                    "layer": layer_num,
+                    "layer_name": layer_def.get('name', ''),
+                    "agent": layer_def.get('agent', ''),
+                    "topics": [],
+                    "task_count": 0,
+                    "completed_at": '',
+                    "description": layer_def.get('description', ''),
+                    "custom": layer_def.get('custom', False)
                 })
-            except Exception as e:
-                print(f"读取合并文件失败 {merged_file.name}: {e}")
+        except Exception as e:
+            print(f"读取知识框架失败: {e}")
     
-    # 按层号排序
+    # 2. 再从工作流结果读取已生成的层数据（覆盖框架定义）
+    if WORKFLOW_RESULTS_DIR.exists():
+        for pattern in ["layer_*_workflow.json", "layer_*_merged.json"]:
+            for merged_file in sorted(WORKFLOW_RESULTS_DIR.glob(pattern)):
+                try:
+                    layer_num = int(merged_file.stem.split('_')[1])
+                    
+                    with open(merged_file, 'r', encoding='utf-8') as f:
+                        layer_data = json.load(f)
+                    
+                    existing = next((l for l in layers if l['layer'] == layer_num), None)
+                    if existing:
+                        existing['topics'] = layer_data.get('topics', [])
+                        existing['task_count'] = layer_data.get('task_count', len(layer_data.get('topics', [])))
+                        existing['completed_at'] = layer_data.get('completed_at', '')
+                    elif layer_num not in seen_layers:
+                        seen_layers.add(layer_num)
+                        layers.append({
+                            "layer": layer_num,
+                            "layer_name": layer_data.get('layer_name', ''),
+                            "agent": layer_data.get('agent', ''),
+                            "topics": layer_data.get('topics', []),
+                            "task_count": layer_data.get('task_count', len(layer_data.get('topics', []))),
+                            "completed_at": layer_data.get('completed_at', '')
+                        })
+                except Exception as e:
+                    print(f"读取合并文件失败 {merged_file.name}: {e}")
+    
     layers.sort(key=lambda x: x['layer'])
     
     return jsonify({

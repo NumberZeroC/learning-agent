@@ -22,6 +22,7 @@
             --layer-3-color: #f093fb;
             --layer-4-color: #4facfe;
             --layer-5-color: #43e97b;
+            --layer-6-color: #ff6b6b;
             --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
@@ -1027,29 +1028,47 @@
         function renderKnowledgeTree(layers) {
             const container = document.getElementById('knowledgeTree');
             
-            // 使用 DocumentFragment 减少 DOM 操作
             const fragment = document.createDocumentFragment();
             
             layers.forEach((layer, layerIndex) => {
                 const topics = layer.topics || [];
+                const isCustomLayer = layer.custom || layer.layer === 6;
                 const layerGroup = document.createElement('div');
                 layerGroup.className = `layer-group layer-${layer.layer}`;
+                
+                let topicsHtml = '';
+                if (isCustomLayer) {
+                    topicsHtml = `
+                        <div class="custom-topic-header" style="padding: 12px 15px; background: #fff5f5; border-bottom: 1px solid #ffe0e0;">
+                            <button class="btn-add-custom" onclick="window.location.href='/custom'" style="width: 100%; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%); color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                                <i class="bi bi-plus-circle"></i> 添加自定义主题
+                            </button>
+                        </div>
+                        <div id="customTopicList" style="padding: 10px 0;">
+                            <div class="loading-container" style="padding: 20px;">
+                                <p class="text-muted" style="font-size: 0.85rem;">加载自定义主题...</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    topicsHtml = topics.map((topic, topicIndex) => `
+                        <div class="topic-item" onclick="showTopic(${layer.layer}, ${topicIndex}, this)">
+                            ${topic.topic_name || topic.name}
+                        </div>
+                    `).join('');
+                }
                 
                 layerGroup.innerHTML = `
                     <div class="layer-header" onclick="toggleLayer(${layerIndex})">
                         <div class="layer-icon">${layer.layer}</div>
                         <div class="layer-info">
-                            <div class="layer-name">${layer.layer_name || LAYER_NAMES[layer.layer]}</div>
-                            <div class="layer-stats">${topics.length} 个主题</div>
+                            <div class="layer-name">${layer.layer_name || LAYER_NAMES[layer.layer]}${isCustomLayer ? ' ✨' : ''}</div>
+                            <div class="layer-stats">${isCustomLayer ? '自定义扩展' : topics.length + ' 个主题'}</div>
                         </div>
                         <i class="bi bi-chevron-right layer-arrow"></i>
                     </div>
                     <div class="topic-list" id="topicList-${layerIndex}">
-                        ${topics.map((topic, topicIndex) => `
-                            <div class="topic-item" onclick="showTopic(${layer.layer}, ${topicIndex}, this)">
-                                ${topic.topic_name || topic.name}
-                            </div>
-                        `).join('')}
+                        ${topicsHtml}
                     </div>
                 `;
                 
@@ -1059,7 +1078,186 @@
             container.innerHTML = '';
             container.appendChild(fragment);
             
+            // 加载自定义主题列表
+            loadCustomTopics();
+            
             console.log(`渲染完成：${layers.length} 层`);
+        }
+        
+        // 加载自定义主题列表
+        async function loadCustomTopics() {
+            const container = document.getElementById('customTopicList');
+            if (!container) return;
+            
+            try {
+                const response = await fetch('/api/custom/list');
+                const result = await response.json();
+                
+                if (result.success && result.data.topics.length > 0) {
+                    const topics = result.data.topics;
+                    container.innerHTML = topics.map(t => `
+                        <div class="topic-item custom-topic-item ${t.success ? '' : 'failed'}" 
+                             onclick="showCustomTopic('${t.topic_id}', this)"
+                             style="${t.success ? '' : 'opacity: 0.6;'}">
+                            <i class="bi ${t.success ? 'bi-check-circle text-success' : 'bi-x-circle text-danger'}"></i>
+                            ${t.topic_name}
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = `
+                        <div style="padding: 15px; text-align: center; color: #999; font-size: 0.85rem;">
+                            <i class="bi bi-inbox"></i> 暂无自定义主题
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                container.innerHTML = `
+                    <div style="padding: 15px; text-align: center; color: #dc3545; font-size: 0.85rem;">
+                        <i class="bi bi-exclamation-circle"></i> 加载失败
+                    </div>
+                `;
+            }
+        }
+        
+        // 显示自定义主题详情
+        async function showCustomTopic(topicId, element) {
+            document.querySelectorAll('.topic-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            
+            document.getElementById('mainContent').innerHTML = `
+                <div class="loading-container">
+                    <div class="spinner"></div>
+                    <p class="text-muted">加载内容...</p>
+                </div>
+            `;
+            
+            try {
+                const response = await fetch(`/api/custom/${topicId}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    renderCustomTopicDetail(result.data);
+                } else {
+                    showError(result.error);
+                }
+            } catch (error) {
+                showError(error.message);
+            }
+        }
+        
+        // 渲染自定义主题详情
+        function renderCustomTopicDetail(data) {
+            const knowledge = data.knowledge || {};
+            const layerColor = 'var(--layer-6-color)';
+            
+            let contentHtml = '';
+            let countInfo = '';
+            
+            // 判断是 terms 格式还是 subtopics 格式
+            if (knowledge.terms && knowledge.terms.length > 0) {
+                // 名词解释格式
+                const terms = knowledge.terms;
+                countInfo = `${terms.length} 个术语`;
+                
+                contentHtml = `
+                    <div class="terms-list" style="display: grid; gap: 15px;">
+                        ${terms.map(term => `
+                            <div class="term-card" style="background: white; border-radius: 10px; padding: 20px; border-left: 4px solid ${layerColor}; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;">
+                                    <h3 style="color: #2d3748; font-size: 1.2rem; font-weight: 700; margin: 0;">
+                                        ${term.name || '术语'}
+                                        ${term.abbreviation ? `<span style="color: ${layerColor}; font-size: 0.9rem; margin-left: 8px;">${term.abbreviation}</span>` : ''}
+                                    </h3>
+                                    ${term.english ? `<span style="color: #718096; font-size: 0.85rem; font-style: italic;">${term.english}</span>` : ''}
+                                </div>
+                                ${term.definition ? `
+                                    <div style="background: #f8fafc; padding: 10px; border-radius: 6px; margin-bottom: 10px; font-size: 0.95rem;">
+                                        <strong style="color: ${layerColor};">定义：</strong>${term.definition}
+                                    </div>
+                                ` : ''}
+                                ${term.detailed_explanation ? `
+                                    <div style="color: #4a5568; font-size: 0.9rem; line-height: 1.6; margin-bottom: 10px;">
+                                        ${term.detailed_explanation}
+                                    </div>
+                                ` : ''}
+                                ${term.usage_scenario ? `
+                                    <div style="color: #718096; font-size: 0.85rem; margin-top: 8px;">
+                                        <i class="bi bi-lightbulb" style="color: ${layerColor};"></i>
+                                        <strong>使用场景：</strong>${term.usage_scenario}
+                                    </div>
+                                ` : ''}
+                                ${term.example ? `
+                                    <div style="background: #1a1a2e; color: #00d4ff; padding: 12px; border-radius: 6px; font-size: 0.85rem; margin-top: 10px; font-family: monospace;">
+                                        ${term.example}
+                                    </div>
+                                ` : ''}
+                                ${term.related_terms && term.related_terms.length > 0 ? `
+                                    <div style="margin-top: 10px; font-size: 0.8rem; color: #a0aec0;">
+                                        <strong>相关术语：</strong>${term.related_terms.join('、')}
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            } else {
+                // subtopics 格式
+                const subtopics = knowledge.subtopics || [];
+                countInfo = `${subtopics.length} 个子主题`;
+                
+                contentHtml = subtopics.map(subtopic => {
+                    const keyPoints = subtopic.detailed_keypoints || subtopic.key_points || [];
+                    return `
+                        <div class="subtopic-card" style="border-left-color: ${layerColor}">
+                            <h3 class="subtopic-title">${subtopic.name || '子主题'}</h3>
+                            ${keyPoints.length > 0 ? `
+                                <ul class="keypoint-list">
+                                    ${keyPoints.map(kp => `
+                                        <li class="keypoint-item">
+                                            <div class="keypoint-title">${kp.key_point || kp}</div>
+                                            ${kp.detailed_content ? `
+                                                <div class="keypoint-content">
+                                                    <div class="keypoint-explanation">${kp.detailed_content.explanation || ''}</div>
+                                                </div>
+                                            ` : ''}
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            ` : `
+                                <p class="text-muted">暂无知识点详情</p>
+                            `}
+                        </div>
+                    `;
+                }).join('');
+            }
+            
+            let html = `
+                <div class="breadcrumb-custom">
+                    <span class="breadcrumb-item">FAQ 问答层</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item active">${data.topic_name}</span>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="text-muted" style="font-size: 0.8rem;">自定义主题</span>
+                </div>
+                
+                <div class="content-card">
+                    <div class="card-header-custom" style="background: linear-gradient(135deg, ${layerColor} 0%, #ee5a5a 100%)">
+                        <h1 class="card-title">${data.topic_name}</h1>
+                        <div class="card-subtitle">
+                            <i class="bi bi-layers"></i> FAQ 问答层 · 
+                            <i class="bi bi-lightbulb"></i> ${countInfo} ·
+                            <i class="bi bi-robot"></i> ${knowledge.agent || '自定义'}
+                        </div>
+                    </div>
+                    <div class="card-body-custom">
+                        <div class="description">${knowledge.description || '用户自定义学习主题'}</div>
+                        ${contentHtml}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('mainContent').innerHTML = html;
+            document.getElementById('tocSidebar').style.display = 'none';
         }
 
         // 切换层展开/收起

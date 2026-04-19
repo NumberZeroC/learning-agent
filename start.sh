@@ -190,7 +190,7 @@ start_service() {
     # 公开版默认端口80，开发版默认端口5001
     if [ "$PUBLIC" = "true" ]; then
         PORT=${CUSTOM_PORT:-80}
-        APP_FILE="web/public_app.py"
+        APP_FILE="web/app.py"
         log_info "启动 Learning Agent 公开版 Web 服务..."
         log_info "模式：公开版（只读展示，禁用聊天/配置/工作流）"
     else

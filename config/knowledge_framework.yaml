@@ -1,16 +1,17 @@
 # Agent 开发面试知识体系架构
-# 版本：1.0
-# 创建日期：2026-04-19
+# 版本：1.1
+# 更新日期：2026-04-19
 # 
 # 说明：
-# - 定义 5 层知识架构（基础理论→技术栈→核心能力→工程实践→面试准备）
+# - 定义 6 层知识架构（基础理论→技术栈→核心能力→工程实践→面试准备→FAQ）
 # - 每层包含若干主题，每个主题有描述和优先级
+# - Layer 6 FAQ 为自定义主题扩展层
 # - subtopics 由大模型根据主题自动生成，不再硬编码
 # - 增加跨层级知识依赖关系生成
 
 name: Agent 开发面试知识体系
-version: '1.0'
-description: AI Agent 开发岗位面试知识体系，覆盖从基础理论到面试准备的全链路
+version: '1.1'
+description: AI Agent 开发岗位面试知识体系，覆盖从基础理论到面试准备的全链路，支持自定义主题扩展
 layers:
 - layer: 1
   name: 基础理论层
@@ -77,3 +78,9 @@ layers:
     priority: medium
   - name: 简历优化
     priority: medium
+- layer: 6
+  name: FAQ 问答层
+  agent: faq_worker
+  description: 自定义主题知识扩展，用户可自由添加感兴趣的学习主题
+  topics: []
+  custom: true
