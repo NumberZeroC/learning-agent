@@ -18,6 +18,10 @@ logs/
 # 数据（运行时生成）
 data/workflow_results/*
 !data/workflow_results/.gitkeep
+data/custom_topics/*
+!data/custom_topics/.gitkeep
+data/llm_audit_logs/*
+!data/llm_audit_logs/.gitkeep
 
 # PID 文件
 *.pid
