@@ -347,6 +347,7 @@
         .layer-3 .layer-icon { background: var(--layer-3-color); }
         .layer-4 .layer-icon { background: var(--layer-4-color); }
         .layer-5 .layer-icon { background: var(--layer-5-color); }
+        .layer-6 .layer-icon { background: var(--layer-6-color); }
         
         .layer-info {
             flex: 1;
@@ -980,7 +981,8 @@
             2: "技术栈层",
             3: "核心能力层",
             4: "工程实践层",
-            5: "面试准备层"
+            5: "面试准备层",
+            6: "FAQ"
         };
 
         // 加载知识树
@@ -1233,7 +1235,7 @@
             
             let html = `
                 <div class="breadcrumb-custom">
-                    <span class="breadcrumb-item">FAQ 问答层</span>
+                    <span class="breadcrumb-item">FAQ</span>
                     <span class="breadcrumb-separator">/</span>
                     <span class="breadcrumb-item active">${data.topic_name}</span>
                     <span class="breadcrumb-separator">/</span>
@@ -1244,7 +1246,7 @@
                     <div class="card-header-custom" style="background: linear-gradient(135deg, ${layerColor} 0%, #ee5a5a 100%)">
                         <h1 class="card-title">${data.topic_name}</h1>
                         <div class="card-subtitle">
-                            <i class="bi bi-layers"></i> FAQ 问答层 · 
+                            <i class="bi bi-layers"></i> FAQ · 
                             <i class="bi bi-lightbulb"></i> ${countInfo} ·
                             <i class="bi bi-robot"></i> ${knowledge.agent || '自定义'}
                         </div>

@@ -79,7 +79,7 @@ layers:
   - name: 简历优化
     priority: medium
 - layer: 6
-  name: FAQ 问答层
+  name: FAQ
   agent: faq_worker
   description: 自定义主题知识扩展，用户可自由添加感兴趣的学习主题
   topics: []

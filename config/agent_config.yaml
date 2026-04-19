@@ -120,7 +120,7 @@ agents:
     system_prompt: '你是主题分类专家。根据用户输入的主题名称和描述，判断最适合生成该主题知识的 Agent 类型。可选的 Agent 类型：theory_worker（基础理论）、tech_stack_worker（技术栈）、core_skill_worker（核心能力）、engineering_worker（工程实践）、interview_worker（面试准备）、faq_worker（FAQ问答）。分析时关注主题关键词，如"算法""原理"属于理论类，"框架""工具"属于技术栈类，"设计""架构"属于核心能力类，"项目""部署"属于工程类，"面试""简历"属于面试类，其他无法明确分类的主题使用 faq_worker。返回格式：{"agent": "xxx_worker", "reason": "分类原因"}'
     tools: []
   faq_worker:
-    description: FAQ 问答层 Agent，用于生成自定义主题知识
+    description: FAQ 层 Agent，用于生成自定义主题知识
     enabled: true
     hot_reload: true
     layer: 6

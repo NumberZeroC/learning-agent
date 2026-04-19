@@ -313,6 +313,96 @@
             white-space: pre-wrap;
         }
         
+        .rendered-content {
+            display: block;
+        }
+        
+        .term-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .term-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+        }
+        
+        .term-name {
+            color: #2d3748;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        
+        .term-abbr {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-left: 8px;
+        }
+        
+        .term-english {
+            color: #718096;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+        
+        .term-definition {
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        
+        .term-detail {
+            color: #4a5568;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .term-detail pre {
+            background: #1a1a2e;
+            color: #00d4ff;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+        
+        .term-detail code {
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .term-meta {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #718096;
+        }
+        
+        .subtopic-card-rendered {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .subtopic-title-rendered {
+            color: #2d3748;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
         .history-section {
             background: white;
             border-radius: 15px;
@@ -478,7 +568,7 @@
                         <option value="core_skill_worker">核心能力层（设计、架构、规划）</option>
                         <option value="engineering_worker">工程实践层（项目、部署、运维）</option>
                         <option value="interview_worker">面试准备层（面试、简历、软技能）</option>
-                        <option value="faq_worker">FAQ 问答层（自定义主题、知识扩展）</option>
+                        <option value="faq_worker">FAQ（自定义主题、知识扩展）</option>
                     </select>
                     <button class="btn-classify" id="classifyBtn">
                         <i class="bi bi-magic"></i> 智能分类

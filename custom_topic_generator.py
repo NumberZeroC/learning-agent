@@ -89,7 +89,7 @@ class CustomTopicGenerator:
         "core_skill_worker": {"layer": 3, "name": "核心能力层"},
         "engineering_worker": {"layer": 4, "name": "工程实践层"},
         "interview_worker": {"layer": 5, "name": "面试准备层"},
-        "faq_worker": {"layer": 6, "name": "FAQ 问答层"},
+        "faq_worker": {"layer": 6, "name": "FAQ"},
     }
 
     def __init__(
@@ -403,7 +403,7 @@ class CustomTopicGenerator:
             3: "核心能力层",
             4: "工程实践层",
             5: "面试准备层",
-            6: "FAQ 问答层",
+            6: "FAQ",
         }
         layer_name = layer_names.get(layer_num, "自定义主题")
         
