@@ -50,3 +50,7 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Runtime data
+data/chat_history/chat_history.json
+data/secrets.db
