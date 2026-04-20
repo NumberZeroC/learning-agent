@@ -69,31 +69,15 @@ class AskService:
             logger.warning(f"保存对话历史失败：{e}")
 
     def _get_api_config(self) -> Dict[str, str]:
-        """获取API配置（支持热更新，每5分钟刷新）"""
+        """获取API配置（引用统一模块）"""
         now = time.time()
         if self._api_config_cache and (now - self._config_loaded_time) < 300:
             return self._api_config_cache
 
-        config = self._load_config()
-        providers = config.get("providers", {})
-        dashscope = providers.get("dashscope", {})
+        from services.agent_factory import get_api_config
+        api_key, base_url = get_api_config(self.config)
 
-        api_key = ""
-        try:
-            from services.key_vault import get_key_vault
-
-            vault = get_key_vault()
-            api_key = vault.get_key("dashscope") or ""
-        except Exception:
-            pass
-
-        if not api_key:
-            api_key = dashscope.get("api_key_value", "") or os.getenv(
-                "DASHSCOPE_API_KEY", ""
-            )
-
-        base_url = dashscope.get("base_url", "https://coding.dashscope.aliyuncs.com/v1")
-        model = config.get("global", {}).get("default_model", "qwen3.5-plus")
+        model = self.config.get("global", {}).get("default_model", "qwen3.5-plus")
 
         self._api_config_cache = {
             "api_key": api_key,

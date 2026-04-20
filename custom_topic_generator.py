@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-自定义主题知识生成器
+自定义主题知识生成器 (优化版 v2)
 
 功能：
 - 接收用户输入的主题
@@ -8,9 +8,14 @@
 - 执行三轮生成流程
 - 结果存储到独立目录
 
+优化改进 v2：
+- 引用独立模块（models, utils, services）
+- 消除重复代码
+- 统一 API Key 获取
+
 用法：
     from custom_topic_generator import CustomTopicGenerator
-    
+
     generator = CustomTopicGenerator()
     result = generator.generate("微服务架构")
     result = generator.generate("微服务架构", agent="engineering_worker")
@@ -25,9 +30,7 @@ import logging
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional
-from dataclasses import dataclass
 import re
-from logging.handlers import RotatingFileHandler
 
 from dotenv import load_dotenv
 
@@ -35,49 +38,18 @@ env_file = Path(__file__).parent / ".env"
 if env_file.exists():
     load_dotenv(env_file)
 
+# 引用新模块
+from models.agent import AsyncSubAgent
+from models.custom_topic import CustomTopicResult
+from services.agent_factory import create_agents_from_config, create_classifier_agent, get_api_config
 from services.llm_client import LLMClient
-from workflow_orchestrator import AsyncSubAgent
+from utils.knowledge_parser import parse_knowledge
+from utils.prompt_builder import build_keypoint_question, build_custom_topic_question
+from utils.logger import setup_logger
+from core.knowledge_utils import count_keypoints
 
-
-def _setup_logger():
-    log_dir = Path(__file__).parent / "logs"
-    log_dir.mkdir(exist_ok=True)
-
-    logger = logging.getLogger("custom_topic")
-    if logger.handlers:
-        return logger
-
-    logger.setLevel(logging.INFO)
-
-    console = logging.StreamHandler()
-    console.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
-    logger.addHandler(console)
-
-    file = RotatingFileHandler(
-        log_dir / "custom_topic.log",
-        maxBytes=10 * 1024 * 1024,
-        backupCount=10,
-        encoding="utf-8",
-    )
-    file.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
-    logger.addHandler(file)
-
-    return logger
-
-
-logger = _setup_logger()
-
-
-@dataclass
-class CustomTopicResult:
-    topic_id: str
-    topic_name: str
-    agent: str
-    success: bool
-    knowledge: Optional[Dict] = None
-    error: Optional[str] = None
-    created_at: str = ""
-    keypoint_count: int = 0
+# 使用统一的 logger
+logger = setup_logger("custom_topic", "custom_topic.log")
 
 
 class CustomTopicGenerator:
@@ -147,61 +119,13 @@ class CustomTopicGenerator:
         """异步初始化"""
         self.initialize()
 
-    def _get_api_config(self) -> tuple:
-        api_key = ""
-        base_url = "https://coding.dashscope.aliyuncs.com/v1"
-        
-        try:
-            from services.key_vault import get_key_vault
-            vault = get_key_vault()
-            api_key = vault.get_key("dashscope") or ""
-        except Exception:
-            pass
-        
-        if not api_key:
-            providers = self.agent_config.get("providers", {})
-            dashscope = providers.get("dashscope", {})
-            api_key = dashscope.get("api_key_value", "") or os.getenv("DASHSCOPE_API_KEY", "")
-            base_url = dashscope.get("base_url", base_url)
-        
-        return api_key, base_url
-
     def _create_agents(self) -> Dict[str, AsyncSubAgent]:
-        api_key, base_url = self._get_api_config()
-        
-        agents = {}
-        agents_config = self.agent_config.get("agents", {})
-        
-        for agent_name, agent_conf in agents_config.items():
-            if agent_name in self.AGENT_MAPPING and agent_conf.get("enabled", False):
-                agents[agent_name] = AsyncSubAgent(
-                    name=agent_name,
-                    role=agent_conf.get("role", "专家"),
-                    layer=self.AGENT_MAPPING[agent_name]["layer"],
-                    system_prompt=agent_conf.get("system_prompt", ""),
-                    model=agent_conf.get("model", "qwen3.5-plus"),
-                    api_key=api_key,
-                    base_url=base_url,
-                    enable_cache=self.enable_cache,
-                )
-        
-        return agents
+        """创建 Agent（引用统一模块）"""
+        return create_agents_from_config(self.agent_config, self.enable_cache, agent_filter=self.AGENT_MAPPING)
 
     def _create_classifier_agent(self) -> AsyncSubAgent:
-        api_key, base_url = self._get_api_config()
-        
-        classifier_config = self.agent_config.get("agents", {}).get("topic_classifier", {})
-        
-        return AsyncSubAgent(
-            name="topic_classifier",
-            role=classifier_config.get("role", "主题分类专家"),
-            layer=0,
-            system_prompt=classifier_config.get("system_prompt", ""),
-            model=classifier_config.get("model", "qwen3.5-plus"),
-            api_key=api_key,
-            base_url=base_url,
-            enable_cache=False,
-        )
+        """创建分类 Agent（引用统一模块）"""
+        return create_classifier_agent(self.agent_config)
 
     def generate(
         self,
@@ -647,40 +571,12 @@ class CustomTopicGenerator:
         return knowledge
 
     def _parse_knowledge(self, content: str, fallback_name: str) -> Dict:
-        """解析 LLM 返回的 JSON 内容"""
-        try:
-            content = content.strip()
-            if content.startswith("```json"):
-                content = content[7:]
-            if content.startswith("```"):
-                content = content[3:]
-            if content.endswith("```"):
-                content = content[:-3]
-            
-            content = content.strip()
-            
-            json_match = re.search(r'\{.*\}', content, re.DOTALL)
-            if json_match:
-                json_str = json_match.group()
-                return json.loads(json_str)
-        except Exception as e:
-            logger.warning(f"⚠️  JSON 解析失败：{e}")
-        
-        return {"topic_name": fallback_name, "raw_content": content}
+        """解析 LLM 返回的 JSON 内容（引用统一模块）"""
+        return parse_knowledge(content, fallback_name)
 
     def _count_keypoints(self, knowledge: Dict) -> int:
-        """统计知识点数量"""
-        # 如果是 terms 格式
-        if "terms" in knowledge:
-            return len(knowledge.get("terms", []))
-        
-        # 如果是 subtopics 格式
-        count = 0
-        for subtopic in knowledge.get("subtopics", []):
-            count += len(subtopic.get("detailed_keypoints", []))
-            if count == 0:
-                count += len(subtopic.get("key_points", []))
-        return count
+        """统计知识点数量（引用统一模块）"""
+        return count_keypoints(knowledge)
 
     def _save_result(self, topic_id: str, knowledge: Dict):
         """保存结果到文件"""

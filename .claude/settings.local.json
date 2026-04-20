@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m json.tool)",
+      "Bash(python3 -m py_compile /home/admin/.openclaw/workspace/learning-agent/workflow_orchestrator.py)",
+      "Bash(python3 -m py_compile /home/admin/.openclaw/workspace/learning-agent/custom_topic_generator.py)",
+      "Bash(python3 -m py_compile /home/admin/.openclaw/workspace/learning-agent/services/ask_service.py)",
+      "Bash(python3 -m py_compile /home/admin/.openclaw/workspace/learning-agent/web/app.py)",
+      "Bash(python3 -m pytest tests/ -v --tb=short)",
+      "Bash(python3 -m pytest tests/test_custom_topic_generator.py -v --tb=short)",
+      "Bash(python3:*)"
+    ]
+  }
+}

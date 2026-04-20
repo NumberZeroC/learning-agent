@@ -111,6 +111,80 @@ def get_service_logger(name: str) -> logging.Logger:
     return LogConfig.get_logger(f'service.{name}', f'{name}.log')
 
 
+def setup_logger(
+    name: str,
+    log_file: str,
+    log_dir: Path = None,
+    level: int = logging.INFO,
+    max_bytes: int = 10 * 1024 * 1024,
+    backup_count: int = 10,
+    add_console: bool = True,
+) -> logging.Logger:
+    """
+    设置并返回一个配置好的 logger（兼容原有代码）
+
+    这是合并 workflow_orchestrator.py 和 custom_topic_generator.py
+    中 `_setup_logger` 方法的通用版本。
+
+    Args:
+        name: logger 名称
+        log_file: 日志文件名
+        log_dir: 日志目录（可选，默认为项目根目录下的 logs/）
+        level: 日志级别
+        max_bytes: 单个日志文件最大大小（默认 10MB）
+        backup_count: 保留的备份文件数量（默认 10）
+        add_console: 是否添加控制台输出
+
+    Returns:
+        logging.Logger: 配置好的 logger
+    """
+    # 确定日志目录
+    if log_dir is None:
+        log_dir = Path(__file__).parent.parent / "logs"
+
+    log_dir.mkdir(exist_ok=True)
+
+    logger = logging.getLogger(name)
+
+    # 避免重复添加 handler
+    if logger.handlers:
+        return logger
+
+    logger.setLevel(level)
+
+    # 控制台处理器
+    if add_console:
+        console = logging.StreamHandler()
+        console.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+        console.setLevel(level)
+        logger.addHandler(console)
+
+    # 文件处理器（支持轮转）
+    log_path = log_dir / log_file
+    file = RotatingFileHandler(
+        log_path,
+        maxBytes=max_bytes,
+        backupCount=backup_count,
+        encoding="utf-8",
+    )
+    file.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+    file.setLevel(level)
+    logger.addHandler(file)
+
+    return logger
+
+
+# 预定义的便捷函数
+def get_workflow_orchestrator_logger() -> logging.Logger:
+    """获取 workflow_orchestrator 的 logger"""
+    return setup_logger("workflow", "workflow.log")
+
+
+def get_custom_topic_logger() -> logging.Logger:
+    """获取 custom_topic_generator 的 logger"""
+    return setup_logger("custom_topic", "custom_topic.log")
+
+
 # 使用示例
 if __name__ == '__main__':
     # 示例 1：获取 Web logger

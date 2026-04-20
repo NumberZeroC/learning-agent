@@ -91,26 +91,10 @@ def after_request(response):
 
 api_key = ""
 try:
-    from services.key_vault import get_key_vault
-
-    vault = get_key_vault()
-    api_key = vault.get_key("dashscope") or ""
+    from services.agent_factory import get_api_config
+    api_key, _ = get_api_config()
 except Exception:
-    if not api_key:
-        config_path = project_dir / "config" / "agent_config.yaml"
-        if config_path.exists():
-            import yaml
-
-            with open(config_path, "r", encoding="utf-8") as f:
-                config = yaml.safe_load(f)
-                api_key = (
-                    config.get("providers", {})
-                    .get("dashscope", {})
-                    .get("api_key_value", "")
-                )
-
-        if not api_key:
-            api_key = os.getenv("DASHSCOPE_API_KEY", "")
+    api_key = os.getenv("DASHSCOPE_API_KEY", "")
 
 if api_key:
     app.logger.info(f"API Key 已加载 (前缀：{api_key[:15]}...)")
